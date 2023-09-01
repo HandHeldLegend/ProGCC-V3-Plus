@@ -1,0 +1,14 @@
+### Footprint positions - created on Tue Jun  6 21:42:37 2023 ###
+### Printed by KiCad version 7.0.2
+## Unit = mm, Angle = deg.
+## Side : bottom
+# Ref     Val              Package                    PosX       PosY       Rot  Side
+D1        BAS16VY,115      SOT-363_SC-70-6        149.4227  -164.2596   90.0000  bottom
+D2        BAS16VY,115      SOT-363_SC-70-6        146.3747  -164.2596   90.0000  bottom
+D3        BAS16VY,115      SOT-363_SC-70-6        143.3267  -164.2596   90.0000  bottom
+D4        BAS16VY,115      SOT-363_SC-70-6        140.2787  -164.2596   90.0000  bottom
+D5        BAS16VY,115      SOT-363_SC-70-6        137.2307  -164.2596   90.0000  bottom
+D6        BAS16VY,115      SOT-363_SC-70-6        134.1827  -164.2596   90.0000  bottom
+J1        To_Button_Board  molex_5051101492_14P   104.4647  -160.0016    0.0000  bottom
+J2        bumpers          molex_5034800540       143.1230  -133.2960    0.0000  bottom
+## End

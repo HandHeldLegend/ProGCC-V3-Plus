@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "progcc_v3")(type "KiCad")(uri "${KIPRJMOD}/../progcc_v3_libs/footprints/progcc_v3.pretty")(options "")(descr ""))
+)

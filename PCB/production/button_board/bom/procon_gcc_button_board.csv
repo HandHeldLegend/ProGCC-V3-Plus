@@ -1,0 +1,7 @@
+"#","Reference","Qty","Value","Footprint","DNP","MPN"
+"1","D1, D2, D3, D4, D5, D6","6","BAS16VY,115","progcc_v3:SOT-363_SC-70-6","",""
+"2","J1","1","To Button Board","progcc_v3:molex_5051101492_14P","",""
+"3","J2","1","bumpers","progcc_v3:molex_5034800540","","molex_5034800540"
+"4","L1, L2, L3, L4, L5, L6, L7, L8, L9, L10, L11, L12","12","SK6805-EC-15","progcc_v3:SK6805-EC-15","",""
+"5","SW1, SW2, SW3, SW4","4"," TL3315NF100Q","progcc_v3:TL3315NFxxxQ","",""
+"6","SW5, SW6, SW7, SW8","4","BPAD","progcc_v3:progcc_bpad","",""
