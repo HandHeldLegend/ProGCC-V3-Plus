@@ -1,4 +1,4 @@
-### Footprint positions - created on Fri Sep  1 17:33:39 2023 ###
+### Footprint positions - created on Fri Sep  1 19:16:40 2023 ###
 ### Printed by KiCad version 7.0.6
 ## Unit = mm, Angle = deg.
 ## Side : top
@@ -89,6 +89,8 @@ R30       27                  R_0201_0603Metric                                1
 R31       10k                 R_0201_0603Metric                                137.0584  -101.7524    0.0000  top
 R32       10k                 R_0201_0603Metric                                141.2748  -103.4288  -90.0000  top
 R33       10k                 R_0201_0603Metric                                151.4634  -111.8648    0.0000  top
+R34       75k                 R_0603_1608Metric                                 83.0072  -136.1826   90.0000  top
+R35       75k                 R_0603_1608Metric                                 83.0072  -133.1468   90.0000  top
 REF**     HHL_Logo            HHL_Logo                                         116.7892  -137.6426    0.0000  top
 SW1       GL18_SW             GL18                                              96.3770  -118.4326    0.0000  top
 SW2       GL18_SW             GL18                                             158.3202  -140.0220    0.0000  top
