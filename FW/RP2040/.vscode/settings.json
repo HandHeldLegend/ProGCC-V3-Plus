@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "nspi.h": "c",
+        "gamecube.h": "c"
+    }
+}
