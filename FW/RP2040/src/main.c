@@ -28,6 +28,56 @@ button_remap_s user_map = {
 uint main_slice_num = 0;
 uint brake_slice_num = 0;
 
+void _gpio_put_od(uint gpio, bool level)
+{
+    if(level)
+    {
+        gpio_set_dir(gpio, GPIO_IN);
+        gpio_pull_up(gpio);
+        gpio_put(gpio, 1);
+    }
+    else
+    {
+        gpio_set_dir(gpio, GPIO_OUT);
+        gpio_disable_pulls(gpio);
+        gpio_put(gpio, 0);
+    }
+}
+
+void cb_hoja_set_uart_enabled(bool enable)
+{
+    if(enable)
+    {
+        gpio_put(PGPIO_BUTTON_USB_EN, 1);
+        sleep_ms(100);
+        gpio_put(PGPIO_BUTTON_USB_SEL, 1);
+        sleep_ms(100);
+        gpio_put(PGPIO_BUTTON_USB_EN, 0);
+    }
+    else
+    {
+        gpio_put(PGPIO_BUTTON_USB_EN, 1);
+        sleep_ms(100);
+        gpio_put(PGPIO_BUTTON_USB_SEL, 0);
+        sleep_ms(100);
+        gpio_put(PGPIO_BUTTON_USB_EN, 0);
+    }
+}
+
+void cb_hoja_set_bluetooth_enabled(bool enable)
+{
+    if(enable)
+    {
+        cb_hoja_set_uart_enabled(true);
+        // Release ESP to be controlled externally
+        _gpio_put_od(PGPIO_ESP_EN, true);
+    }
+    else
+    {
+        _gpio_put_od(PGPIO_ESP_EN, false);
+    }
+}
+
 void cb_hoja_hardware_setup()
 {
     // Set up GPIO for input buttons
@@ -110,28 +160,6 @@ void cb_hoja_read_buttons(button_data_s *data)
     gpio_put(PGPIO_SCAN_A, false);
     sleep_us(5);
     data->button_a  = !gpio_get(PGPIO_PUSH_C);
-
-    /* DEBUG LATENCY TEST
-    if (data->button_a && !set)
-    {
-        rgb_set_group(RGB_GROUP_A, COLOR_RED.color);
-        rgb_set_instant();
-        set = true;
-        unset = true;
-    }
-    else if (!data->button_a && set)
-    {
-        set = false;
-    }
-
-    if (!data->button_a && unset)
-    {
-        unset = false;
-        rgb_set_group(RGB_GROUP_A, 0x00);
-        rgb_set_instant();
-    }
-    // DEBUG LATENCY TEST */
-
     data->button_b  = !gpio_get(PGPIO_PUSH_D);
     data->button_x  = !gpio_get(PGPIO_PUSH_A);
     data->button_y  = !gpio_get(PGPIO_PUSH_B);
@@ -175,6 +203,7 @@ void cb_hoja_read_buttons(button_data_s *data)
     data->button_stick_left = !gpio_get(PGPIO_BUTTON_LS);
 
     data->button_safemode = !gpio_get(PGPIO_BUTTON_MODE);
+    data->button_shipping = data->button_safemode;
 }
 
 void cb_hoja_read_analog(a_data_s *data)
@@ -229,45 +258,45 @@ int main()
     stdio_init_all();
     sleep_ms(100);
 
-    printf("ProGCC+ Started.\n");
+    printf("ProGCC3+ Started.\n");
+
     cb_hoja_hardware_setup();
 
-    gpio_init(PGPIO_BUTTON_ESP_EN);
-    gpio_pull_up(PGPIO_BUTTON_ESP_EN);
-    gpio_set_dir(PGPIO_BUTTON_ESP_EN, GPIO_OUT);
-    gpio_put(PGPIO_BUTTON_ESP_EN, 0);
+    gpio_init(PGPIO_ESP_EN);
+    cb_hoja_set_bluetooth_enabled(false);
 
     gpio_init(PGPIO_BUTTON_USB_EN);
-    gpio_pull_down(PGPIO_BUTTON_USB_EN);
     gpio_set_dir(PGPIO_BUTTON_USB_EN, GPIO_OUT);
     gpio_put(PGPIO_BUTTON_USB_EN, 0);
 
     gpio_init(PGPIO_BUTTON_USB_SEL);
-    gpio_pull_up(PGPIO_BUTTON_USB_SEL);
     gpio_set_dir(PGPIO_BUTTON_USB_SEL, GPIO_OUT);
-    gpio_put(PGPIO_BUTTON_USB_SEL, 1);
+    gpio_put(PGPIO_BUTTON_USB_SEL, 0);
 
-    hoja_setup_gpio_button(PGPIO_BUTTON_MODE);
+    gpio_init(PGPIO_BUTTON_MODE);
+    gpio_set_dir(PGPIO_BUTTON_MODE, GPIO_IN);
+    gpio_pull_up(PGPIO_BUTTON_MODE);
 
     button_data_s tmp = {0};
     cb_hoja_read_buttons(&tmp);
 
-    // Handle bootloader stuff
-    if (!gpio_get(PGPIO_BUTTON_MODE))
+    hoja_config_t _config = {
+            .input_method   = INPUT_METHOD_AUTO,
+            .input_mode     = INPUT_MODE_LOAD,
+        };
+
+    if(!gpio_get(PGPIO_BUTTON_MODE))
     {
         reset_usb_boot(0, 0);
     }
-    else if (tmp.button_a)
+    else if (tmp.trigger_r)
     {
-        gpio_put(PGPIO_BUTTON_USB_EN, 1);
-        sleep_ms(100);
-        gpio_put(PGPIO_BUTTON_USB_SEL, 0);
-        gpio_put(PGPIO_BUTTON_ESP_EN, 1);
-        sleep_ms(100);
-        gpio_put(PGPIO_BUTTON_USB_EN, 0);
+        _config.input_method = INPUT_METHOD_BLUETOOTH;
+        // Release ESP to be controlled externally
+        cb_hoja_set_bluetooth_enabled(true);
+        cb_hoja_set_uart_enabled(true);
+        sleep_ms(1000);
     }
-    else
-    {
-        hoja_init();
-    }
+
+    hoja_init(&_config);
 }

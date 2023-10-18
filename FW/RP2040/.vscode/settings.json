@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "nspi.h": "c",
-        "gamecube.h": "c"
+        "gamecube.h": "c",
+        "main.h": "c",
+        "hoja_includes.h": "c",
+        "battery.h": "c"
     }
 }

@@ -46,6 +46,6 @@
 
   #define PGPIO_BUTTON_USB_SEL 1
   #define PGPIO_BUTTON_USB_EN 27
-  #define PGPIO_BUTTON_ESP_EN 14
+  #define PGPIO_ESP_EN 14
 
   

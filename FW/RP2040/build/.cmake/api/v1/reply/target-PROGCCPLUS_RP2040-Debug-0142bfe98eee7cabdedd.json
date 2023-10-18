@@ -71,7 +71,7 @@
 			{
 				"command" : 4,
 				"file" : 3,
-				"line" : 58,
+				"line" : 60,
 				"parent" : 7
 			},
 			{
@@ -83,7 +83,7 @@
 			{
 				"command" : 4,
 				"file" : 3,
-				"line" : 56,
+				"line" : 59,
 				"parent" : 7
 			},
 			{
@@ -95,7 +95,7 @@
 			{
 				"command" : 4,
 				"file" : 3,
-				"line" : 57,
+				"line" : 58,
 				"parent" : 7
 			},
 			{
@@ -573,6 +573,10 @@
 				},
 				{
 					"backtrace" : 2,
+					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_i2c/include"
+				},
+				{
+					"backtrace" : 2,
 					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/lib/tinyusb/src"
 				},
 				{
@@ -634,8 +638,8 @@
 				32,
 				33,
 				34,
+				35,
 				36,
-				37,
 				38,
 				39,
 				40,
@@ -650,16 +654,16 @@
 				49,
 				50,
 				51,
+				52,
 				53,
-				54,
+				55,
 				56,
-				59,
-				60,
-				64,
-				65,
+				58,
+				61,
+				62,
+				66,
 				67,
-				71,
-				72,
+				69,
 				73,
 				74,
 				75,
@@ -689,7 +693,10 @@
 				99,
 				100,
 				101,
-				102
+				102,
+				103,
+				104,
+				105
 			]
 		},
 		{
@@ -1130,6 +1137,10 @@
 				},
 				{
 					"backtrace" : 2,
+					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_i2c/include"
+				},
+				{
+					"backtrace" : 2,
 					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/lib/tinyusb/src"
 				},
 				{
@@ -1148,17 +1159,17 @@
 			"language" : "ASM",
 			"sourceIndexes" : 
 			[
-				35,
-				52,
-				55,
+				37,
+				54,
 				57,
-				58,
-				61,
-				62,
+				59,
+				60,
 				63,
-				66,
+				64,
+				65,
 				68,
-				69
+				70,
+				71
 			]
 		},
 		{
@@ -1618,6 +1629,10 @@
 				},
 				{
 					"backtrace" : 2,
+					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_i2c/include"
+				},
+				{
+					"backtrace" : 2,
 					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/lib/tinyusb/src"
 				},
 				{
@@ -1644,7 +1659,7 @@
 			},
 			"sourceIndexes" : 
 			[
-				70
+				72
 			]
 		}
 	],
@@ -1660,11 +1675,11 @@
 		},
 		{
 			"backtrace" : 11,
-			"id" : "hoja_lib_ws2812_pio_h::@16e020e79a31ade7a0ad"
+			"id" : "hoja_lib_nserial_pio_h::@16e020e79a31ade7a0ad"
 		},
 		{
 			"backtrace" : 13,
-			"id" : "hoja_lib_nserial_pio_h::@16e020e79a31ade7a0ad"
+			"id" : "hoja_lib_ws2812_pio_h::@16e020e79a31ade7a0ad"
 		}
 	],
 	"id" : "PROGCCPLUS_RP2040::@6890427a1f51a3e7e1df",
@@ -2551,8 +2566,8 @@
 				32,
 				33,
 				34,
+				35,
 				36,
-				37,
 				38,
 				39,
 				40,
@@ -2567,16 +2582,16 @@
 				49,
 				50,
 				51,
+				52,
 				53,
-				54,
+				55,
 				56,
-				59,
-				60,
-				64,
-				65,
+				58,
+				61,
+				62,
+				66,
 				67,
-				70,
-				71,
+				69,
 				72,
 				73,
 				74,
@@ -2607,24 +2622,27 @@
 				99,
 				100,
 				101,
-				102
+				102,
+				103,
+				104,
+				105
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				35,
-				52,
-				55,
+				37,
+				54,
 				57,
-				58,
-				61,
-				62,
+				59,
+				60,
 				63,
-				66,
+				64,
+				65,
 				68,
-				69
+				70,
+				71
 			]
 		}
 	],
@@ -2676,6 +2694,12 @@
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
 			"path" : "lib/HOJA-LIB-RP2040/src/utilities/rgb.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "lib/HOJA-LIB-RP2040/src/utilities/battery.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -2753,7 +2777,7 @@
 		{
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "lib/HOJA-LIB-RP2040/src/input/safemode.c",
+			"path" : "lib/HOJA-LIB-RP2040/src/input/macros.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -2802,6 +2826,12 @@
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
 			"path" : "lib/HOJA-LIB-RP2040/src/devices/xinput.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "lib/HOJA-LIB-RP2040/src/devices/btinput.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -3120,6 +3150,12 @@
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
 			"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_spi/spi.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_i2c/i2c.c",
 			"sourceGroupIndex" : 0
 		},
 		{
