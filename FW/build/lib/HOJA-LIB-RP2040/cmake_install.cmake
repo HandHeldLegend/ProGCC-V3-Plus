@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/RP2040/lib/HOJA-LIB-RP2040
+# Install script for directory: C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/lib/HOJA-LIB-RP2040
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

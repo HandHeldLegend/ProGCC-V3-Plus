@@ -658,8 +658,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/RP2040/build",
-		"source" : "C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/RP2040"
+		"build" : "C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build",
+		"source" : "C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW"
 	},
 	"version" : 
 	{

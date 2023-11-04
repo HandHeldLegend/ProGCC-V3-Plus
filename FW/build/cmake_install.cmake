@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/RP2040
+# Install script for directory: C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,8 +39,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/RP2040/build/pico-sdk/cmake_install.cmake")
-  include("C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/RP2040/build/lib/HOJA-LIB-RP2040/cmake_install.cmake")
+  include("C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build/pico-sdk/cmake_install.cmake")
+  include("C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build/lib/HOJA-LIB-RP2040/cmake_install.cmake")
 
 endif()
 
@@ -52,5 +52,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/RP2040/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

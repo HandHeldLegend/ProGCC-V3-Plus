@@ -1160,14 +1160,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "PROGCCPLUS_RP2040::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PROGCCPLUS_RP2040-Debug-11be56750dfe0cf3b652.json",
+					"jsonFile" : "target-PROGCCPLUS_RP2040-Debug-46d7137eaed6423ea886.json",
 					"name" : "PROGCCPLUS_RP2040",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 43,
 					"id" : "bs2_default::@bc554eaed616d198a22d",
-					"jsonFile" : "target-bs2_default-Debug-68b1514fac8924ad491d.json",
+					"jsonFile" : "target-bs2_default-Debug-03a8cd15df3df492a73a.json",
 					"name" : "bs2_default",
 					"projectIndex" : 1
 				},
@@ -1233,8 +1233,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/RP2040/build",
-		"source" : "C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/RP2040"
+		"build" : "C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build",
+		"source" : "C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW"
 	},
 	"version" : 
 	{

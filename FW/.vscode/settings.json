@@ -4,6 +4,7 @@
         "gamecube.h": "c",
         "main.h": "c",
         "hoja_includes.h": "c",
-        "battery.h": "c"
+        "battery.h": "c",
+        "webusb.h": "c"
     }
 }

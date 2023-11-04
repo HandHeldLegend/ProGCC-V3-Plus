@@ -1,4 +1,4 @@
-// Padded and checksummed version of: C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/RP2040/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
+// Padded and checksummed version of: C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
 
 .cpu cortex-m0plus
 .thumb
