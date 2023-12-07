@@ -6,10 +6,10 @@
 
   (paper "A4")
   (title_block
-    (title "ProGCC V3 Logic Board")
+    (title "ProGCC V3+ Logic Board")
     (date "2023-04-15")
     (rev "1")
-    (company "HHL/Esca")
+    (company "HHL")
   )
 
   (layers

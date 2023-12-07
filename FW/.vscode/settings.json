@@ -5,6 +5,9 @@
         "main.h": "c",
         "hoja_includes.h": "c",
         "battery.h": "c",
-        "webusb.h": "c"
-    }
+        "webusb.h": "c",
+        "btinput.h": "c",
+        "imu.h": "c"
+    },
+    "idf.flashType": "UART"
 }

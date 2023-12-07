@@ -1,10 +1,11 @@
 #ifndef BOARD_CONFIG_H
 #define BOARD_CONFIG_H
 
+#define HOJA_BT_LOGGING_DEBUG 0
+
 // Device stuff
 #define HOJA_DEVICE_ID  0xA002
 #define HOJA_FW_VERSION 0x0A01
-#define HOJA_SETTINGS_VERSION 0xA000
 
 // RGB Stuff
 #define HOJA_RGB_PIN 23
