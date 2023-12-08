@@ -296,6 +296,7 @@ int main()
         // Release ESP to be controlled externally
         cb_hoja_set_bluetooth_enabled(true);
         cb_hoja_set_uart_enabled(true);
+
         sleep_ms(3500);
 
         for(;;)
@@ -305,6 +306,7 @@ int main()
             {
                 watchdog_reboot(0, 0, 0);
             }
+
             sleep_ms(150);
         }
     }
