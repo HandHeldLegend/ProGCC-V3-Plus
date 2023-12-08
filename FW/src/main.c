@@ -290,7 +290,7 @@ int main()
     {
         reset_usb_boot(0, 0);
     }
-    else if (tmp.trigger_r)
+    else if (tmp.trigger_r && !gpio_get(PGPIO_BUTTON_MODE))
     {
         _config.input_method = INPUT_METHOD_BLUETOOTH;
         // Release ESP to be controlled externally
