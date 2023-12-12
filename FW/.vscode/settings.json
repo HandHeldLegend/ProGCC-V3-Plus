@@ -7,7 +7,10 @@
         "battery.h": "c",
         "webusb.h": "c",
         "btinput.h": "c",
-        "imu.h": "c"
+        "imu.h": "c",
+        "hoja.h": "c",
+        "hoja_types.h": "c",
+        "app_hwtest.h": "c"
     },
     "idf.flashType": "UART"
 }
