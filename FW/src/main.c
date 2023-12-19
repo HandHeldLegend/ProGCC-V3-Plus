@@ -286,7 +286,7 @@ int main()
             .input_mode     = INPUT_MODE_LOAD,
         };
 
-    if(!gpio_get(PGPIO_BUTTON_MODE))
+    if(!gpio_get(PGPIO_BUTTON_MODE) && !tmp.trigger_r)
     {
         reset_usb_boot(0, 0);
     }

@@ -10,7 +10,8 @@
         "imu.h": "c",
         "hoja.h": "c",
         "hoja_types.h": "c",
-        "app_hwtest.h": "c"
+        "app_hwtest.h": "c",
+        "rgb.h": "c"
     },
     "idf.flashType": "UART"
 }

@@ -5,7 +5,7 @@
 
 // Device stuff
 #define HOJA_DEVICE_ID  0xA002
-#define HOJA_FW_VERSION 0x0A04
+#define HOJA_FW_VERSION 0x0A05
 
 // RGB Stuff
 #define HOJA_RGB_PIN 23
@@ -25,7 +25,7 @@
 #define HOJA_ANALOG_LIGHT 50
 
 // URL that will display to open a config tool
-#define HOJA_WEBUSB_URL     "handheldlegend.com"
+#define HOJA_WEBUSB_URL     "handheldlegend.github.io/hoja_config"
 #define HOJA_MANUFACTURER   "HHL"
 #define HOJA_PRODUCT        "ProGCC 3+"
 
@@ -39,7 +39,7 @@
 #define HOJA_CAPABILITY_RGB 1
 #define HOJA_CAPABILITY_GYRO 1
 
-#define HOJA_CAPABILITY_NINTENDO_SERIAL 0
+#define HOJA_CAPABILITY_NINTENDO_SERIAL 1
 #define HOJA_CAPABILITY_NINTENDO_JOYBUS 1
 
 #define HOJA_CAPABILITY_RUMBLE 1

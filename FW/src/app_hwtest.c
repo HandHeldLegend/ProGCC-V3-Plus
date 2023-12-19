@@ -167,24 +167,6 @@ bool _hwtest_analog()
 
 bool _hwtest_rgb()
 {
-    rgb_set_all(COLOR_RED.color);
-    rgb_set_instant();
-    sleep_ms(1000);
-
-    rgb_set_all(COLOR_GREEN.color);
-    rgb_set_instant();
-    sleep_ms(1000);
-
-    rgb_set_all(COLOR_BLUE.color);
-    rgb_set_instant();
-    sleep_ms(1000);
-
-    rgb_set_all(COLOR_WHITE.color);
-    rgb_set_instant();
-    sleep_ms(1000);
-
-    rgb_preset_reload();
-    rgb_set_dirty();
     return true;
 }
 
