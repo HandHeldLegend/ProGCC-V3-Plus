@@ -2,8 +2,6 @@
 #include "main.h"
 #include "app_imu.h"
 
-static bool _hw_test_setup = false;
-
 bool _hwtest_pinok(uint primary)
 {
     uint second = 0;
