@@ -5,7 +5,7 @@
 
 // Device stuff
 #define HOJA_DEVICE_ID  0xA002
-#define HOJA_FW_VERSION 0x0A05
+#define HOJA_FW_VERSION 0x0A07
 
 // RGB Stuff
 #define HOJA_RGB_PIN 23
@@ -60,5 +60,7 @@
 #define HOJA_I2CINPUT_ADDRESS 0x76
 #define HOJA_I2C_SDA 28
 #define HOJA_I2C_SCL 29
+
+// Defined by cmake #define HOJA_RUMBLE_TYPE HOJA_RUMBLE_TYPE_HAPTIC or HOJA_RUMBLE_TYPE_ERM
 
 #endif

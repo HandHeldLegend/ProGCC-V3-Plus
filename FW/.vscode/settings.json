@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "hoja_includes.h": "c",
+        "macros.h": "c",
+        "app_rumble.h": "c",
+        "main.h": "c"
+    }
+}

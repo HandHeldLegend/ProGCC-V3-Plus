@@ -1,6 +1,7 @@
 #include "app_hwtest.h"
 #include "main.h"
 #include "app_imu.h"
+#include "app_rumble.h"
 
 bool _hwtest_pinok(uint primary)
 {
@@ -163,6 +164,16 @@ bool _hwtest_analog()
     return test_pass;
 }
 
+bool _hwtest_rumble()
+{
+    cb_hoja_rumble_set(100, 1);
+
+    sleep_ms(500);
+
+    cb_hoja_rumble_set(0, 0);
+    return true;
+}
+
 bool _hwtest_rgb()
 {
     return true;
@@ -188,8 +199,9 @@ uint16_t cb_hoja_hardware_test()
     _t.clock_pin = _hwtest_clock();
     _t.data_pin = _hwtest_data();
     _t.latch_pin = _hwtest_latch();
-    _t.rgb_pin = _hwtest_rgb();
+    _t.rgb_pin = app_rumble_hwtest();//_hwtest_rgb();
     _t.imu = _hwtest_imu();
+    _t.rumble = _hwtest_rumble();
 
     return _t.val;
 }

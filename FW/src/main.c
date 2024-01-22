@@ -25,9 +25,6 @@ button_remap_s user_map = {
     .button_stick_right = MAPCODE_B_STICKR,
 };
 
-uint main_slice_num = 0;
-uint brake_slice_num = 0;
-
 void _gpio_put_od(uint gpio, bool level)
 {
     if(level)
@@ -68,7 +65,7 @@ void cb_hoja_set_bluetooth_enabled(bool enable)
 {
     if(enable)
     {
-        cb_hoja_set_uart_enabled(true);
+        //cb_hoja_set_uart_enabled(true);
         // Release ESP to be controlled externally
         _gpio_put_od(PGPIO_ESP_EN, true);
     }
@@ -93,33 +90,6 @@ void cb_hoja_hardware_setup()
     hoja_setup_gpio_scan(PGPIO_SCAN_B);
     hoja_setup_gpio_scan(PGPIO_SCAN_C);
     hoja_setup_gpio_scan(PGPIO_SCAN_D);
-
-    // Set up Rumble GPIO
-    gpio_init(PGPIO_RUMBLE_MAIN);
-    gpio_init(PGPIO_RUMBLE_BRAKE);
-
-    gpio_set_dir(PGPIO_RUMBLE_MAIN, GPIO_OUT);
-    gpio_set_dir(PGPIO_RUMBLE_BRAKE, GPIO_OUT);
-
-    gpio_set_function(PGPIO_RUMBLE_MAIN, GPIO_FUNC_PWM);
-    gpio_set_function(PGPIO_RUMBLE_BRAKE, GPIO_FUNC_PWM);
-
-    main_slice_num = pwm_gpio_to_slice_num(PGPIO_RUMBLE_MAIN);
-    brake_slice_num = pwm_gpio_to_slice_num(PGPIO_RUMBLE_BRAKE);
-
-    pwm_set_wrap(main_slice_num, 255);
-    pwm_set_wrap(brake_slice_num, 255);
-
-    pwm_set_chan_level(main_slice_num, PWM_CHAN_B, 0);    // B for odd pins
-    pwm_set_chan_level(brake_slice_num, PWM_CHAN_B, 255); // B for odd pins
-
-    pwm_set_enabled(main_slice_num, true);
-    pwm_set_enabled(brake_slice_num, true);
-
-    pwm_set_gpio_level(PGPIO_RUMBLE_BRAKE, 255);
-    pwm_set_gpio_level(PGPIO_RUMBLE_MAIN, 0);
-
-    sleep_us(150); // Stabilize voltages
 
     // initialize SPI at 1 MHz
     // initialize SPI at 3 MHz just to test
@@ -286,7 +256,7 @@ int main()
             .input_mode     = INPUT_MODE_LOAD,
         };
 
-    if(!gpio_get(PGPIO_BUTTON_MODE) && !tmp.trigger_r)
+    if(!gpio_get(PGPIO_BUTTON_MODE) && tmp.trigger_l)
     {
         reset_usb_boot(0, 0);
     }
