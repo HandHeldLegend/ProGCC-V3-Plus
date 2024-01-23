@@ -41,7 +41,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 36,
+				"line" : 38,
 				"parent" : 0
 			},
 			{
@@ -83,7 +83,7 @@
 			{
 				"command" : 4,
 				"file" : 3,
-				"line" : 60,
+				"line" : 61,
 				"parent" : 7
 			},
 			{
@@ -95,7 +95,7 @@
 			{
 				"command" : 4,
 				"file" : 3,
-				"line" : 61,
+				"line" : 60,
 				"parent" : 7
 			},
 			{
@@ -113,7 +113,7 @@
 			{
 				"command" : 6,
 				"file" : 0,
-				"line" : 62,
+				"line" : 64,
 				"parent" : 0
 			},
 			{
@@ -159,6 +159,14 @@
 				{
 					"backtrace" : 2,
 					"define" : "CFG_TUSB_OS=OPT_OS_PICO"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "HOJA_DEVICE_ID=0xA002"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "HOJA_PRODUCT=\"ProGCC 3+\""
 				},
 				{
 					"backtrace" : 14,
@@ -733,6 +741,14 @@
 				},
 				{
 					"backtrace" : 14,
+					"define" : "HOJA_DEVICE_ID=0xA002"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "HOJA_PRODUCT=\"ProGCC 3+\""
+				},
+				{
+					"backtrace" : 14,
 					"define" : "HOJA_RUMBLE_TYPE=0"
 				},
 				{
@@ -1229,6 +1245,14 @@
 				},
 				{
 					"backtrace" : 14,
+					"define" : "HOJA_DEVICE_ID=0xA002"
+				},
+				{
+					"backtrace" : 14,
+					"define" : "HOJA_PRODUCT=\"ProGCC 3+\""
+				},
+				{
+					"backtrace" : 14,
 					"define" : "HOJA_RUMBLE_TYPE=0"
 				},
 				{
@@ -1690,11 +1714,11 @@
 		},
 		{
 			"backtrace" : 11,
-			"id" : "hoja_lib_ws2812_pio_h::@16e020e79a31ade7a0ad"
+			"id" : "hoja_lib_nserial_pio_h::@16e020e79a31ade7a0ad"
 		},
 		{
 			"backtrace" : 13,
-			"id" : "hoja_lib_nserial_pio_h::@16e020e79a31ade7a0ad"
+			"id" : "hoja_lib_ws2812_pio_h::@16e020e79a31ade7a0ad"
 		}
 	],
 	"id" : "PROGCCPLUS_ERM_RP2040::@6890427a1f51a3e7e1df",
