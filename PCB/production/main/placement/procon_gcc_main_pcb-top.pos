@@ -1,4 +1,4 @@
-### Footprint positions - created on Fri Dec 22 13:28:01 2023 ###
+### Footprint positions - created on Tue Jan  2 21:37:21 2024 ###
 ### Printed by KiCad version 7.0.6
 ## Unit = mm, Angle = deg.
 ## Side : top
@@ -31,12 +31,15 @@ C25       10uF                  C_0805_2012Metric                               
 C26       1u                    C_0201_0603Metric                                153.6732  -109.2740    0.0000  top
 C27       10uF                  C_0402_1005Metric                                153.8764  -110.1630  180.0000  top
 C28       1u                    C_0201_0603Metric                                 89.6000  -135.3750  180.0000  top
-D1        M7C                   D_SOD-123                                        159.2372  -122.1260  -90.0000  top
+C30       1uF                   C_0201_0603Metric                                162.2500  -117.1900  -90.0000  top
+C31       1uF                   C_0201_0603Metric                                159.6750  -121.8750  180.0000  top
+C32       100n                  C_0201_0603Metric                                153.8626  -114.7762   90.0000  top
+C33       1uF                   C_0201_0603Metric                                165.6800  -117.2000  -90.0000  top
+C34       1uF                   C_0201_0603Metric                                163.8500  -121.8750  180.0000  top
 D2        CUS08F30              D_SOD-323_HandSoldering                          151.0871  -106.7100  180.0000  top
 D3        CUS08F30              D_SOD-323_HandSoldering                          122.7582  -110.6424  -90.0000  top
 D4        CUS08F30              D_SOD-323_HandSoldering                          148.6916  -112.6490    0.0000  top
 D5        CUS08F30              D_SOD-323_HandSoldering                          148.1000  -108.7500  180.0000  top
-F1        Fuse                  Fuse_1206_3216Metric_Pad1.42x1.75mm_HandSolder   155.5542  -123.3932  180.0000  top
 F2        Fuse                  Fuse_1206_3216Metric_Pad1.42x1.75mm_HandSolder   146.5518  -106.5411  180.0000  top
 J1        Conn_01x04_Pin        PinHeader_1x04_P2.00mm_Vertical                   83.2744  -140.1826   90.0000  top
 J3        To_Button_Board       molex_5051101492_14P                              99.9912  -145.1678    0.0000  top
@@ -50,18 +53,13 @@ L6        SK6805-EC-15          SK6805-EC-15                                    
 L7        SK6805-EC-15          SK6805-EC-15                                      87.3770  -111.9326    0.0000  top
 L8        SK6805-EC-15          SK6805-EC-15                                      87.3770  -124.9326    0.0000  top
 L9        1.3A_2.2uH_±20%_80mΩ  L_1008_2520Metric                                161.1000  -108.5500    0.0000  top
-Q1        Q_PMOS_GDS            SOT-23                                           160.1747  -117.9756    0.0000  top
-Q2        Q_NMOS_GSD            SOT-23                                           155.5034  -117.0206    0.0000  top
-Q3        Q_NMOS_GSD            SOT-23                                           156.0876  -120.5004  180.0000  top
 Q4        BSS138DW              SOT-363_SC-70-6                                  125.1966  -109.6061   90.0000  top
 Q5        BSS138DW              SOT-363_SC-70-6                                  128.0414  -109.6061   90.0000  top
 Q7        MMBT3904              SOT-23                                           117.6822  -117.8729    0.0000  top
 Q8        MMBT3904              SOT-23                                           113.7706  -117.8729  180.0000  top
-R1        10k                   R_0201_0603Metric                                157.8402  -117.3508  -90.0000  top
-R2        100R                  R_0201_0603Metric                                153.1666  -116.2438   90.0000  top
-R3        10k                   R_0201_0603Metric                                153.1666  -117.7170   90.0000  top
-R4        100R                  R_0201_0603Metric                                153.7254  -121.5164   90.0000  top
-R5        10k                   R_0201_0603Metric                                152.9634  -121.5164  -90.0000  top
+R3        1k                    R_0201_0603Metric                                151.9500  -114.4250  180.0000  top
+R4        1k                    R_0201_0603Metric                                161.0250  -117.5500    0.0000  top
+R5        10k                   R_0201_0603Metric                                158.5500  -118.8750   90.0000  top
 R6        1k                    R_0201_0603Metric                                125.5268  -111.6127    0.0000  top
 R7        1k                    R_0201_0603Metric                                127.3408  -111.6127  180.0000  top
 R8        5.1k                  R_0201_0603Metric                                141.3764  -102.3112    0.0000  top
@@ -93,6 +91,8 @@ R33       10k                   R_0201_0603Metric                               
 R34       75k                   R_0603_1608Metric                                 83.0072  -136.1826   90.0000  top
 R35       75k                   R_0603_1608Metric                                 83.0072  -133.1468  -90.0000  top
 R36       100                   R_0201_0603Metric                                159.5783  -115.2142    0.0000  top
+R37       1.2k                  R_0201_0603Metric                                153.0876  -114.7762   90.0000  top
+R38       1k                    R_0201_0603Metric                                164.5750  -117.5500    0.0000  top
 REF**     HHL_Logo              HHL_Logo                                         116.7892  -137.6426    0.0000  top
 SW1       GL18_SW               GL18                                              96.3770  -118.4326    0.0000  top
 SW2       GL18_SW               GL18                                             158.3202  -140.0220    0.0000  top
@@ -117,6 +117,9 @@ U11       ST_LSM6               LGA14                                           
 U12       PI3USB4000A           Texas_UQFN-10_1.5x2mm_P0.5mm                     138.5570  -104.0130   90.0000  top
 U13       GD25Q80EEIGR          USON-8-EP(2x3)                                   135.6995  -106.8819   90.0000  top
 U14       TPS630001RCR          VREG_V62_16624-01YE                              160.4000  -112.0000  -90.0000  top
+U15       DRV2605LYZFR          Texas_DSBGA-9_1.4715x1.4715mm_Layout3x3_P0.5mm   160.7000  -119.7000    0.0000  top
 U16       BQ25180               DSBGA                                            151.4888  -110.5694    0.0000  top
+U17       PI5A3157CEX           SOT-363_SC-70-6                                  155.9000  -113.0250  180.0000  top
+U18       DRV2605LYZFR          Texas_DSBGA-9_1.4715x1.4715mm_Layout3x3_P0.5mm   164.2500  -119.7000    0.0000  top
 Y1        Crystal_GND3          Resonator_SMD_Murata_CSTxExxV-3Pin_3.0x1.1mm     138.5951  -120.4365  -90.0000  top
 ## End

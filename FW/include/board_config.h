@@ -4,8 +4,11 @@
 #define HOJA_BT_LOGGING_DEBUG 0
 
 // Device stuff
-#define HOJA_DEVICE_ID  0xA002
-#define HOJA_FW_VERSION 0x0A05
+#ifndef HOJA_DEVICE_ID
+#define HOJA_DEVICE_ID  0xA002 // A002 is 3+, A003 is 3+ (Haptic)
+#endif
+
+#define HOJA_FW_VERSION 0x0A07
 
 // RGB Stuff
 #define HOJA_RGB_PIN 23
@@ -27,7 +30,9 @@
 // URL that will display to open a config tool
 #define HOJA_WEBUSB_URL     "handheldlegend.github.io/hoja_config"
 #define HOJA_MANUFACTURER   "HHL"
-#define HOJA_PRODUCT        "ProGCC 3+"
+#ifndef HOJA_PRODUCT
+    #define HOJA_PRODUCT        "ProGCC 3+"
+#endif
 
 #define HOJA_CAPABILITY_ANALOG_STICK_L 1
 #define HOJA_CAPABILITY_ANALOG_STICK_R 1
@@ -60,5 +65,7 @@
 #define HOJA_I2CINPUT_ADDRESS 0x76
 #define HOJA_I2C_SDA 28
 #define HOJA_I2C_SCL 29
+
+// Defined by cmake #define HOJA_RUMBLE_TYPE HOJA_RUMBLE_TYPE_HAPTIC or HOJA_RUMBLE_TYPE_ERM
 
 #endif

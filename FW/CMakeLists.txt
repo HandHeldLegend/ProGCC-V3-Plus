@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 include($ENV{PICO_SDK_PATH}/pico_sdk_init.cmake)
 
-project(PROGCCPLUS_RP2040 C CXX ASM)
+project(PROGCCPLUS_ERM_RP2040 C CXX ASM)
 
 pico_sdk_init()
 
@@ -18,13 +18,16 @@ include_directories(
 
 add_executable(${PROJECT_NAME}
 	src/main.c
-	src/app_rumble.c 
+	src/app_rumble_erm.c 
 	src/app_imu.c
 	src/app_hwtest.c
 )
 
 target_compile_definitions(${PROJECT_NAME}
 	PRIVATE
+	HOJA_PRODUCT="ProGCC 3+"
+	HOJA_RUMBLE_TYPE=0 #haptic
+	HOJA_DEVICE_ID=0xA002
 	PICO_XOSC_STARTUP_DELAY_MULTIPLIER=64
 	PICO_DEFAULT_UART_TX_PIN=12
 	PICO_DEFAULT_UART_RX_PIN=13
@@ -32,6 +35,59 @@ target_compile_definitions(${PROJECT_NAME}
 	#PICO_FLASH_SPI_CLKDIV=8
 	)
 
+target_link_libraries(${PROJECT_NAME}
+PRIVATE
+hoja_lib
+pico_stdlib
+pico_bootrom
+pico_multicore
+pico_platform
+pico_rand
+
+hardware_gpio
+hardware_adc
+hardware_flash
+hardware_pio
+hardware_dma
+hardware_pwm
+hardware_spi
+hardware_sync
+hardware_timer
+
+tinyusb_device
+tinyusb_board
+)
+
+pico_enable_stdio_usb(${PROJECT_NAME} 0)
+pico_enable_stdio_uart(${PROJECT_NAME} 1)
+
+pico_add_extra_outputs(${PROJECT_NAME})
+
+# Haptic Feedback Build
+project(PROGCCPLUS_HAPTIC_RP2040 C CXX ASM)
+
+include_directories(
+	include
+)
+
+add_executable(${PROJECT_NAME}
+	src/main.c
+	src/app_rumble_haptic.c 
+	src/app_imu.c
+	src/app_hwtest.c
+)
+
+target_compile_definitions(${PROJECT_NAME}
+	PRIVATE
+	HOJA_DEVICE_ID=0xA003
+	HOJA_PRODUCT="ProGCC 3+ Haptic"
+	HOJA_RUMBLE_TYPE=1 #haptic
+	PICO_XOSC_STARTUP_DELAY_MULTIPLIER=64
+	PICO_DEFAULT_UART_TX_PIN=12
+	PICO_DEFAULT_UART_RX_PIN=13
+	#PICO_DEFAULT_BOOT_STAGE2=boot2_generic_03h
+	#PICO_FLASH_SPI_CLKDIV=8
+	)
 
 target_link_libraries(${PROJECT_NAME}
 PRIVATE

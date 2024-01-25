@@ -1,4 +1,5 @@
-C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build/CMakeFiles/PROGCCPLUS_RP2040.dir
+C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build/CMakeFiles/PROGCCPLUS_ERM_RP2040.dir
+C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build/CMakeFiles/PROGCCPLUS_HAPTIC_RP2040.dir
 C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build/CMakeFiles/edit_cache.dir
 C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build/CMakeFiles/rebuild_cache.dir
 C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build/pico-sdk/CMakeFiles/edit_cache.dir
