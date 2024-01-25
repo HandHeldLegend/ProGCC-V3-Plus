@@ -19,7 +19,6 @@ static uint8_t _rumble_max = RUMBLE_MAX;
 
 static bool _declining = false;
 
-
 void app_rumble_task(uint32_t timestamp)
 {
     if(interval_run(timestamp, _rumble_interval))
