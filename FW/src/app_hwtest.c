@@ -71,22 +71,11 @@ bool _hwtest_bluetooth()
 
     sleep_ms(600);
 
-    uint8_t data_out[32] = {0};
-    data_out[0] = 0xDD;
-    data_out[1] = 0xEE;
-    data_out[2] = 0xAA;
+    uint16_t v = btinput_get_version();
 
-    data_out[3] = I2CINPUT_ID_INIT;
-    data_out[4] = (uint8_t)INPUT_MODE_XINPUT;
+    if(v>0) return true;
 
-    int stat = i2c_write_timeout_us(HOJA_I2C_BUS, HOJA_I2CINPUT_ADDRESS, data_out, 32, false, 150000);
-
-    if (stat < 0)
-    {
-        return false;
-    }
-
-    return true;
+    return false;
 }
 
 bool _hwtest_battery()
@@ -96,7 +85,7 @@ bool _hwtest_battery()
 
 #define IMU_OUTX_L_G 0x22
 #define IMU_OUTX_L_X 0x28
-#define IMU_ATTEMPTS 5
+#define IMU_ATTEMPTS 20
 
 bool _hwtest_imu()
 {
@@ -150,7 +139,7 @@ bool _hwtest_imu()
     return false;
 }
 
-#define ANALOG_ATTEMPTS 5
+#define ANALOG_ATTEMPTS 10
 bool _hwtest_analog()
 {
     uint attempts = ANALOG_ATTEMPTS;
@@ -238,12 +227,7 @@ bool _hwtest_analog()
 
 bool _hwtest_rumble()
 {
-    cb_hoja_rumble_set(100, 1);
-
-    sleep_ms(500);
-
-    cb_hoja_rumble_set(0, 0);
-    return true;
+    app_rumble_hwtest();
 }
 
 bool _hwtest_rgb()
@@ -271,7 +255,7 @@ uint16_t cb_hoja_hardware_test()
     _t.clock_pin = _hwtest_clock();
     _t.data_pin = _hwtest_data();
     _t.latch_pin = _hwtest_latch();
-    _t.rgb_pin = app_rumble_hwtest(); //_hwtest_rgb();
+    _t.rgb_pin =  _hwtest_rgb();
     _t.imu = _hwtest_imu();
     _t.rumble = _hwtest_rumble();
 

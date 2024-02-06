@@ -30,7 +30,8 @@ void _gpio_put_od(uint gpio, bool level)
     if(level)
     {
         gpio_set_dir(gpio, GPIO_IN);
-        gpio_pull_up(gpio);
+        //gpio_pull_up(gpio);
+        gpio_disable_pulls(gpio);
         gpio_put(gpio, 1);
     }
     else

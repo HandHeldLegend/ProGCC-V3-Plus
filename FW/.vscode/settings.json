@@ -3,6 +3,10 @@
         "hoja_includes.h": "c",
         "macros.h": "c",
         "app_rumble.h": "c",
-        "main.h": "c"
+        "main.h": "c",
+        "stick_scaling.h": "c",
+        "type_traits": "c",
+        "analog.h": "c",
+        "hoja.h": "c"
     }
 }
