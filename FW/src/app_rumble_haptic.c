@@ -41,29 +41,109 @@ uint slice_num;
 float _current_amplitude = 0;
 float _current_frequency = 0;
 
-void play_pwm_frequency(float frequency, float amplitude) {
+// Write to register  0x16
+#define RATED_VOLTAGE_HEX 0x3
+#define RATED_VOLTAGE_REGISTER 0x16
+
+// Write to register 0x17
+#define ODCLAMP_HEX 0x17
+#define ODCLAMP_REGISTER 0x17
+
+#define HAPTIC_COMPENSATION 0
+#define HAPTIC_BACKEMF 0
+#define HAPTIC_BACKFEEDBACK 0
+
+#define BLANKING_TIME_BASE (15)//(1)
+#define IDISS_TIME_BASE (1)
+
+#define DRIVE_TIME (26)
+#define ERM_LRA (1U << 7)
+#define FB_BRAKE_FACTOR (3U << 4)
+#define LOOP_GAIN (1U << 2)
+// Write to register 0x1A
+#define FEEDBACK_CTRL_BYTE (DRIVE_TIME | ERM_LRA | FB_BRAKE_FACTOR | LOOP_GAIN | HAPTIC_BACKFEEDBACK)
+#define FEEDBACK_CTRL_REGISTER 0x1A
+
+#define CTRL1_BYTE (0xAB)
+#define CTRL1_REGISTER 0x1B
+
+#define CTRL3_BYTE (0xD3)
+#define CTRL3_REGISTER 0x1D
+
+#define ZC_DET_TIME (0) // 100us
+#define AUTO_CAL_TIME (2U << 4)
+// Write to register 0x1E
+#define CTRL4_BYTE (ZC_DET_TIME | AUTO_CAL_TIME)
+#define CTRL4_REGISTER 0x1E
+
+#define SAMPLE_TIME (3U << 4)
+#define BLANKING_TIME_LOWER ( (BLANKING_TIME_BASE & 0b00000011) << 2 )
+#define IDISS_TIME_LOWER (IDISS_TIME_BASE & 0b00000011)
+// Write to register 0x1C
+#define CTRL2_BYTE (0xC0 | SAMPLE_TIME | BLANKING_TIME_LOWER | IDISS_TIME_LOWER)
+#define CTRL2_REGISTER 0x1C
+
+#define BLANKING_TIME_UPPER ( (BLANKING_TIME_BASE & 0b00001100) )
+#define IDISS_TIME_UPPER ( (IDISS_TIME_BASE & 0b00001100) >> 2 )
+// Write to register 0x1F
+#define CTRL5_BYTE (BLANKING_TIME_UPPER | IDISS_TIME_UPPER)
+#define CTRL5_REGISTER 0x1F
+
+#define MODE_REGISTER 0x01
+// Write to register 0x01
+#define MODE_CALIBRATE (0x07)
+
+#define GO_REGISTER 0x0C
+#define GO_SET (1U)
+
+#define STATUS_REGISTER 0x00
+
+#define RTP_AMPLITUDE_REGISTER 0x02
+#define RTP_FREQUENCY_REGISTER 0x22
+
+// Function to calculate the PWM clock divider
+float calculate_pwm_divider(float frequency) {
+    // Calculate the number of clock cycles required for one period
+    float cycles_per_period = 125000000 / frequency;
     
+    // As you mentioned, we want the PWM to count up 100 times before the period ends
+    // So, we divide the cycles per period by 100
+    float desired_cycles = cycles_per_period / 10000;
+    
+    // Calculate the divider value
+    float divider = (desired_cycles - 1); // Subtract 1 because the divider is zero-based
+    
+    return divider;
+}
+
+void play_pwm_frequency(float frequency, float amplitude) 
+{
+    //pwm_set_enabled(slice_num, false);
+
     if(!amplitude) 
     {
+        pwm_set_chan_level(slice_num, PWM_CHAN_A, 5000); 
         pwm_set_enabled(slice_num, false);
         return;
     }
 
     frequency = (frequency>1300) ? 1300 : frequency;
     frequency = (frequency<40) ? 40 : frequency;
+    frequency -= 10.0f;
 
-    float plug = 100 * amplitude;
+    pwm_set_clkdiv(slice_num, calculate_pwm_divider(frequency));
 
-    uint32_t top =  1000000/frequency -1; // TOP is u16 has a max of 65535, being 65536 cycles
-	pwm_set_wrap(slice_num, top);
+	pwm_set_wrap(slice_num, 10000);
 
-	// set duty cycle
-	uint16_t level = (top+1) * ((uint16_t) plug) / 100 -1; // calculate channel level from given duty cycle in %
-	pwm_set_chan_level(slice_num, PWM_CHAN_A, level); 
+    amplitude = (amplitude < 0.15) ? 0.15 : amplitude;
+
+    float l = amplitude*5000;
+
+	pwm_set_chan_level(slice_num, PWM_CHAN_A, (uint16_t) l); 
 	
 	pwm_set_enabled(slice_num, true); // let's go!
 }
-bool fflip = false;
+
 void cb_hoja_rumble_set(float frequency, float amplitude)
 {
     _current_amplitude = amplitude;
@@ -72,71 +152,56 @@ void cb_hoja_rumble_set(float frequency, float amplitude)
     play_pwm_frequency(_current_frequency, _current_amplitude);
 }
 
-#define RATED_VOLTAGE_HEX 0x4
-#define ODCLAMP_HEX 0x17
-#define HAPTIC_COMPENSATION 12
-#define HAPTIC_BACKEMF 108
-#define HAPTIC_BACKFEEDBACK 2
-
 // Obtain and dump calibration values for auto-init LRA
 void rumble_get_calibration()
 {
     // Init GPIO for LRA switch
     gpio_init(GPIO_LRA_SDA_SEL);
     gpio_set_dir(GPIO_LRA_SDA_SEL, GPIO_OUT);
-    gpio_put(GPIO_LRA_SDA_SEL, 1);
+    gpio_put(GPIO_LRA_SDA_SEL, 0);
 
     // Perform auto-calibrate sequence
     sleep_ms(100);
 
-    uint8_t _set_mode1[] = {0x01, 0x00};
+    uint8_t _set_mode1[] = {MODE_REGISTER, MODE_CALIBRATE};
     i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode1, 2, false);
 
     sleep_ms(10);
 
-    uint8_t _set_rated_voltage[] = {0x16, RATED_VOLTAGE_HEX};
+    uint8_t _set_rated_voltage[] = {RATED_VOLTAGE_REGISTER, RATED_VOLTAGE_HEX};
     i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_rated_voltage, 2, false);
 
     sleep_ms(10);
 
-    uint8_t _set_odclamped[] = {0x17, ODCLAMP_HEX};
+    uint8_t _set_odclamped[] = {ODCLAMP_REGISTER, ODCLAMP_HEX};
     i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_odclamped, 2, false);
 
     sleep_ms(10);
 
-    uint8_t _set_lra[] = {0x1A, 0xB6};
-    i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_lra, 2, false);
+    uint8_t _set_feedback[] = {FEEDBACK_CTRL_REGISTER, FEEDBACK_CTRL_BYTE};
+    i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_feedback, 2, false);
 
     sleep_ms(10);
 
-    uint8_t _set_control1[] = {0x1B, 0xB3};
-    i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control1, 2, false);
-    sleep_ms(10); 
-
-    uint8_t _set_control2[] = {0x1C, 0xF5};
+    uint8_t _set_control2[] = {CTRL2_REGISTER, CTRL2_BYTE};
     i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control2, 2, false);
     sleep_ms(10);
 
-    uint8_t _set_control3[] = {0x1D, 0x80};
-    i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control3, 2, false);
-    sleep_ms(10);
-
-    uint8_t _set_mode[] = {0x01, 0x07};
-    i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode, 2, false);
-
+    uint8_t _set_control4[] = {CTRL4_REGISTER, CTRL4_BYTE};
+    i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control4, 2, false);
     sleep_ms(10);
     
-    uint8_t _set_autocalmem[] = {0x1E, 0x20};
-    i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_autocalmem, 2, false);
+    uint8_t _set_control5[] = {CTRL5_REGISTER, CTRL5_BYTE};
+    i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control5, 2, false);
     sleep_ms(10);
 
-    uint8_t _set_go[] = {0x0C, 0x01};
+    uint8_t _set_go[] = {GO_REGISTER, GO_SET};
     i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_go, 2, false);
 
     sleep_ms(600);
 
     // Get status
-    uint8_t _get_calibrate_status[] = {0x0C};
+    uint8_t _get_calibrate_status[] = {GO_REGISTER};
     uint8_t _out[1] = {0};
 
     bool calibration_stopped = false;
@@ -146,7 +211,7 @@ void rumble_get_calibration()
         // Read status
         i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _get_calibrate_status, 1, true);
         i2c_read_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _out, 1, false);
-        if(!(_out[0] & 0x01))
+        if(!(_out[0] & GO_SET))
         {
             calibration_stopped = true;
         }
@@ -154,10 +219,10 @@ void rumble_get_calibration()
     }
 
     // Check our diag result
-    uint8_t _get_diag_bit[] = {0x00};
-    uint8_t _diag_bit = 0;
+    uint8_t _get_diag_bit[1] = {STATUS_REGISTER};
+    uint8_t _diag_bit[1] = {0};
     i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _get_diag_bit, 1, true);
-    i2c_read_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, &_diag_bit, 1, false);
+    i2c_read_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _diag_bit, 1, false);
 
     // Read results and save later
     uint8_t auto_compensation = 0;
@@ -179,9 +244,13 @@ void rumble_get_calibration()
     // Isolate bemfgain bits
     auto_feedback &= 0b00000011;
 
-    uint8_t out_dump[4] = {auto_compensation, auto_back_emf, auto_feedback, _diag_bit};
+    uint8_t out_dump[4] = {auto_compensation, auto_back_emf, auto_feedback, _diag_bit[0]};
 
     webusb_send_debug_dump(4, out_dump);
+
+    uint8_t _set_mode[] = {0x01, 0x03};
+    i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode, 2, false);
+    //gpio_put(GPIO_LRA_SDA_SEL, 0);
 }
 
 bool played = false;
@@ -192,24 +261,29 @@ void test_sequence()
     for(int i = 0; i < 28; i+=1)
     {
         play_pwm_frequency(song[i], 0.5f);
+        
         sleep_ms(150);
     }
     sleep_ms(150);
+    play_pwm_frequency(100, 0);
 }
 
 bool lra_init = false;
 // Obtain and dump calibration values for auto-init LRA
 void cb_hoja_rumble_init()
 {
+    //return;
     if(lra_init) return;
     lra_init = true;
 
     // Init GPIO for LRA switch
     gpio_init(GPIO_LRA_SDA_SEL);
     gpio_set_dir(GPIO_LRA_SDA_SEL, GPIO_OUT);
+    
     gpio_put(GPIO_LRA_SDA_SEL, 1);
     
     // Set PWM function
+    gpio_init(GPIO_LRA_IN);
     gpio_set_function(GPIO_LRA_IN, GPIO_FUNC_PWM);
 
     // Find out which PWM slice is connected to our GPIO pin
@@ -220,31 +294,46 @@ void cb_hoja_rumble_init()
     // Set the PWM clock divider to run at 1Khz
     pwm_set_clkdiv(slice_num, divider);
 
-    //play_pwm_frequency(0);
-
     for(uint set = 0; set<2; set++)
     {
         // Get out of standbyu
         //uint8_t _set_mode1[] = {0x01, 0x00};
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode1, 2, false);
 
-        uint8_t _set_rated_voltage[] = {0x16, RATED_VOLTAGE_HEX};
+        uint8_t _set_rated_voltage[] = {RATED_VOLTAGE_REGISTER, RATED_VOLTAGE_HEX};
         i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_rated_voltage, 2, false);
 
-        uint8_t _set_odclamped[] = {0x17, ODCLAMP_HEX};
+        sleep_ms(10);
+
+        uint8_t _set_odclamped[] = {ODCLAMP_REGISTER, ODCLAMP_HEX};
         i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_odclamped, 2, false);
 
-        uint8_t _set_lra[] = {0x1A, 0x9E};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_lra, 2, false);
+        sleep_ms(10);
 
-        uint8_t _set_control1[] = {0x1B, 0x2F};
+        uint8_t _set_feedback[] = {FEEDBACK_CTRL_REGISTER, FEEDBACK_CTRL_BYTE};
+        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_feedback, 2, false);
+
+        sleep_ms(10);
+
+        uint8_t _set_control1[] = {CTRL1_REGISTER, CTRL1_BYTE};
         i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control1, 2, false);
+        sleep_ms(10);
 
-        uint8_t _set_control2[] = {0x1C, 0xFF};
+        uint8_t _set_control2[] = {CTRL2_REGISTER, CTRL2_BYTE};
         i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control2, 2, false);
+        sleep_ms(10);
 
-        uint8_t _set_control3[] = {0x1D, 0x43};
+        uint8_t _set_control3[] = {CTRL3_REGISTER, CTRL3_BYTE};
         i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control3, 2, false);
+        sleep_ms(10);
+
+        uint8_t _set_control4[] = {CTRL4_REGISTER, CTRL4_BYTE};
+        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control4, 2, false);
+        sleep_ms(10);
+        
+        uint8_t _set_control5[] = {CTRL5_REGISTER, CTRL5_BYTE};
+        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control5, 2, false);
+        sleep_ms(10);
 
         uint8_t _set_compensation[] = {0x18, HAPTIC_COMPENSATION};
         i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_compensation, 2, false);
@@ -252,29 +341,15 @@ void cb_hoja_rumble_init()
         uint8_t _set_bemf[] = {0x19, HAPTIC_BACKEMF};
         i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_bemf, 2, false);
 
-        /*
-        uint8_t _set_audio1[] = {0x11, 0x05};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_audio1, 2, false);
-
-        uint8_t _set_audio2[] = {0x12, 0x19};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_audio2, 2, false);
-
-        uint8_t _set_audio3[] = {0x13, 0xFF};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_audio3, 2, false);
-
-        // Minimum output drive
-        uint8_t _set_audio4[] = {0x14, 0x19};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_audio4, 2, false);
-
-        // Max output drive
-        uint8_t _set_audio5[] = {0x15, 0x19};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_audio5, 2, false);
-        */
+        uint8_t _set_freq[] = {RTP_FREQUENCY_REGISTER, 31};
+        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_freq, 2, false);
 
         uint8_t _set_mode[] = {0x01, 0x03};
         i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode, 2, false);
         gpio_put(GPIO_LRA_SDA_SEL, 0);
     }
+
+    play_pwm_frequency(0,0);
 
 }
 
@@ -319,15 +394,17 @@ bool app_rumble_hwtest()
     play_pwm_frequency(0, 0);
     sleep_ms(500);*/
 
+    rumble_get_calibration();
     return true;
 }
 
 void app_rumble_task(uint32_t timestamp)
 {
+    return;
     static interval_s interval = {0};
     if(interval_run(timestamp, 8000, &interval))
     {
-        return;
+        
         if(_current_amplitude>0)
         {
             //_current_amplitude -= 0.015f;
