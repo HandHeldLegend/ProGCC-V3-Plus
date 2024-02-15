@@ -73,7 +73,7 @@ void cb_hoja_rumble_set(float frequency, float amplitude)
 }
 
 #define RATED_VOLTAGE_HEX 0x4
-#define ODCLAMP_HEX 0x54
+#define ODCLAMP_HEX 0x17
 #define HAPTIC_COMPENSATION 12
 #define HAPTIC_BACKEMF 108
 #define HAPTIC_BACKFEEDBACK 2
