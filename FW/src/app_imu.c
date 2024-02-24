@@ -4,7 +4,7 @@
 
 // LSM6DSR REGISTERS
 #define FUNC_CFG_ACCESS 0x01
-#define CTRL1_XL        0x10
+#define CTRL1_XL        0x10  // Accelerometer Activation Register - Write 0x60 to enable 416hz
 #define CTRL2_G         0x11  // Gyro Activation Register - Write 0x60 to enable 416hz
 #define CTRL3_C         0x12  // Used to set BDU
 #define CTRL4_C         0x13
@@ -14,11 +14,44 @@
 #define CTRL10_C        0x19
 
 #define FUNC_MASK   (0b10000000) // Enable FUNC CFG access
-#define CTRL1_MASK  (0b10101110) // 1.66kHz, 8G, output first stage filtering
-#define CTRL2_MASK  (0b01011100) // 208Hz, 2000dps
+
+#define PERF_6KHZ   (0b10100000) // 6.66KHz
+#define PERF_1KHZ   (0b10000000) // 1.66KHz
+#define PERF_416HZ  (0b01100000) // 416Hz
+
+#define XL_LOWPASS (0b00000001)
+
+// 2G
+#define XL_SENS_2G  (0b00000000)
+
+// 16G
+#define XL_SENS_16G (0b00001000)
+
+// 4G
+#define XL_SENS_4G  (0b00001000)
+
+// 8G
+#define XL_SENS_8G  (0b00001100)
+
+// 4000dps
+#define G_SENS_4000DPS  (0b00000001)
+
+// 2000dps
+#define G_SENS_2000DPS  (0b00001100)
+
+// 1000dps
+#define G_SENS_1000DPS  (0b00001000)
+
+// 500dps
+#define G_SENS_500DPS   (0b00000100)
+
+
+#define CTRL1_MASK  (XL_SENS_8G | PERF_1KHZ) 
+#define CTRL2_MASK  (G_SENS_2000DPS | PERF_1KHZ)
 #define CTRL3_MASK  (0b00000100) // BDU enabled and Interrupt out active low
 #define CTRL4_MASK  (0b00000100) // I2C disable (Check later for LPF for gyro)
-#define CTRL6_MASK  (0b00000000) // 12.2 LPF gyro
+#define CTRL4_LPF1_SEL_G (0b00000010)
+#define CTRL6_MASK  (0b00000110) // 12.2 LPF gyro
 #define CTRL8_MASK  (0b11100000) //H P_SLOPE_XL_EN
 #define CTRL9_MASK  (0x38)
 #define CTRL10_MASK (0x38 | 0x4)
@@ -87,7 +120,7 @@ void app_imu_init()
   _app_imu_write_register(CTRL1_XL, CTRL1_MASK);
   _app_imu_write_register(CTRL2_G, CTRL2_MASK);
   _app_imu_write_register(CTRL3_C, CTRL3_MASK);
-  _app_imu_write_register(CTRL4_C, CTRL4_MASK);
+  _app_imu_write_register(CTRL4_C, CTRL4_MASK | CTRL4_LPF1_SEL_G);
   _app_imu_write_register(CTRL6_C, CTRL6_MASK);
   _app_imu_write_register(CTRL8_XL, CTRL8_MASK);
 }
