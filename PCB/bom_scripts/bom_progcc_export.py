@@ -92,6 +92,7 @@ grouped = net.groupComponents()
 index = 1
 for group in grouped:
     refs = ""
+    skip = False
 
     # Add the reference of every component in the group and keep a reference
     # to the component so that the other data can be filled in once per group
@@ -99,10 +100,14 @@ for group in grouped:
         # Check if the component contains the USBDNP field
         if component.getField("USBDNP"):
             # Skip exporting this component to the BOM
+            skip = True
             continue
             
         refs += component.getRef() + ", "
         c = component
+
+    if skip == True:
+        continue
 
     # Remove trailing comma
     refs = refs[:-2]
@@ -144,18 +149,23 @@ grouped = net.groupComponents()
 index = 1
 for group in grouped:
     refs = ""
+    skip = False
 
     # Add the reference of every component in the group and keep a reference
     # to the component so that the other data can be filled in once per group
     for component in group:
         # Check if the component contains the USBDNP field
         if component.getField("BTDNP"):
+            skip = True
             # Skip exporting this component to the BOM
             continue
             
         refs += component.getRef() + ", "
         c = component
 
+    if skip == True:
+        continue
+        
     # Remove trailing comma
     refs = refs[:-2]
 
