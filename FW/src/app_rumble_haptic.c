@@ -144,10 +144,10 @@ void play_pwm_frequency(float frequency, float amplitude)
 	pwm_set_enabled(slice_num, true); // let's go!
 }
 
-void cb_hoja_rumble_set(float frequency, float amplitude)
+void cb_hoja_rumble_set(rumble_data_s *data)
 {
-    _current_amplitude = amplitude;
-    _current_frequency = frequency;
+    _current_amplitude = data->amplitude_low;
+    _current_frequency = data->frequency_low;
 
     play_pwm_frequency(_current_frequency, _current_amplitude);
 }

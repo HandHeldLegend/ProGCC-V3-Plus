@@ -15,9 +15,34 @@ int _rumble_min = 0;
 int _rumble_current = 0;
 
 #define RUMBLE_MAX 100
+#define RUMBLE_MAX_ADD 50
 static uint8_t _rumble_max = RUMBLE_MAX;
 
 static bool _declining = false;
+
+void app_rumble_output()
+{
+    if (_rumble_current < _rumble_cap)
+    {
+        _rumble_current += 10;
+    }
+    else
+    {
+        _rumble_current -= 10;
+        
+        if (_rumble_current <= _rumble_min)
+        {
+            _rumble_current = _rumble_min; 
+        }
+
+        _rumble_cap = _rumble_current;
+    }
+
+    pwm_set_gpio_level(PGPIO_RUMBLE_BRAKE, (!_rumble_current) ? 255 : 0);
+    pwm_set_gpio_level(PGPIO_RUMBLE_MAIN, (_rumble_current > 0) ? _rumble_current : 0);
+}
+
+bool testing = false;
 
 void app_rumble_task(uint32_t timestamp)
 {
@@ -25,38 +50,25 @@ void app_rumble_task(uint32_t timestamp)
 
     if(interval_run(timestamp, _rumble_interval, &interval))
     {
-        if (_rumble_current < _rumble_cap)
-        {
-            _rumble_current += 20;
-        }
-        else
-        {
-            _rumble_current -= 10;
-            
-            if (_rumble_current <= _rumble_min)
-            {
-                _rumble_current = _rumble_min; 
-            }
-
-            _rumble_cap = _rumble_current;
-        }
-        
-        pwm_set_gpio_level(PGPIO_RUMBLE_BRAKE, (!_rumble_current) ? 255 : 0);
-        pwm_set_gpio_level(PGPIO_RUMBLE_MAIN, (_rumble_current > 0) ? _rumble_current : 0);
+        if(!testing);
+        app_rumble_output();
     }
 }
 
-void cb_hoja_rumble_set(float frequency, float amplitude)
+void cb_hoja_rumble_set(rumble_data_s *data)
 {
-    (void)frequency;
+    if(!_rumble_floor)
+    return;
+    
+    float amp1 = (data->amplitude_high > data->amplitude_low) ? data->amplitude_high : data->amplitude_low;
 
-    if(amplitude > 1.0f) amplitude = 1.0f;
-
-    float p = (_rumble_max * amplitude);
+    if(amp1 > 1.0f) amp1 = 1.0f;
+    
+    float p = ((float) RUMBLE_MAX_ADD * amp1);
     uint16_t tmp = (uint16_t) p;
 
 
-    if(amplitude > 0)
+    if(amp1 > 0)
     {
         tmp += _rumble_floor;
     }
@@ -69,8 +81,31 @@ void cb_hoja_rumble_set(float frequency, float amplitude)
     }
 }
 
+void cb_hoja_rumble_test()
+{
+    testing = true;
+    rumble_data_s tmp = {.amplitude_high=1, .amplitude_low = 1};
+
+    cb_hoja_rumble_set(&tmp);
+
+    for(int i = 0; i < 62; i++)
+    {   
+        app_rumble_output();
+        watchdog_update();
+        sleep_ms(8);
+    }
+    tmp.amplitude_high = 0;
+    tmp.amplitude_low = 0;
+    testing = false;
+    
+    cb_hoja_rumble_set(&tmp);
+    
+    app_rumble_output();
+}
+
 bool app_rumble_hwtest()
 {
+    cb_hoja_rumble_test();
     return true;
 }
 
@@ -105,18 +140,19 @@ void cb_hoja_rumble_init()
 
     uint8_t fl;
     uint8_t max;
-    hoja_get_rumble_intensity(&fl, &max);
+    rumble_type_t type;
+    hoja_get_rumble_settings(&fl, &type);
 
-    _rumble_floor = (fl > 75)      ? 75 : fl;
-    _rumble_max   = (max > 50)  ? 50 : max;
+    _rumble_floor = fl;
+    _rumble_max   = (fl+RUMBLE_MAX_ADD) > 255 ? 255 : fl+RUMBLE_MAX_ADD;
 
-    if(!_rumble_max)
+    if(!_rumble_floor)
     {
         _rumble_floor = 0;
         _rumble_max = 0;
     }
     
-    cb_hoja_rumble_set(100, 1);
+
     sleep_ms(350);
-    cb_hoja_rumble_set(0, 0);
+
 }

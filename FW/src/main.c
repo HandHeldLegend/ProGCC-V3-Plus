@@ -174,7 +174,7 @@ void cb_hoja_read_buttons(button_data_s *data)
     data->button_stick_left = !gpio_get(PGPIO_BUTTON_LS);
 
     data->button_safemode = !gpio_get(PGPIO_BUTTON_MODE);
-    data->button_shipping = data->button_safemode;
+    data->button_shipping = data->button_stick_right && data->button_stick_left;
     data->button_sync = data->button_plus;
 }
 
@@ -282,5 +282,4 @@ int main()
         }
     }
 
-    hoja_init(&_config);
 }

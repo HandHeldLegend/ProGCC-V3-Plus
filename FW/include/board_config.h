@@ -8,7 +8,7 @@
 #define HOJA_DEVICE_ID  0xA002 // A002 is 3+, A003 is 3+ (Haptic)
 #endif
 
-#define HOJA_FW_VERSION 0x0A08
+#define HOJA_FW_VERSION 0x0A0A
 
 // RGB Stuff
 #define HOJA_RGB_PIN 23
@@ -47,7 +47,8 @@
 #define HOJA_CAPABILITY_NINTENDO_SERIAL 1
 #define HOJA_CAPABILITY_NINTENDO_JOYBUS 1
 
-#define HOJA_CAPABILITY_RUMBLE 1
+#define HOJA_CAPABILITY_RUMBLE_ERM 1
+#define HOJA_CAPABILITY_RUMBLE_LRA 1
 
 #define HOJA_RGB_GROUP_RS       {0, 1, 2, 3}
 #define HOJA_RGB_GROUP_LS       {4, 5, 6, 7}
