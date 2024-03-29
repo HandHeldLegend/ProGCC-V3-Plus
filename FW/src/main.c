@@ -281,5 +281,7 @@ int main()
             sleep_ms(150);
         }
     }
+    
+    hoja_init(&_config);
 
 }
