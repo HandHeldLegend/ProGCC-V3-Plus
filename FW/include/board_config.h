@@ -8,7 +8,7 @@
 #define HOJA_DEVICE_ID  0xA002 // A002 is 3+, A003 is 3+ (Haptic)
 #endif
 
-#define HOJA_FW_VERSION 0x0A0A
+#define HOJA_FW_VERSION 0x0A0B
 
 // RGB Stuff
 #define HOJA_RGB_PIN 23
