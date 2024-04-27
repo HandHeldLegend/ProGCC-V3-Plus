@@ -1,4 +1,4 @@
 {
-    "changelog": "4.19.2024\n-Frameperfect Test Update",
-    "fw_version": 2572
+    "changelog": "4.26.2024\n-Frameperfect Update\n-Add Bluetooth Timeout power off",
+    "fw_version": 2574
 }

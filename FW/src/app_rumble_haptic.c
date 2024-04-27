@@ -272,7 +272,6 @@ bool lra_init = false;
 // Obtain and dump calibration values for auto-init LRA
 void cb_hoja_rumble_init()
 {
-    //return;
     if(lra_init) return;
     lra_init = true;
 

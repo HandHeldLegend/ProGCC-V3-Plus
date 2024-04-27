@@ -230,8 +230,6 @@ int main()
     stdio_init_all();
     sleep_ms(100);
 
-    printf("ProGCC3+ Started.\n");
-
     cb_hoja_hardware_setup();
 
     gpio_init(PGPIO_ESP_EN);

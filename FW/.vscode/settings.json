@@ -10,5 +10,7 @@
         "hoja.h": "c",
         "hoja_types.h": "c",
         "rgb.h": "c"
-    }
+    },
+    "idf.flashType": "UART",
+    "idf.portWin": "COM22"
 }
