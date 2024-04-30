@@ -220,7 +220,7 @@ void cb_hoja_read_analog(a_data_s *data)
     data->ry = BUFFER_TO_UINT16(buffer_ry);
 }
 
-void cb_hoja_task_1_hook(uint32_t timestamp)
+void cb_hoja_task_0_hook(uint32_t timestamp)
 {
     app_rumble_task(timestamp);
 }

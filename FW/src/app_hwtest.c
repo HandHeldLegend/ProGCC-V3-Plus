@@ -227,7 +227,7 @@ bool _hwtest_analog()
 
 bool _hwtest_rumble()
 {
-    app_rumble_hwtest();
+    return app_rumble_hwtest();
 }
 
 bool _hwtest_rgb()
