@@ -1,4 +1,4 @@
 {
-    "changelog": "4.26.2024\n-Frameperfect Update\n-Add Bluetooth Timeout power off",
-    "fw_version": 2574
+    "changelog": "4.30.2024\n-Gyro Mode 0x02 Update",
+    "fw_version": 2575
 }

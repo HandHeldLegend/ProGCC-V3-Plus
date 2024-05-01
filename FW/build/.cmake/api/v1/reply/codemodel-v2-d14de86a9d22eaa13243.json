@@ -1173,14 +1173,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "PROGCCPLUS_ERM_RP2040::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PROGCCPLUS_ERM_RP2040-Debug-0e82a0e01411703175c4.json",
+					"jsonFile" : "target-PROGCCPLUS_ERM_RP2040-Debug-8aa5b35f5a20c24058a2.json",
 					"name" : "PROGCCPLUS_ERM_RP2040",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "PROGCCPLUS_HAPTIC_RP2040::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PROGCCPLUS_HAPTIC_RP2040-Debug-ab535309dfcffe1e911f.json",
+					"jsonFile" : "target-PROGCCPLUS_HAPTIC_RP2040-Debug-47d0037982295ae63078.json",
 					"name" : "PROGCCPLUS_HAPTIC_RP2040",
 					"projectIndex" : 0
 				},

@@ -83,7 +83,6 @@ void cb_hoja_rumble_set(rumble_data_s *data)
 
 void cb_hoja_rumble_test()
 {
-    testing = true;
     rumble_data_s tmp = {.amplitude_high=1, .amplitude_low = 1};
 
     cb_hoja_rumble_set(&tmp);
@@ -96,7 +95,6 @@ void cb_hoja_rumble_test()
     }
     tmp.amplitude_high = 0;
     tmp.amplitude_low = 0;
-    testing = false;
     
     cb_hoja_rumble_set(&tmp);
     
