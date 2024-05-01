@@ -1,7 +1,7 @@
 #ifndef BOARD_CONFIG_H
 #define BOARD_CONFIG_H
 
-#define HOJA_BT_LOGGING_DEBUG 0
+#define HOJA_BT_LOGGING_DEBUG 1
 
 // Device stuff
 #ifndef HOJA_DEVICE_ID
@@ -13,7 +13,7 @@
 #define HOJA_CLOCK_PIN 4
 #define HOJA_LATCH_PIN 5
 
-#define HOJA_FW_VERSION 0x0A0F
+#define HOJA_FW_VERSION 0x0A10
 
 // Haptic
 #if (HOJA_DEVICE_ID == 0xA003)

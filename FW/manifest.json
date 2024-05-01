@@ -1,4 +1,4 @@
 {
-    "changelog": "4.30.2024\n-Gyro Mode 0x02 Update",
-    "fw_version": 2575
+    "changelog": "5.1.2024\n-Gyro Mode 0x02 Update\n-Fix rumble case not stopping",
+    "fw_version": 2576
 }
