@@ -5,7 +5,7 @@
 
 // Device stuff
 #ifndef HOJA_DEVICE_ID
-#define HOJA_DEVICE_ID  0xA002 // A002 is 3+, A003 is 3+ (Haptic)
+#define HOJA_DEVICE_ID  0xA004 // A002 is 3+, A003 is 3+ (Haptic), A004 is 3.1
 #endif
 
 // GPIO definitions
@@ -33,7 +33,7 @@
 
     // RGB Stuff
     #define HOJA_RGB_PIN 23
-    #define HOJA_RGB_COUNT 20
+    #define HOJA_RGB_COUNT 28
     #define HOJA_RGBW_EN 0
 
     // If we do not have native analog triggers
@@ -60,22 +60,49 @@
     #define HOJA_CAPABILITY_NINTENDO_SERIAL 1
     #define HOJA_CAPABILITY_NINTENDO_JOYBUS 1
 
-    #define HOJA_RGB_GROUP_RS       {0, 1, 2, 3}
-    #define HOJA_RGB_GROUP_LS       {4, 5, 6, 7}
-    #define HOJA_RGB_GROUP_DPAD     {8, 9, 10, 11}
-    #define HOJA_RGB_GROUP_MINUS    {12}
-    #define HOJA_RGB_GROUP_CAPTURE  {13}
-    #define HOJA_RGB_GROUP_HOME     {14}
-    #define HOJA_RGB_GROUP_PLUS     {15}
-    #define HOJA_RGB_GROUP_Y        {16}
-    #define HOJA_RGB_GROUP_X        {17}
-    #define HOJA_RGB_GROUP_A        {18}
-    #define HOJA_RGB_GROUP_B        {19}
+    #if ( (HOJA_DEVICE_ID == 0xA002) || (HOJA_DEVICE_ID== 0xA003) )
+        #define HOJA_RGB_GROUP_RS       {0, 1, 2, 3}
+        #define HOJA_RGB_GROUP_LS       {4, 5, 6, 7}
+        #define HOJA_RGB_GROUP_DPAD     {8, 9, 10, 11}
+        #define HOJA_RGB_GROUP_MINUS    {12}
+        #define HOJA_RGB_GROUP_CAPTURE  {13}
+        #define HOJA_RGB_GROUP_HOME     {14}
+        #define HOJA_RGB_GROUP_PLUS     {15}
+        #define HOJA_RGB_GROUP_Y        {16}
+        #define HOJA_RGB_GROUP_X        {17}
+        #define HOJA_RGB_GROUP_A        {18}
+        #define HOJA_RGB_GROUP_B        {19}
+
+        #define HOJA_RGB_GROUP_L {-1}
+        #define HOJA_RGB_GROUP_ZL {-1}
+        #define HOJA_RGB_GROUP_R {-1}
+        #define HOJA_RGB_GROUP_ZR {-1}
+        #define HOJA_RGB_GROUP_PLAYER {-1}
+    #elif (HOJA_DEVICE_ID == 0xA004)
+        #define HOJA_RGB_GROUP_RS       {0, 1, 2, 3}
+        #define HOJA_RGB_GROUP_PLAYER   {4, 5, 6, 7}
+        #define HOJA_RGB_GROUP_LS       {8, 9, 10, 11}
+        #define HOJA_RGB_GROUP_DPAD     {12, 13, 14, 15}
+        #define HOJA_RGB_GROUP_MINUS    {16}
+        #define HOJA_RGB_GROUP_CAPTURE  {17}
+        #define HOJA_RGB_GROUP_HOME     {18}
+        #define HOJA_RGB_GROUP_PLUS     {19}
+        #define HOJA_RGB_GROUP_Y        {20}
+        #define HOJA_RGB_GROUP_X        {21}
+        #define HOJA_RGB_GROUP_A        {22}
+        #define HOJA_RGB_GROUP_B        {23}
+
+        #define HOJA_RGB_GROUP_L        {24}
+        #define HOJA_RGB_GROUP_ZL       {25}
+        #define HOJA_RGB_GROUP_R        {26}
+        #define HOJA_RGB_GROUP_ZR       {27}
+        
+    #endif
 
     #define HOJA_I2C_BUS i2c0
     #define HOJA_I2CINPUT_ADDRESS 0x76
-    #define HOJA_I2C_SDA 28
-    #define HOJA_I2C_SCL 29
+    #define HOJA_I2C_SDA 28     // ok
+    #define HOJA_I2C_SCL 29     // ok
 
 // Defined by cmake #define HOJA_RUMBLE_TYPE HOJA_RUMBLE_TYPE_HAPTIC or HOJA_RUMBLE_TYPE_ERM
 

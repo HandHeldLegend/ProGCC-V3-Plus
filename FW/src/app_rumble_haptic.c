@@ -33,10 +33,16 @@ float song[28] = {
 
 #define DRV2605_SLAVE_ADDR 0x5A
 
-// LRA SDA Select (left/right)
-#define GPIO_LRA_SDA_SEL    25
-// LRA Audio Output
-#define GPIO_LRA_IN         24
+#if ( (HOJA_DEVICE_ID == 0xA002) || (HOJA_DEVICE_ID == 0xA003) )
+    // LRA SDA Select (left/right)
+    #define GPIO_LRA_SDA_SEL    25
+    // LRA Audio Output
+    #define GPIO_LRA_IN         24
+#elif (HOJA_DEVICE_ID == 0xA004)
+    // LRA Audio Output
+    #define GPIO_LRA_IN         21 // Low
+    #define GPIO_LRA_IN_HI      24
+#endif
 
 uint slice_num;
 
@@ -276,11 +282,12 @@ void cb_hoja_rumble_init()
     sleep_ms(100);
     lra_init = true;
 
-    // Init GPIO for LRA switch
-    gpio_init(GPIO_LRA_SDA_SEL);
-    gpio_set_dir(GPIO_LRA_SDA_SEL, GPIO_OUT);
-    
-    gpio_put(GPIO_LRA_SDA_SEL, 1);
+    #if ( HOJA_DEVICE_ID == 0xA003 )
+        // Init GPIO for LRA switch
+        gpio_init(GPIO_LRA_SDA_SEL);
+        gpio_set_dir(GPIO_LRA_SDA_SEL, GPIO_OUT);
+        gpio_put(GPIO_LRA_SDA_SEL, 1);
+    #endif
     
     // Set PWM function
     gpio_init(GPIO_LRA_IN);
