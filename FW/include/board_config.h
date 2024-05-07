@@ -4,9 +4,8 @@
 #define HOJA_BT_LOGGING_DEBUG 1
 
 // Device stuff
-#ifndef HOJA_DEVICE_ID
-#define HOJA_DEVICE_ID  0xA004 // A002 is 3+, A003 is 3+ (Haptic), A004 is 3.1
-#endif
+//#define HOJA_DEVICE_ID  0xA004 // A002 is 3+, A003 is 3+ (Haptic), A004 is 3.1
+
 
 // GPIO definitions
 #define HOJA_SERIAL_PIN 3
@@ -17,7 +16,7 @@
 
 // Haptic
 #if (HOJA_DEVICE_ID == 0xA003)
-    #define HOJA_PRODUCT        "ProGCC 3+ Haptic Proto"
+    #define HOJA_PRODUCT        "ProGCC 3H"
     #define HOJA_CAPABILITY_RUMBLE_LRA 1
     #define HOJA_CAPABILITY_RUMBLE_ERM 0
 // Normal
@@ -33,7 +32,7 @@
 
     // RGB Stuff
     #define HOJA_RGB_PIN 23
-    #define HOJA_RGB_COUNT 28
+    #define HOJA_RGB_COUNT 32
     #define HOJA_RGBW_EN 0
 
     // If we do not have native analog triggers
@@ -60,7 +59,7 @@
     #define HOJA_CAPABILITY_NINTENDO_SERIAL 1
     #define HOJA_CAPABILITY_NINTENDO_JOYBUS 1
 
-    #if ( (HOJA_DEVICE_ID == 0xA002) || (HOJA_DEVICE_ID== 0xA003) )
+    #if ( (HOJA_DEVICE_ID == 0xA002) | (HOJA_DEVICE_ID== 0xA003) )
         #define HOJA_RGB_GROUP_RS       {0, 1, 2, 3}
         #define HOJA_RGB_GROUP_LS       {4, 5, 6, 7}
         #define HOJA_RGB_GROUP_DPAD     {8, 9, 10, 11}
@@ -78,6 +77,7 @@
         #define HOJA_RGB_GROUP_R {-1}
         #define HOJA_RGB_GROUP_ZR {-1}
         #define HOJA_RGB_GROUP_PLAYER {-1}
+        
     #elif (HOJA_DEVICE_ID == 0xA004)
         #define HOJA_RGB_GROUP_RS       {0, 1, 2, 3}
         #define HOJA_RGB_GROUP_PLAYER   {4, 5, 6, 7}

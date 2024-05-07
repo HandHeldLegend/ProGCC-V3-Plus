@@ -1724,9 +1724,9 @@ Discarded input sections
                 0x00000000        0xa CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
  .bss.uart_inst
                 0x00000000        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
- .text          0x00000000        0x0 C:\Users\Mitch\AppData\Local\Temp\cccaCFb6.o
- .data          0x00000000        0x0 C:\Users\Mitch\AppData\Local\Temp\cccaCFb6.o
- .bss           0x00000000        0x0 C:\Users\Mitch\AppData\Local\Temp\cccaCFb6.o
+ .text          0x00000000        0x0 C:\Users\Mitch\AppData\Local\Temp\ccWZUTY3.o
+ .data          0x00000000        0x0 C:\Users\Mitch\AppData\Local\Temp\ccWZUTY3.o
+ .bss           0x00000000        0x0 C:\Users\Mitch\AppData\Local\Temp\ccWZUTY3.o
  .text          0x00000000        0x0 c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a(lib_a-s_fmin.o)
  .data          0x00000000        0x0 c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a(lib_a-s_fmin.o)
  .bss           0x00000000        0x0 c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a(lib_a-s_fmin.o)
@@ -1948,7 +1948,7 @@ LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.
 .boot2          0x10000000      0x100
                 0x10000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 C:\Users\Mitch\AppData\Local\Temp\cccaCFb6.o
+ .boot2         0x10000000      0x100 C:\Users\Mitch\AppData\Local\Temp\ccWZUTY3.o
                 0x10000100                __boot2_end__ = .
                 0x00000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -4681,7 +4681,7 @@ LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.
                 0x20041000                __scratch_y_end__ = .
                 0x10016be0                __scratch_y_source__ = LOADADDR (.scratch_y)
 
-.bss            0x20001658     0x1cd8
+.bss            0x20001658     0x1d20
                 0x20001658                . = ALIGN (0x4)
                 0x20001658                __bss_start__ = .
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.bss*)))
@@ -4741,560 +4741,560 @@ LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.
  .bss._ctrl_xfer
                 0x20001c8c       0x14 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
  .bss._cycle_offset_idx
-                0x20001ca0       0x1c CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x20001ca0       0x20 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
                 0x20001ca0                _cycle_offset_idx
- .bss._data_in  0x20001cbc        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
-                0x20001cbc                _data_in
+ .bss._data_in  0x20001cc0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
+                0x20001cc0                _data_in
  .bss._data_out
-                0x20001cc0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
-                0x20001cc0                _data_out
+                0x20001cc4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
+                0x20001cc4                _data_out
  .bss._desc_str
-                0x20001cc4       0x80 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
+                0x20001cc8       0x80 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
  .bss._gamecube_c
-                0x20001d44       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
-                0x20001d44                _gamecube_c
+                0x20001d48       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
+                0x20001d48                _gamecube_c
  .bss._gamecube_irq
-                0x20001d54        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
-                0x20001d54                _gamecube_irq
- .bss._gamecube_irq_tx
                 0x20001d58        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
-                0x20001d58                _gamecube_irq_tx
- .bss._gamecube_offset
+                0x20001d58                _gamecube_irq
+ .bss._gamecube_irq_tx
                 0x20001d5c        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
-                0x20001d5c                _gamecube_offset
+                0x20001d5c                _gamecube_irq_tx
+ .bss._gamecube_offset
+                0x20001d60        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
+                0x20001d60                _gamecube_offset
  .bss._ginputd_itf
-                0x20001d60       0x3c CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/ginput_device.c.obj
+                0x20001d64       0x3c CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/ginput_device.c.obj
  .bss._has_connected
-                0x20001d9c        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
-                0x20001d9c                _has_connected
+                0x20001da0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
+                0x20001da0                _has_connected
  .bss._hidd_itf
-                0x20001da0      0x118 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
+                0x20001da4      0x118 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
  .bss._hoja_timestamp
-                0x20001eb8        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja.c.obj
-                0x20001eb8                _hoja_timestamp
+                0x20001ebc        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja.c.obj
+                0x20001ebc                _hoja_timestamp
  .bss._imu_buffer_a
-                0x20001ebc        0xd CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
-                0x20001ebc                _imu_buffer_a
- *fill*         0x20001ec9        0x3 
+                0x20001ec0        0xd CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
+                0x20001ec0                _imu_buffer_a
+ *fill*         0x20001ecd        0x3 
  .bss._imu_buffer_avg
-                0x20001ecc        0xd CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
-                0x20001ecc                _imu_buffer_avg
- *fill*         0x20001ed9        0x3 
+                0x20001ed0        0xd CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
+                0x20001ed0                _imu_buffer_avg
+ *fill*         0x20001edd        0x3 
  .bss._imu_buffer_b
-                0x20001edc        0xd CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
-                0x20001edc                _imu_buffer_b
- *fill*         0x20001ee9        0x3 
+                0x20001ee0        0xd CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
+                0x20001ee0                _imu_buffer_b
+ *fill*         0x20001eed        0x3 
  .bss._imu_calibrate_cycles_remaining
-                0x20001eec        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
-                0x20001eec                _imu_calibrate_cycles_remaining
+                0x20001ef0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
+                0x20001ef0                _imu_calibrate_cycles_remaining
  .bss._imu_fifo
-                0x20001ef0       0x27 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
-                0x20001ef0                _imu_fifo
- *fill*         0x20001f17        0x1 
+                0x20001ef4       0x27 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
+                0x20001ef4                _imu_fifo
+ *fill*         0x20001f1b        0x1 
  .bss._imu_fifo_idx
-                0x20001f18        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
-                0x20001f18                _imu_fifo_idx
- .bss._imu_owner_0
                 0x20001f1c        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
-                0x20001f1c                _imu_owner_0
- .bss._imu_owner_1
+                0x20001f1c                _imu_fifo_idx
+ .bss._imu_owner_0
                 0x20001f20        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
-                0x20001f20                _imu_owner_1
+                0x20001f20                _imu_owner_0
+ .bss._imu_owner_1
+                0x20001f24        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
+                0x20001f24                _imu_owner_1
  .bss._in_buffer
-                0x20001f24       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
+                0x20001f28       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
  .bss._l_sub_angle_states
-                0x20001f64       0x80 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/stick_scaling.c.obj
-                0x20001f64                _l_sub_angle_states
+                0x20001f68       0x80 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/stick_scaling.c.obj
+                0x20001f68                _l_sub_angle_states
  .bss._lx_tracker_mem
-                0x20001fe4        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
+                0x20001fe8        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
  .bss._ly_tracker_mem
-                0x20001fec        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
+                0x20001ff0        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
  .bss._mode_color
-                0x20001ff4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
-                0x20001ff4                _mode_color
- .bss._n64_c    0x20001ff8       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
-                0x20001ff8                _n64_c
- .bss._n64_irq  0x20002008        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
-                0x20002008                _n64_irq
+                0x20001ff8        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
+                0x20001ff8                _mode_color
+ .bss._n64_c    0x20001ffc       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
+                0x20001ffc                _n64_c
+ .bss._n64_irq  0x2000200c        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
+                0x2000200c                _n64_irq
  .bss._n64_irq_tx
-                0x2000200c        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
-                0x2000200c                _n64_irq_tx
- .bss._n64_offset
                 0x20002010        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
-                0x20002010                _n64_offset
+                0x20002010                _n64_irq_tx
+ .bss._n64_offset
+                0x20002014        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
+                0x20002014                _n64_offset
  .bss._nspi_irq
-                0x20002014        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/nspi.c.obj
- .bss._nspi_offset
                 0x20002018        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/nspi.c.obj
- .bss._nspi_pio
+ .bss._nspi_offset
                 0x2000201c        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/nspi.c.obj
- .bss._nspi_sm  0x20002020        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/nspi.c.obj
+ .bss._nspi_pio
+                0x20002020        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/nspi.c.obj
+ .bss._nspi_sm  0x20002024        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/nspi.c.obj
  .bss._out_buffer
-                0x20002024        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
+                0x20002028        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
  .bss._r_sub_angle_states
-                0x20002028       0x80 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/stick_scaling.c.obj
-                0x20002028                _r_sub_angle_states
+                0x2000202c       0x80 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/stick_scaling.c.obj
+                0x2000202c                _r_sub_angle_states
  .bss._rainbow_next
-                0x200020a8        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x200020a8                _rainbow_next
+                0x200020ac        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x200020ac                _rainbow_next
  .bss._rainbowoffset_hsv
-                0x200020ac       0x1c CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x200020ac                _rainbowoffset_hsv
+                0x200020b0       0x20 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x200020b0                _rainbowoffset_hsv
  .bss._remap_arr
-                0x200020c8       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
-                0x200020c8                _remap_arr
+                0x200020d0       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
+                0x200020d0                _remap_arr
  .bss._remap_internal
-                0x200020d8        0xc CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
-                0x200020d8                _remap_internal
+                0x200020e0        0xc CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
+                0x200020e0                _remap_internal
  .bss._remap_struct
-                0x200020e4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
-                0x200020e4                _remap_struct
+                0x200020ec        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
+                0x200020ec                _remap_struct
  .bss._rgb_anim_cb
-                0x200020e8        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x200020e8                _rgb_anim_cb
+                0x200020f0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x200020f0                _rgb_anim_cb
  .bss._rgb_anim_override_cb
-                0x200020ec        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x200020ec                _rgb_anim_override_cb
+                0x200020f4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x200020f4                _rgb_anim_override_cb
  .bss._rgb_current
-                0x200020f0       0x70 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x200020f0                _rgb_current
+                0x200020f8       0x80 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x200020f8                _rgb_current
  .bss._rgb_flash_color
-                0x20002160        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x20002160                _rgb_flash_color
+                0x20002178        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x20002178                _rgb_flash_color
  .bss._rgb_indicate_color
-                0x20002164        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x20002164                _rgb_indicate_color
+                0x2000217c        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x2000217c                _rgb_indicate_color
  .bss._rgb_last
-                0x20002168       0x70 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x20002168                _rgb_last
+                0x20002180       0x80 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x20002180                _rgb_last
  .bss._rgb_next
-                0x200021d8       0x70 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x200021d8                _rgb_next
+                0x20002200       0x80 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x20002200                _rgb_next
  .bss._rgb_preset
-                0x20002248        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x20002248                _rgb_preset
+                0x20002280        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x20002280                _rgb_preset
  .bss._rgb_preset_loaded
-                0x2000224c       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x2000224c                _rgb_preset_loaded
+                0x20002284       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x20002284                _rgb_preset_loaded
  .bss._rumble_cap
-                0x2000228c        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
-                0x2000228c                _rumble_cap
+                0x200022c4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
+                0x200022c4                _rumble_cap
  .bss._rumble_current
-                0x20002290        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
-                0x20002290                _rumble_current
+                0x200022c8        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
+                0x200022c8                _rumble_current
  .bss._rumble_floor
-                0x20002294        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
-                0x20002294                _rumble_floor
+                0x200022cc        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
+                0x200022cc                _rumble_floor
  .bss._rumble_min
-                0x20002298        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
-                0x20002298                _rumble_min
+                0x200022d0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
+                0x200022d0                _rumble_min
  .bss._rx_tracker_mem
-                0x2000229c        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
+                0x200022d4        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
  .bss._ry_tracker_mem
-                0x200022a4        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
+                0x200022dc        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
  .bss._snapback_report
-                0x200022ac       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
-                0x200022ac                _snapback_report
+                0x200022e4       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
+                0x200022e4                _snapback_report
  .bss._stick_l_center_x
-                0x200022ec        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/stick_scaling.c.obj
-                0x200022ec                _stick_l_center_x
+                0x20002324        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/stick_scaling.c.obj
+                0x20002324                _stick_l_center_x
  .bss._stick_l_center_y
-                0x200022f0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/stick_scaling.c.obj
-                0x200022f0                _stick_l_center_y
+                0x20002328        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/stick_scaling.c.obj
+                0x20002328                _stick_l_center_y
  .bss._stick_r_center_x
-                0x200022f4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/stick_scaling.c.obj
-                0x200022f4                _stick_r_center_x
+                0x2000232c        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/stick_scaling.c.obj
+                0x2000232c                _stick_r_center_x
  .bss._stick_r_center_y
-                0x200022f8        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/stick_scaling.c.obj
-                0x200022f8                _stick_r_center_y
+                0x20002330        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/stick_scaling.c.obj
+                0x20002330                _stick_r_center_y
  .bss._switch_command_buffer
-                0x200022fc       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
-                0x200022fc                _switch_command_buffer
+                0x20002334       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
+                0x20002334                _switch_command_buffer
  .bss._switch_in_command_buffer
-                0x2000233c       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
-                0x2000233c                _switch_in_command_buffer
+                0x20002374       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
+                0x20002374                _switch_in_command_buffer
  .bss._switch_ltk
-                0x2000237c       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
-                0x2000237c                _switch_ltk
+                0x200023b4       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
+                0x200023b4                _switch_ltk
  .bss._timer_owner_0
-                0x2000238c        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja.c.obj
-                0x2000238c                _timer_owner_0
+                0x200023c4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja.c.obj
+                0x200023c4                _timer_owner_0
  .bss._timer_owner_1
-                0x20002390        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja.c.obj
-                0x20002390                _timer_owner_1
+                0x200023c8        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja.c.obj
+                0x200023c8                _timer_owner_1
  .bss._tmp_remap_arr
-                0x20002394       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
-                0x20002394                _tmp_remap_arr
+                0x200023cc       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
+                0x200023cc                _tmp_remap_arr
  .bss._tmp_remap_struct
-                0x200023a4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
-                0x200023a4                _tmp_remap_struct
+                0x200023dc        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
+                0x200023dc                _tmp_remap_struct
  .bss._tmp_unset_struct
-                0x200023a8        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
-                0x200023a8                _tmp_unset_struct
+                0x200023e0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
+                0x200023e0                _tmp_unset_struct
  .bss._ubsd_mutexdef
-                0x200023ac        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x200023e4        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .bss._unset_struct
-                0x200023b4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
-                0x200023b4                _unset_struct
+                0x200023ec        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
+                0x200023ec                _unset_struct
  .bss._usb_frames
-                0x200023b8        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
-                0x200023b8                _usb_frames
+                0x200023f0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
+                0x200023f0                _usb_frames
  .bss._usb_hid_cb
-                0x200023bc        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
-                0x200023bc                _usb_hid_cb
+                0x200023f4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
+                0x200023f4                _usb_hid_cb
  .bss._usb_rate
-                0x200023c0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
-                0x200023c0                _usb_rate
+                0x200023f8        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
+                0x200023f8                _usb_rate
  .bss._usb_ready_cb
-                0x200023c4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
-                0x200023c4                _usb_ready_cb
+                0x200023fc        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
+                0x200023fc                _usb_ready_cb
  .bss._usbd_ctrl_buf
-                0x200023c8       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x20002400       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
  .bss._usbd_dev
-                0x20002408       0x53 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
- *fill*         0x2000245b        0x1 
+                0x20002440       0x53 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+ *fill*         0x20002493        0x1 
  .bss._usbd_mutex
-                0x2000245c        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
- .bss._usbd_q   0x20002460        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x20002494        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+ .bss._usbd_q   0x20002498        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .bss._usbd_qdef_buf
-                0x20002464       0xc0 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x20002464                _usbd_qdef_buf
+                0x2000249c       0xc0 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x2000249c                _usbd_qdef_buf
  .bss._used_instruction_space
-                0x20002524        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+                0x2000255c        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
  .bss._vendord_itf
-                0x2000252c      0x278 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
+                0x20002564      0x278 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
  .bss._webusb_out_buffer
-                0x200027a4       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/webusb.c.obj
-                0x200027a4                _webusb_out_buffer
+                0x200027dc       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/webusb.c.obj
+                0x200027dc                _webusb_out_buffer
  .bss._xinputd_itf
-                0x200027e4       0x84 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/xinput_device.c.obj
+                0x2000281c       0x84 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/xinput_device.c.obj
  .bss.alarm_callbacks
-                0x20002868       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x200028a0       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.analog_data_deadzone
-                0x20002878       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
-                0x20002878                analog_data_deadzone
+                0x200028b0       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
+                0x200028b0                analog_data_deadzone
  .bss.boot2_copyout
-                0x20002888      0x100 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+                0x200028c0      0x100 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .bss.brake_slice_num
-                0x20002988        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
-                0x20002988                brake_slice_num
+                0x200029c0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
+                0x200029c0                brake_slice_num
  .bss.bt_dc_interval.2
-                0x2000298c        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
- .bss.buffer.1  0x20002994       0x25 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gcinput.c.obj
- *fill*         0x200029b9        0x3 
+                0x200029c4        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
+ .bss.buffer.1  0x200029cc       0x25 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gcinput.c.obj
+ *fill*         0x200029f1        0x3 
  .bss.chars_available_callback
-                0x200029bc        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x200029f4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .bss.chars_available_param
-                0x200029c0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .bss.claimed   0x200029c4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x200029f8        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .bss.claimed   0x200029fc        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
  .bss.configured_freq
-                0x200029c8       0x28 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
- .bss.data.0    0x200029f0        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gcinput.c.obj
- .bss.data.0    0x200029f8       0x14 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/xinput.c.obj
- .bss.data.0    0x20002a0c       0x1c CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
- .bss.data.2    0x20002a28        0xb CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/swpro.c.obj
- *fill*         0x20002a33        0x1 
- .bss.data_in   0x20002a34        0xc CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
-                0x20002a34                data_in
+                0x20002a00       0x28 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+ .bss.data.0    0x20002a28        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gcinput.c.obj
+ .bss.data.0    0x20002a30       0x14 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/xinput.c.obj
+ .bss.data.0    0x20002a44       0x1c CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
+ .bss.data.2    0x20002a60        0xb CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/swpro.c.obj
+ *fill*         0x20002a6b        0x1 
+ .bss.data_in   0x20002a6c        0xc CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
+                0x20002a6c                data_in
  .bss.data_in.6
-                0x20002a40        0xc CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
- .bss.data_out  0x20002a4c       0x20 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
-                0x20002a4c                data_out
+                0x20002a78        0xc CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
+ .bss.data_out  0x20002a84       0x20 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
+                0x20002a84                data_out
  .bss.default_alarm_pool_entry_ids_high
-                0x20002a6c       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_time/time.c.obj
+                0x20002aa4       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_time/time.c.obj
  .bss.default_alarm_pool_heap_nodes
-                0x20002a7c       0x30 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_time/time.c.obj
- .bss.drivers   0x20002aac        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x20002ab4       0x30 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_time/time.c.obj
+ .bss.drivers   0x20002ae4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .bss.e15_last_sof
-                0x20002ab0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x20002ab0                e15_last_sof
- .bss.filter    0x20002ab4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x20002ae8        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x20002ae8                e15_last_sof
+ .bss.filter    0x20002aec        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .bss.frame_storage.3
-                0x20002ab8        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
+                0x20002af0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
  .bss.hw_endpoints
-                0x20002abc      0x400 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x20002af4      0x400 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .bss.interval.0
-                0x20002ebc        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
+                0x20002ef4        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
  .bss.interval.0
-                0x20002ec4        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x20002efc        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
  .bss.interval.0
-                0x20002ecc        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
+                0x20002f04        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
  .bss.interval.0
-                0x20002ed4        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
+                0x20002f0c        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
  .bss.interval.0
-                0x20002edc        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
+                0x20002f14        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
  .bss.interval.0
-                0x20002ee4        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/webusb.c.obj
+                0x20002f1c        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/webusb.c.obj
  .bss.interval.1
-                0x20002eec        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
+                0x20002f24        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
  .bss.interval.1
-                0x20002ef4        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
+                0x20002f2c        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
  .bss.interval.2
-                0x20002efc        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/battery.c.obj
+                0x20002f34        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/battery.c.obj
  .bss.interval.3
-                0x20002f04        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/macros.c.obj
+                0x20002f3c        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/macros.c.obj
  .bss.interval.4
-                0x20002f0c        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
+                0x20002f44        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
  .bss.interval_2.0
-                0x20002f14        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/macros.c.obj
+                0x20002f4c        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/macros.c.obj
  .bss.interval_3.1
-                0x20002f1c        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/macros.c.obj
- .bss.l.7       0x20002f24       0x1c CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
+                0x20002f54        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/macros.c.obj
+ .bss.l.7       0x20002f5c       0x1c CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
  .bss.load_value
-                0x20002f40        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x20002f78        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .bss.lockout_mutex
-                0x20002f44        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+                0x20002f7c        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
  .bss.lockout_victim_initialized
-                0x20002f4c        0x2 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
- *fill*         0x20002f4e        0x2 
+                0x20002f84        0x2 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+ *fill*         0x20002f86        0x2 
  .bss.main_slice_num
-                0x20002f50        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
-                0x20002f50                main_slice_num
+                0x20002f88        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
+                0x20002f88                main_slice_num
  .bss.mode_2_data.0
-                0x20002f54       0x24 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
+                0x20002f8c       0x24 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
  .bss.next_buffer_ptr
-                0x20002f78        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x20002fb0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .bss.output_buffer.0
-                0x20002f7c       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/ds4input.c.obj
- .bss.pools     0x20002fbc       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_time/time.c.obj
+                0x20002fb4       0x40 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/ds4input.c.obj
+ .bss.pools     0x20002ff4       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_time/time.c.obj
  .bss.prev_timestamp.1
-                0x20002fcc        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
- .bss.r.6       0x20002fd0       0x1c CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
- .bss.re.0      0x20002fec        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/swpro.c.obj
+                0x20003004        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
+ .bss.r.6       0x20003008       0x1c CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
+ .bss.re.0      0x20003024        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/swpro.c.obj
  .bss.retrieved_id
-                0x20002ff0        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x20003028        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
  .bss.rgb_indicate_store.3
-                0x20002ff8       0x70 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x20003030       0x80 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
  .bss.rumble_data.1
-                0x20003068       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja.c.obj
- .bss.s.4       0x20003078        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
+                0x200030b0       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja.c.obj
+ .bss.s.4       0x200030c0        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
  .bss.scaled_analog_data
-                0x20003080       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
-                0x20003080                scaled_analog_data
- .bss.sd_table  0x20003090      0x100 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x20003090                sd_table
+                0x200030c8       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
+                0x200030c8                scaled_analog_data
+ .bss.sd_table  0x200030d8      0x100 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x200030d8                sd_table
  .bss.selection.2
-                0x20003190        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
+                0x200031d8        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
  .bss.sf_clz_func
-                0x20003194        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x20003194                sf_clz_func
- .bss.sf_table  0x20003198      0x100 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x20003198                sf_table
+                0x200031dc        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x200031dc                sf_clz_func
+ .bss.sf_table  0x200031e0      0x100 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x200031e0                sf_table
  .bss.sleep_notifier
-                0x20003298        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_time/time.c.obj
- .bss.status.4  0x2000329c       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
+                0x200032e0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_time/time.c.obj
+ .bss.status.4  0x200032e4       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
  .bss.switch_analog_calibration_data
-                0x200032ac       0x12 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_analog.c.obj
-                0x200032ac                switch_analog_calibration_data
- *fill*         0x200032be        0x2 
+                0x200032f4       0x12 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_analog.c.obj
+                0x200032f4                switch_analog_calibration_data
+ *fill*         0x20003306        0x2 
  .bss.target_hi
-                0x200032c0       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x20003308       0x10 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.uart_char_to_line_feed
-                0x200032d0        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-                0x200032d0                uart_char_to_line_feed
+                0x20003318        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x20003318                uart_char_to_line_feed
  .bss.uart_instance
-                0x200032d4        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x2000331c        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .bss.usb_interval.1
-                0x200032d8        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
+                0x20003320        0x8 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
  .bss._rgb_active_anim_steps
-                0x200032e0        0x2 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x200032e0                _rgb_active_anim_steps
+                0x20003328        0x2 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x20003328                _rgb_active_anim_steps
  .bss._rgb_anim_override_steps
-                0x200032e2        0x2 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x200032e2                _rgb_anim_override_steps
+                0x2000332a        0x2 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x2000332a                _rgb_anim_override_steps
  .bss._rgb_anim_steps
-                0x200032e4        0x2 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x200032e4                _rgb_anim_steps
+                0x2000332c        0x2 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x2000332c                _rgb_anim_steps
  .bss._stick_distances_tracker
-                0x200032e6        0x2 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/stick_scaling.c.obj
-                0x200032e6                _stick_distances_tracker
+                0x2000332e        0x2 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/stick_scaling.c.obj
+                0x2000332e                _stick_distances_tracker
  .bss._switch_timer.2
-                0x200032e8        0x2 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
+                0x20003330        0x2 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
  .bss._analog_all_angles_got
-                0x200032ea        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
-                0x200032ea                _analog_all_angles_got
+                0x20003332        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
+                0x20003332                _analog_all_angles_got
  .bss._analog_calibrate
-                0x200032eb        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
-                0x200032eb                _analog_calibrate
+                0x20003333        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
+                0x20003333                _analog_calibrate
  .bss._analog_centered
-                0x200032ec        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
-                0x200032ec                _analog_centered
+                0x20003334        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/analog.c.obj
+                0x20003334                _analog_centered
  .bss._app_driver_count
-                0x200032ed        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x20003335        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .bss._baseband_loop
-                0x200032ee        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja.c.obj
-                0x200032ee                _baseband_loop
+                0x20003336        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja.c.obj
+                0x20003336                _baseband_loop
  .bss._button_remap_code
-                0x200032ef        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
-                0x200032ef                _button_remap_code
+                0x20003337        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
+                0x20003337                _button_remap_code
  .bss._button_remap_listen
-                0x200032f0        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
-                0x200032f0                _button_remap_listen
+                0x20003338        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
+                0x20003338                _button_remap_listen
  .bss._byteCount
-                0x200032f1        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
+                0x20003339        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
  .bss._capturing.3
-                0x200032f2        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
+                0x2000333a        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
  .bss._connected.1
-                0x200032f3        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/battery.c.obj
+                0x2000333b        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/battery.c.obj
  .bss._crc_reply
-                0x200032f4        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
-                0x200032f4                _crc_reply
+                0x2000333c        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
+                0x2000333c                _crc_reply
  .bss._cycle_idx
-                0x200032f5        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x200032f5                _cycle_idx
+                0x2000333d        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x2000333d                _cycle_idx
  .bss._gc_first
-                0x200032f6        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gcinput.c.obj
-                0x200032f6                _gc_first
+                0x2000333e        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gcinput.c.obj
+                0x2000333e                _gc_first
  .bss._gc_got_data
-                0x200032f7        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
-                0x200032f7                _gc_got_data
+                0x2000333f        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
+                0x2000333f                _gc_got_data
  .bss._gc_rumble
-                0x200032f8        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
-                0x200032f8                _gc_rumble
+                0x20003340        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
+                0x20003340                _gc_rumble
  .bss._gc_running
-                0x200032f9        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
-                0x200032f9                _gc_running
+                0x20003341        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
+                0x20003341                _gc_running
  .bss._got_selection.0
-                0x200032fa        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
+                0x20003342        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
  .bss._hoja_input_mode
-                0x200032fb        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja_comms.c.obj
- .bss._idx.5    0x200032fc        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
+                0x20003343        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja_comms.c.obj
+ .bss._idx.5    0x20003344        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
  .bss._imu_calibrate
-                0x200032fd        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
-                0x200032fd                _imu_calibrate
+                0x20003345        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
+                0x20003345                _imu_calibrate
  .bss._imu_calibrate_init
-                0x200032fe        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
-                0x200032fe                _imu_calibrate_init
+                0x20003346        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
+                0x20003346                _imu_calibrate_init
  .bss._imu_enabled
-                0x200032ff        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
-                0x200032ff                _imu_enabled
+                0x20003347        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/imu.c.obj
+                0x20003347                _imu_enabled
  .bss._l_analog_remapped
-                0x20003300        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
-                0x20003300                _l_analog_remapped
+                0x20003348        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
+                0x20003348                _l_analog_remapped
  .bss._n64_got_data
-                0x20003301        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
-                0x20003301                _n64_got_data
+                0x20003349        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
+                0x20003349                _n64_got_data
  .bss._n64_running
-                0x20003302        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
-                0x20003302                _n64_running
+                0x2000334a        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
+                0x2000334a                _n64_running
  .bss._nspi_running
-                0x20003303        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/nspi.c.obj
+                0x2000334b        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/nspi.c.obj
  .bss._r_analog_remapped
-                0x20003304        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
-                0x20003304                _r_analog_remapped
+                0x2000334c        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
+                0x2000334c                _r_analog_remapped
  .bss._remap_mode
-                0x20003305        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
-                0x20003305                _remap_mode
+                0x2000334d        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
+                0x2000334d                _remap_mode
  .bss._rgb_anim_override_setup
-                0x20003306        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x20003306                _rgb_anim_override_setup
+                0x2000334e        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x2000334e                _rgb_anim_override_setup
  .bss._rgb_mode
-                0x20003307        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x20003307                _rgb_mode
+                0x2000334f        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x2000334f                _rgb_mode
  .bss._rgb_mode_setup
-                0x20003308        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x20003308                _rgb_mode_setup
+                0x20003350        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x20003350                _rgb_mode_setup
  .bss._rgb_out_dirty
-                0x20003309        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x20003309                _rgb_out_dirty
+                0x20003351        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x20003351                _rgb_out_dirty
  .bss._rgb_pio_done.1
-                0x2000330a        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x20003352        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
  .bss._rgb_shutdown_restart
-                0x2000330b        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x2000330b                _rgb_shutdown_restart
+                0x20003353        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x20003353                _rgb_shutdown_restart
  .bss._rgb_task_constant
-                0x2000330c        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
-                0x2000330c                _rgb_task_constant
+                0x20003354        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x20003354                _rgb_task_constant
  .bss._rumble_max
-                0x2000330d        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
+                0x20003355        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
  .bss._rumblestate.0
-                0x2000330e        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
+                0x20003356        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
  .bss._safe_mode
-                0x2000330f        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/macros.c.obj
-                0x2000330f                _safe_mode
+                0x20003357        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/macros.c.obj
+                0x20003357                _safe_mode
  .bss._safe_mode_state
-                0x20003310        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/macros.c.obj
-                0x20003310                _safe_mode_state
+                0x20003358        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/macros.c.obj
+                0x20003358                _safe_mode_state
  .bss._save_flag
-                0x20003311        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja_settings.c.obj
-                0x20003311                _save_flag
+                0x20003359        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja_settings.c.obj
+                0x20003359                _save_flag
  .bss._selection_idx.1
-                0x20003312        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
+                0x2000335a        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/snapback.c.obj
  .bss._shutdown_started.0
-                0x20003313        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja.c.obj
+                0x2000335b        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja.c.obj
  .bss._sof_enable
-                0x20003314        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x2000335c        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .bss._switch_command_report_id
-                0x20003315        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
-                0x20003315                _switch_command_report_id
+                0x2000335d        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
+                0x2000335d                _switch_command_report_id
  .bss._switch_imu_mode
-                0x20003316        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
-                0x20003316                _switch_imu_mode
+                0x2000335e        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
+                0x2000335e                _switch_imu_mode
  .bss._switch_in_command_got
-                0x20003317        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
-                0x20003317                _switch_in_command_got
+                0x2000335f        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
+                0x2000335f                _switch_in_command_got
  .bss._switch_in_report_id
-                0x20003318        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
-                0x20003318                _switch_in_report_id
+                0x20003360        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/switch/switch_commands.c.obj
+                0x20003360                _switch_in_report_id
  .bss._tmp_remap_mode
-                0x20003319        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
-                0x20003319                _tmp_remap_mode
+                0x20003361        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/input/remap.c.obj
+                0x20003361                _tmp_remap_mode
  .bss._usb_clear
-                0x2000331a        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
-                0x2000331a                _usb_clear
+                0x20003362        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
+                0x20003362                _usb_clear
  .bss._usb_ready
-                0x2000331b        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
-                0x2000331b                _usb_ready
+                0x20003363        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
+                0x20003363                _usb_ready
  .bss._watchdog_enabled
-                0x2000331c        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja.c.obj
-                0x2000331c                _watchdog_enabled
+                0x20003364        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja.c.obj
+                0x20003364                _watchdog_enabled
  .bss._webusb_indicate
-                0x2000331d        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja_settings.c.obj
-                0x2000331d                _webusb_indicate
+                0x20003365        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja_settings.c.obj
+                0x20003365                _webusb_indicate
  .bss._webusb_output_enabled
-                0x2000331e        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/webusb.c.obj
-                0x2000331e                _webusb_output_enabled
+                0x20003366        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/webusb.c.obj
+                0x20003366                _webusb_output_enabled
  .bss._workingCmd
-                0x2000331f        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
+                0x20003367        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/gamecube.c.obj
  .bss._workingCmd
-                0x20003320        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
+                0x20003368        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/n64.c.obj
  .bss.boot2_copyout_valid
-                0x20003321        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+                0x20003369        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .bss.bus_counter_idx
-                0x20003322        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
+                0x2000336a        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
  .bss.check_byte.4
-                0x20003323        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
- .bss.claimed   0x20003324        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .bss.dir.5     0x20003325        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x2000336b        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
+ .bss.claimed   0x2000336c        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .bss.dir.5     0x2000336d        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
  .bss.enstate.0
-                0x20003326        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/main.c.obj
- .bss.first.1   0x20003327        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/swpro.c.obj
+                0x2000336e        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/main.c.obj
+ .bss.first.1   0x2000336f        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/swpro.c.obj
  .bss.frame_requirement_met.2
-                0x20003328        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
+                0x20003370        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
  .bss.global_loaded_settings_bank
-                0x20003329        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja_settings.c.obj
-                0x20003329                global_loaded_settings_bank
+                0x20003371        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/hoja_settings.c.obj
+                0x20003371                global_loaded_settings_bank
  .bss.irq_hander_chain_free_slot_head
-                0x2000332a        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x20003372        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .bss.lockout_in_progress
-                0x2000332b        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
- .bss.reps.2    0x2000332c        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
+                0x20003373        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+ .bss.reps.2    0x20003374        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/utilities/rgb.c.obj
  .bss.rng_initialised
-                0x2000332d        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
+                0x20003375        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
  .bss.timer_callbacks_pending
-                0x2000332e        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x20003376        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.usb_requirement_met.0
-                0x2000332f        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
+                0x20003377        0x1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/usb/hoja_usb.c.obj
  *(COMMON)
-                0x20003330                . = ALIGN (0x4)
-                0x20003330                __bss_end__ = .
+                0x20003378                . = ALIGN (0x4)
+                0x20003378                __bss_end__ = .
 
-.heap           0x20003330      0x800
-                0x20003330                __end__ = .
-                0x20003330                end = __end__
+.heap           0x20003378      0x800
+                0x20003378                __end__ = .
+                0x20003378                end = __end__
  *(.heap*)
- .heap          0x20003330      0x800 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
-                0x20003b30                __HeapLimit = .
+ .heap          0x20003378      0x800 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+                0x20003b78                __HeapLimit = .
 
 .stack1_dummy   0x20040000      0x800
  *(.stack1*)
@@ -5424,7 +5424,7 @@ LOAD CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK
 LOAD CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 LOAD CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 LOAD CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
-LOAD C:\Users\Mitch\AppData\Local\Temp\cccaCFb6.o
+LOAD C:\Users\Mitch\AppData\Local\Temp\ccWZUTY3.o
 LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a
 LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a
 START GROUP
@@ -5627,7 +5627,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000f06       0x2c CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
  .ARM.attributes
-                0x00000f32       0x22 C:\Users\Mitch\AppData\Local\Temp\cccaCFb6.o
+                0x00000f32       0x22 C:\Users\Mitch\AppData\Local\Temp\ccWZUTY3.o
  .ARM.attributes
                 0x00000f54       0x2c c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a(lib_a-s_fmin.o)
  .ARM.attributes

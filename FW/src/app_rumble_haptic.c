@@ -33,7 +33,7 @@ float song[28] = {
 
 #define DRV2605_SLAVE_ADDR 0x5A
 
-#if ( (HOJA_DEVICE_ID == 0xA002) || (HOJA_DEVICE_ID == 0xA003) )
+#if (HOJA_DEVICE_ID == 0xA003)
     // LRA SDA Select (left/right)
     #define GPIO_LRA_SDA_SEL    25
     // LRA Audio Output
@@ -198,15 +198,15 @@ void play_pwm_frequency(float frequency, float amplitude)
         playing_amp = -1;
         playing_freq = -1;
 
-        uint8_t _set_mode[] = {MODE_REGISTER, STANDBY_MODE_BYTE};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode, 2, false);
+        uint8_t _set_mode1[] = {MODE_REGISTER, STANDBY_MODE_BYTE};
+        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode1, 2, false);
         disabled = true;
         return;
     }
     else if(disabled)
     {
-        uint8_t _set_mode[] = {MODE_REGISTER, MODE_BYTE};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode, 2, false);
+        uint8_t _set_mode2[] = {MODE_REGISTER, MODE_BYTE};
+        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode2, 2, false);
         disabled = false;
     }
 
@@ -220,23 +220,16 @@ void play_pwm_frequency(float frequency, float amplitude)
     // Calculate wrap value
     float target_wrap = (float) PWM_CLOCK_BASE / frequency;
 
-    if(frequency != playing_freq)
-    {
-        pwm_set_wrap(slice_num, (uint16_t) target_wrap);
-        playing_freq = frequency;
-    }
+    pwm_set_wrap(slice_num, (uint16_t) target_wrap);
+    playing_freq = frequency;
 	
-
     float min_amp = (amplitude < 0.2f) ? 0.2f : amplitude;
+    min_amp = (min_amp>0.9f) ? 0.9f : min_amp;
  
     float amp_val_base = target_wrap * amplitude ;
 
-    if(amp_val_base != playing_amp)
-    {
-        pwm_set_chan_level(slice_num, PWM_CHAN_A, (uint16_t) amp_val_base); 
-        playing_amp = amp_val_base;
-    }
-	
+    pwm_set_chan_level(slice_num, PWM_CHAN_A, (uint16_t) amp_val_base); 
+    playing_amp = amp_val_base;
 	
 	pwm_set_enabled(slice_num, true); // let's go!
 }
@@ -265,7 +258,7 @@ void test_sequence()
     played = true;
     for(int i = 0; i < 27; i+=1)
     {
-        play_pwm_frequency(song[i], 1);
+        play_pwm_frequency(song[i], 0.9);
         watchdog_update();
         sleep_ms(150);
     }
@@ -350,7 +343,6 @@ void cb_hoja_rumble_init()
     i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode3, 2, false);
 
     play_pwm_frequency(300, 0.0);
-
 }
 
 bool app_rumble_hwtest()

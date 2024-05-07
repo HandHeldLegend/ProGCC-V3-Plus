@@ -16,7 +16,6 @@
 #define PGPIO_PUSH_C    11  // ok
 #define PGPIO_PUSH_D    12  // ok
 
-
 #if (HOJA_DEVICE_ID == 0xA002)
   #define PGPIO_RUMBLE_MAIN   24
   #define PGPIO_RUMBLE_BRAKE  25
@@ -35,7 +34,7 @@
 #define PGPIO_RS_CS   22    // ok
 
 #define PGPIO_IMU0_CS 17    // ok
-#if ( (HOJA_DEVICE_ID == 0xA002) || (HOJA_DEVICE_ID== 0xA003) )
+#if ( (HOJA_DEVICE_ID == 0xA002) | (HOJA_DEVICE_ID == 0xA003) )
   #define PGPIO_IMU1_CS 21    // ok
 #elif (HOJA_DEVICE_ID == 0xA004)
   #define PGPIO_IMU1_CS 25    // ok
