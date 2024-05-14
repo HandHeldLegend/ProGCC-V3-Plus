@@ -34,17 +34,23 @@ float song[28] = {
 #define DRV2605_SLAVE_ADDR 0x5A
 
 #if (HOJA_DEVICE_ID == 0xA003)
+    #define LRA_LOW_PWM_CHAN    PWM_CHAN_A
+    #define LRA_HI_PWM_CHAN     PWM_CHAN_A
     // LRA SDA Select (left/right)
     #define GPIO_LRA_SDA_SEL    25
     // LRA Audio Output
-    #define GPIO_LRA_IN         24
+    #define GPIO_LRA_IN_LO         24
+    #define GPIO_LRA_IN_HI      24
 #elif (HOJA_DEVICE_ID == 0xA004)
     // LRA Audio Output
-    #define GPIO_LRA_IN         21 // Low
+    #define LRA_LOW_PWM_CHAN    PWM_CHAN_B
+    #define LRA_HI_PWM_CHAN     PWM_CHAN_A
+    #define GPIO_LRA_IN_LO      21 // Low
     #define GPIO_LRA_IN_HI      24
 #endif
 
-uint slice_num;
+uint slice_num_hi;
+uint slice_num_lo;
 
 float _current_amplitude = 0;
 float _current_frequency = 0;
@@ -97,7 +103,7 @@ float _current_frequency = 0;
     Equation 7
     V(Lra-OL_RMS) = 21.32 * (10^-3) * OD_CLAMP * sqrt(1-resonantfreq * 800 * (10^-6))
 */
-#define ODCLAMP_BYTE (uint8_t) 42 // Using the equation from the DRV2604L datasheet for Open Loop mode
+#define ODCLAMP_BYTE (uint8_t) 25 // Using the equation from the DRV2604L datasheet for Open Loop mode
 // First value for 3.3v at 320hz is 179
 // Alt value for 3v is uint8_t 163 (320hz)
 // Alt value for 3v at 160hz is uint8_t 150
@@ -186,17 +192,16 @@ float _current_frequency = 0;
     PWM signal and commutates the output drive signal at the PWM frequency divided by 128. To accomplish LRA
     drive, the host should drive the PWM frequency at 128 times the desired operating frequency.
 */
-void play_pwm_frequency(float frequency, float amplitude) 
+void play_pwm_frequency(rumble_data_s *data) 
 {
     static bool disabled = false;
-    static float playing_freq = 0;
-    static float playing_amp = 0;
+    rumble_data_s playing_data = {0};
 
-    if(!amplitude) 
+    if((!data->amplitude_high) && (!data->amplitude_low)) 
     {
         //disabled = true;
-        playing_amp = -1;
-        playing_freq = -1;
+        playing_data.amplitude_high = -1;
+        playing_data.amplitude_low = -1;
 
         uint8_t _set_mode1[] = {MODE_REGISTER, STANDBY_MODE_BYTE};
         i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode1, 2, false);
@@ -210,60 +215,75 @@ void play_pwm_frequency(float frequency, float amplitude)
         disabled = false;
     }
 
-    frequency = (frequency>1300) ? 1300 : frequency;
-    frequency = (frequency<40) ? 40 : frequency;
+    data->frequency_high     = (data->frequency_high > 1300) ? 1300 : data->frequency_high ;
+    data->frequency_high     = (data->frequency_high < 40) ? 40 : data->frequency_high;
+
+    data->frequency_low  = (data->frequency_low > 1300) ? 1300 : data->frequency_low ;
+    data->frequency_low  = (data->frequency_low < 40) ? 40 : data->frequency_low;
 
 
     //pwm_set_enabled(slice_num, false);
     //frequency *= 128; // Neets to multiply by 128 to get appropriate output signal
 
     // Calculate wrap value
-    float target_wrap = (float) PWM_CLOCK_BASE / frequency;
+    float target_wrap_hi = (float) PWM_CLOCK_BASE / data->frequency_high;
+    float target_wrap_lo = (float) PWM_CLOCK_BASE / data->frequency_low;
 
-    pwm_set_wrap(slice_num, (uint16_t) target_wrap);
-    playing_freq = frequency;
+    pwm_set_wrap(slice_num_hi, (uint16_t) target_wrap_hi);
+    playing_data.frequency_high = data->frequency_high;
+    pwm_set_wrap(slice_num_lo, (uint16_t) target_wrap_lo);
+    playing_data.frequency_low = data->frequency_low;
 	
-    float min_amp = (amplitude < 0.2f) ? 0.2f : amplitude;
-    min_amp = (min_amp>0.9f) ? 0.9f : min_amp;
+    float min_amp_hi = 0;
+    if(data->amplitude_high>0)
+    {
+        min_amp_hi = (data->amplitude_high < 0.2f) ? 0.2f : data->amplitude_high;
+        min_amp_hi = (min_amp_hi>0.9f) ? 0.9f : min_amp_hi;
+    }
+
+    float min_amp_lo = 0;
+    if(data->amplitude_low>0)
+    {
+        min_amp_lo = (data->amplitude_low < 0.2f) ? 0.2f : data->amplitude_low;
+        min_amp_lo = (min_amp_lo>0.9f) ? 0.9f : min_amp_lo;
+    }
  
-    float amp_val_base = target_wrap * amplitude ;
+    float amp_val_base_hi = target_wrap_hi * min_amp_hi;
+    float amp_val_base_lo = target_wrap_lo * min_amp_lo;
 
-    pwm_set_chan_level(slice_num, PWM_CHAN_A, (uint16_t) amp_val_base); 
-    playing_amp = amp_val_base;
+    pwm_set_chan_level(slice_num_hi, LRA_HI_PWM_CHAN, (uint16_t) amp_val_base_hi); 
+    playing_data.amplitude_high = amp_val_base_hi;
+    pwm_set_chan_level(slice_num_lo, amp_val_base_lo, (uint16_t) amp_val_base_lo); 
+    playing_data.amplitude_low = amp_val_base_hi;
 	
-	pwm_set_enabled(slice_num, true); // let's go!
+	pwm_set_enabled(slice_num_hi, true); // let's go!
+    pwm_set_enabled(slice_num_lo, true); // let's go!
 }
 
 void cb_hoja_rumble_set(rumble_data_s *data)
 {
-    if(data->amplitude_low > data->amplitude_high)
-    {
-        _current_amplitude = data->amplitude_low;
-        _current_frequency = data->frequency_low;
-    }
-    else
-    {
-        _current_amplitude = data->amplitude_high;
-        _current_frequency = data->frequency_high;
-    }
-
-    play_pwm_frequency(_current_frequency, _current_amplitude);
+    play_pwm_frequency(data);
 }
 
 
 bool played = false;
 void test_sequence()
 {
+    static rumble_data_s s = {0};
     if(played) return;
     played = true;
     for(int i = 0; i < 27; i+=1)
     {
-        play_pwm_frequency(song[i], 0.9);
+        s.amplitude_low = 0.9f;
+        s.frequency_low = song[i];
+        play_pwm_frequency(&s);
         watchdog_update();
         sleep_ms(150);
     }
     sleep_ms(150);
-    play_pwm_frequency(100, 0);
+    s.amplitude_low = 0;
+    s.amplitude_high = 0;;
+    play_pwm_frequency(&s);
     played = false;
 }
 
@@ -283,18 +303,25 @@ void cb_hoja_rumble_init()
     #endif
     
     // Set PWM function
-    gpio_init(GPIO_LRA_IN);
-    gpio_set_function(GPIO_LRA_IN, GPIO_FUNC_PWM);
+    gpio_init(GPIO_LRA_IN_LO);
+    gpio_set_function(GPIO_LRA_IN_LO, GPIO_FUNC_PWM);
+    
+    #if (HOJA_DEVICE_ID == 0xA004 )
+        gpio_init(GPIO_LRA_IN_HI);
+        gpio_set_dir(GPIO_LRA_IN_HI, false);
+    #endif
 
     // Find out which PWM slice is connected to our GPIO pin
-    slice_num = pwm_gpio_to_slice_num(GPIO_LRA_IN);
+    slice_num_lo = pwm_gpio_to_slice_num(GPIO_LRA_IN_LO);
+    slice_num_hi = pwm_gpio_to_slice_num(GPIO_LRA_IN_HI);
 
     // We want a 2Mhz clock driving the PWM
     // this means 1000 ticks = 2khz, 2000 ticks = 1khz
     float divider = 125000000.0f / PWM_CLOCK_BASE;
 
     // Set the PWM clock divider to run at 125MHz
-    pwm_set_clkdiv(slice_num, divider);
+    pwm_set_clkdiv(slice_num_lo, divider);
+    pwm_set_clkdiv(slice_num_hi, divider);
 
     // Take MODE out of standby
     uint8_t _set_mode1[] = {MODE_REGISTER, 0x00};
@@ -342,7 +369,6 @@ void cb_hoja_rumble_init()
     uint8_t _set_mode3[] = {MODE_REGISTER, MODE_BYTE};
     i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode3, 2, false);
 
-    play_pwm_frequency(300, 0.0);
 }
 
 bool app_rumble_hwtest()
@@ -356,16 +382,4 @@ bool app_rumble_hwtest()
 void app_rumble_task(uint32_t timestamp)
 {
     return;
-    static interval_s interval = {0};
-    if(interval_run(timestamp, 8000, &interval))
-    {
-        
-        if(_current_amplitude>0)
-        {
-            //_current_amplitude -= 0.015f;
-            //_current_amplitude = (_current_amplitude<0) ? 0 : _current_amplitude;
-            play_pwm_frequency(_current_frequency, _current_amplitude);
-            
-        }
-    }
 }

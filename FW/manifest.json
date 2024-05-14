@@ -1,4 +1,4 @@
 {
-    "changelog": "5.1.2024\n-Gyro Mode 0x02 Update\n-Fix rumble case not stopping",
-    "fw_version": 2576
+    "changelog": "5.14.2024\n-Add debug option for flashing BT baseband.",
+    "fw_version": 2577
 }

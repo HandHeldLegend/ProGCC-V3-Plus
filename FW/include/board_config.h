@@ -1,7 +1,7 @@
 #ifndef BOARD_CONFIG_H
 #define BOARD_CONFIG_H
 
-#define HOJA_BT_LOGGING_DEBUG 1
+#define HOJA_BT_LOGGING_DEBUG 0
 
 // Device stuff
 //#define HOJA_DEVICE_ID  0xA004 // A002 is 3+, A003 is 3+ (Haptic), A004 is 3.1
@@ -12,7 +12,7 @@
 #define HOJA_CLOCK_PIN 4
 #define HOJA_LATCH_PIN 5
 
-#define HOJA_FW_VERSION 0x0A10
+#define HOJA_FW_VERSION 0x0A11
 
 // Haptic
 #if (HOJA_DEVICE_ID == 0xA003)
@@ -80,7 +80,7 @@
         
     #elif (HOJA_DEVICE_ID == 0xA004)
         #define HOJA_RGB_GROUP_RS       {0, 1, 2, 3}
-        #define HOJA_RGB_GROUP_PLAYER   {4, 5, 6, 7}
+        #define HOJA_RGB_GROUP_PLAYER   {7, 6, 5, 4}
         #define HOJA_RGB_GROUP_LS       {8, 9, 10, 11}
         #define HOJA_RGB_GROUP_DPAD     {12, 13, 14, 15}
         #define HOJA_RGB_GROUP_MINUS    {16}

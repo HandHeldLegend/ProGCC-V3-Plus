@@ -61,8 +61,8 @@ void cb_hoja_baseband_update_loop(button_data_s *buttons)
         _gpio_put_od(PGPIO_ESP_EN, true);
         enstate = false;
     }
-
-    sleep_ms(150);
+    sleep_ms(10);
+    
 }
 
 void cb_hoja_set_uart_enabled(bool enable)
@@ -285,11 +285,7 @@ int main()
     else if (tmp.trigger_r && !gpio_get(PGPIO_BUTTON_MODE))
     {
         _config.input_method = INPUT_METHOD_BLUETOOTH;
-        // Release ESP to be controlled externally
-        cb_hoja_set_bluetooth_enabled(true);
-        cb_hoja_set_uart_enabled(true);
-
-        hoja_set_baseband_update(true);
+        _config.input_mode = INPUT_MODE_BASEBANDUPDATE;
     }
     
     hoja_init(&_config);
