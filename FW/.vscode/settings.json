@@ -10,7 +10,8 @@
         "hoja.h": "c",
         "hoja_types.h": "c",
         "rgb.h": "c",
-        "hoja_usb.h": "c"
+        "hoja_usb.h": "c",
+        "btinput.h": "c"
     },
     "idf.flashType": "UART",
     "idf.portWin": "COM22"

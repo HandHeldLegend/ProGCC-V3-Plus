@@ -72,7 +72,7 @@ bool _hwtest_bluetooth()
     sleep_ms(600);
 
     uint16_t v = btinput_get_version();
-
+    if(v==0xFFFF) return false;
     if(v>0) return true;
 
     return false;

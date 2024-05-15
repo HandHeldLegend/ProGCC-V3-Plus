@@ -6,13 +6,12 @@
 // Device stuff
 //#define HOJA_DEVICE_ID  0xA004 // A002 is 3+, A003 is 3+ (Haptic), A004 is 3.1
 
-
 // GPIO definitions
 #define HOJA_SERIAL_PIN 3
 #define HOJA_CLOCK_PIN 4
 #define HOJA_LATCH_PIN 5
 
-#define HOJA_FW_VERSION 0x0A11
+#define HOJA_FW_VERSION 0x0A12
 
 // Haptic
 #if (HOJA_DEVICE_ID == 0xA003)
