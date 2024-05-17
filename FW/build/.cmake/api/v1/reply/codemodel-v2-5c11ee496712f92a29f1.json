@@ -1175,21 +1175,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "PROGCC3.1_RP2040::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PROGCC3.1_RP2040-Debug-accf5976c76c4417c522.json",
+					"jsonFile" : "target-PROGCC3.1_RP2040-Debug-5ff42887fc988d30968e.json",
 					"name" : "PROGCC3.1_RP2040",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "PROGCCPLUS_ERM_RP2040::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PROGCCPLUS_ERM_RP2040-Debug-eb8ff3ec31b6bb3d4716.json",
+					"jsonFile" : "target-PROGCCPLUS_ERM_RP2040-Debug-55a9790bfddbcb574444.json",
 					"name" : "PROGCCPLUS_ERM_RP2040",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "PROGCCPLUS_HAPTIC_RP2040::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PROGCCPLUS_HAPTIC_RP2040-Debug-58a858609b10067a3bad.json",
+					"jsonFile" : "target-PROGCCPLUS_HAPTIC_RP2040-Debug-949d34973b122634d8aa.json",
 					"name" : "PROGCCPLUS_HAPTIC_RP2040",
 					"projectIndex" : 0
 				},
@@ -1224,21 +1224,21 @@
 				{
 					"directoryIndex" : 81,
 					"id" : "hoja_lib_joybus_pio_h::@16e020e79a31ade7a0ad",
-					"jsonFile" : "target-hoja_lib_joybus_pio_h-Debug-c24aa6aeb1f94b922088.json",
+					"jsonFile" : "target-hoja_lib_joybus_pio_h-Debug-aa641b9565ad66fd05ae.json",
 					"name" : "hoja_lib_joybus_pio_h",
 					"projectIndex" : 2
 				},
 				{
 					"directoryIndex" : 81,
 					"id" : "hoja_lib_nserial_pio_h::@16e020e79a31ade7a0ad",
-					"jsonFile" : "target-hoja_lib_nserial_pio_h-Debug-ce0da41e737166095fe0.json",
+					"jsonFile" : "target-hoja_lib_nserial_pio_h-Debug-388773da6c32f69a18ca.json",
 					"name" : "hoja_lib_nserial_pio_h",
 					"projectIndex" : 2
 				},
 				{
 					"directoryIndex" : 81,
 					"id" : "hoja_lib_ws2812_pio_h::@16e020e79a31ade7a0ad",
-					"jsonFile" : "target-hoja_lib_ws2812_pio_h-Debug-0795c0aaf5dff7d30e6a.json",
+					"jsonFile" : "target-hoja_lib_ws2812_pio_h-Debug-b10f686e3dab50ce09a1.json",
 					"name" : "hoja_lib_ws2812_pio_h",
 					"projectIndex" : 2
 				},

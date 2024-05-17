@@ -1,4 +1,4 @@
 {
-    "changelog": "5.14.2024\n-Add debug option for flashing BT baseband.",
+    "changelog": "5.16.2024\n-Fixes for N64 mode.",
     "fw_version": 2578
 }
