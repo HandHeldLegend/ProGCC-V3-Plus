@@ -249,15 +249,15 @@ uint16_t cb_hoja_hardware_test()
 {
     hoja_hw_test_u _t;
 
-    _t.analog = _hwtest_analog();
-    _t.battery = _hwtest_battery();
+    _t.analog   = _hwtest_analog();
+    _t.battery  = _hwtest_battery();
     _t.bluetooth = _hwtest_bluetooth();
     _t.clock_pin = _hwtest_clock();
-    _t.data_pin = _hwtest_data();
-    _t.latch_pin = _hwtest_latch();
-    _t.rgb_pin =  _hwtest_rgb();
-    _t.imu = _hwtest_imu();
-    _t.rumble = _hwtest_rumble();
+    _t.data_pin     = _hwtest_data();
+    _t.latch_pin    = _hwtest_latch();
+    _t.rgb_pin      =  _hwtest_rgb();
+    _t.imu          = _hwtest_imu();
+    _t.rumble       = _hwtest_rumble();
 
     return _t.val;
 }
