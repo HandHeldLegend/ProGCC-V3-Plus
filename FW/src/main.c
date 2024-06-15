@@ -201,6 +201,38 @@ void cb_hoja_read_buttons(button_data_s *data)
     data->button_sync = data->button_plus;
 }
 
+#define BUFFER_SIZE 16
+
+typedef struct {
+    float buffer[BUFFER_SIZE];
+    int index;
+    float sum;
+} RollingAverage;
+
+void initRollingAverage(RollingAverage* ra) {
+    for (int i = 0; i < BUFFER_SIZE; ++i) {
+        ra->buffer[i] = 0.0f;
+    }
+    ra->index = 0;
+    ra->sum = 0.0f;
+}
+
+void addSample(RollingAverage* ra, float sample) {
+    // Subtract the value being replaced from the sum
+    ra->sum -= ra->buffer[ra->index];
+    
+    // Add the new sample to the buffer and sum
+    ra->buffer[ra->index] = sample;
+    ra->sum += sample;
+    
+    // Move to the next index, wrapping around if necessary
+    ra->index = (ra->index + 1) % BUFFER_SIZE;
+}
+
+float getAverage(RollingAverage* ra) {
+    return ra->sum / BUFFER_SIZE;
+}
+
 void cb_hoja_read_analog(a_data_s *data)
 {
     // Set up buffers for each axis
@@ -236,11 +268,21 @@ void cb_hoja_read_analog(a_data_s *data)
     // Release right stick CS ADC
     gpio_put(PGPIO_RS_CS, true);
 
+    static RollingAverage ralx = {0};
+    static RollingAverage raly = {0};
+    static RollingAverage rarx = {0};
+    static RollingAverage rary = {0};
+
+    addSample(&ralx, BUFFER_TO_UINT16(buffer_lx));
+    addSample(&raly, BUFFER_TO_UINT16(buffer_ly));
+    addSample(&rarx, BUFFER_TO_UINT16(buffer_rx));
+    addSample(&rary, BUFFER_TO_UINT16(buffer_ry));
+
     // Convert data
-    data->lx = BUFFER_TO_UINT16(buffer_lx);
-    data->ly = BUFFER_TO_UINT16(buffer_ly);
-    data->rx = BUFFER_TO_UINT16(buffer_rx);
-    data->ry = BUFFER_TO_UINT16(buffer_ry);
+    data->lx = (uint16_t) getAverage(&ralx);
+    data->ly = (uint16_t) getAverage(&raly);
+    data->rx = (uint16_t) getAverage(&rarx);
+    data->ry = (uint16_t) getAverage(&rary);
 }
 
 void cb_hoja_task_0_hook(uint32_t timestamp)
