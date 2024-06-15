@@ -91,10 +91,10 @@
         #define HOJA_RGB_GROUP_A        {22}
         #define HOJA_RGB_GROUP_B        {23}
 
-        #define HOJA_RGB_GROUP_L        {24}
-        #define HOJA_RGB_GROUP_ZL       {25}
-        #define HOJA_RGB_GROUP_R        {26}
-        #define HOJA_RGB_GROUP_ZR       {27}
+        #define HOJA_RGB_GROUP_L        {26}
+        #define HOJA_RGB_GROUP_ZL       {27}
+        #define HOJA_RGB_GROUP_R        {25}
+        #define HOJA_RGB_GROUP_ZR       {24}
         
     #endif
 
