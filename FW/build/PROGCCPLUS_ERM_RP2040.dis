@@ -16041,13 +16041,13 @@ Disassembly of section .text:
 1000899a:	7023      	strb	r3, [r4, #0]
 1000899c:	3ba5      	subs	r3, #165	; 0xa5
 1000899e:	7063      	strb	r3, [r4, #1]
-100089a0:	330d      	adds	r3, #13
+100089a0:	330e      	adds	r3, #14
 100089a2:	70a3      	strb	r3, [r4, #2]
 100089a4:	26a0      	movs	r6, #160	; 0xa0
 100089a6:	70e6      	strb	r6, [r4, #3]
 100089a8:	2502      	movs	r5, #2
 100089aa:	7125      	strb	r5, [r4, #4]
-100089ac:	3b16      	subs	r3, #22
+100089ac:	3b17      	subs	r3, #23
 100089ae:	71a3      	strb	r3, [r4, #6]
 100089b0:	f000 fc3e 	bl	10009230 <btinput_get_version>
 100089b4:	0a03      	lsrs	r3, r0, #8

@@ -1,4 +1,4 @@
 {
-    "changelog": "6.13.2024r1\n-SNES Mode power settings.",
-    "fw_version": 2583
+    "changelog": "6.14.2024r1\n-Fix LED Trigger Mapping.",
+    "fw_version": 2584
 }

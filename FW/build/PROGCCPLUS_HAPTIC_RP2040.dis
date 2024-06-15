@@ -16163,11 +16163,11 @@ Disassembly of section .text:
 10008ace:	7023      	strb	r3, [r4, #0]
 10008ad0:	3ba5      	subs	r3, #165	; 0xa5
 10008ad2:	7063      	strb	r3, [r4, #1]
-10008ad4:	330d      	adds	r3, #13
+10008ad4:	330e      	adds	r3, #14
 10008ad6:	70a3      	strb	r3, [r4, #2]
 10008ad8:	25a0      	movs	r5, #160	; 0xa0
 10008ada:	70e5      	strb	r5, [r4, #3]
-10008adc:	3b14      	subs	r3, #20
+10008adc:	3b15      	subs	r3, #21
 10008ade:	7123      	strb	r3, [r4, #4]
 10008ae0:	3b02      	subs	r3, #2
 10008ae2:	71a3      	strb	r3, [r4, #6]
