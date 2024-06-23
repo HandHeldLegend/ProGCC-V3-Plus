@@ -265,6 +265,24 @@ void cb_hoja_rumble_set(rumble_data_s *data)
     play_pwm_frequency(data);
 }
 
+void cb_hoja_rumble_test()
+{
+    rumble_data_s tmp = {.frequency_high = 320, .frequency_low = 160, .amplitude_high=1, .amplitude_low = 1};
+
+    cb_hoja_rumble_set(&tmp);
+
+    for(int i = 0; i < 62; i++)
+    {   
+        watchdog_update();
+        sleep_ms(8);
+    }
+
+    tmp.amplitude_high = 0;
+    tmp.amplitude_low = 0;
+    
+    cb_hoja_rumble_set(&tmp);
+}
+
 
 bool played = false;
 void test_sequence()

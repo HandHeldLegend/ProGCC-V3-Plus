@@ -1,4 +1,4 @@
 {
-    "changelog": "6.23.2024r1\n-Remove debug analog smoothing.\n-Disable PMIC regulation causing excess noise.",
-    "fw_version": 2586
+    "changelog": "6.23.2024r1\n-Remove debug analog smoothing.\n-Disable PMIC regulation causing excess noise.\n-Haptic rumble test function works.",
+    "fw_version": 2587
 }
