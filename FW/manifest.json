@@ -1,4 +1,4 @@
 {
-    "changelog": "6.15.2024r1\n-Fix LED Trigger Mapping.\n-Decrease analog stick jitter.",
-    "fw_version": 2585
+    "changelog": "6.23.2024r1\n-Remove debug analog smoothing.\n-Disable PMIC regulation causing excess noise.",
+    "fw_version": 2586
 }

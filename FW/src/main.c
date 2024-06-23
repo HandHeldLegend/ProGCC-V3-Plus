@@ -201,7 +201,7 @@ void cb_hoja_read_buttons(button_data_s *data)
     data->button_sync = data->button_plus;
 }
 
-#define BUFFER_SIZE 16
+#define BUFFER_SIZE 4
 
 typedef struct {
     float buffer[BUFFER_SIZE];
