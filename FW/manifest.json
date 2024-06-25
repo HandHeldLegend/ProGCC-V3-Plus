@@ -1,4 +1,4 @@
 {
-    "changelog": "6.23.2024r1\n-Remove debug analog smoothing.\n-Disable PMIC regulation causing excess noise.\n-Haptic rumble test function works.",
+    "changelog": "6.25.2024r1\n-New charging breathe animation.",
     "fw_version": 2587
 }

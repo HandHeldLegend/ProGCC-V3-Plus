@@ -21,8 +21,7 @@
 					"targetIndexes" : 
 					[
 						0,
-						1,
-						2
+						1
 					]
 				},
 				{
@@ -586,9 +585,9 @@
 					"source" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/boot_stage2",
 					"targetIndexes" : 
 					[
+						2,
 						3,
-						4,
-						5
+						4
 					]
 				},
 				{
@@ -790,8 +789,8 @@
 					"source" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/tinyusb",
 					"targetIndexes" : 
 					[
-						10,
-						11
+						9,
+						10
 					]
 				},
 				{
@@ -854,7 +853,7 @@
 					"source" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_cyw43_driver",
 					"targetIndexes" : 
 					[
-						6
+						5
 					]
 				},
 				{
@@ -1032,9 +1031,9 @@
 					"source" : "lib/HOJA-LIB-RP2040",
 					"targetIndexes" : 
 					[
+						6,
 						7,
-						8,
-						9
+						8
 					]
 				}
 			],
@@ -1055,8 +1054,7 @@
 					"targetIndexes" : 
 					[
 						0,
-						1,
-						2
+						1
 					]
 				},
 				{
@@ -1147,12 +1145,12 @@
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
+						2,
 						3,
 						4,
 						5,
-						6,
-						10,
-						11
+						9,
+						10
 					]
 				},
 				{
@@ -1164,9 +1162,9 @@
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
+						6,
 						7,
-						8,
-						9
+						8
 					]
 				}
 			],
@@ -1175,22 +1173,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "PROGCC3.1_RP2040::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PROGCC3.1_RP2040-Debug-358236465c34762274bb.json",
+					"jsonFile" : "target-PROGCC3.1_RP2040-Debug-6bd9d67fd85db8915bd1.json",
 					"name" : "PROGCC3.1_RP2040",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "PROGCCPLUS_ERM_RP2040::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PROGCCPLUS_ERM_RP2040-Debug-0758c9e7588d695e2c4d.json",
+					"jsonFile" : "target-PROGCCPLUS_ERM_RP2040-Debug-ceefb20ee360c41cd2c5.json",
 					"name" : "PROGCCPLUS_ERM_RP2040",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "PROGCCPLUS_HAPTIC_RP2040::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PROGCCPLUS_HAPTIC_RP2040-Debug-25cb327dc016c73655a7.json",
-					"name" : "PROGCCPLUS_HAPTIC_RP2040",
 					"projectIndex" : 0
 				},
 				{

@@ -11,7 +11,7 @@
 #define HOJA_CLOCK_PIN 4
 #define HOJA_LATCH_PIN 5
 
-#define HOJA_FW_VERSION 0x0A1B
+#define HOJA_FW_VERSION 0x0A1C
 
 // Haptic
 #if (HOJA_DEVICE_ID == 0xA003)
@@ -78,6 +78,8 @@
         #define HOJA_RGB_GROUP_PLAYER {-1}
         
     #elif (HOJA_DEVICE_ID == 0xA004)
+        #define HOJA_CAPABILITY_BLUETOOTH_OPTIONAL 1
+    
         #define HOJA_RGB_GROUP_RS       {0, 1, 2, 3}
         #define HOJA_RGB_GROUP_PLAYER   {7, 6, 5, 4}
         #define HOJA_RGB_GROUP_LS       {8, 9, 10, 11}
