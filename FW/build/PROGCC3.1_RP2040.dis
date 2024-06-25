@@ -16625,11 +16625,11 @@ Disassembly of section .text:
 10008ee8:	7023      	strb	r3, [r4, #0]
 10008eea:	3ba5      	subs	r3, #165	; 0xa5
 10008eec:	7063      	strb	r3, [r4, #1]
-10008eee:	3311      	adds	r3, #17
+10008eee:	3312      	adds	r3, #18
 10008ef0:	70a3      	strb	r3, [r4, #2]
 10008ef2:	25a0      	movs	r5, #160	; 0xa0
 10008ef4:	70e5      	strb	r5, [r4, #3]
-10008ef6:	3b17      	subs	r3, #23
+10008ef6:	3b18      	subs	r3, #24
 10008ef8:	7123      	strb	r3, [r4, #4]
 10008efa:	3b03      	subs	r3, #3
 10008efc:	71a3      	strb	r3, [r4, #6]
