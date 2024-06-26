@@ -1173,14 +1173,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "PROGCC3.1_RP2040::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PROGCC3.1_RP2040-Debug-4a6d9e0ebbe6745e1364.json",
+					"jsonFile" : "target-PROGCC3.1_RP2040-Debug-fa79950bbd875546759c.json",
 					"name" : "PROGCC3.1_RP2040",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "PROGCCPLUS_ERM_RP2040::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PROGCCPLUS_ERM_RP2040-Debug-9c44b6374bfdb23ff630.json",
+					"jsonFile" : "target-PROGCCPLUS_ERM_RP2040-Debug-8c8e9deca35db011d68c.json",
 					"name" : "PROGCCPLUS_ERM_RP2040",
 					"projectIndex" : 0
 				},
