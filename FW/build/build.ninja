@@ -3207,7 +3207,7 @@ build pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksum
 # Custom command for pico-sdk\src\rp2_common\boot_stage2\bs2_default_padded_checksummed.S
 
 build pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S | ${cmake_ninja_workdir}pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S: CUSTOM_COMMAND pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin || pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf
-  COMMAND = cmd.exe /C "cd /D C:\Users\Mitch\GitRepos\ProGCC-V3-Plus\FW\build\pico-sdk\src\rp2_common\boot_stage2 && C:\Python312\python.exe "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/boot_stage2/pad_checksum" -s 0xffffffff C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S"
+  COMMAND = cmd.exe /C "cd /D C:\Users\Mitch\GitRepos\ProGCC-V3-Plus\FW\build\pico-sdk\src\rp2_common\boot_stage2 && C:\Users\Mitch\AppData\Local\Programs\Python\Python310\python.exe "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/boot_stage2/pad_checksum" -s 0xffffffff C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S"
   DESC = Generating bs2_default_padded_checksummed.S
   restat = 1
 

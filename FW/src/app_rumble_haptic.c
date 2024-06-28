@@ -216,10 +216,10 @@ void play_pwm_frequency(rumble_data_s *data)
         disabled = false;
     }
 
-    data->frequency_high     = (data->frequency_high > 1300) ? 1300 : data->frequency_high ;
+    data->frequency_high     = (data->frequency_high > 1300) ? 1300 : data->frequency_high;
     data->frequency_high     = (data->frequency_high < 40) ? 40 : data->frequency_high;
 
-    data->frequency_low     = (data->frequency_low > 1300) ? 1300 : data->frequency_low ;
+    data->frequency_low     = (data->frequency_low > 1300) ? 1300 : data->frequency_low;
     data->frequency_low     = (data->frequency_low < 40) ? 40 : data->frequency_low;
 
     //pwm_set_enabled(slice_num, false);
@@ -229,32 +229,32 @@ void play_pwm_frequency(rumble_data_s *data)
     float target_wrap_hi = (float) PWM_CLOCK_BASE / data->frequency_high;
     float target_wrap_lo = (float) PWM_CLOCK_BASE / data->frequency_low;
 
-    target_wrap_hi *= 0.5f;
-    target_wrap_lo *= 0.5f;
-
     pwm_set_wrap(slice_num_hi, (uint16_t) target_wrap_hi);
     playing_data.frequency_high = data->frequency_high;
     pwm_set_wrap(slice_num_lo, (uint16_t) target_wrap_lo);
     playing_data.frequency_low = data->frequency_low;
+
+    const float real_amp_range = 0.5f-0.05f;
+    const float min_amp = 0.05f;
 	
     float min_amp_hi = 0;
     if(data->amplitude_high>0)
     {
-        min_amp_hi = (data->amplitude_high < 0.1f) ? 0.1f : data->amplitude_high;
-        min_amp_hi = (min_amp_hi>0.9f) ? 0.9f : min_amp_hi;
-
         // Scale by scaler
-        min_amp_hi *= _rumble_scaler;
+        data->amplitude_high *= _rumble_scaler;
+
+        min_amp_hi = data->amplitude_high * real_amp_range;
+        min_amp_hi += min_amp;
     }
 
     float min_amp_lo = 0;
     if(data->amplitude_low>0)
     {
-        min_amp_lo = (data->amplitude_low < 0.1f) ? 0.1f : data->amplitude_low;
-        min_amp_lo = (min_amp_lo>0.9f) ? 0.9f : min_amp_lo;
-
         // Scale by scaler
-        min_amp_lo *= _rumble_scaler;
+        data->amplitude_low *= _rumble_scaler;
+
+        min_amp_lo = data->amplitude_low * real_amp_range;
+        min_amp_lo += min_amp;
     }
  
     float amp_val_base_hi = target_wrap_hi * min_amp_hi;
@@ -405,9 +405,8 @@ void cb_hoja_rumble_init()
     hoja_get_rumble_settings(&intensity, &type);
 
     if(!intensity) _rumble_scaler = 0;
-    else _rumble_scaler = (float) intensity / 200.0f;
+    else _rumble_scaler = (float) intensity / 100.0f;
 
-    
 }
 
 bool app_rumble_hwtest()
