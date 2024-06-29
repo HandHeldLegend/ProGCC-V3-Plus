@@ -1,5 +1,5 @@
-### Footprint positions - created on Fri Apr  5 10:32:12 2024 ###
-### Printed by KiCad version 7.0.6
+### Footprint positions - created on 2024-06-28T21:20:44-0500 ###
+### Printed by KiCad version 8.0.3
 ## Unit = mm, Angle = deg.
 ## Side : top
 # Ref     Val                    Package                                              PosX       PosY       Rot  Side
@@ -18,7 +18,7 @@ C12       .047u                  C_0603_1608Metric_Pad1.08x0.95mm_HandSolder    
 C13       100n                   C_0402_1005Metric                                141.2367  -108.6599  -90.0000  top
 C14       100nF                  C_0603_1608Metric                                141.9383  -121.8131  -90.0000  top
 C15       100n                   C_0201_0603Metric                                136.3218  -103.5050  180.0000  top
-C16       47uF_6.3v              CP_EIA-3216-18_Kemet-A                           152.6600  -104.6400  180.0000  top
+C16       47uF_6.3v              CP_EIA-3216-18_Kemet-A                           152.6600  -104.6400    0.0000  top
 C17       100n                   C_0201_0603Metric                                134.2517  -110.8443   90.0000  top
 C18       100n                   C_0402_1005Metric                                143.4719  -110.7173   90.0000  top
 C19       1u                     C_0402_1005Metric                                142.1511  -108.6573   90.0000  top
@@ -30,7 +30,7 @@ C24       100n                   C_0201_0603Metric                              
 C25       10uF                   C_0805_2012Metric                                164.2700  -110.7700    0.0000  top
 C26       1u                     C_0201_0603Metric                                153.6732  -109.2740    0.0000  top
 C27       10uF                   C_0402_1005Metric                                153.8764  -110.1630  180.0000  top
-C28       1u                     C_0201_0603Metric                                 90.6272  -136.4488  180.0000  top
+C28       1u                     C_0201_0603Metric                                 85.6800  -137.2800    0.0000  top
 C30       1uF                    C_0201_0603Metric                                162.2500  -117.1900  -90.0000  top
 C31       1uF                    C_0201_0603Metric                                159.6750  -121.8750  180.0000  top
 C32       100n                   C_0201_0603Metric                                153.3250  -114.3100   90.0000  top
@@ -38,10 +38,9 @@ D1        CUS08F30               D_SOD-323_HandSoldering                        
 D2        CUS08F30               D_SOD-323_HandSoldering                          152.3600  -106.7400  180.0000  top
 D3        CUS08F30               D_SOD-323_HandSoldering                          122.7582  -110.6424  -90.0000  top
 D4        CUS08F30               D_SOD-323_HandSoldering                          148.6916  -112.6490    0.0000  top
-F2        Fuse                   Fuse_1206_3216Metric_Pad1.42x1.75mm_HandSolder   147.8200  -106.5500  180.0000  top
-J1        Conn_01x04_Pin         PinHeader_1x04_P2.00mm_Vertical                   83.2744  -140.1826   90.0000  top
-J2        SM02B-SURS-TF_LF__SN_  JST_SM02B-SURS-TF_LF__SN_                         95.9950  -144.1600  -90.0000  top
-J3        To_Button_Board        molex_5051101492_14P                             103.0400  -145.2800    0.0000  top
+J1        Conn_01x04_Pin         PinHeader_1x04_P2.00mm_Vertical                   82.8100  -140.3100   90.0000  top
+J2        SM02B-SURS-TF_LF__SN_  JST_SM02B-SURS-TF_LF__SN_                         92.2400  -138.4950    0.0000  top
+J3        To_Button_Board        molex_5051101492_14P                              99.7900  -145.2800    0.0000  top
 J4        SM02B-SURS-TF_LF__SN_  JST_SM02B-SURS-TF_LF__SN_                        180.7300  -144.0550    0.0000  top
 J9        USB_C_Receptacle       Shou_Han_Type-C_24P_QCHT                         138.4600   -90.7750  180.0000  top
 L1        SK6805-EC-10           SK6805-EC-10                                     149.3202  -133.5220    0.0000  top
@@ -106,8 +105,8 @@ SW3       1TS026A-1000-0550      1TS026A-1000-0550                              
 SW4       TS35CA                 TS35CA                                           128.4835  -101.8900    0.0000  top
 SW5       1TS026A-1000-0550      1TS026A-1000-0550                                132.4610  -119.7102    0.0000  top
 T1        36-8730                KS_8730                                          178.4800  -139.9100    0.0000  top
-T2        36-8730                KS_8730                                           94.3826  -138.9322  -90.0000  top
-T3        36-8730                KS_8730                                           94.3826  -134.9383  -90.0000  top
+T2        36-8730                KS_8730                                           95.7400  -135.4100  180.0000  top
+T3        36-8730                KS_8730                                           91.6239  -135.4400  180.0000  top
 T4        36-8730                KS_8730                                          182.9800  -139.9100    0.0000  top
 U1        GH39F_(Hall_SOT23)     GH39F                                             96.3770  -118.4326  -90.0000  top
 U2        GH39F_(Hall_SOT23)     GH39F                                             96.3770  -118.4326    0.0000  top

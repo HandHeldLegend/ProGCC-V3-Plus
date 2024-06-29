@@ -61,15 +61,9 @@
       ],
       "drc_exclusions": [
         "clearance|160700000|119200000|b239278b-b794-4bf8-9d43-883269186908|b5b91b87-8d90-42e1-b026-68b52ba9dd02",
-        "clearance|83275000|139507600|becffbb0-7a9a-4f96-9f09-28bce9c675b3|5901c410-30ed-4e04-8008-52ab42c8e59d",
-        "clearance|87274400|140225000|3c128ca4-91ad-4bec-b0dc-4f778b327921|54aafc4a-7e06-4123-9aa9-97280fbf250d",
-        "clearance|89274400|140250000|cc83e98a-5709-4c66-a13c-07c8f88a10a3|badf699b-1893-49a6-8283-a9999507ee45",
-        "lib_footprint_issues|87275000|139475000|e900e8c9-5be4-4379-82ff-ddb6c549abbf|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_issues|89275000|139500000|826fcc56-7892-4164-88c2-4ff08d99ea6d|00000000-0000-0000-0000-000000000000",
         "track_width|160450144|117690144|a1ec9660-d0cf-48e6-840f-03f29dc0ac4d|00000000-0000-0000-0000-000000000000",
         "track_width|160450287|118570287|b5b91b87-8d90-42e1-b026-68b52ba9dd02|00000000-0000-0000-0000-000000000000",
-        "track_width|160575144|119575144|082bf87d-62c1-4cdf-89d3-01bcfe66478d|00000000-0000-0000-0000-000000000000",
-        "unconnected_items|105790000|142030000|1dc340f3-b784-482c-ad5e-76dcbb2ec8d7|e198de30-3c8b-4847-bc9c-ba99b89d2424"
+        "track_width|160575144|119575144|082bf87d-62c1-4cdf-89d3-01bcfe66478d|00000000-0000-0000-0000-000000000000"
       ],
       "meta": {
         "filename": "board_design_settings.json",
@@ -92,6 +86,7 @@
         "footprint_type_mismatch": "ignore",
         "hole_clearance": "error",
         "hole_near_hole": "error",
+        "holes_co_located": "warning",
         "invalid_outline": "error",
         "isolated_copper": "warning",
         "item_on_disabled_layer": "error",
@@ -508,8 +503,8 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
-      "pos_files": "",
+      "plot": "../production/main_3.1/gerber/",
+      "pos_files": "../production/main_3.1/placement/",
       "specctra_dsn": "",
       "step": "production/3d/procon_gcc_main_pcb.step",
       "svg": "",
