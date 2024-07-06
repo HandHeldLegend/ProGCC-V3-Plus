@@ -1,5 +1,5 @@
-### Footprint positions - created on 2024-06-28T21:20:44-0500 ###
-### Printed by KiCad version 8.0.3
+### Footprint positions - created on 2024-07-05T18:36:20-0700 ###
+### Printed by KiCad version 8.0.2
 ## Unit = mm, Angle = deg.
 ## Side : top
 # Ref     Val                    Package                                              PosX       PosY       Rot  Side
@@ -99,8 +99,8 @@ R36       100                    R_0201_0603Metric                              
 R37       1.2k                   R_0201_0603Metric                                152.5500  -114.3100   90.0000  top
 R38       0R                     R_0603_1608Metric_Pad0.98x0.95mm_HandSolder      156.4400  -112.1400    0.0000  top
 REF**     HHL_Logo               HHL_Logo                                         116.7892  -137.6426    0.0000  top
-SW1       GL18_SW                GL18                                              96.3770  -118.4326    0.0000  top
-SW2       GL18_SW                GL18                                             158.3202  -140.0220    0.0000  top
+SW1       GL1807SYAE-002         GL1807SYAE                                        96.3770  -118.4326    0.0000  top
+SW2       GL1807SYAE-002         GL1807SYAE                                       158.3202  -140.0220    0.0000  top
 SW3       1TS026A-1000-0550      1TS026A-1000-0550                                130.8354  -110.7948  180.0000  top
 SW4       TS35CA                 TS35CA                                           128.4835  -101.8900    0.0000  top
 SW5       1TS026A-1000-0550      1TS026A-1000-0550                                132.4610  -119.7102    0.0000  top
@@ -108,10 +108,6 @@ T1        36-8730                KS_8730                                        
 T2        36-8730                KS_8730                                           95.7400  -135.4100  180.0000  top
 T3        36-8730                KS_8730                                           91.6239  -135.4400  180.0000  top
 T4        36-8730                KS_8730                                          182.9800  -139.9100    0.0000  top
-U1        GH39F_(Hall_SOT23)     GH39F                                             96.3770  -118.4326  -90.0000  top
-U2        GH39F_(Hall_SOT23)     GH39F                                             96.3770  -118.4326    0.0000  top
-U3        GH39F_(Hall_SOT23)     GH39F                                            158.3202  -140.0220  -90.0000  top
-U4        GH39F_(Hall_SOT23)     GH39F                                            158.3202  -140.0220    0.0000  top
 U5        ST_LSM6                LGA14                                            117.2392  -124.0536  180.0000  top
 U6        RP2040                 QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm              138.7857  -114.1081    0.0000  top
 U7        CH340K                 ESSOP-10                                         115.9773  -112.7261    0.0000  top
@@ -121,7 +117,7 @@ U10       MCP3002                MSOP-8_3x3mm_P0.65mm                           
 U11       ST_LSM6                LGA14                                            144.7618  -123.5456    0.0000  top
 U12       PI3USB4000A            Texas_UQFN-10_1.5x2mm_P0.5mm                     138.5570  -104.0130   90.0000  top
 U13       GD25Q80EEIGR           USON-8-EP(2x3)                                   135.6995  -106.8819   90.0000  top
-U14       TPS630001RCR           VREG_V62_16624-01YE                              160.4000  -112.0000  -90.0000  top
+U14       TPS63001DRCR           VREG_V62_16624-01YE                              160.4000  -112.0000  -90.0000  top
 U15       DRV2605LYZFR           Texas_DSBGA-9_1.4715x1.4715mm_Layout3x3_P0.5mm   160.7000  -119.7000    0.0000  top
 U16       BQ25180                DSBGA                                            151.4888  -110.5694    0.0000  top
 Y1        Crystal_GND3           Resonator_SMD_Murata_CSTxExxV-3Pin_3.0x1.1mm     138.5951  -120.4365  -90.0000  top
