@@ -1,4 +1,4 @@
 {
-    "changelog": "7.11.2024\n-Scale up Gyro 1.4x to better match OEM",
-    "fw_version": 2591
+    "changelog": "7.14.2024\n-Scale up Gyro 1.4x to better match OEM\n-Adjust HD Rumble parameters\n-Fix GC Mode Rumble",
+    "fw_version": 2592
 }

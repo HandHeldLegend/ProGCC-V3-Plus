@@ -186,7 +186,7 @@ float _current_frequency = 0;
 #define RTP_AMPLITUDE_REGISTER 0x02
 #define RTP_FREQUENCY_REGISTER 0x22
 
-float _rumble_scaler = 0;
+float _rumble_scaler = 1;
 
 /* Note from datasheet
     When using the PWM input in open-loop mode, the DRV2604L device employs a fixed divider that observes the
@@ -195,26 +195,57 @@ float _rumble_scaler = 0;
 */
 void play_pwm_frequency(rumble_data_s *data) 
 {
-    static bool disabled = false;
+    static bool hi_disabled = false;
+    static bool lo_disabled = false;
     rumble_data_s playing_data = {0};
 
-    if((!data->amplitude_high) && (!data->amplitude_low)) 
+    if(!data->amplitude_high && (!hi_disabled))
     {
-        //disabled = true;
-        playing_data.amplitude_high = -1;
-        playing_data.amplitude_low = -1;
+        pwm_set_enabled(slice_num_hi, false);
+        hi_disabled = true;
+        gpio_init(GPIO_LRA_IN_HI);
+        gpio_set_dir(GPIO_LRA_IN_HI, false);
+    }
+    else 
+    {
+        gpio_init(GPIO_LRA_IN_HI);
+        gpio_pull_up(GPIO_LRA_IN_HI);
+        gpio_set_function(GPIO_LRA_IN_HI, GPIO_FUNC_PWM);
+        hi_disabled = false;
+    }
+        
+    if(!data->amplitude_low && (!lo_disabled))
+    {
+        pwm_set_enabled(slice_num_lo, false);
+        lo_disabled = true;
+        gpio_init(GPIO_LRA_IN_LO);
+        gpio_set_dir(GPIO_LRA_IN_LO, false);
+    }
+    else 
+    {
+        gpio_init(GPIO_LRA_IN_LO);
+        gpio_pull_up(GPIO_LRA_IN_LO);
+        gpio_set_function(GPIO_LRA_IN_LO, GPIO_FUNC_PWM);
+        lo_disabled = false;
+    }
 
-        uint8_t _set_mode1[] = {MODE_REGISTER, STANDBY_MODE_BYTE};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode1, 2, false);
-        disabled = true;
-        return;
-    }
-    else if(disabled)
-    {
-        uint8_t _set_mode2[] = {MODE_REGISTER, MODE_BYTE};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode2, 2, false);
-        disabled = false;
-    }
+    //if((!data->amplitude_high) && (!data->amplitude_low)) 
+    //{
+    //    //disabled = true;
+    //    playing_data.amplitude_high = -1;
+    //    playing_data.amplitude_low = -1;
+//
+    //    uint8_t _set_mode1[] = {MODE_REGISTER, STANDBY_MODE_BYTE};
+    //    i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode1, 2, false);
+    //    disabled = true;
+    //    return;
+    //}
+    //else if(disabled)
+    //{
+    //    uint8_t _set_mode2[] = {MODE_REGISTER, MODE_BYTE};
+    //    i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode2, 2, false);
+    //    disabled = false;
+    //}
 
     data->frequency_high     = (data->frequency_high > 1300) ? 1300 : data->frequency_high;
     data->frequency_high     = (data->frequency_high < 40) ? 40 : data->frequency_high;
@@ -234,8 +265,11 @@ void play_pwm_frequency(rumble_data_s *data)
     pwm_set_wrap(slice_num_lo, (uint16_t) target_wrap_lo);
     playing_data.frequency_low = data->frequency_low;
 
-    const float real_amp_range = 0.5f-0.05f;
-    const float min_amp = 0.05f;
+    const float lo_min_amp = 0.05f;
+    const float lo_real_amp_range = 0.4f-lo_min_amp;
+    const float hi_min_amp = 0.2f;
+    const float hi_real_amp_range = 0.55f-hi_min_amp;
+    
 	
     float min_amp_hi = 0;
     if(data->amplitude_high>0)
@@ -243,8 +277,8 @@ void play_pwm_frequency(rumble_data_s *data)
         // Scale by scaler
         data->amplitude_high *= _rumble_scaler;
 
-        min_amp_hi = data->amplitude_high * real_amp_range;
-        min_amp_hi += min_amp;
+        min_amp_hi = data->amplitude_high * hi_real_amp_range;
+        min_amp_hi += hi_min_amp;
     }
 
     float min_amp_lo = 0;
@@ -253,8 +287,8 @@ void play_pwm_frequency(rumble_data_s *data)
         // Scale by scaler
         data->amplitude_low *= _rumble_scaler;
 
-        min_amp_lo = data->amplitude_low * real_amp_range;
-        min_amp_lo += min_amp;
+        min_amp_lo = data->amplitude_low * lo_real_amp_range;
+        min_amp_lo += lo_min_amp;
     }
  
     float amp_val_base_hi = target_wrap_hi * min_amp_hi;
@@ -265,7 +299,10 @@ void play_pwm_frequency(rumble_data_s *data)
     pwm_set_chan_level(slice_num_lo, LRA_LOW_PWM_CHAN, (uint16_t) amp_val_base_lo); 
     playing_data.amplitude_low = amp_val_base_lo;
 	
+	if(!hi_disabled)
 	pwm_set_enabled(slice_num_hi, true); // let's go!
+
+    if(!lo_disabled)
     pwm_set_enabled(slice_num_lo, true); // let's go!
 }
 
@@ -338,7 +375,7 @@ void cb_hoja_rumble_init()
         
         #if (HOJA_DEVICE_ID == 0xA004 )
             gpio_init(GPIO_LRA_IN_HI);
-            gpio_set_dir(GPIO_LRA_IN_HI, false);
+            gpio_set_function(GPIO_LRA_IN_HI, GPIO_FUNC_PWM);
         #endif
 
         // Find out which PWM slice is connected to our GPIO pin
@@ -407,6 +444,7 @@ void cb_hoja_rumble_init()
     if(!intensity) _rumble_scaler = 0;
     else _rumble_scaler = (float) intensity / 100.0f;
 
+    _rumble_scaler = 1;
 }
 
 bool app_rumble_hwtest()
