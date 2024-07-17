@@ -1,3 +1,6 @@
 [submodule "FW/lib/HOJA-LIB-RP2040"]
 	path = FW/lib/HOJA-LIB-RP2040
 	url = https://github.com/HandHeldLegend/HOJA-LIB-RP2040
+[submodule "FW/lib/audio"]
+	path = FW/lib/audio
+	url = https://github.com/HandHeldLegend/RP2040-PWM-DMA-Audio

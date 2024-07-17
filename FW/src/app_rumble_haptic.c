@@ -4,8 +4,153 @@
 #include "math.h"
 #include "float.h"
 
-#define PWM_CLOCK_BASE 2000000 // 2Mhz
-#define PWM_CLOCK_MULTIPLIER 1000 // Scale back up to where we need it
+#define SAMPLE_RATE 22050
+#define BUFFER_SIZE 1024
+#define PWM_WRAP 254
+#define PWM_PIN GPIO_LRA_IN_LO
+
+// Example from https://github.com/moefh/pico-audio-demo/blob/main/audio.c
+
+#define REPETITION_RATE 4
+
+static uint32_t single_sample = 0;
+static uint32_t *single_sample_ptr = &single_sample;
+static int pwm_dma_chan, trigger_dma_chan, sample_dma_chan;
+
+static uint8_t audio_buffers[2][BUFFER_SIZE];
+static volatile int cur_audio_buffer;
+static volatile int last_audio_buffer;
+
+volatile float cur_low = 80; // A4 note
+volatile float cur_low_amp = 0;
+volatile float phase_low = 0.0f;
+
+volatile float cur_high = 0; // A4 note
+volatile float cur_high_amp = 0;
+volatile float phase_high = 0.0f;
+
+volatile float _rumble_scaler = 1;
+
+#define M_PI 3.14159265358979323846
+
+void generate_sine_wave(uint8_t *buffer)
+{
+    float step_low = (2 * M_PI * cur_low) / SAMPLE_RATE;
+    float step_high = (2 * M_PI * cur_high) / SAMPLE_RATE;
+
+    for (int i = 0; i < BUFFER_SIZE; i++)
+    {
+        float sample_low = sinf(phase_low) * cur_low_amp;
+        float sample_high = sinf(phase_high) * cur_high_amp;
+
+        // Combine samples
+        float sample = (sample_low + sample_high);
+        sample *= 0.5f;
+        sample *= _rumble_scaler;
+
+        // Ensure the sample is within [-1, 1] range
+        if (sample > 1.0f)
+            sample = 1.0f;
+        if (sample < -1.0f)
+            sample = -1.0f;
+
+        buffer[i] = (uint8_t)((sample + 1.0f) * (127.5));
+
+        // Update phases
+        phase_low += step_low;
+        phase_high += step_high;
+
+        // Keep phases within [0, 2π) range
+        phase_low = fmodf(phase_low, 2 * M_PI);
+        phase_high = fmodf(phase_high, 2 * M_PI);
+    }
+}
+
+static void __isr __time_critical_func(dma_handler)()
+{
+    cur_audio_buffer = 1 - cur_audio_buffer;
+    dma_hw->ch[sample_dma_chan].al1_read_addr = (intptr_t)&audio_buffers[cur_audio_buffer][0];
+    dma_hw->ch[trigger_dma_chan].al3_read_addr_trig = (intptr_t)&single_sample_ptr;
+
+    // Fill now-unused buffer
+    uint8_t unused_buffer = 1 - cur_audio_buffer;
+    generate_sine_wave(audio_buffers[unused_buffer]);
+
+    dma_hw->ints1 = 1u << trigger_dma_chan;
+}
+
+void audio_init(int audio_pin, int sample_freq)
+{
+    gpio_set_function(audio_pin, GPIO_FUNC_PWM);
+
+    int audio_pin_slice = pwm_gpio_to_slice_num(audio_pin);
+    int audio_pin_chan = pwm_gpio_to_channel(audio_pin);
+
+    uint f_clk_sys = frequency_count_khz(CLOCKS_FC0_SRC_VALUE_CLK_SYS);
+    float clock_div = ((float)f_clk_sys * 1000.0f) / 254.0f / (float)sample_freq / (float)REPETITION_RATE;
+
+    pwm_config config = pwm_get_default_config();
+    pwm_config_set_clkdiv(&config, clock_div);
+    pwm_config_set_wrap(&config, 254);
+    pwm_init(audio_pin_slice, &config, true);
+
+    pwm_dma_chan = dma_claim_unused_channel(true);
+    trigger_dma_chan = dma_claim_unused_channel(true);
+    sample_dma_chan = dma_claim_unused_channel(true);
+
+    // setup PWM DMA channel
+    dma_channel_config pwm_dma_chan_config = dma_channel_get_default_config(pwm_dma_chan);
+    channel_config_set_transfer_data_size(&pwm_dma_chan_config, DMA_SIZE_32);        // transfer 32 bits at a time
+    channel_config_set_read_increment(&pwm_dma_chan_config, false);                  // always read from the same address
+    channel_config_set_write_increment(&pwm_dma_chan_config, false);                 // always write to the same address
+    channel_config_set_chain_to(&pwm_dma_chan_config, sample_dma_chan);              // trigger sample DMA channel when done
+    channel_config_set_dreq(&pwm_dma_chan_config, DREQ_PWM_WRAP0 + audio_pin_slice); // transfer on PWM cycle end
+    dma_channel_configure(pwm_dma_chan,
+                          &pwm_dma_chan_config,
+                          &pwm_hw->slice[audio_pin_slice].cc, // write to PWM slice CC register
+                          &single_sample,                     // read from single_sample
+                          REPETITION_RATE,                    // transfer once per desired sample repetition
+                          false                               // don't start yet
+    );
+
+    // setup trigger DMA channel
+    dma_channel_config trigger_dma_chan_config = dma_channel_get_default_config(trigger_dma_chan);
+    channel_config_set_transfer_data_size(&trigger_dma_chan_config, DMA_SIZE_32);        // transfer 32-bits at a time
+    channel_config_set_read_increment(&trigger_dma_chan_config, false);                  // always read from the same address
+    channel_config_set_write_increment(&trigger_dma_chan_config, false);                 // always write to the same address
+    channel_config_set_dreq(&trigger_dma_chan_config, DREQ_PWM_WRAP0 + audio_pin_slice); // transfer on PWM cycle end
+    dma_channel_configure(trigger_dma_chan,
+                          &trigger_dma_chan_config,
+                          &dma_hw->ch[pwm_dma_chan].al3_read_addr_trig, // write to PWM DMA channel read address trigger
+                          &single_sample_ptr,                           // read from location containing the address of single_sample
+                          REPETITION_RATE * BUFFER_SIZE,                // trigger once per audio sample per repetition rate
+                          false                                         // don't start yet
+    );
+    dma_channel_set_irq1_enabled(trigger_dma_chan, true); // fire interrupt when trigger DMA channel is done
+    irq_set_exclusive_handler(DMA_IRQ_1, dma_handler);
+    irq_set_enabled(DMA_IRQ_1, true);
+
+    // setup sample DMA channel
+    dma_channel_config sample_dma_chan_config = dma_channel_get_default_config(sample_dma_chan);
+    channel_config_set_transfer_data_size(&sample_dma_chan_config, DMA_SIZE_8); // transfer 8-bits at a time
+    channel_config_set_read_increment(&sample_dma_chan_config, true);           // increment read address to go through audio buffer
+    channel_config_set_write_increment(&sample_dma_chan_config, false);         // always write to the same address
+    dma_channel_configure(sample_dma_chan,
+                          &sample_dma_chan_config,
+                          (char *)&single_sample + 2 * audio_pin_chan, // write to single_sample
+                          &audio_buffers[0][0],                        // read from audio buffer
+                          1,                                           // only do one transfer (once per PWM DMA completion due to chaining)
+                          false                                        // don't start yet
+    );
+
+    // clear audio buffers
+    memset(audio_buffers[0], 128, BUFFER_SIZE);
+    memset(audio_buffers[1], 128, BUFFER_SIZE);
+
+    // kick things off with the trigger DMA channel
+    dma_channel_start(trigger_dma_chan);
+}
+
 
 #define B3 246.94f  // Frequency of B3 in Hz
 #define E4 329.63f  // Frequency of E4 in Hz
@@ -49,12 +194,6 @@ float song[28] = {
     #define GPIO_LRA_IN_HI      24
 #endif
 
-uint slice_num_hi;
-uint slice_num_lo;
-
-float _current_amplitude = 0;
-float _current_frequency = 0;
-
 #define RATED_VOLTAGE_HEX 0x3
 #define RATED_VOLTAGE_REGISTER 0x16
 
@@ -65,7 +204,6 @@ float _current_frequency = 0;
 #define BLANKING_TIME_BASE (1)//(1)
 #define IDISS_TIME_BASE (1)
 
-#define DRIVE_TIME (26)
 #define N_ERM_LRA (1 << 7)
 #define FB_BRAKE_FACTOR (7 << 4) // Disable brake
 #define LOOP_GAIN (1U << 2)
@@ -75,9 +213,9 @@ float _current_frequency = 0;
 #define FEEDBACK_CTRL_REGISTER 0x1A
 
 // CTRL 1 Registers START
-#define STARTUP_BOOST (0 << 7) // 1 to enable
+#define STARTUP_BOOST (1 << 7) // 1 to enable
 #define AC_COUPLE (0 << 5)
-#define DRIVE_TIME (26) // Set default
+#define DRIVE_TIME (1) // Set default
 
 #define CTRL1_BYTE (STARTUP_BOOST | AC_COUPLE | DRIVE_TIME)
 #define CTRL1_REGISTER 0x1B
@@ -103,12 +241,15 @@ float _current_frequency = 0;
     Equation 7
     V(Lra-OL_RMS) = 21.32 * (10^-3) * OD_CLAMP * sqrt(1-resonantfreq * 800 * (10^-6))
 */
-#define ODCLAMP_BYTE (uint8_t) 25 // Using the equation from the DRV2604L datasheet for Open Loop mode
+#define ODCLAMP_BYTE (uint8_t) 16 // Using the equation from the DRV2604L datasheet for Open Loop mode
 // First value for 3.3v at 320hz is 179
 // Alt value for 3v is uint8_t 163 (320hz)
 // Alt value for 3v at 160hz is uint8_t 150
 // Write to register 0x17
 #define ODCLAMP_REGISTER 0x17
+
+// LRA Open Loop Period (Address: 0x20)
+#define OL_LRA_REGISTER 0x20
 
 // CTRL 3 Registers START
 
@@ -118,7 +259,7 @@ float _current_frequency = 0;
     used, the open-loop frequency is given by the PWM frequency divided by 128. If PWM interface is not used, the
     open-loop frequency is given by the OL_LRA_PERIOD[6:0] bit in register 0x20.
 */
-#define OL_LRA_PERIOD 42
+#define OL_LRA_PERIOD 127
 
 #define NG_THRESH_DISABLED 0
 #define NG_THRESH_2 1 // Percent
@@ -186,131 +327,30 @@ float _current_frequency = 0;
 #define RTP_AMPLITUDE_REGISTER 0x02
 #define RTP_FREQUENCY_REGISTER 0x22
 
-float _rumble_scaler = 1;
 
-/* Note from datasheet
-    When using the PWM input in open-loop mode, the DRV2604L device employs a fixed divider that observes the
-    PWM signal and commutates the output drive signal at the PWM frequency divided by 128. To accomplish LRA
-    drive, the host should drive the PWM frequency at 128 times the desired operating frequency.
-*/
-void play_pwm_frequency(rumble_data_s *data) 
-{
-    static bool hi_disabled = false;
-    static bool lo_disabled = false;
-    rumble_data_s playing_data = {0};
-
-    if(!data->amplitude_high && (!hi_disabled))
-    {
-        pwm_set_enabled(slice_num_hi, false);
-        hi_disabled = true;
-        gpio_init(GPIO_LRA_IN_HI);
-        gpio_set_dir(GPIO_LRA_IN_HI, false);
-    }
-    else 
-    {
-        gpio_init(GPIO_LRA_IN_HI);
-        gpio_pull_up(GPIO_LRA_IN_HI);
-        gpio_set_function(GPIO_LRA_IN_HI, GPIO_FUNC_PWM);
-        hi_disabled = false;
-    }
-        
-    if(!data->amplitude_low && (!lo_disabled))
-    {
-        pwm_set_enabled(slice_num_lo, false);
-        lo_disabled = true;
-        gpio_init(GPIO_LRA_IN_LO);
-        gpio_set_dir(GPIO_LRA_IN_LO, false);
-    }
-    else 
-    {
-        gpio_init(GPIO_LRA_IN_LO);
-        gpio_pull_up(GPIO_LRA_IN_LO);
-        gpio_set_function(GPIO_LRA_IN_LO, GPIO_FUNC_PWM);
-        lo_disabled = false;
-    }
-
-    //if((!data->amplitude_high) && (!data->amplitude_low)) 
-    //{
-    //    //disabled = true;
-    //    playing_data.amplitude_high = -1;
-    //    playing_data.amplitude_low = -1;
-//
-    //    uint8_t _set_mode1[] = {MODE_REGISTER, STANDBY_MODE_BYTE};
-    //    i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode1, 2, false);
-    //    disabled = true;
-    //    return;
-    //}
-    //else if(disabled)
-    //{
-    //    uint8_t _set_mode2[] = {MODE_REGISTER, MODE_BYTE};
-    //    i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode2, 2, false);
-    //    disabled = false;
-    //}
-
-    data->frequency_high     = (data->frequency_high > 1300) ? 1300 : data->frequency_high;
-    data->frequency_high     = (data->frequency_high < 40) ? 40 : data->frequency_high;
-
-    data->frequency_low     = (data->frequency_low > 1300) ? 1300 : data->frequency_low;
-    data->frequency_low     = (data->frequency_low < 40) ? 40 : data->frequency_low;
-
-    //pwm_set_enabled(slice_num, false);
-    //frequency *= 128; // Neets to multiply by 128 to get appropriate output signal
-
-    // Calculate wrap value
-    float target_wrap_hi = (float) PWM_CLOCK_BASE / data->frequency_high;
-    float target_wrap_lo = (float) PWM_CLOCK_BASE / data->frequency_low;
-
-    pwm_set_wrap(slice_num_hi, (uint16_t) target_wrap_hi);
-    playing_data.frequency_high = data->frequency_high;
-    pwm_set_wrap(slice_num_lo, (uint16_t) target_wrap_lo);
-    playing_data.frequency_low = data->frequency_low;
-
-    const float lo_min_amp = 0.05f;
-    const float lo_real_amp_range = 0.4f-lo_min_amp;
-    const float hi_min_amp = 0.2f;
-    const float hi_real_amp_range = 0.55f-hi_min_amp;
-    
-	
-    float min_amp_hi = 0;
-    if(data->amplitude_high>0)
-    {
-        // Scale by scaler
-        data->amplitude_high *= _rumble_scaler;
-
-        min_amp_hi = data->amplitude_high * hi_real_amp_range;
-        min_amp_hi += hi_min_amp;
-    }
-
-    float min_amp_lo = 0;
-    if(data->amplitude_low>0)
-    {
-        // Scale by scaler
-        data->amplitude_low *= _rumble_scaler;
-
-        min_amp_lo = data->amplitude_low * lo_real_amp_range;
-        min_amp_lo += lo_min_amp;
-    }
- 
-    float amp_val_base_hi = target_wrap_hi * min_amp_hi;
-    float amp_val_base_lo = target_wrap_lo * min_amp_lo;
-
-    pwm_set_chan_level(slice_num_hi, LRA_HI_PWM_CHAN, (uint16_t) amp_val_base_hi); 
-    playing_data.amplitude_high = amp_val_base_hi;
-    pwm_set_chan_level(slice_num_lo, LRA_LOW_PWM_CHAN, (uint16_t) amp_val_base_lo); 
-    playing_data.amplitude_low = amp_val_base_lo;
-	
-	if(!hi_disabled)
-	pwm_set_enabled(slice_num_hi, true); // let's go!
-
-    if(!lo_disabled)
-    pwm_set_enabled(slice_num_lo, true); // let's go!
-}
 
 void cb_hoja_rumble_set(rumble_data_s *data)
 {
-    if(!_rumble_scaler) return;
+    cur_low = data->frequency_low;
+    cur_high = data->frequency_high;
 
-    play_pwm_frequency(data);
+    if (data->amplitude_low > 0)
+    {
+        cur_low_amp = data->amplitude_low;
+    }
+    else
+    {
+        cur_low_amp = 0;
+    }   
+    
+    if (data->amplitude_high > 0)
+    {
+        cur_high_amp = data->amplitude_high;
+    }
+    else
+    {
+        cur_high_amp = 0;
+    }
 }
 
 void cb_hoja_rumble_test()
@@ -342,14 +382,14 @@ void test_sequence()
     {
         s.amplitude_low = 0.9f;
         s.frequency_low = song[i];
-        play_pwm_frequency(&s);
+        cb_hoja_rumble_set(&s);
         watchdog_update();
         sleep_ms(150);
     }
     sleep_ms(150);
     s.amplitude_low = 0;
     s.amplitude_high = 0;;
-    play_pwm_frequency(&s);
+    cb_hoja_rumble_set(&s);
     played = false;
 }
 
@@ -360,43 +400,20 @@ void cb_hoja_rumble_init()
     if(!lra_init)
     {
         sleep_ms(100);
-        lra_init = true;
+        lra_init = true;  
 
-        #if ( HOJA_DEVICE_ID == 0xA003 )
-            // Init GPIO for LRA switch
-            gpio_init(GPIO_LRA_SDA_SEL);
-            gpio_set_dir(GPIO_LRA_SDA_SEL, GPIO_OUT);
-            gpio_put(GPIO_LRA_SDA_SEL, 1);
-        #endif
-        
-        // Set PWM function
-        gpio_init(GPIO_LRA_IN_LO);
-        gpio_set_function(GPIO_LRA_IN_LO, GPIO_FUNC_PWM);
-        
-        #if (HOJA_DEVICE_ID == 0xA004 )
-            gpio_init(GPIO_LRA_IN_HI);
-            gpio_set_function(GPIO_LRA_IN_HI, GPIO_FUNC_PWM);
-        #endif
-
-        // Find out which PWM slice is connected to our GPIO pin
-        slice_num_lo = pwm_gpio_to_slice_num(GPIO_LRA_IN_LO);
-        slice_num_hi = pwm_gpio_to_slice_num(GPIO_LRA_IN_HI);
-
-        // We want a 2Mhz clock driving the PWM
-        // this means 1000 ticks = 2khz, 2000 ticks = 1khz
-        float divider = 125000000.0f / PWM_CLOCK_BASE;
-
-        // Set the PWM clock divider to run at 125MHz
-        pwm_set_clkdiv(slice_num_lo, divider);
-        pwm_set_clkdiv(slice_num_hi, divider);
+        // Generate initial buffers
+        generate_sine_wave(audio_buffers[0]);
+        generate_sine_wave(audio_buffers[1]);
+        audio_init(GPIO_LRA_IN_LO, SAMPLE_RATE);
 
         // Take MODE out of standby
-        uint8_t _set_mode1[] = {MODE_REGISTER, 0x00};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode1, 2, false);
-        
-        uint8_t _set_feedback[] = {FEEDBACK_CTRL_REGISTER, FEEDBACK_CTRL_BYTE};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_feedback, 2, false);
-        sleep_ms(10);
+        //uint8_t _set_mode1[] = {MODE_REGISTER, 0x00};
+        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode1, 2, false);
+        //
+        //uint8_t _set_feedback[] = {FEEDBACK_CTRL_REGISTER, FEEDBACK_CTRL_BYTE};
+        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_feedback, 2, false);
+        //sleep_ms(10);
 
         //uint8_t _set_control1[] = {CTRL1_REGISTER, CTRL1_BYTE};
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control1, 2, false);
@@ -406,9 +423,9 @@ void cb_hoja_rumble_init()
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control2, 2, false);
         //sleep_ms(10);
 
-        uint8_t _set_control3[] = {CTRL3_REGISTER, CTRL3_BYTE};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control3, 2, false);
-        sleep_ms(10);
+        //uint8_t _set_control3[] = {CTRL3_REGISTER, CTRL3_BYTE};
+        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control3, 2, false);
+        //sleep_ms(10);
 
         //uint8_t _set_control4[] = {CTRL4_REGISTER, CTRL4_BYTE};
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control4, 2, false);
@@ -424,14 +441,14 @@ void cb_hoja_rumble_init()
         //uint8_t _set_bemf[] = {0x19, HAPTIC_BACKEMF};
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_bemf, 2, false);
 
-        //uint8_t _set_freq[] = {RTP_FREQUENCY_REGISTER, 31};
+        //uint8_t _set_freq[] = {OL_LRA_REGISTER, OL_LRA_PERIOD};
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_freq, 2, false);
 
         uint8_t _set_odclamped[] = {ODCLAMP_REGISTER, ODCLAMP_BYTE};
         i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_odclamped, 2, false);
 
-        uint8_t _set_mode2[] = {MODE_REGISTER, STANDBY_MODE_BYTE};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode2, 2, false);
+        //uint8_t _set_mode2[] = {MODE_REGISTER, STANDBY_MODE_BYTE};
+        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode2, 2, false);
 
         uint8_t _set_mode3[] = {MODE_REGISTER, MODE_BYTE};
         i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode3, 2, false);
@@ -441,10 +458,7 @@ void cb_hoja_rumble_init()
     rumble_type_t type;
     hoja_get_rumble_settings(&intensity, &type);
 
-    if(!intensity) _rumble_scaler = 0;
-    else _rumble_scaler = (float) intensity / 100.0f;
-
-    _rumble_scaler = 1;
+    _rumble_scaler = 0.75f + (0.25f * ((float) intensity / 100.0f));
 }
 
 bool app_rumble_hwtest()
