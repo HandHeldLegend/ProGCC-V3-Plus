@@ -4,10 +4,16 @@
 #include "math.h"
 #include "float.h"
 
-#define SAMPLE_RATE 22050
-#define BUFFER_SIZE 1024
-#define PWM_WRAP 254
+#define SOC_CLOCK (float)125000000.0f
+
+#define SAMPLE_RATE 12000
+#define BUFFER_SIZE 255
+#define SAMPLE_FRAME_PERIOD 30
+#define PWM_WRAP BUFFER_SIZE
 #define PWM_PIN GPIO_LRA_IN_LO
+
+#define STARTING_LOW_FREQ 160.0f
+#define STARTING_HIGH_FREQ 320.0f
 
 // Example from https://github.com/moefh/pico-audio-demo/blob/main/audio.c
 
@@ -17,36 +23,108 @@ static uint32_t single_sample = 0;
 static uint32_t *single_sample_ptr = &single_sample;
 static int pwm_dma_chan, trigger_dma_chan, sample_dma_chan;
 
+hoja_rumble_msg_s msg_left = {0};
+hoja_rumble_msg_s msg_right = {0};
+
 static uint8_t audio_buffers[2][BUFFER_SIZE];
 static volatile int cur_audio_buffer;
 static volatile int last_audio_buffer;
 
-volatile float cur_low = 80; // A4 note
-volatile float cur_low_amp = 0;
-volatile float phase_low = 0.0f;
-
-volatile float cur_high = 0; // A4 note
-volatile float cur_high_amp = 0;
-volatile float phase_high = 0.0f;
-
-volatile float _rumble_scaler = 1;
-
 #define M_PI 3.14159265358979323846
+
+// Which sample we're processing
+uint8_t samples_idx;
+// How many sample frames we have to go through
+uint8_t samples_count;
+// How many samples we've generated
+uint8_t sample_counter;
+float _rumble_scaler = 0;
+
+typedef struct
+{
+    float phase_step;
+    float phase;
+    float f;
+    float f_step;
+    float f_target;
+    float a;
+    float a_step;
+    float a_target;
+} haptic_s;
+
+haptic_s hi_state = {0};
+haptic_s lo_state = {0};
+
+float clamp_rumble(float amplitude)
+{
+    const float min = 0.2f;
+    const float max = 1.0f;
+    float range = max - min;
+
+    if(!_rumble_scaler) return 0;
+    
+    range *= _rumble_scaler;
+
+    float retval = 0;
+    if (amplitude > 0)
+    {
+        retval = range * amplitude;
+        retval += min;
+        if (retval > max)
+            retval = max;
+        return retval;
+    }
+    return 0;
+}
 
 void generate_sine_wave(uint8_t *buffer)
 {
-    float step_low = (2 * M_PI * cur_low) / SAMPLE_RATE;
-    float step_high = (2 * M_PI * cur_high) / SAMPLE_RATE;
+    // This means we need to reset our state and
+    // calculate our next step
+    if (msg_left.unread)
+    {
+        msg_left.unread = false;
+        samples_count = msg_left.sample_count;
+        samples_idx = 0;
+        sample_counter = 0;
+
+        // Adjust hi frequency
+        {
+            float hif = msg_left.samples[0].high_frequency;
+            hi_state.f_target = hif;
+            hi_state.f_step = (hif - hi_state.f) / SAMPLE_FRAME_PERIOD;
+
+            float hia = msg_left.samples[0].high_amplitude;
+            hi_state.a_target = hia;
+            hi_state.a_step = (hia - hi_state.a) / SAMPLE_FRAME_PERIOD;
+        }
+
+        // Adjust lo frequency
+        {
+            float lof = msg_left.samples[0].low_frequency;
+            lo_state.f_target = lof;
+            lo_state.f_step = (lof - lo_state.f) / SAMPLE_FRAME_PERIOD;
+
+            float loa = msg_left.samples[0].low_amplitude;
+            lo_state.a_target = loa;
+            lo_state.a_step = (loa - lo_state.a) / SAMPLE_FRAME_PERIOD;
+        }
+    }
 
     for (int i = 0; i < BUFFER_SIZE; i++)
     {
-        float sample_low = sinf(phase_low) * cur_low_amp;
-        float sample_high = sinf(phase_high) * cur_high_amp;
+        hi_state.phase_step = (2 * M_PI * hi_state.f) / SAMPLE_RATE;
+        lo_state.phase_step = (2 * M_PI * lo_state.f) / SAMPLE_RATE;
+
+        float sample_high   = sinf(hi_state.phase);
+        float sample_low    = sinf(lo_state.phase);
+
+        // Scale samples by amplitude
+        sample_high *= clamp_rumble(hi_state.a);
+        sample_low  *= clamp_rumble(lo_state.a);
 
         // Combine samples
-        float sample = (sample_low + sample_high);
-        sample *= 0.5f;
-        sample *= _rumble_scaler;
+        float sample = ((sample_low * 0.6f) + (sample_high * 0.4f));
 
         // Ensure the sample is within [-1, 1] range
         if (sample > 1.0f)
@@ -56,13 +134,63 @@ void generate_sine_wave(uint8_t *buffer)
 
         buffer[i] = (uint8_t)((sample + 1.0f) * (127.5));
 
-        // Update phases
-        phase_low += step_low;
-        phase_high += step_high;
+        // Update phases and steps
+        {
+            hi_state.phase += hi_state.phase_step;
+            lo_state.phase += lo_state.phase_step;
 
-        // Keep phases within [0, 2π) range
-        phase_low = fmodf(phase_low, 2 * M_PI);
-        phase_high = fmodf(phase_high, 2 * M_PI);
+            // Keep phases within [0, 2π) range
+            hi_state.phase = fmodf(hi_state.phase, 2 * M_PI);
+            lo_state.phase = fmodf(lo_state.phase, 2 * M_PI);
+
+            if (sample_counter <= SAMPLE_FRAME_PERIOD)
+            {
+                hi_state.f += hi_state.f_step;
+                hi_state.a += hi_state.a_step;
+                lo_state.f += lo_state.f_step;
+                lo_state.a += lo_state.a_step;
+            }
+            else
+            {
+                // Set values to target
+                hi_state.f = hi_state.f_target;
+                hi_state.a = hi_state.a_target;
+                lo_state.f = lo_state.f_target;
+                lo_state.a = lo_state.a_target;
+
+                // increment sample_idx and prevent overflow
+                if(samples_idx<100)
+                    samples_idx++;
+                
+                if(samples_idx < samples_count)
+                {
+                    // reset sample_counter 
+                    sample_counter = 0;
+
+                    // Adjust hi frequency
+                    float hif = msg_left.samples[samples_idx].high_frequency;
+                    hi_state.f_target = hif;
+                    hi_state.f_step = (hif - hi_state.f) / SAMPLE_FRAME_PERIOD;
+
+                    float hia = msg_left.samples[samples_idx].high_amplitude;
+                    hi_state.a_target = hia;
+                    hi_state.a_step = (hia - hi_state.a) / SAMPLE_FRAME_PERIOD;
+
+                    // Adjust lo frequency
+                    float lof = msg_left.samples[samples_idx].low_frequency;
+                    lo_state.f_target = lof;
+                    lo_state.f_step = (lof - lo_state.f) / SAMPLE_FRAME_PERIOD;
+
+                    float loa = msg_left.samples[samples_idx].low_amplitude;
+                    lo_state.a_target = loa;
+                    lo_state.a_step = (loa - lo_state.a) / SAMPLE_FRAME_PERIOD;
+                }
+            }
+
+            // Increment sample_counter/prevent overflow
+            if(sample_counter < 100)
+                sample_counter++;
+        }
     }
 }
 
@@ -265,13 +393,13 @@ float song[28] = {
 #define NG_THRESH_2 1 // Percent
 #define NG_THRESH_4 2
 #define NG_THRESH_8 3
-#define NG_THRESH (NG_THRESH_4 << 6)
+#define NG_THRESH (NG_THRESH_DISABLED << 6)
 
 #define ERM_OPEN_LOOP (0 << 5)
 
 #define SUPPLY_COMP_ENABLED 0
 #define SUPPLY_COMP_DISABLED 1
-#define SUPPLY_COMP_DIS (SUPPLY_COMP_ENABLED << 4)
+#define SUPPLY_COMP_DIS (SUPPLY_COMP_DISABLED << 4)
 
 #define DATA_FORMAT_RTP_SIGNED 0
 #define DATA_FORMAT_RTP_UNSIGNED 1
@@ -327,69 +455,50 @@ float song[28] = {
 #define RTP_AMPLITUDE_REGISTER 0x02
 #define RTP_FREQUENCY_REGISTER 0x22
 
-
-
-void cb_hoja_rumble_set(rumble_data_s *data)
+void cb_hoja_rumble_set(hoja_rumble_msg_s *left, hoja_rumble_msg_s *right)
 {
-    cur_low = data->frequency_low;
-    cur_high = data->frequency_high;
-
-    if (data->amplitude_low > 0)
-    {
-        cur_low_amp = data->amplitude_low;
-    }
-    else
-    {
-        cur_low_amp = 0;
-    }   
-    
-    if (data->amplitude_high > 0)
-    {
-        cur_high_amp = data->amplitude_high;
-    }
-    else
-    {
-        cur_high_amp = 0;
-    }
+    memcpy(&msg_left, left, sizeof(hoja_rumble_msg_s));
+    msg_left.unread = true;
 }
 
 void cb_hoja_rumble_test()
 {
-    rumble_data_s tmp = {.frequency_high = 320, .frequency_low = 160, .amplitude_high=1, .amplitude_low = 1};
+    hoja_rumble_msg_s msg = {.sample_count=1, .samples[0]={.high_amplitude=1.0f, .high_frequency=320.0f, .low_amplitude=1.0f, .low_frequency=160.0f}, .unread=true};
 
-    cb_hoja_rumble_set(&tmp);
+    cb_hoja_rumble_set(&msg, &msg);
 
-    for(int i = 0; i < 62; i++)
-    {   
+    for (int i = 0; i < 62; i++)
+    {
         watchdog_update();
         sleep_ms(8);
     }
 
-    tmp.amplitude_high = 0;
-    tmp.amplitude_low = 0;
-    
-    cb_hoja_rumble_set(&tmp);
+    msg.samples[0].high_amplitude   = 0;
+    msg.samples[0].low_amplitude    = 0;
+
+    cb_hoja_rumble_set(&msg, &msg);
 }
 
 
 bool played = false;
 void test_sequence()
 {
-    static rumble_data_s s = {0};
+    hoja_rumble_msg_s msg = {.sample_count=1, .samples[0]={.high_amplitude=0, .high_frequency=320.0f, .low_amplitude=1.0f, .low_frequency=160.0f}, .unread=true};
+
     if(played) return;
     played = true;
     for(int i = 0; i < 27; i+=1)
     {
-        s.amplitude_low = 0.9f;
-        s.frequency_low = song[i];
-        cb_hoja_rumble_set(&s);
+        msg.samples[0].low_amplitude = 0.9f;
+        msg.samples[0].low_frequency = song[i];
+        cb_hoja_rumble_set(&msg, &msg);
         watchdog_update();
         sleep_ms(150);
     }
     sleep_ms(150);
-    s.amplitude_low = 0;
-    s.amplitude_high = 0;;
-    cb_hoja_rumble_set(&s);
+    msg.samples[0].low_amplitude = 0;
+    msg.samples[0].low_frequency = 0;
+    cb_hoja_rumble_set(&msg, &msg);
     played = false;
 }
 
@@ -401,11 +510,6 @@ void cb_hoja_rumble_init()
     {
         sleep_ms(100);
         lra_init = true;  
-
-        // Generate initial buffers
-        generate_sine_wave(audio_buffers[0]);
-        generate_sine_wave(audio_buffers[1]);
-        audio_init(GPIO_LRA_IN_LO, SAMPLE_RATE);
 
         // Take MODE out of standby
         //uint8_t _set_mode1[] = {MODE_REGISTER, 0x00};
@@ -452,6 +556,10 @@ void cb_hoja_rumble_init()
 
         uint8_t _set_mode3[] = {MODE_REGISTER, MODE_BYTE};
         i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode3, 2, false);
+
+        generate_sine_wave(audio_buffers[0]);
+        generate_sine_wave(audio_buffers[1]);
+        audio_init(GPIO_LRA_IN_LO, SAMPLE_RATE);
     }
 
     uint8_t intensity = 0;
