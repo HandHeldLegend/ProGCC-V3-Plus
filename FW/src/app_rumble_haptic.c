@@ -4,6 +4,8 @@
 #include "math.h"
 #include "float.h"
 
+//#include "egg.h"
+
 #define SOC_CLOCK (float)125000000.0f
 
 #define SAMPLE_RATE 12000
@@ -57,7 +59,7 @@ haptic_s lo_state = {0};
 
 float clamp_rumble(float amplitude)
 {
-    const float min = 0.2f;
+    const float min = 0.05f;
     const float max = 1.0f;
     float range = max - min;
 
@@ -116,8 +118,8 @@ void generate_sine_wave(uint8_t *buffer)
         hi_state.phase_step = (2 * M_PI * hi_state.f) / SAMPLE_RATE;
         lo_state.phase_step = (2 * M_PI * lo_state.f) / SAMPLE_RATE;
 
-        float sample_high   = sinf(hi_state.phase);
-        float sample_low    = sinf(lo_state.phase);
+        float sample_high   = sinf(hi_state.phase); //sinf
+        float sample_low    = sinf(lo_state.phase); //sinf
 
         // Scale samples by amplitude
         sample_high *= clamp_rumble(hi_state.a);
@@ -194,6 +196,9 @@ void generate_sine_wave(uint8_t *buffer)
     }
 }
 
+//volatile uint32_t _audio_playback_idx = 0;
+//volatile bool _audio_playback = false;
+
 static void __isr __time_critical_func(dma_handler)()
 {
     cur_audio_buffer = 1 - cur_audio_buffer;
@@ -202,7 +207,23 @@ static void __isr __time_critical_func(dma_handler)()
 
     // Fill now-unused buffer
     uint8_t unused_buffer = 1 - cur_audio_buffer;
-    generate_sine_wave(audio_buffers[unused_buffer]);
+
+    //if(!_audio_playback)
+        generate_sine_wave(audio_buffers[unused_buffer]);
+    //else
+    //{
+    //    uint32_t leftover = 255;
+    //    bool done = false;
+    //    if(_audio_playback_idx >= 62067)
+    //    {
+    //        leftover = _audio_playback_idx % (62067);
+    //        done = true;
+    //    }
+    //    // Fill buffer with next audio data
+    //    memcpy(audio_buffers[unused_buffer], &(egg_audio_data[_audio_playback_idx]), leftover);
+    //    _audio_playback_idx+=255;
+    //    if(done) _audio_playback = false;
+    //}
 
     dma_hw->ints1 = 1u << trigger_dma_chan;
 }
@@ -341,9 +362,9 @@ float song[28] = {
 #define FEEDBACK_CTRL_REGISTER 0x1A
 
 // CTRL 1 Registers START
-#define STARTUP_BOOST (1 << 7) // 1 to enable
+#define STARTUP_BOOST (0 << 7) // 1 to enable
 #define AC_COUPLE (0 << 5)
-#define DRIVE_TIME (1) // Set default
+#define DRIVE_TIME (26) // Set default
 
 #define CTRL1_BYTE (STARTUP_BOOST | AC_COUPLE | DRIVE_TIME)
 #define CTRL1_REGISTER 0x1B
@@ -351,7 +372,7 @@ float song[28] = {
 
 // CTRL 2 Registers START
 #define BIDIR_INPUT (1<<7) // Enable bidirectional input for Open-loop operation (<50% input is braking applied)
-#define BRAKE_STABILIZER (1<<6) // Improve loop stability? LOL no clue.
+#define BRAKE_STABILIZER (0<<6) // Improve loop stability? LOL no clue.
 #define SAMPLE_TIME (3U << 4)
 #define BLANKING_TIME_LOWER ( (BLANKING_TIME_BASE & 0b00000011) << 2 )
 #define IDISS_TIME_LOWER (IDISS_TIME_BASE & 0b00000011)
@@ -369,7 +390,7 @@ float song[28] = {
     Equation 7
     V(Lra-OL_RMS) = 21.32 * (10^-3) * OD_CLAMP * sqrt(1-resonantfreq * 800 * (10^-6))
 */
-#define ODCLAMP_BYTE (uint8_t) 16 // Using the equation from the DRV2604L datasheet for Open Loop mode
+#define ODCLAMP_BYTE (uint8_t) 55 // Using the equation from the DRV2604L datasheet for Open Loop mode
 // First value for 3.3v at 320hz is 179
 // Alt value for 3v is uint8_t 163 (320hz)
 // Alt value for 3v at 160hz is uint8_t 150
@@ -378,6 +399,7 @@ float song[28] = {
 
 // LRA Open Loop Period (Address: 0x20)
 #define OL_LRA_REGISTER 0x20
+#define OL_LRA_PERIOD 0b1111111
 
 // CTRL 3 Registers START
 
@@ -387,7 +409,7 @@ float song[28] = {
     used, the open-loop frequency is given by the PWM frequency divided by 128. If PWM interface is not used, the
     open-loop frequency is given by the OL_LRA_PERIOD[6:0] bit in register 0x20.
 */
-#define OL_LRA_PERIOD 127
+
 
 #define NG_THRESH_DISABLED 0
 #define NG_THRESH_2 1 // Percent
@@ -411,7 +433,7 @@ float song[28] = {
 
 #define N_PWM_ANALOG_PWM 0
 #define N_PWM_ANALOG_ANALOG 1
-#define N_PWM_ANALOG (N_PWM_ANALOG_PWM << 1)
+#define N_PWM_ANALOG (N_PWM_ANALOG_ANALOG << 1)
 
 #define LRA_OPEN_LOOP (1)
 
@@ -489,7 +511,7 @@ void test_sequence()
     played = true;
     for(int i = 0; i < 27; i+=1)
     {
-        msg.samples[0].low_amplitude = 0.9f;
+        msg.samples[0].low_amplitude = 1.0f;
         msg.samples[0].low_frequency = song[i];
         cb_hoja_rumble_set(&msg, &msg);
         watchdog_update();
@@ -515,21 +537,21 @@ void cb_hoja_rumble_init()
         //uint8_t _set_mode1[] = {MODE_REGISTER, 0x00};
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode1, 2, false);
         //
-        //uint8_t _set_feedback[] = {FEEDBACK_CTRL_REGISTER, FEEDBACK_CTRL_BYTE};
-        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_feedback, 2, false);
-        //sleep_ms(10);
+        uint8_t _set_feedback[] = {FEEDBACK_CTRL_REGISTER, FEEDBACK_CTRL_BYTE};
+        i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_feedback, 2, false);
+        sleep_ms(10);
 
-        //uint8_t _set_control1[] = {CTRL1_REGISTER, CTRL1_BYTE};
-        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control1, 2, false);
-        //sleep_ms(10);
+        uint8_t _set_control1[] = {CTRL1_REGISTER, CTRL1_BYTE};
+        i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control1, 2, false);
+        sleep_ms(10);
 
         //uint8_t _set_control2[] = {CTRL2_REGISTER, CTRL2_BYTE};
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control2, 2, false);
         //sleep_ms(10);
 
-        //uint8_t _set_control3[] = {CTRL3_REGISTER, CTRL3_BYTE};
-        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control3, 2, false);
-        //sleep_ms(10);
+        uint8_t _set_control3[] = {CTRL3_REGISTER, CTRL3_BYTE};
+        i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control3, 2, false);
+        sleep_ms(10);
 
         //uint8_t _set_control4[] = {CTRL4_REGISTER, CTRL4_BYTE};
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control4, 2, false);
@@ -545,17 +567,17 @@ void cb_hoja_rumble_init()
         //uint8_t _set_bemf[] = {0x19, HAPTIC_BACKEMF};
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_bemf, 2, false);
 
-        //uint8_t _set_freq[] = {OL_LRA_REGISTER, OL_LRA_PERIOD};
-        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_freq, 2, false);
+        uint8_t _set_freq[] = {OL_LRA_REGISTER, OL_LRA_PERIOD};
+        i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_freq, 2, false);
 
         uint8_t _set_odclamped[] = {ODCLAMP_REGISTER, ODCLAMP_BYTE};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_odclamped, 2, false);
+        i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_odclamped, 2, false);
 
         //uint8_t _set_mode2[] = {MODE_REGISTER, STANDBY_MODE_BYTE};
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode2, 2, false);
 
         uint8_t _set_mode3[] = {MODE_REGISTER, MODE_BYTE};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode3, 2, false);
+        i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode3, 2, false);
 
         generate_sine_wave(audio_buffers[0]);
         generate_sine_wave(audio_buffers[1]);
@@ -566,12 +588,14 @@ void cb_hoja_rumble_init()
     rumble_type_t type;
     hoja_get_rumble_settings(&intensity, &type);
 
-    _rumble_scaler = 0.75f + (0.25f * ((float) intensity / 100.0f));
+    _rumble_scaler = ((float) intensity / 100.0f);
 }
 
 bool app_rumble_hwtest()
 {
-
+    //_audio_playback_idx = 0;
+    //_audio_playback = true;
+    //cb_hoja_rumble_test();
     test_sequence();
     //rumble_get_calibration();
     return true;
