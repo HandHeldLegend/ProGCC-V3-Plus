@@ -117,7 +117,7 @@ void cb_hoja_hardware_setup()
 
     // initialize SPI at 1 MHz
     // initialize SPI at 3 MHz just to test
-    spi_init(spi0, 3000 * 1000);
+    spi_init(spi0, 2000 * 1000);
     gpio_set_function(PGPIO_SPI_CLK, GPIO_FUNC_SPI);
     gpio_set_function(PGPIO_SPI_TX, GPIO_FUNC_SPI);
     gpio_set_function(PGPIO_SPI_RX, GPIO_FUNC_SPI);
@@ -233,8 +233,10 @@ float getAverage(RollingAverage* ra) {
     return ra->sum / BUFFER_SIZE;
 }
 
+auto_init_mutex(analog_safe_mutex);
 void cb_hoja_read_analog(a_data_s *data)
 {
+    mutex_enter_blocking(&analog_safe_mutex);
     // Set up buffers for each axis
     uint8_t buffer_lx[3] = {0};
     uint8_t buffer_ly[3] = {0};
@@ -283,6 +285,7 @@ void cb_hoja_read_analog(a_data_s *data)
     data->ly = (uint16_t) getAverage(&raly);
     data->rx = (uint16_t) getAverage(&rarx);
     data->ry = (uint16_t) getAverage(&rary);
+    mutex_exit(&analog_safe_mutex);
 }
 
 void cb_hoja_task_0_hook(uint32_t timestamp)

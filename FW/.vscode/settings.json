@@ -12,7 +12,9 @@
         "rgb.h": "c",
         "hoja_usb.h": "c",
         "btinput.h": "c",
-        "limits": "c"
+        "limits": "c",
+        "hoja_settings.h": "c",
+        "float.h": "c"
     },
     "idf.flashType": "UART",
     "idf.portWin": "COM22"
