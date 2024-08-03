@@ -14,7 +14,9 @@
         "btinput.h": "c",
         "limits": "c",
         "hoja_settings.h": "c",
-        "float.h": "c"
+        "float.h": "c",
+        "interval.h": "c",
+        "battery.h": "c"
     },
     "idf.flashType": "UART",
     "idf.portWin": "COM22"
