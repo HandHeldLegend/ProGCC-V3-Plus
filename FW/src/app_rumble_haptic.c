@@ -2,9 +2,12 @@
 #include "interval.h"
 #include "main.h"
 #include "math.h"
-#include "float.h"
 
-#define SOC_CLOCK (float)125000000.0f
+//#include "egg.h"
+
+void app_rumble_task(uint32_t timestamp);
+
+#define SOC_CLOCK (float)HOJA_SYS_CLK_HZ
 
 #define SAMPLE_RATE 12000
 #define BUFFER_SIZE 255
@@ -26,11 +29,14 @@ static int pwm_dma_chan, trigger_dma_chan, sample_dma_chan;
 hoja_rumble_msg_s msg_left = {0};
 hoja_rumble_msg_s msg_right = {0};
 
-static uint8_t audio_buffers[2][BUFFER_SIZE];
-static volatile int cur_audio_buffer;
-static volatile int last_audio_buffer;
+//static volatile int cur_audio_buffer;
 
 #define M_PI 3.14159265358979323846
+#define TWO_PI (M_PI*2)
+
+static volatile int audio_buffer_idx_used = 0;
+static uint8_t audio_buffers[2][BUFFER_SIZE] = {0};
+static volatile bool ready_next_sine = false;
 
 // Which sample we're processing
 uint8_t samples_idx;
@@ -42,7 +48,11 @@ float _rumble_scaler = 0;
 
 typedef struct
 {
+    // How much we increase the phase each time
     float phase_step;
+    // How much to increase our phase step each time
+    float phase_accumulator;
+    // Our current phase
     float phase;
     float f;
     float f_step;
@@ -57,7 +67,7 @@ haptic_s lo_state = {0};
 
 float clamp_rumble(float amplitude)
 {
-    const float min = 0.2f;
+    const float min = 0.05f;
     const float max = 1.0f;
     float range = max - min;
 
@@ -77,11 +87,33 @@ float clamp_rumble(float amplitude)
     return 0;
 }
 
-void generate_sine_wave(uint8_t *buffer)
+#define SIN_TABLE_SIZE 4096
+int8_t sin_table[SIN_TABLE_SIZE] = {0};
+
+void sine_table_init()
+{
+    float inc = TWO_PI / SIN_TABLE_SIZE;
+    float fi = 0;
+
+    for (int i = 0; i < SIN_TABLE_SIZE; i++)
+    {
+        float sample = sinf(fi);
+        sin_table[i] = (int8_t)((sample)* (127.5));
+        
+        fi+=inc;
+        fi = fmodf(fi, TWO_PI);
+    }
+}
+
+// This function is designed to be broken
+// up into many steps to avoid causing slowdown
+// or starve other tasks
+// Returns true when the buffer is filled
+bool generate_sine_wave(uint8_t *buffer, uint16_t i)
 {
     // This means we need to reset our state and
     // calculate our next step
-    if (msg_left.unread)
+    if (msg_left.unread && !i)
     {
         msg_left.unread = false;
         samples_count = msg_left.sample_count;
@@ -93,6 +125,8 @@ void generate_sine_wave(uint8_t *buffer)
             float hif = msg_left.samples[0].high_frequency;
             hi_state.f_target = hif;
             hi_state.f_step = (hif - hi_state.f) / SAMPLE_FRAME_PERIOD;
+            hi_state.phase_step = (SIN_TABLE_SIZE * hi_state.f) / SAMPLE_RATE;
+            hi_state.phase_accumulator = (SIN_TABLE_SIZE * hi_state.f_step) / SAMPLE_RATE;
 
             float hia = msg_left.samples[0].high_amplitude;
             hi_state.a_target = hia;
@@ -104,6 +138,8 @@ void generate_sine_wave(uint8_t *buffer)
             float lof = msg_left.samples[0].low_frequency;
             lo_state.f_target = lof;
             lo_state.f_step = (lof - lo_state.f) / SAMPLE_FRAME_PERIOD;
+            lo_state.phase_step = (SIN_TABLE_SIZE * lo_state.f) / SAMPLE_RATE;
+            lo_state.phase_accumulator = (SIN_TABLE_SIZE * lo_state.f_step) / SAMPLE_RATE;
 
             float loa = msg_left.samples[0].low_amplitude;
             lo_state.a_target = loa;
@@ -111,104 +147,124 @@ void generate_sine_wave(uint8_t *buffer)
         }
     }
 
-    for (int i = 0; i < BUFFER_SIZE; i++)
+    //hi_state.phase_step = (TWO_PI * hi_state.f) / SAMPLE_RATE;
+    //lo_state.phase_step = (TWO_PI * lo_state.f) / SAMPLE_RATE;
+
+    if(hi_state.phase_accumulator>0)
+        hi_state.phase_step += hi_state.phase_accumulator;
+
+    if(lo_state.phase_accumulator>0)
+        lo_state.phase_step += lo_state.phase_accumulator;
+
+    //float sample_high   = sinf(hi_state.phase); //sinf
+    //float sample_low    = sinf(lo_state.phase); //sinf
+    float sample_high   = sin_table[(uint16_t) hi_state.phase];
+    float sample_low    = sin_table[(uint16_t) lo_state.phase];
+
+    sample_high *= clamp_rumble(hi_state.a);
+    sample_low  *= clamp_rumble(lo_state.a);
+
+    // Combine samples
+    float sample = sample_low+sample_high;
+
+    sample += 127.5;
+
+    sample = (sample > 255.0f) ? 255.0f : (sample < 0) ? 0 : sample;
+
+    buffer[i] = (uint8_t)sample;
+
+    // Update phases and steps
     {
-        hi_state.phase_step = (2 * M_PI * hi_state.f) / SAMPLE_RATE;
-        lo_state.phase_step = (2 * M_PI * lo_state.f) / SAMPLE_RATE;
+        hi_state.phase += hi_state.phase_step;
+        lo_state.phase += lo_state.phase_step;
 
-        float sample_high   = sinf(hi_state.phase);
-        float sample_low    = sinf(lo_state.phase);
+        // Keep phases within [0, 2π) range
+        hi_state.phase = fmodf(hi_state.phase, SIN_TABLE_SIZE);
+        lo_state.phase = fmodf(lo_state.phase, SIN_TABLE_SIZE);
 
-        // Scale samples by amplitude
-        sample_high *= clamp_rumble(hi_state.a);
-        sample_low  *= clamp_rumble(lo_state.a);
-
-        // Combine samples
-        float sample = ((sample_low * 0.6f) + (sample_high * 0.4f));
-
-        // Ensure the sample is within [-1, 1] range
-        if (sample > 1.0f)
-            sample = 1.0f;
-        if (sample < -1.0f)
-            sample = -1.0f;
-
-        buffer[i] = (uint8_t)((sample + 1.0f) * (127.5));
-
-        // Update phases and steps
+        if (sample_counter <= SAMPLE_FRAME_PERIOD)
         {
-            hi_state.phase += hi_state.phase_step;
-            lo_state.phase += lo_state.phase_step;
+            hi_state.f += hi_state.f_step;
+            hi_state.a += hi_state.a_step;
 
-            // Keep phases within [0, 2π) range
-            hi_state.phase = fmodf(hi_state.phase, 2 * M_PI);
-            lo_state.phase = fmodf(lo_state.phase, 2 * M_PI);
+            lo_state.f += lo_state.f_step;
+            lo_state.a += lo_state.a_step;
+        }
+        else
+        {
+            // Set values to target
+            hi_state.f = hi_state.f_target;
+            hi_state.a = hi_state.a_target;
+            lo_state.f = lo_state.f_target;
+            lo_state.a = lo_state.a_target;
 
-            if (sample_counter <= SAMPLE_FRAME_PERIOD)
+            // increment sample_idx and prevent overflow
+            if(samples_idx<100)
+                samples_idx++;
+            
+            if(samples_idx < samples_count)
             {
-                hi_state.f += hi_state.f_step;
-                hi_state.a += hi_state.a_step;
-                lo_state.f += lo_state.f_step;
-                lo_state.a += lo_state.a_step;
+                // reset sample_counter 
+                sample_counter = 0;
+
+                // Adjust hi frequency
+                float hif = msg_left.samples[samples_idx].high_frequency;
+                hi_state.f_target = hif;
+                hi_state.f_step = (hif - hi_state.f) / SAMPLE_FRAME_PERIOD;
+                hi_state.phase_step = (SIN_TABLE_SIZE * hi_state.f) / SAMPLE_RATE;
+
+                // Calculate hi phase accumulator
+                hi_state.phase_accumulator = (SIN_TABLE_SIZE * hi_state.f_step) / SAMPLE_RATE;
+
+                float hia = msg_left.samples[samples_idx].high_amplitude;
+                hi_state.a_target = hia;
+                hi_state.a_step = (hia - hi_state.a) / SAMPLE_FRAME_PERIOD;
+
+                // Adjust lo frequency
+                float lof = msg_left.samples[samples_idx].low_frequency;
+                lo_state.f_target = lof;
+                lo_state.f_step = (lof - lo_state.f) / SAMPLE_FRAME_PERIOD;
+                lo_state.phase_step = (SIN_TABLE_SIZE * lo_state.f) / SAMPLE_RATE;
+
+                // Calculate lo phase accumulator
+                lo_state.phase_accumulator = (SIN_TABLE_SIZE * lo_state.f_step) / SAMPLE_RATE;
+
+                float loa = msg_left.samples[samples_idx].low_amplitude;
+                lo_state.a_target = loa;
+                lo_state.a_step = (loa - lo_state.a) / SAMPLE_FRAME_PERIOD;
             }
             else
             {
-                // Set values to target
-                hi_state.f = hi_state.f_target;
-                hi_state.a = hi_state.a_target;
-                lo_state.f = lo_state.f_target;
-                lo_state.a = lo_state.a_target;
-
-                // increment sample_idx and prevent overflow
-                if(samples_idx<100)
-                    samples_idx++;
-                
-                if(samples_idx < samples_count)
-                {
-                    // reset sample_counter 
-                    sample_counter = 0;
-
-                    // Adjust hi frequency
-                    float hif = msg_left.samples[samples_idx].high_frequency;
-                    hi_state.f_target = hif;
-                    hi_state.f_step = (hif - hi_state.f) / SAMPLE_FRAME_PERIOD;
-
-                    float hia = msg_left.samples[samples_idx].high_amplitude;
-                    hi_state.a_target = hia;
-                    hi_state.a_step = (hia - hi_state.a) / SAMPLE_FRAME_PERIOD;
-
-                    // Adjust lo frequency
-                    float lof = msg_left.samples[samples_idx].low_frequency;
-                    lo_state.f_target = lof;
-                    lo_state.f_step = (lof - lo_state.f) / SAMPLE_FRAME_PERIOD;
-
-                    float loa = msg_left.samples[samples_idx].low_amplitude;
-                    lo_state.a_target = loa;
-                    lo_state.a_step = (loa - lo_state.a) / SAMPLE_FRAME_PERIOD;
-                }
+                hi_state.phase_accumulator = 0;
+                lo_state.phase_accumulator = 0;
             }
-
-            // Increment sample_counter/prevent overflow
-            if(sample_counter < 100)
-                sample_counter++;
         }
+
+        // Increment sample_counter/prevent overflow
+        if(sample_counter < 100)
+            sample_counter++;
     }
 }
 
+//volatile uint32_t _audio_playback_idx = 0;
+//volatile bool _audio_playback = false;
+
 static void __isr __time_critical_func(dma_handler)()
 {
-    cur_audio_buffer = 1 - cur_audio_buffer;
-    dma_hw->ch[sample_dma_chan].al1_read_addr = (intptr_t)&audio_buffers[cur_audio_buffer][0];
+    audio_buffer_idx_used = 1 - audio_buffer_idx_used;
+
+    dma_hw->ch[sample_dma_chan].al1_read_addr = (intptr_t)&audio_buffers[audio_buffer_idx_used][0];
     dma_hw->ch[trigger_dma_chan].al3_read_addr_trig = (intptr_t)&single_sample_ptr;
 
-    // Fill now-unused buffer
-    uint8_t unused_buffer = 1 - cur_audio_buffer;
-    generate_sine_wave(audio_buffers[unused_buffer]);
+    ready_next_sine = true;
 
     dma_hw->ints1 = 1u << trigger_dma_chan;
 }
 
 void audio_init(int audio_pin, int sample_freq)
 {
+    sine_table_init();
+
     gpio_set_function(audio_pin, GPIO_FUNC_PWM);
 
     int audio_pin_slice = pwm_gpio_to_slice_num(audio_pin);
@@ -272,13 +328,12 @@ void audio_init(int audio_pin, int sample_freq)
     );
 
     // clear audio buffers
-    memset(audio_buffers[0], 128, BUFFER_SIZE);
-    memset(audio_buffers[1], 128, BUFFER_SIZE);
+    memset(audio_buffers[0], 0, BUFFER_SIZE);
+    memset(audio_buffers[1], 0, BUFFER_SIZE);
 
     // kick things off with the trigger DMA channel
     dma_channel_start(trigger_dma_chan);
 }
-
 
 #define B3 246.94f  // Frequency of B3 in Hz
 #define E4 329.63f  // Frequency of E4 in Hz
@@ -341,9 +396,9 @@ float song[28] = {
 #define FEEDBACK_CTRL_REGISTER 0x1A
 
 // CTRL 1 Registers START
-#define STARTUP_BOOST (1 << 7) // 1 to enable
-#define AC_COUPLE (0 << 5)
-#define DRIVE_TIME (1) // Set default
+#define STARTUP_BOOST (0 << 7) // 1 to enable
+#define AC_COUPLE (1 << 5)
+#define DRIVE_TIME (20) // Set default
 
 #define CTRL1_BYTE (STARTUP_BOOST | AC_COUPLE | DRIVE_TIME)
 #define CTRL1_REGISTER 0x1B
@@ -351,7 +406,7 @@ float song[28] = {
 
 // CTRL 2 Registers START
 #define BIDIR_INPUT (1<<7) // Enable bidirectional input for Open-loop operation (<50% input is braking applied)
-#define BRAKE_STABILIZER (1<<6) // Improve loop stability? LOL no clue.
+#define BRAKE_STABILIZER (0<<6) // Improve loop stability? LOL no clue.
 #define SAMPLE_TIME (3U << 4)
 #define BLANKING_TIME_LOWER ( (BLANKING_TIME_BASE & 0b00000011) << 2 )
 #define IDISS_TIME_LOWER (IDISS_TIME_BASE & 0b00000011)
@@ -369,7 +424,7 @@ float song[28] = {
     Equation 7
     V(Lra-OL_RMS) = 21.32 * (10^-3) * OD_CLAMP * sqrt(1-resonantfreq * 800 * (10^-6))
 */
-#define ODCLAMP_BYTE (uint8_t) 16 // Using the equation from the DRV2604L datasheet for Open Loop mode
+#define ODCLAMP_BYTE (uint8_t) 26 // Using the equation from the DRV2604L datasheet for Open Loop mode
 // First value for 3.3v at 320hz is 179
 // Alt value for 3v is uint8_t 163 (320hz)
 // Alt value for 3v at 160hz is uint8_t 150
@@ -378,6 +433,7 @@ float song[28] = {
 
 // LRA Open Loop Period (Address: 0x20)
 #define OL_LRA_REGISTER 0x20
+#define OL_LRA_PERIOD 0b1111111
 
 // CTRL 3 Registers START
 
@@ -387,7 +443,7 @@ float song[28] = {
     used, the open-loop frequency is given by the PWM frequency divided by 128. If PWM interface is not used, the
     open-loop frequency is given by the OL_LRA_PERIOD[6:0] bit in register 0x20.
 */
-#define OL_LRA_PERIOD 127
+
 
 #define NG_THRESH_DISABLED 0
 #define NG_THRESH_2 1 // Percent
@@ -399,7 +455,7 @@ float song[28] = {
 
 #define SUPPLY_COMP_ENABLED 0
 #define SUPPLY_COMP_DISABLED 1
-#define SUPPLY_COMP_DIS (SUPPLY_COMP_DISABLED << 4)
+#define SUPPLY_COMP_DIS (SUPPLY_COMP_ENABLED << 4)
 
 #define DATA_FORMAT_RTP_SIGNED 0
 #define DATA_FORMAT_RTP_UNSIGNED 1
@@ -411,7 +467,7 @@ float song[28] = {
 
 #define N_PWM_ANALOG_PWM 0
 #define N_PWM_ANALOG_ANALOG 1
-#define N_PWM_ANALOG (N_PWM_ANALOG_PWM << 1)
+#define N_PWM_ANALOG (N_PWM_ANALOG_ANALOG << 1)
 
 #define LRA_OPEN_LOOP (1)
 
@@ -469,6 +525,7 @@ void cb_hoja_rumble_test()
 
     for (int i = 0; i < 62; i++)
     {
+        app_rumble_task(0);
         watchdog_update();
         sleep_ms(8);
     }
@@ -489,9 +546,10 @@ void test_sequence()
     played = true;
     for(int i = 0; i < 27; i+=1)
     {
-        msg.samples[0].low_amplitude = 0.9f;
+        msg.samples[0].low_amplitude = 1.0f;
         msg.samples[0].low_frequency = song[i];
         cb_hoja_rumble_set(&msg, &msg);
+        app_rumble_task(0);
         watchdog_update();
         sleep_ms(150);
     }
@@ -515,21 +573,21 @@ void cb_hoja_rumble_init()
         //uint8_t _set_mode1[] = {MODE_REGISTER, 0x00};
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode1, 2, false);
         //
-        //uint8_t _set_feedback[] = {FEEDBACK_CTRL_REGISTER, FEEDBACK_CTRL_BYTE};
-        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_feedback, 2, false);
-        //sleep_ms(10);
+        uint8_t _set_feedback[] = {FEEDBACK_CTRL_REGISTER, FEEDBACK_CTRL_BYTE};
+        i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_feedback, 2, false);
+        sleep_ms(5);
 
-        //uint8_t _set_control1[] = {CTRL1_REGISTER, CTRL1_BYTE};
-        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control1, 2, false);
-        //sleep_ms(10);
+        uint8_t _set_control1[] = {CTRL1_REGISTER, CTRL1_BYTE};
+        i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control1, 2, false);
+        sleep_ms(5);
 
         //uint8_t _set_control2[] = {CTRL2_REGISTER, CTRL2_BYTE};
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control2, 2, false);
         //sleep_ms(10);
 
-        //uint8_t _set_control3[] = {CTRL3_REGISTER, CTRL3_BYTE};
-        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control3, 2, false);
-        //sleep_ms(10);
+        uint8_t _set_control3[] = {CTRL3_REGISTER, CTRL3_BYTE};
+        i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control3, 2, false);
+        sleep_ms(5);
 
         //uint8_t _set_control4[] = {CTRL4_REGISTER, CTRL4_BYTE};
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control4, 2, false);
@@ -546,19 +604,19 @@ void cb_hoja_rumble_init()
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_bemf, 2, false);
 
         //uint8_t _set_freq[] = {OL_LRA_REGISTER, OL_LRA_PERIOD};
-        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_freq, 2, false);
+        //i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_freq, 2, false);
 
         uint8_t _set_odclamped[] = {ODCLAMP_REGISTER, ODCLAMP_BYTE};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_odclamped, 2, false);
+        i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_odclamped, 2, false);
+        sleep_ms(5);
 
         //uint8_t _set_mode2[] = {MODE_REGISTER, STANDBY_MODE_BYTE};
         //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode2, 2, false);
 
         uint8_t _set_mode3[] = {MODE_REGISTER, MODE_BYTE};
-        i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode3, 2, false);
+        i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode3, 2, false);
+        sleep_ms(5);
 
-        generate_sine_wave(audio_buffers[0]);
-        generate_sine_wave(audio_buffers[1]);
         audio_init(GPIO_LRA_IN_LO, SAMPLE_RATE);
     }
 
@@ -566,18 +624,28 @@ void cb_hoja_rumble_init()
     rumble_type_t type;
     hoja_get_rumble_settings(&intensity, &type);
 
-    _rumble_scaler = 0.75f + (0.25f * ((float) intensity / 100.0f));
+    _rumble_scaler = ((float) intensity / 100.0f);
 }
 
 bool app_rumble_hwtest()
 {
-
-    test_sequence();
+    //_audio_playback_idx = 0;
+    //_audio_playback = true;
+    cb_hoja_rumble_test();
+    //test_sequence();
     //rumble_get_calibration();
     return true;
 }
 
 void app_rumble_task(uint32_t timestamp)
 {
-    return;
+    if(ready_next_sine)
+    {
+        ready_next_sine = false;
+        uint8_t available_buffer = 1 - audio_buffer_idx_used;
+        for(int i = 0; i<BUFFER_SIZE; i++)
+        {
+            generate_sine_wave(audio_buffers[available_buffer], i);
+        }
+    }
 }
