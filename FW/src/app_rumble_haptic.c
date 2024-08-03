@@ -88,7 +88,7 @@ float clamp_rumble(float amplitude)
 }
 
 #define SIN_TABLE_SIZE 4096
-int8_t sin_table[SIN_TABLE_SIZE] = {0};
+int16_t sin_table[SIN_TABLE_SIZE] = {0};
 
 void sine_table_init()
 {
@@ -98,7 +98,7 @@ void sine_table_init()
     for (int i = 0; i < SIN_TABLE_SIZE; i++)
     {
         float sample = sinf(fi);
-        sin_table[i] = (int8_t)((sample)* (127.5));
+        sin_table[i] = (int16_t)((sample)* (255.0f));
         
         fi+=inc;
         fi = fmodf(fi, TWO_PI);
@@ -167,9 +167,15 @@ bool generate_sine_wave(uint8_t *buffer, uint16_t i)
     // Combine samples
     float sample = sample_low+sample_high;
 
-    sample += 127.5;
+    //sample += 127.5;
+    if(hi_state.a > 0 || lo_state.a > 0)
+    {
+        sample += 25; // Add base
+    }
 
     sample = (sample > 255.0f) ? 255.0f : (sample < 0) ? 0 : sample;
+
+    
 
     buffer[i] = (uint8_t)sample;
 
