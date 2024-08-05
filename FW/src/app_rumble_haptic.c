@@ -67,7 +67,7 @@ haptic_s lo_state = {0};
 
 float clamp_rumble(float amplitude)
 {
-    const float min = 0.05f;
+    const float min = 0.01f;
     const float max = 1.0f;
     float range = max - min;
 
@@ -167,10 +167,16 @@ bool generate_sine_wave(uint8_t *buffer, uint16_t i)
     // Combine samples
     float sample = sample_low+sample_high;
 
+    if((hi_state.a + lo_state.a) > 1.0f)
+    {
+        float new_ratio = 1.0f/(hi_state.a + lo_state.a);
+        sample *= new_ratio;
+    }
+
     //sample += 127.5;
     if(hi_state.a > 0 || lo_state.a > 0)
     {
-        sample += 25; // Add base
+        sample += 15; // Add base
     }
 
     sample = (sample > 255.0f) ? 255.0f : (sample < 0) ? 0 : sample;
