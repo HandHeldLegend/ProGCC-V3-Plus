@@ -11,7 +11,7 @@
 #define HOJA_CLOCK_PIN 4
 #define HOJA_LATCH_PIN 5
 
-#define HOJA_FW_VERSION 0x0A26
+#define HOJA_FW_VERSION 0x0A27
 
 // Haptic
 #if (HOJA_DEVICE_ID == 0xA003)

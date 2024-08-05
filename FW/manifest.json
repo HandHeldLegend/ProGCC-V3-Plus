@@ -1,4 +1,4 @@
 {
-    "changelog": "8.3.2024r1<br>-HD Rumble updated<br>-Bluetooth Comms updated (Baseband Update REQUIRED)<br>-Resolve RGB dimming",
-    "fw_version": 2598
+    "changelog": "8.5.2024<br>-I2C Comms Update (Bluetooth update required)",
+    "fw_version": 2599
 }
