@@ -65,26 +65,56 @@ typedef struct
 haptic_s hi_state = {0};
 haptic_s lo_state = {0};
 
-float clamp_rumble(float amplitude)
+float clamp_rumble_lo(float amplitude)
 {
-    const float min = 0.01f;
+    const float min = 0.05f;
     const float max = 1.0f;
-    float range = max - min;
 
+    const float upper_expander = 0.5f; // We want to treat 0 to 0.75 as 0 to 1
+
+    if(!amplitude) return 0;
     if(!_rumble_scaler) return 0;
-    
+
+    float expanded_amp = amplitude/upper_expander;
+    expanded_amp = (expanded_amp>1) ? 1 : expanded_amp;
+
+    float range = max - min;
     range *= _rumble_scaler;
 
     float retval = 0;
-    if (amplitude > 0)
-    {
-        retval = range * amplitude;
-        retval += min;
-        if (retval > max)
-            retval = max;
-        return retval;
-    }
-    return 0;
+
+    retval = range * expanded_amp;
+    retval += min;
+    if (retval > max)
+        retval = max;
+    return retval;
+
+}
+
+float clamp_rumble_hi(float amplitude)
+{
+    const float min = 0.2f;
+    const float max = 1.0f;
+
+    const float upper_expander = 0.5f; // We want to treat 0 to 0.75 as 0 to 1
+
+    if(!amplitude) return 0;
+    if(!_rumble_scaler) return 0;
+
+    float expanded_amp = amplitude/upper_expander;
+    expanded_amp = (expanded_amp>1) ? 1 : expanded_amp;
+
+    float range = max - min;
+    range *= _rumble_scaler;
+
+    float retval = 0;
+
+    retval = range * expanded_amp;
+    retval += min;
+    if (retval > max)
+        retval = max;
+    return retval;
+
 }
 
 #define SIN_TABLE_SIZE 4096
@@ -98,7 +128,7 @@ void sine_table_init()
     for (int i = 0; i < SIN_TABLE_SIZE; i++)
     {
         float sample = sinf(fi);
-        sin_table[i] = (int16_t)((sample)* (255.0f));
+        sin_table[i] = (int16_t)((sample) * (255.0f));
         
         fi+=inc;
         fi = fmodf(fi, TWO_PI);
@@ -161,27 +191,24 @@ bool generate_sine_wave(uint8_t *buffer, uint16_t i)
     float sample_high   = sin_table[(uint16_t) hi_state.phase];
     float sample_low    = sin_table[(uint16_t) lo_state.phase];
 
-    sample_high *= clamp_rumble(hi_state.a);
-    sample_low  *= clamp_rumble(lo_state.a);
+    float hi_a = clamp_rumble_hi(hi_state.a);
+    float lo_a = clamp_rumble_lo(lo_state.a);
+    float comb_a = hi_a + lo_a;
+
+    if((comb_a) > 1.0f)
+    {
+        float new_ratio = 1.0f/(comb_a);
+        hi_a *= new_ratio;
+        lo_a *= new_ratio;
+    }
+
+    sample_high *= hi_a;
+    sample_low  *= lo_a;
 
     // Combine samples
     float sample = sample_low+sample_high;
 
-    if((hi_state.a + lo_state.a) > 1.0f)
-    {
-        float new_ratio = 1.0f/(hi_state.a + lo_state.a);
-        sample *= new_ratio;
-    }
-
-    //sample += 127.5;
-    if(hi_state.a > 0 || lo_state.a > 0)
-    {
-        sample += 15; // Add base
-    }
-
-    sample = (sample > 255.0f) ? 255.0f : (sample < 0) ? 0 : sample;
-
-    
+    sample = (sample > 255) ? 255 : (sample < 0) ? 0 : sample;
 
     buffer[i] = (uint8_t)sample;
 
@@ -436,7 +463,7 @@ float song[28] = {
     Equation 7
     V(Lra-OL_RMS) = 21.32 * (10^-3) * OD_CLAMP * sqrt(1-resonantfreq * 800 * (10^-6))
 */
-#define ODCLAMP_BYTE (uint8_t) 26 // Using the equation from the DRV2604L datasheet for Open Loop mode
+#define ODCLAMP_BYTE (uint8_t) 20 // Using the equation from the DRV2604L datasheet for Open Loop mode
 // First value for 3.3v at 320hz is 179
 // Alt value for 3v is uint8_t 163 (320hz)
 // Alt value for 3v at 160hz is uint8_t 150
@@ -531,7 +558,7 @@ void cb_hoja_rumble_set(hoja_rumble_msg_s *left, hoja_rumble_msg_s *right)
 
 void cb_hoja_rumble_test()
 {
-    hoja_rumble_msg_s msg = {.sample_count=1, .samples[0]={.high_amplitude=1.0f, .high_frequency=320.0f, .low_amplitude=1.0f, .low_frequency=160.0f}, .unread=true};
+    hoja_rumble_msg_s msg = {.sample_count=1, .samples[0]={.high_amplitude=0, .high_frequency=320.0f, .low_amplitude=1.0f, .low_frequency=160.0f}, .unread=true};
 
     cb_hoja_rumble_set(&msg, &msg);
 
