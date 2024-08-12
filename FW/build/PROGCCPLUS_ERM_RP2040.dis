@@ -37,7 +37,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_abbrev 00010d8d  00000000  00000000  00088a9a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_loc    00041341  00000000  00000000  00099827  2**0
+ 17 .debug_loc    00041340  00000000  00000000  00099827  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_aranges 00002960  00000000  00000000  000dab68  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -18503,13 +18503,13 @@ Disassembly of section .text:
 10009e62:	7023      	strb	r3, [r4, #0]
 10009e64:	3ba5      	subs	r3, #165	; 0xa5
 10009e66:	7063      	strb	r3, [r4, #1]
-10009e68:	3320      	adds	r3, #32
+10009e68:	3321      	adds	r3, #33	; 0x21
 10009e6a:	70a3      	strb	r3, [r4, #2]
 10009e6c:	26a0      	movs	r6, #160	; 0xa0
 10009e6e:	70e6      	strb	r6, [r4, #3]
 10009e70:	2502      	movs	r5, #2
 10009e72:	7125      	strb	r5, [r4, #4]
-10009e74:	3b29      	subs	r3, #41	; 0x29
+10009e74:	3b2a      	subs	r3, #42	; 0x2a
 10009e76:	71a3      	strb	r3, [r4, #6]
 10009e78:	f000 fc84 	bl	1000a784 <btinput_get_version>
 10009e7c:	0a03      	lsrs	r3, r0, #8

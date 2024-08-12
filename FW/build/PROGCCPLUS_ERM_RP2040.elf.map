@@ -1763,9 +1763,9 @@ Discarded input sections
                 0x00000000        0xa CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
  .bss.uart_inst
                 0x00000000        0x4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
- .text          0x00000000        0x0 C:\Users\Mitch\AppData\Local\Temp\ccy5PCDG.o
- .data          0x00000000        0x0 C:\Users\Mitch\AppData\Local\Temp\ccy5PCDG.o
- .bss           0x00000000        0x0 C:\Users\Mitch\AppData\Local\Temp\ccy5PCDG.o
+ .text          0x00000000        0x0 C:\Users\Mitch\AppData\Local\Temp\ccuanHvq.o
+ .data          0x00000000        0x0 C:\Users\Mitch\AppData\Local\Temp\ccuanHvq.o
+ .bss           0x00000000        0x0 C:\Users\Mitch\AppData\Local\Temp\ccuanHvq.o
  .text          0x00000000        0x0 c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a(lib_a-s_fmin.o)
  .data          0x00000000        0x0 c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a(lib_a-s_fmin.o)
  .bss           0x00000000        0x0 c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a(lib_a-s_fmin.o)
@@ -1987,7 +1987,7 @@ LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.
 .boot2          0x10000000      0x100
                 0x10000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 C:\Users\Mitch\AppData\Local\Temp\ccy5PCDG.o
+ .boot2         0x10000000      0x100 C:\Users\Mitch\AppData\Local\Temp\ccuanHvq.o
                 0x10000100                __boot2_end__ = .
                 0x00000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -5694,7 +5694,7 @@ LOAD CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK
 LOAD CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 LOAD CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 LOAD CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
-LOAD C:\Users\Mitch\AppData\Local\Temp\ccy5PCDG.o
+LOAD C:\Users\Mitch\AppData\Local\Temp\ccuanHvq.o
 LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a
 LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a
 START GROUP
@@ -5905,7 +5905,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000fb6       0x2c CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
  .ARM.attributes
-                0x00000fe2       0x22 C:\Users\Mitch\AppData\Local\Temp\ccy5PCDG.o
+                0x00000fe2       0x22 C:\Users\Mitch\AppData\Local\Temp\ccuanHvq.o
  .ARM.attributes
                 0x00001004       0x2c c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a(lib_a-s_fmin.o)
  .ARM.attributes
@@ -6189,7 +6189,7 @@ LOAD linker stubs
  .debug_abbrev  0x00010595      0x437 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
  .debug_abbrev  0x000109cc      0x3c1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
 
-.debug_loc      0x00000000    0x41341
+.debug_loc      0x00000000    0x41340
  .debug_loc     0x00000000     0x1285 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/main.c.obj
  .debug_loc     0x00001285      0x9ea CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_rumble_erm.c.obj
  .debug_loc     0x00001c6f      0x4aa CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/src/app_imu.c.obj
@@ -6223,53 +6223,53 @@ LOAD linker stubs
  .debug_loc     0x0001243b       0x57 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/swpro.c.obj
  .debug_loc     0x00012492      0x49f CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/webusb.c.obj
  .debug_loc     0x00012931       0xe0 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/xinput.c.obj
- .debug_loc     0x00012a11      0x59c CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
- .debug_loc     0x00012fad       0xdd CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/ds4input.c.obj
- .debug_loc     0x0001308a      0x296 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
- .debug_loc     0x00013320     0x1237 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_loc     0x00014557       0xe9 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
- .debug_loc     0x00014640      0x45f CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
- .debug_loc     0x00014a9f      0x233 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
- .debug_loc     0x00014cd2     0x13f5 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- .debug_loc     0x000160c7       0x60 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/lock_core.c.obj
- .debug_loc     0x00016127     0x152e CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/mutex.c.obj
- .debug_loc     0x00017655       0xf5 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/critical_section.c.obj
- .debug_loc     0x0001774a     0x31e5 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_time/time.c.obj
- .debug_loc     0x0001a92f      0x488 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_time/timeout_helper.c.obj
- .debug_loc     0x0001adb7      0xacb CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .debug_loc     0x0001b882     0x1446 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_util/pheap.c.obj
- .debug_loc     0x0001ccc8      0x83b CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
- .debug_loc     0x0001d503      0x832 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_loc     0x0001dd35      0x310 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
- .debug_loc     0x0001e045      0x2ec CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_loc     0x0001e331       0x71 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_loc     0x0001e3a2      0x674 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_loc     0x0001ea16     0x2095 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .debug_loc     0x00020aab      0x1a1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_loc     0x00020c4c       0x59 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
- .debug_loc     0x00020ca5     0x7f1a CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
- .debug_loc     0x00028bbf       0x73 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
- .debug_loc     0x00028c32     0x6167 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
- .debug_loc     0x0002ed99      0x2dc CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
- .debug_loc     0x0002f075      0xe23 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_loc     0x0002fe98      0x888 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .debug_loc     0x00030720      0xf93 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
- .debug_loc     0x000316b3      0xa71 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
- .debug_loc     0x00032124       0xff CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
- .debug_loc     0x00032223      0x909 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .debug_loc     0x00032b2c     0x1ca7 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
- .debug_loc     0x000347d3      0xc12 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
- .debug_loc     0x000353e5     0x1359 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
- .debug_loc     0x0003673e      0xebe CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
- .debug_loc     0x000375fc      0x7a9 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- .debug_loc     0x00037da5     0x2456 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
- .debug_loc     0x0003a1fb      0x4de CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
- .debug_loc     0x0003a6d9     0x11d4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
- .debug_loc     0x0003b8ad     0x1195 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
- .debug_loc     0x0003ca42      0x8eb CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
- .debug_loc     0x0003d32d      0xe2f CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/tusb.c.obj
- .debug_loc     0x0003e15c     0x2b8e CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
- .debug_loc     0x00040cea      0x657 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
+ .debug_loc     0x00012a11      0x59b CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/btinput.c.obj
+ .debug_loc     0x00012fac       0xdd CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/lib/HOJA-LIB-RP2040/src/devices/ds4input.c.obj
+ .debug_loc     0x00013089      0x296 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
+ .debug_loc     0x0001331f     0x1237 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_loc     0x00014556       0xe9 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+ .debug_loc     0x0001463f      0x45f CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+ .debug_loc     0x00014a9e      0x233 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_loc     0x00014cd1     0x13f5 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_loc     0x000160c6       0x60 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/lock_core.c.obj
+ .debug_loc     0x00016126     0x152e CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/mutex.c.obj
+ .debug_loc     0x00017654       0xf5 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/critical_section.c.obj
+ .debug_loc     0x00017749     0x31e5 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_time/time.c.obj
+ .debug_loc     0x0001a92e      0x488 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_time/timeout_helper.c.obj
+ .debug_loc     0x0001adb6      0xacb CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_loc     0x0001b881     0x1446 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_util/pheap.c.obj
+ .debug_loc     0x0001ccc7      0x83b CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+ .debug_loc     0x0001d502      0x832 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_loc     0x0001dd34      0x310 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_loc     0x0001e044      0x2ec CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_loc     0x0001e330       0x71 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_loc     0x0001e3a1      0x674 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_loc     0x0001ea15     0x2095 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .debug_loc     0x00020aaa      0x1a1 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_loc     0x00020c4b       0x59 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+ .debug_loc     0x00020ca4     0x7f1a CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
+ .debug_loc     0x00028bbe       0x73 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+ .debug_loc     0x00028c31     0x6167 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
+ .debug_loc     0x0002ed98      0x2dc CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+ .debug_loc     0x0002f074      0xe23 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_loc     0x0002fe97      0x888 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .debug_loc     0x0003071f      0xf93 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_multicore/multicore.c.obj
+ .debug_loc     0x000316b2      0xa71 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_rand/rand.c.obj
+ .debug_loc     0x00032123       0xff CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_loc     0x00032222      0x909 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ .debug_loc     0x00032b2b     0x1ca7 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj
+ .debug_loc     0x000347d2      0xc12 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj
+ .debug_loc     0x000353e4     0x1359 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+ .debug_loc     0x0003673d      0xebe CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+ .debug_loc     0x000375fb      0x7a9 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ .debug_loc     0x00037da4     0x2456 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+ .debug_loc     0x0003a1fa      0x4de CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+ .debug_loc     0x0003a6d8     0x11d4 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+ .debug_loc     0x0003b8ac     0x1195 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj
+ .debug_loc     0x0003ca41      0x8eb CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj
+ .debug_loc     0x0003d32c      0xe2f CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/tusb.c.obj
+ .debug_loc     0x0003e15b     0x2b8e CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+ .debug_loc     0x00040ce9      0x657 CMakeFiles/PROGCCPLUS_ERM_RP2040.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj
 
 .debug_aranges  0x00000000     0x2960
  .debug_aranges
