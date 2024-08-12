@@ -18503,13 +18503,13 @@ Disassembly of section .text:
 10009e62:	7023      	strb	r3, [r4, #0]
 10009e64:	3ba5      	subs	r3, #165	; 0xa5
 10009e66:	7063      	strb	r3, [r4, #1]
-10009e68:	331f      	adds	r3, #31
+10009e68:	3320      	adds	r3, #32
 10009e6a:	70a3      	strb	r3, [r4, #2]
 10009e6c:	26a0      	movs	r6, #160	; 0xa0
 10009e6e:	70e6      	strb	r6, [r4, #3]
 10009e70:	2502      	movs	r5, #2
 10009e72:	7125      	strb	r5, [r4, #4]
-10009e74:	3b28      	subs	r3, #40	; 0x28
+10009e74:	3b29      	subs	r3, #41	; 0x29
 10009e76:	71a3      	strb	r3, [r4, #6]
 10009e78:	f000 fc84 	bl	1000a784 <btinput_get_version>
 10009e7c:	0a03      	lsrs	r3, r0, #8
