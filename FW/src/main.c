@@ -147,6 +147,7 @@ void cb_hoja_hardware_setup()
 
 bool set = false;
 bool unset = true;
+static uint32_t this_timestamp = 0;
 
 void cb_hoja_read_buttons(button_data_s *data)
 {
@@ -199,6 +200,8 @@ void cb_hoja_read_buttons(button_data_s *data)
     data->button_safemode = !gpio_get(PGPIO_BUTTON_MODE);
     data->button_shipping = data->button_stick_right && data->button_stick_left;
     data->button_sync = data->button_plus;
+
+
 }
 
 #define BUFFER_SIZE 4
@@ -290,6 +293,7 @@ void cb_hoja_read_analog(a_data_s *data)
 
 void cb_hoja_task_0_hook(uint32_t timestamp)
 {
+    this_timestamp = timestamp;
     app_rumble_task(timestamp);
 }
 

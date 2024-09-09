@@ -3,7 +3,7 @@
 #include "main.h"
 #include "math.h"
 
-//#include "egg.h"
+// #include "egg.h"
 
 void app_rumble_task(uint32_t timestamp);
 
@@ -29,10 +29,10 @@ static int pwm_dma_chan, trigger_dma_chan, sample_dma_chan;
 hoja_rumble_msg_s msg_left = {0};
 hoja_rumble_msg_s msg_right = {0};
 
-//static volatile int cur_audio_buffer;
+// static volatile int cur_audio_buffer;
 
 #define M_PI 3.14159265358979323846
-#define TWO_PI (M_PI*2)
+#define TWO_PI (M_PI * 2)
 
 static volatile int audio_buffer_idx_used = 0;
 static uint8_t audio_buffers[2][BUFFER_SIZE] = {0};
@@ -62,8 +62,19 @@ typedef struct
     float a_target;
 } haptic_s;
 
-haptic_s hi_state = {0};
-haptic_s lo_state = {0};
+typedef struct
+{
+    haptic_s lo_state;
+    haptic_s hi_state;
+
+    amfm_s amfm;
+
+    // Which sample we're processing
+    uint8_t sample_idx;
+
+} haptic_both_s;
+
+haptic_both_s haptic_state = {0};
 
 float clamp_rumble_lo(float amplitude)
 {
@@ -72,11 +83,13 @@ float clamp_rumble_lo(float amplitude)
 
     const float upper_expander = 0.5f; // We want to treat 0 to 0.75 as 0 to 1
 
-    if(!amplitude) return 0;
-    if(!_rumble_scaler) return 0;
+    if (!amplitude)
+        return 0;
+    if (!_rumble_scaler)
+        return 0;
 
-    float expanded_amp = amplitude/upper_expander;
-    expanded_amp = (expanded_amp>1) ? 1 : expanded_amp;
+    float expanded_amp = amplitude / upper_expander;
+    expanded_amp = (expanded_amp > 1) ? 1 : expanded_amp;
 
     float range = max - min;
     range *= _rumble_scaler;
@@ -88,7 +101,6 @@ float clamp_rumble_lo(float amplitude)
     if (retval > max)
         retval = max;
     return retval;
-
 }
 
 float clamp_rumble_hi(float amplitude)
@@ -98,11 +110,13 @@ float clamp_rumble_hi(float amplitude)
 
     const float upper_expander = 0.5f; // We want to treat 0 to 0.75 as 0 to 1
 
-    if(!amplitude) return 0;
-    if(!_rumble_scaler) return 0;
+    if (!amplitude)
+        return 0;
+    if (!_rumble_scaler)
+        return 0;
 
-    float expanded_amp = amplitude/upper_expander;
-    expanded_amp = (expanded_amp>1) ? 1 : expanded_amp;
+    float expanded_amp = amplitude / upper_expander;
+    expanded_amp = (expanded_amp > 1) ? 1 : expanded_amp;
 
     float range = max - min;
     range *= _rumble_scaler;
@@ -114,7 +128,6 @@ float clamp_rumble_hi(float amplitude)
     if (retval > max)
         retval = max;
     return retval;
-
 }
 
 #define SIN_TABLE_SIZE 4096
@@ -129,8 +142,8 @@ void sine_table_init()
     {
         float sample = sinf(fi);
         sin_table[i] = (int16_t)((sample) * (255.0f));
-        
-        fi+=inc;
+
+        fi += inc;
         fi = fmodf(fi, TWO_PI);
     }
 }
@@ -139,154 +152,120 @@ void sine_table_init()
 // up into many steps to avoid causing slowdown
 // or starve other tasks
 // Returns true when the buffer is filled
-bool generate_sine_wave(uint8_t *buffer, uint16_t i)
+bool generate_sine_wave(uint8_t *buffer)
 {
-    // This means we need to reset our state and
-    // calculate our next step
-    if (msg_left.unread && !i)
+    for (uint16_t i = 0; i < BUFFER_SIZE; i++)
     {
-        msg_left.unread = false;
-        samples_count = msg_left.sample_count;
-        samples_idx = 0;
-        sample_counter = 0;
-
-        // Adjust hi frequency
+        // This means we need to reset our state and
+        // calculate our next step
+        if (!haptic_state.sample_idx)
         {
-            float hif = msg_left.samples[0].high_frequency;
-            hi_state.f_target = hif;
-            hi_state.f_step = (hif - hi_state.f) / SAMPLE_FRAME_PERIOD;
-            hi_state.phase_step = (SIN_TABLE_SIZE * hi_state.f) / SAMPLE_RATE;
-            hi_state.phase_accumulator = (SIN_TABLE_SIZE * hi_state.f_step) / SAMPLE_RATE;
+            bool new = false;
 
-            float hia = msg_left.samples[0].high_amplitude;
-            hi_state.a_target = hia;
-            hi_state.a_step = (hia - hi_state.a) / SAMPLE_FRAME_PERIOD;
+            new = haptics_l_get(&(haptic_state.amfm));
+
+            if (new)
+            {
+                // Adjust hi frequency
+                {
+                    float hif = haptic_state.amfm.f_hi;
+                    haptic_state.hi_state.f_target = hif;
+                    haptic_state.hi_state.f_step = (hif - haptic_state.hi_state.f) / SAMPLE_FRAME_PERIOD;
+                    haptic_state.hi_state.phase_step = (SIN_TABLE_SIZE * haptic_state.hi_state.f) / SAMPLE_RATE;
+                    haptic_state.hi_state.phase_accumulator = (SIN_TABLE_SIZE * haptic_state.hi_state.f_step) / SAMPLE_RATE;
+
+                    float hia = haptic_state.amfm.a_hi;
+                    haptic_state.hi_state.a_target = hia;
+                    haptic_state.hi_state.a_step = (hia - haptic_state.hi_state.a) / SAMPLE_FRAME_PERIOD;
+                }
+
+                // Adjust lo frequency
+                {
+                    float lof = haptic_state.amfm.f_lo;
+                    haptic_state.lo_state.f_target = lof;
+                    haptic_state.lo_state.f_step = (lof - haptic_state.lo_state.f) / SAMPLE_FRAME_PERIOD;
+                    haptic_state.lo_state.phase_step = (SIN_TABLE_SIZE * haptic_state.lo_state.f) / SAMPLE_RATE;
+                    haptic_state.lo_state.phase_accumulator = (SIN_TABLE_SIZE * haptic_state.lo_state.f_step) / SAMPLE_RATE;
+
+                    float loa = haptic_state.amfm.a_lo;
+                    haptic_state.lo_state.a_target = loa;
+                    haptic_state.lo_state.a_step = (loa - haptic_state.lo_state.a) / SAMPLE_FRAME_PERIOD;
+                }
+            }
+            else
+            {
+                haptic_state.lo_state.phase_accumulator = 0;
+                haptic_state.hi_state.phase_accumulator = 0;
+            }
         }
 
-        // Adjust lo frequency
+        // hi_state.phase_step = (TWO_PI * hi_state.f) / SAMPLE_RATE;
+        // lo_state.phase_step = (TWO_PI * lo_state.f) / SAMPLE_RATE;
+
+        if (haptic_state.hi_state.phase_accumulator > 0)
+            haptic_state.hi_state.phase_step += haptic_state.hi_state.phase_accumulator;
+
+        if (haptic_state.lo_state.phase_accumulator > 0)
+            haptic_state.lo_state.phase_step += haptic_state.lo_state.phase_accumulator;
+
+        // float sample_low    = sinf(lo_state.phase); //sinf
+        float sample_high = sin_table[(uint16_t)haptic_state.hi_state.phase];
+        float sample_low = sin_table[(uint16_t)haptic_state.lo_state.phase];
+
+        float hi_a = clamp_rumble_hi(haptic_state.hi_state.a);
+        float lo_a = clamp_rumble_lo(haptic_state.lo_state.a);
+        float comb_a = hi_a + lo_a;
+
+        if ((comb_a) > 1.0f)
         {
-            float lof = msg_left.samples[0].low_frequency;
-            lo_state.f_target = lof;
-            lo_state.f_step = (lof - lo_state.f) / SAMPLE_FRAME_PERIOD;
-            lo_state.phase_step = (SIN_TABLE_SIZE * lo_state.f) / SAMPLE_RATE;
-            lo_state.phase_accumulator = (SIN_TABLE_SIZE * lo_state.f_step) / SAMPLE_RATE;
-
-            float loa = msg_left.samples[0].low_amplitude;
-            lo_state.a_target = loa;
-            lo_state.a_step = (loa - lo_state.a) / SAMPLE_FRAME_PERIOD;
+            float new_ratio = 1.0f / (comb_a);
+            hi_a *= new_ratio;
+            lo_a *= new_ratio;
         }
-    }
 
-    //hi_state.phase_step = (TWO_PI * hi_state.f) / SAMPLE_RATE;
-    //lo_state.phase_step = (TWO_PI * lo_state.f) / SAMPLE_RATE;
+        sample_high *= hi_a;
+        sample_low *= lo_a;
 
-    if(hi_state.phase_accumulator>0)
-        hi_state.phase_step += hi_state.phase_accumulator;
+        // Combine samples
+        float sample = sample_low + sample_high;
 
-    if(lo_state.phase_accumulator>0)
-        lo_state.phase_step += lo_state.phase_accumulator;
+        sample = (sample > 255) ? 255 : (sample < 0) ? 0
+                                                     : sample;
 
-    //float sample_high   = sinf(hi_state.phase); //sinf
-    //float sample_low    = sinf(lo_state.phase); //sinf
-    float sample_high   = sin_table[(uint16_t) hi_state.phase];
-    float sample_low    = sin_table[(uint16_t) lo_state.phase];
+        buffer[i] = (uint8_t)sample;
 
-    float hi_a = clamp_rumble_hi(hi_state.a);
-    float lo_a = clamp_rumble_lo(lo_state.a);
-    float comb_a = hi_a + lo_a;
-
-    if((comb_a) > 1.0f)
-    {
-        float new_ratio = 1.0f/(comb_a);
-        hi_a *= new_ratio;
-        lo_a *= new_ratio;
-    }
-
-    sample_high *= hi_a;
-    sample_low  *= lo_a;
-
-    // Combine samples
-    float sample = sample_low+sample_high;
-
-    sample = (sample > 255) ? 255 : (sample < 0) ? 0 : sample;
-
-    buffer[i] = (uint8_t)sample;
-
-    // Update phases and steps
-    {
-        hi_state.phase += hi_state.phase_step;
-        lo_state.phase += lo_state.phase_step;
+        // Update phases and steps
+        haptic_state.hi_state.phase += haptic_state.hi_state.phase_step;
+        haptic_state.lo_state.phase += haptic_state.lo_state.phase_step;
 
         // Keep phases within [0, 2π) range
-        hi_state.phase = fmodf(hi_state.phase, SIN_TABLE_SIZE);
-        lo_state.phase = fmodf(lo_state.phase, SIN_TABLE_SIZE);
+        haptic_state.hi_state.phase = fmodf(haptic_state.hi_state.phase, SIN_TABLE_SIZE);
+        haptic_state.lo_state.phase = fmodf(haptic_state.lo_state.phase, SIN_TABLE_SIZE);
 
-        if (sample_counter <= SAMPLE_FRAME_PERIOD)
+        if (sample_counter < SAMPLE_FRAME_PERIOD)
         {
-            hi_state.f += hi_state.f_step;
-            hi_state.a += hi_state.a_step;
+            haptic_state.hi_state.f += haptic_state.hi_state.f_step;
+            haptic_state.hi_state.a += haptic_state.hi_state.a_step;
 
-            lo_state.f += lo_state.f_step;
-            lo_state.a += lo_state.a_step;
+            haptic_state.lo_state.f += haptic_state.lo_state.f_step;
+            haptic_state.lo_state.a += haptic_state.lo_state.a_step;
         }
         else
         {
             // Set values to target
-            hi_state.f = hi_state.f_target;
-            hi_state.a = hi_state.a_target;
-            lo_state.f = lo_state.f_target;
-            lo_state.a = lo_state.a_target;
+            haptic_state.hi_state.f = haptic_state.hi_state.f_target;
+            haptic_state.hi_state.a = haptic_state.hi_state.a_target;
+            haptic_state.lo_state.f = haptic_state.lo_state.f_target;
+            haptic_state.lo_state.a = haptic_state.lo_state.a_target;
 
-            // increment sample_idx and prevent overflow
-            if(samples_idx<100)
-                samples_idx++;
-            
-            if(samples_idx < samples_count)
-            {
-                // reset sample_counter 
-                sample_counter = 0;
-
-                // Adjust hi frequency
-                float hif = msg_left.samples[samples_idx].high_frequency;
-                hi_state.f_target = hif;
-                hi_state.f_step = (hif - hi_state.f) / SAMPLE_FRAME_PERIOD;
-                hi_state.phase_step = (SIN_TABLE_SIZE * hi_state.f) / SAMPLE_RATE;
-
-                // Calculate hi phase accumulator
-                hi_state.phase_accumulator = (SIN_TABLE_SIZE * hi_state.f_step) / SAMPLE_RATE;
-
-                float hia = msg_left.samples[samples_idx].high_amplitude;
-                hi_state.a_target = hia;
-                hi_state.a_step = (hia - hi_state.a) / SAMPLE_FRAME_PERIOD;
-
-                // Adjust lo frequency
-                float lof = msg_left.samples[samples_idx].low_frequency;
-                lo_state.f_target = lof;
-                lo_state.f_step = (lof - lo_state.f) / SAMPLE_FRAME_PERIOD;
-                lo_state.phase_step = (SIN_TABLE_SIZE * lo_state.f) / SAMPLE_RATE;
-
-                // Calculate lo phase accumulator
-                lo_state.phase_accumulator = (SIN_TABLE_SIZE * lo_state.f_step) / SAMPLE_RATE;
-
-                float loa = msg_left.samples[samples_idx].low_amplitude;
-                lo_state.a_target = loa;
-                lo_state.a_step = (loa - lo_state.a) / SAMPLE_FRAME_PERIOD;
-            }
-            else
-            {
-                hi_state.phase_accumulator = 0;
-                lo_state.phase_accumulator = 0;
-            }
+            // Reset sample index
+            haptic_state.sample_idx = 0;
         }
-
-        // Increment sample_counter/prevent overflow
-        if(sample_counter < 100)
-            sample_counter++;
     }
 }
 
-//volatile uint32_t _audio_playback_idx = 0;
-//volatile bool _audio_playback = false;
+// volatile uint32_t _audio_playback_idx = 0;
+// volatile bool _audio_playback = false;
 
 static void __isr __time_critical_func(dma_handler)()
 {
@@ -395,25 +374,24 @@ void audio_init(int audio_pin, int sample_freq)
 #define Ab5 830.61f // Frequency of Ab5 in Hz
 
 float song[28] = {
-    B3, E4, A4, E4, D5, E4, Db5, Ab4, Eb4, Ab4, Fs4, Db4, Ab3, Db4, D4, G4, C5, F5, Bb5, F5, C5, A5, E5, B4, Ab5, 0, 0, E4
-    };
+    B3, E4, A4, E4, D5, E4, Db5, Ab4, Eb4, Ab4, Fs4, Db4, Ab3, Db4, D4, G4, C5, F5, Bb5, F5, C5, A5, E5, B4, Ab5, 0, 0, E4};
 
 #define DRV2605_SLAVE_ADDR 0x5A
 
 #if (HOJA_DEVICE_ID == 0xA003)
-    #define LRA_LOW_PWM_CHAN    PWM_CHAN_A
-    #define LRA_HI_PWM_CHAN     PWM_CHAN_A
-    // LRA SDA Select (left/right)
-    #define GPIO_LRA_SDA_SEL    25
-    // LRA Audio Output
-    #define GPIO_LRA_IN_LO         24
-    #define GPIO_LRA_IN_HI      24
+#define LRA_LOW_PWM_CHAN PWM_CHAN_A
+#define LRA_HI_PWM_CHAN PWM_CHAN_A
+// LRA SDA Select (left/right)
+#define GPIO_LRA_SDA_SEL 25
+// LRA Audio Output
+#define GPIO_LRA_IN_LO 24
+#define GPIO_LRA_IN_HI 24
 #elif (HOJA_DEVICE_ID == 0xA004)
-    // LRA Audio Output
-    #define LRA_LOW_PWM_CHAN    PWM_CHAN_B
-    #define LRA_HI_PWM_CHAN     PWM_CHAN_A
-    #define GPIO_LRA_IN_LO      21 // Low
-    #define GPIO_LRA_IN_HI      24
+// LRA Audio Output
+#define LRA_LOW_PWM_CHAN PWM_CHAN_B
+#define LRA_HI_PWM_CHAN PWM_CHAN_A
+#define GPIO_LRA_IN_LO 21 // Low
+#define GPIO_LRA_IN_HI 24
 #endif
 
 #define RATED_VOLTAGE_HEX 0x3
@@ -422,8 +400,7 @@ float song[28] = {
 #define HAPTIC_COMPENSATION 0
 #define HAPTIC_BACKEMF 0
 
-
-#define BLANKING_TIME_BASE (1)//(1)
+#define BLANKING_TIME_BASE (1) //(1)
 #define IDISS_TIME_BASE (1)
 
 #define N_ERM_LRA (1 << 7)
@@ -444,10 +421,10 @@ float song[28] = {
 // CTRL 1 Registers END
 
 // CTRL 2 Registers START
-#define BIDIR_INPUT (1<<7) // Enable bidirectional input for Open-loop operation (<50% input is braking applied)
-#define BRAKE_STABILIZER (0<<6) // Improve loop stability? LOL no clue.
+#define BIDIR_INPUT (1 << 7)      // Enable bidirectional input for Open-loop operation (<50% input is braking applied)
+#define BRAKE_STABILIZER (0 << 6) // Improve loop stability? LOL no clue.
 #define SAMPLE_TIME (3U << 4)
-#define BLANKING_TIME_LOWER ( (BLANKING_TIME_BASE & 0b00000011) << 2 )
+#define BLANKING_TIME_LOWER ((BLANKING_TIME_BASE & 0b00000011) << 2)
 #define IDISS_TIME_LOWER (IDISS_TIME_BASE & 0b00000011)
 // Write to register 0x1C
 #define CTRL2_BYTE (BIDIR_INPUT | BRAKE_STABILIZER | SAMPLE_TIME | BLANKING_TIME_LOWER | IDISS_TIME_LOWER)
@@ -463,7 +440,7 @@ float song[28] = {
     Equation 7
     V(Lra-OL_RMS) = 21.32 * (10^-3) * OD_CLAMP * sqrt(1-resonantfreq * 800 * (10^-6))
 */
-#define ODCLAMP_BYTE (uint8_t) 20 // Using the equation from the DRV2604L datasheet for Open Loop mode
+#define ODCLAMP_BYTE (uint8_t)20 // Using the equation from the DRV2604L datasheet for Open Loop mode
 // First value for 3.3v at 320hz is 179
 // Alt value for 3v is uint8_t 163 (320hz)
 // Alt value for 3v at 160hz is uint8_t 150
@@ -482,7 +459,6 @@ float song[28] = {
     used, the open-loop frequency is given by the PWM frequency divided by 128. If PWM interface is not used, the
     open-loop frequency is given by the OL_LRA_PERIOD[6:0] bit in register 0x20.
 */
-
 
 #define NG_THRESH_DISABLED 0
 #define NG_THRESH_2 1 // Percent
@@ -516,7 +492,7 @@ float song[28] = {
 // CTRL 3 Register END
 
 // CTRL 4 Registers START
-#define ZC_DET_TIME (0<<6) // 100us
+#define ZC_DET_TIME (0 << 6) // 100us
 #define AUTO_CAL_TIME (2U << 4)
 // Write to register 0x1E
 #define CTRL4_BYTE (ZC_DET_TIME | AUTO_CAL_TIME)
@@ -524,16 +500,16 @@ float song[28] = {
 // CTRL 4 Registers END
 
 // CTRL 5 Registers START
-#define BLANKING_TIME_UPPER ( (BLANKING_TIME_BASE & 0b00001100) )
-#define IDISS_TIME_UPPER ( (IDISS_TIME_BASE & 0b00001100) >> 2 )
+#define BLANKING_TIME_UPPER ((BLANKING_TIME_BASE & 0b00001100))
+#define IDISS_TIME_UPPER ((IDISS_TIME_BASE & 0b00001100) >> 2)
 // Write to register 0x1F
 #define CTRL5_BYTE (BLANKING_TIME_UPPER | IDISS_TIME_UPPER)
 #define CTRL5_REGISTER 0x1F
 // CTRL 5 Registers END
 
 // MODE Register START
-#define DEV_RESET (0<<7)
-#define STANDBY (1<<6)
+#define DEV_RESET (0 << 7)
+#define STANDBY (1 << 6)
 #define MODE (3)
 #define MODE_BYTE (DEV_RESET | MODE)
 #define STANDBY_MODE_BYTE (DEV_RESET | STANDBY | 0x00)
@@ -558,7 +534,7 @@ void cb_hoja_rumble_set(hoja_rumble_msg_s *left, hoja_rumble_msg_s *right)
 
 void cb_hoja_rumble_test()
 {
-    hoja_rumble_msg_s msg = {.sample_count=1, .samples[0]={.high_amplitude=0, .high_frequency=320.0f, .low_amplitude=1.0f, .low_frequency=160.0f}, .unread=true};
+    hoja_rumble_msg_s msg = {.sample_count = 1, .samples[0] = {.high_amplitude = 0, .high_frequency = 320.0f, .low_amplitude = 1.0f, .low_frequency = 160.0f}, .unread = true};
 
     cb_hoja_rumble_set(&msg, &msg);
 
@@ -569,21 +545,21 @@ void cb_hoja_rumble_test()
         sleep_ms(8);
     }
 
-    msg.samples[0].high_amplitude   = 0;
-    msg.samples[0].low_amplitude    = 0;
+    msg.samples[0].high_amplitude = 0;
+    msg.samples[0].low_amplitude = 0;
 
     cb_hoja_rumble_set(&msg, &msg);
 }
 
-
 bool played = false;
 void test_sequence()
 {
-    hoja_rumble_msg_s msg = {.sample_count=1, .samples[0]={.high_amplitude=0, .high_frequency=320.0f, .low_amplitude=1.0f, .low_frequency=160.0f}, .unread=true};
+    hoja_rumble_msg_s msg = {.sample_count = 1, .samples[0] = {.high_amplitude = 0, .high_frequency = 320.0f, .low_amplitude = 1.0f, .low_frequency = 160.0f}, .unread = true};
 
-    if(played) return;
+    if (played)
+        return;
     played = true;
-    for(int i = 0; i < 27; i+=1)
+    for (int i = 0; i < 27; i += 1)
     {
         msg.samples[0].low_amplitude = 1.0f;
         msg.samples[0].low_frequency = song[i];
@@ -603,14 +579,14 @@ bool lra_init = false;
 // Obtain and dump calibration values for auto-init LRA
 void cb_hoja_rumble_init()
 {
-    if(!lra_init)
+    if (!lra_init)
     {
         sleep_ms(100);
-        lra_init = true;  
+        lra_init = true;
 
         // Take MODE out of standby
-        //uint8_t _set_mode1[] = {MODE_REGISTER, 0x00};
-        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode1, 2, false);
+        // uint8_t _set_mode1[] = {MODE_REGISTER, 0x00};
+        // i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode1, 2, false);
         //
         uint8_t _set_feedback[] = {FEEDBACK_CTRL_REGISTER, FEEDBACK_CTRL_BYTE};
         i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_feedback, 2, false);
@@ -620,37 +596,37 @@ void cb_hoja_rumble_init()
         i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control1, 2, false);
         sleep_ms(5);
 
-        //uint8_t _set_control2[] = {CTRL2_REGISTER, CTRL2_BYTE};
-        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control2, 2, false);
-        //sleep_ms(10);
+        // uint8_t _set_control2[] = {CTRL2_REGISTER, CTRL2_BYTE};
+        // i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control2, 2, false);
+        // sleep_ms(10);
 
         uint8_t _set_control3[] = {CTRL3_REGISTER, CTRL3_BYTE};
         i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control3, 2, false);
         sleep_ms(5);
 
-        //uint8_t _set_control4[] = {CTRL4_REGISTER, CTRL4_BYTE};
-        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control4, 2, false);
-        //sleep_ms(10);
-        
-        //uint8_t _set_control5[] = {CTRL5_REGISTER, CTRL5_BYTE};
-        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control5, 2, false);
-        //sleep_ms(10);
+        // uint8_t _set_control4[] = {CTRL4_REGISTER, CTRL4_BYTE};
+        // i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control4, 2, false);
+        // sleep_ms(10);
 
-        //uint8_t _set_compensation[] = {0x18, HAPTIC_COMPENSATION};
-        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_compensation, 2, false);
+        // uint8_t _set_control5[] = {CTRL5_REGISTER, CTRL5_BYTE};
+        // i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_control5, 2, false);
+        // sleep_ms(10);
 
-        //uint8_t _set_bemf[] = {0x19, HAPTIC_BACKEMF};
-        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_bemf, 2, false);
+        // uint8_t _set_compensation[] = {0x18, HAPTIC_COMPENSATION};
+        // i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_compensation, 2, false);
 
-        //uint8_t _set_freq[] = {OL_LRA_REGISTER, OL_LRA_PERIOD};
-        //i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_freq, 2, false);
+        // uint8_t _set_bemf[] = {0x19, HAPTIC_BACKEMF};
+        // i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_bemf, 2, false);
+
+        // uint8_t _set_freq[] = {OL_LRA_REGISTER, OL_LRA_PERIOD};
+        // i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_freq, 2, false);
 
         uint8_t _set_odclamped[] = {ODCLAMP_REGISTER, ODCLAMP_BYTE};
         i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_odclamped, 2, false);
         sleep_ms(5);
 
-        //uint8_t _set_mode2[] = {MODE_REGISTER, STANDBY_MODE_BYTE};
-        //i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode2, 2, false);
+        // uint8_t _set_mode2[] = {MODE_REGISTER, STANDBY_MODE_BYTE};
+        // i2c_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode2, 2, false);
 
         uint8_t _set_mode3[] = {MODE_REGISTER, MODE_BYTE};
         i2c_safe_write_blocking(HOJA_I2C_BUS, DRV2605_SLAVE_ADDR, _set_mode3, 2, false);
@@ -663,7 +639,7 @@ void cb_hoja_rumble_init()
     rumble_type_t type;
     hoja_get_rumble_settings(&intensity, &type);
 
-    _rumble_scaler = ((float) intensity / 100.0f);
+    _rumble_scaler = ((float)intensity / 100.0f);
 }
 
 bool app_rumble_hwtest()
@@ -671,20 +647,17 @@ bool app_rumble_hwtest()
     //_audio_playback_idx = 0;
     //_audio_playback = true;
     cb_hoja_rumble_test();
-    //test_sequence();
-    //rumble_get_calibration();
+    // test_sequence();
+    // rumble_get_calibration();
     return true;
 }
 
 void app_rumble_task(uint32_t timestamp)
 {
-    if(ready_next_sine)
+    if (ready_next_sine)
     {
         ready_next_sine = false;
         uint8_t available_buffer = 1 - audio_buffer_idx_used;
-        for(int i = 0; i<BUFFER_SIZE; i++)
-        {
-            generate_sine_wave(audio_buffers[available_buffer], i);
-        }
+        generate_sine_wave(audio_buffers[available_buffer]);
     }
 }

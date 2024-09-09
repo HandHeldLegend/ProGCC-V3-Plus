@@ -27,6 +27,10 @@
     #define HOJA_PRODUCT        "ProGCC 3.1"
     #define HOJA_CAPABILITY_RUMBLE_ERM 0
     #define HOJA_CAPABILITY_RUMBLE_LRA 1
+#elif (HOJA_DEVICE_ID == 0xA005)
+    #define HOJA_PRODUCT        "ProGCC 3.2"
+    #define HOJA_CAPABILITY_RUMBLE_ERM 0
+    #define HOJA_CAPABILITY_RUMBLE_LRA 1
 #endif
 
     // RGB Stuff
@@ -77,7 +81,7 @@
         #define HOJA_RGB_GROUP_ZR {-1}
         #define HOJA_RGB_GROUP_PLAYER {-1}
         
-    #elif (HOJA_DEVICE_ID == 0xA004)
+    #elif (HOJA_DEVICE_ID == 0xA004) || (HOJA_DEVICE_ID == 0xA005) 
         #define HOJA_CAPABILITY_BLUETOOTH_OPTIONAL 1
     
         #define HOJA_RGB_GROUP_RS       {0, 1, 2, 3}

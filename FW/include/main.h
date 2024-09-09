@@ -34,9 +34,10 @@
 #define PGPIO_RS_CS   22    // ok
 
 #define PGPIO_IMU0_CS 17    // ok
+
 #if ( (HOJA_DEVICE_ID == 0xA002) | (HOJA_DEVICE_ID == 0xA003) )
   #define PGPIO_IMU1_CS 21    // ok
-#elif (HOJA_DEVICE_ID == 0xA004)
+#elif (HOJA_DEVICE_ID == 0xA004) | (HOJA_DEVICE_ID == 0xA005)
   #define PGPIO_IMU1_CS 25    // ok
 #endif
 

@@ -42,35 +42,10 @@ void app_rumble_output()
     pwm_set_gpio_level(PGPIO_RUMBLE_MAIN, (_rumble_current > 0) ? _rumble_current : 0);
 }
 
-bool testing = false;
-
-void app_rumble_task(uint32_t timestamp)
-{
-    static interval_s interval = {0};
-
-    if(interval_run(timestamp, _rumble_interval, &interval))
-    {
-        if(!testing);
-        app_rumble_output();
-    }
-}
-
-void cb_hoja_rumble_set(hoja_rumble_msg_s *left, hoja_rumble_msg_s *right)
+void app_rumble_set(float amphi, float amplo)
 {
     if(!_rumble_floor)
     return;
-
-    float amphi = 0;
-    float amplo = 0;
-
-    // Get count
-    uint8_t count = left->sample_count;
-
-    if(count>0)
-    {
-        amphi = left->samples[count-1].high_amplitude;
-        amplo = left->samples[count-1].low_amplitude;
-    }
     
     float amp1 = (amphi > amplo) ? amphi : amplo;
 
@@ -99,11 +74,29 @@ void cb_hoja_rumble_set(hoja_rumble_msg_s *left, hoja_rumble_msg_s *right)
     }
 }
 
+
+bool testing = false;
+
+void app_rumble_task(uint32_t timestamp)
+{
+    static interval_s interval = {0};
+    static amfm_s amfm = {0};
+
+    if(interval_run(timestamp, _rumble_interval, &interval))
+    {
+        if(haptics_l_get(&amfm))
+        {
+            app_rumble_set(amfm.a_hi, amfm.a_lo);
+        }
+
+        app_rumble_output();
+    }
+}
+
+
 void cb_hoja_rumble_test()
 {
-    hoja_rumble_msg_s msg = {.sample_count=1, .samples[0]={.high_amplitude=1.0f, .high_frequency=320.0f, .low_amplitude=1.0f, .low_frequency=160.0f}, .unread=true};
-
-    cb_hoja_rumble_set(&msg, &msg);
+    app_rumble_set(0, 1);
 
     for(int i = 0; i < 62; i++)
     {   
@@ -112,10 +105,7 @@ void cb_hoja_rumble_test()
         sleep_ms(8);
     }
 
-    msg.samples[0].high_amplitude   = 0;
-    msg.samples[0].low_amplitude    = 0;
-
-    cb_hoja_rumble_set(&msg, &msg);
+    app_rumble_set(0, 0);
     
     app_rumble_output();
 }
