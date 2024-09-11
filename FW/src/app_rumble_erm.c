@@ -80,13 +80,13 @@ bool testing = false;
 void app_rumble_task(uint32_t timestamp)
 {
     static interval_s interval = {0};
-    static amfm_s amfm = {0};
+    static amfm_s amfm[3] = {0};
 
     if(interval_run(timestamp, _rumble_interval, &interval))
     {
-        if(haptics_l_get(&amfm))
+        if(haptics_get(true, amfm, false, NULL))
         {
-            app_rumble_set(amfm.a_hi, amfm.a_lo);
+            app_rumble_set(amfm[0].a_hi, amfm[0].a_lo);
         }
 
         app_rumble_output();

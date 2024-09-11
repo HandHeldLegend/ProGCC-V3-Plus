@@ -24,8 +24,6 @@ bool app_rumble_hwtest();
 #define STARTING_LOW_FREQ 160.0f
 #define STARTING_HIGH_FREQ 320.0f
 
-// Example from https://github.com/moefh/pico-audio-demo/blob/main/audio.c
-
 uint dma_cc_l, dma_cc_r, dma_trigger_l, dma_trigger_r, dma_sample;
 uint pwm_slice_l, pwm_slice_r;
 uint32_t dma_trigger_start_mask = 0;
@@ -129,6 +127,7 @@ float clamp_rumble_hi(float amplitude)
 
 #define SIN_TABLE_SIZE 4096
 int16_t sin_table[SIN_TABLE_SIZE] = {0};
+#define SIN_RANGE_MAX 128
 
 void sine_table_init()
 {
@@ -139,7 +138,7 @@ void sine_table_init()
     {
         float sample = sinf(fi);
 
-        sin_table[i] = (int16_t)(sample * 255.0f);
+        sin_table[i] = (int16_t)(sample * SIN_RANGE_MAX);
 
         fi += inc;
         fi = fmodf(fi, TWO_PI);
@@ -155,8 +154,7 @@ void generate_sine_wave(uint32_t *buffer, haptic_both_s *state)
     uint16_t transition_idx = 0;
     uint8_t sample_idx = 0;
     amfm_s cur[3] = {0};
-    int8_t samples = haptics_l_get(cur);
-    uint16_t di = 0;
+    int8_t samples = haptics_get(true, cur, false, NULL);
 
     for (uint16_t i = 0; i < BUFFER_SIZE; i++)
     {
@@ -233,7 +231,7 @@ void generate_sine_wave(uint32_t *buffer, haptic_both_s *state)
 
         // Combine samples
         float sample = sample_low + sample_high;
-        sample*=0.45f;
+        //sample*=0.45f;
 
         sample = (sample > 255) ? 255 : (sample < 0) ? 0
                                                      : sample;
@@ -466,7 +464,6 @@ void test_sequence()
 }
 
 bool lra_init = false;
-// Obtain and dump calibration values for auto-init LRA
 void cb_hoja_rumble_init()
 {
     if (!lra_init)
@@ -501,11 +498,4 @@ void app_rumble_task(uint32_t timestamp)
         uint8_t available_buffer = 1 - audio_buffer_idx;
         generate_sine_wave(audio_buffers[available_buffer], &haptics_left);
     }
-
-    // if (ready_next_sine_r)
-    //{
-    //     ready_next_sine_r = false;
-    //     uint8_t available_buffer = 1 - audio_buffer_idx_used_r;
-    //     generate_sine_wave(audio_buffers_r[available_buffer], &haptics_right, false);
-    // }
 }

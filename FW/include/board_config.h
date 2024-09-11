@@ -62,6 +62,9 @@
     #define HOJA_CAPABILITY_NINTENDO_SERIAL 1
     #define HOJA_CAPABILITY_NINTENDO_JOYBUS 1
 
+    #define HOJA_POWER_CONSUMPTION_RATE 150 // mA
+    #define HOJA_POWER_CONSUMPTION_SOURCE 1000 // mAh
+
     #if ( (HOJA_DEVICE_ID == 0xA002) | (HOJA_DEVICE_ID== 0xA003) )
         #define HOJA_RGB_GROUP_RS       {0, 1, 2, 3}
         #define HOJA_RGB_GROUP_LS       {4, 5, 6, 7}

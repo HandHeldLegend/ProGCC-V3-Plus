@@ -11,7 +11,7 @@ void app_rumble_task(uint32_t timestamp);
 
 #define SAMPLE_RATE 12000
 #define BUFFER_SIZE 255
-#define SAMPLE_FRAME_PERIOD 30
+#define SAMPLE_TRANSITION 30
 #define PWM_WRAP BUFFER_SIZE
 #define PWM_PIN GPIO_LRA_IN_LO
 
@@ -66,12 +66,6 @@ typedef struct
 {
     haptic_s lo_state;
     haptic_s hi_state;
-
-    amfm_s amfm;
-
-    // Which sample we're processing
-    uint8_t sample_idx;
-
 } haptic_both_s;
 
 haptic_both_s haptic_state = {0};
@@ -152,55 +146,63 @@ void sine_table_init()
 // up into many steps to avoid causing slowdown
 // or starve other tasks
 // Returns true when the buffer is filled
-bool generate_sine_wave(uint8_t *buffer)
+bool generate_sine_wave(uint8_t *buffer, haptic_both_s *state)
 {
+    amfm_s      cur[3] = {0};
+    uint16_t    transition_idx = 0;
+    uint8_t     sample_idx = 0;
+    int8_t samples = haptics_get(true, cur, false, NULL);
+
     for (uint16_t i = 0; i < BUFFER_SIZE; i++)
     {
         // This means we need to reset our state and
         // calculate our next step
-        if (!haptic_state.sample_idx)
+        if (!transition_idx)
         {
-            bool new = false;
-
-            new = haptics_l_get(&(haptic_state.amfm));
-
-            if (new)
+            if ((samples > 0) && (sample_idx < samples))
             {
-                // Adjust hi frequency
-                {
-                    float hif = haptic_state.amfm.f_hi;
-                    haptic_state.hi_state.f_target = hif;
-                    haptic_state.hi_state.f_step = (hif - haptic_state.hi_state.f) / SAMPLE_FRAME_PERIOD;
-                    haptic_state.hi_state.phase_step = (SIN_TABLE_SIZE * haptic_state.hi_state.f) / SAMPLE_RATE;
-                    haptic_state.hi_state.phase_accumulator = (SIN_TABLE_SIZE * haptic_state.hi_state.f_step) / SAMPLE_RATE;
+                // Set high frequency
+                float hif = cur[sample_idx].f_hi;
+                float hia = cur[sample_idx].a_hi;
 
-                    float hia = haptic_state.amfm.a_hi;
-                    haptic_state.hi_state.a_target = hia;
-                    haptic_state.hi_state.a_step = (hia - haptic_state.hi_state.a) / SAMPLE_FRAME_PERIOD;
-                }
+                state->hi_state.f_target = hif;
+                state->hi_state.f_step = (hif - state->hi_state.f) / SAMPLE_TRANSITION;
 
-                // Adjust lo frequency
-                {
-                    float lof = haptic_state.amfm.f_lo;
-                    haptic_state.lo_state.f_target = lof;
-                    haptic_state.lo_state.f_step = (lof - haptic_state.lo_state.f) / SAMPLE_FRAME_PERIOD;
-                    haptic_state.lo_state.phase_step = (SIN_TABLE_SIZE * haptic_state.lo_state.f) / SAMPLE_RATE;
-                    haptic_state.lo_state.phase_accumulator = (SIN_TABLE_SIZE * haptic_state.lo_state.f_step) / SAMPLE_RATE;
+                state->hi_state.phase_step = (SIN_TABLE_SIZE * state->hi_state.f) / SAMPLE_RATE;
+                float hphase_step_end = (SIN_TABLE_SIZE * state->hi_state.f_target) / SAMPLE_RATE;
+                state->hi_state.phase_accumulator = (hphase_step_end - state->hi_state.phase_step) / SAMPLE_TRANSITION;
 
-                    float loa = haptic_state.amfm.a_lo;
-                    haptic_state.lo_state.a_target = loa;
-                    haptic_state.lo_state.a_step = (loa - haptic_state.lo_state.a) / SAMPLE_FRAME_PERIOD;
-                }
+                state->hi_state.a_target = hia;
+                state->hi_state.a_step = (hia - state->hi_state.a) / SAMPLE_TRANSITION;
+
+                float lof = cur[sample_idx].f_lo;
+                float loa = cur[sample_idx].a_lo;
+
+                // Set low frequency
+                state->lo_state.f_target = lof;
+                state->lo_state.f_step = (lof - state->lo_state.f) / SAMPLE_TRANSITION;
+
+                state->lo_state.phase_step = (SIN_TABLE_SIZE * state->lo_state.f) / SAMPLE_RATE;
+                float lphase_step_end = (SIN_TABLE_SIZE * state->lo_state.f_target) / SAMPLE_RATE;
+                state->lo_state.phase_accumulator = (lphase_step_end - state->lo_state.phase_step) / SAMPLE_TRANSITION;
+
+                state->lo_state.a_target = loa;
+                state->lo_state.a_step = (loa - state->lo_state.a) / SAMPLE_TRANSITION;
+
+                sample_idx++;
             }
             else
             {
-                haptic_state.lo_state.phase_accumulator = 0;
-                haptic_state.hi_state.phase_accumulator = 0;
+                // reset all steps so we just
+                // continue generating
+                state->hi_state.f_step = 0;
+                state->hi_state.a_step = 0;
+                state->lo_state.f_step = 0;
+                state->lo_state.a_step = 0;
+                state->hi_state.phase_accumulator = 0;
+                state->lo_state.phase_accumulator = 0;
             }
         }
-
-        // hi_state.phase_step = (TWO_PI * hi_state.f) / SAMPLE_RATE;
-        // lo_state.phase_step = (TWO_PI * lo_state.f) / SAMPLE_RATE;
 
         if (haptic_state.hi_state.phase_accumulator > 0)
             haptic_state.hi_state.phase_step += haptic_state.hi_state.phase_accumulator;
@@ -242,24 +244,28 @@ bool generate_sine_wave(uint8_t *buffer)
         haptic_state.hi_state.phase = fmodf(haptic_state.hi_state.phase, SIN_TABLE_SIZE);
         haptic_state.lo_state.phase = fmodf(haptic_state.lo_state.phase, SIN_TABLE_SIZE);
 
-        if (sample_counter < SAMPLE_FRAME_PERIOD)
+        if (transition_idx < SAMPLE_TRANSITION)
         {
-            haptic_state.hi_state.f += haptic_state.hi_state.f_step;
-            haptic_state.hi_state.a += haptic_state.hi_state.a_step;
+            state->hi_state.f += state->hi_state.f_step;
+            state->hi_state.a += state->hi_state.a_step;
 
-            haptic_state.lo_state.f += haptic_state.lo_state.f_step;
-            haptic_state.lo_state.a += haptic_state.lo_state.a_step;
+            state->lo_state.f += state->lo_state.f_step;
+            state->lo_state.a += state->lo_state.a_step;
+
+            transition_idx++;
         }
         else
         {
             // Set values to target
-            haptic_state.hi_state.f = haptic_state.hi_state.f_target;
-            haptic_state.hi_state.a = haptic_state.hi_state.a_target;
-            haptic_state.lo_state.f = haptic_state.lo_state.f_target;
-            haptic_state.lo_state.a = haptic_state.lo_state.a_target;
+            state->hi_state.f = state->hi_state.f_target;
+            state->hi_state.a = state->hi_state.a_target;
+            state->lo_state.f = state->lo_state.f_target;
+            state->lo_state.a = state->lo_state.a_target;
+            state->hi_state.phase_accumulator = 0;
+            state->lo_state.phase_accumulator = 0;
 
             // Reset sample index
-            haptic_state.sample_idx = 0;
+            transition_idx = 0;
         }
     }
 }
@@ -534,9 +540,8 @@ void cb_hoja_rumble_set(hoja_rumble_msg_s *left, hoja_rumble_msg_s *right)
 
 void cb_hoja_rumble_test()
 {
-    hoja_rumble_msg_s msg = {.sample_count = 1, .samples[0] = {.high_amplitude = 0, .high_frequency = 320.0f, .low_amplitude = 1.0f, .low_frequency = 160.0f}, .unread = true};
-
-    cb_hoja_rumble_set(&msg, &msg);
+    haptics_set_all(0, 0, HOJA_HAPTIC_BASE_LFREQ, 1);
+    haptics_set_all(0, 0, HOJA_HAPTIC_BASE_LFREQ, 1);
 
     for (int i = 0; i < 62; i++)
     {
@@ -545,10 +550,8 @@ void cb_hoja_rumble_test()
         sleep_ms(8);
     }
 
-    msg.samples[0].high_amplitude = 0;
-    msg.samples[0].low_amplitude = 0;
-
-    cb_hoja_rumble_set(&msg, &msg);
+    haptics_set_all(0, 0, HOJA_HAPTIC_BASE_LFREQ, 0);
+    haptics_set_all(0, 0, HOJA_HAPTIC_BASE_LFREQ, 0);
 }
 
 bool played = false;
@@ -658,6 +661,6 @@ void app_rumble_task(uint32_t timestamp)
     {
         ready_next_sine = false;
         uint8_t available_buffer = 1 - audio_buffer_idx_used;
-        generate_sine_wave(audio_buffers[available_buffer]);
+        generate_sine_wave(audio_buffers[available_buffer], &haptic_state);
     }
 }

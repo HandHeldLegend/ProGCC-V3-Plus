@@ -80,7 +80,7 @@ bool _hwtest_bluetooth()
 
 bool _hwtest_battery()
 {
-    return util_battery_comms_check();
+    return battery_comms_check();
 }
 
 #define IMU_OUTX_L_G 0x22
