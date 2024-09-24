@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "PROGCC3.2_RP2040.elf"
+			"path" : "PROGCC3.1_RP2040.elf"
 		}
 	],
 	"backtrace" : 1,
@@ -35,13 +35,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 145,
+				"line" : 84,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 161,
+				"line" : 100,
 				"parent" : 0
 			},
 			{
@@ -83,7 +83,7 @@
 			{
 				"command" : 4,
 				"file" : 3,
-				"line" : 68,
+				"line" : 69,
 				"parent" : 7
 			},
 			{
@@ -95,7 +95,7 @@
 			{
 				"command" : 4,
 				"file" : 3,
-				"line" : 69,
+				"line" : 68,
 				"parent" : 7
 			},
 			{
@@ -107,13 +107,13 @@
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 152,
+				"line" : 91,
 				"parent" : 0
 			},
 			{
 				"command" : 6,
 				"file" : 0,
-				"line" : 187,
+				"line" : 126,
 				"parent" : 0
 			},
 			{
@@ -162,7 +162,7 @@
 				},
 				{
 					"backtrace" : 14,
-					"define" : "HOJA_DEVICE_ID=0xA005"
+					"define" : "HOJA_DEVICE_ID=0xA004"
 				},
 				{
 					"backtrace" : 14,
@@ -334,7 +334,7 @@
 				},
 				{
 					"backtrace" : 16,
-					"define" : "PICO_TARGET_NAME=\"PROGCC3.2_RP2040\""
+					"define" : "PICO_TARGET_NAME=\"PROGCC3.1_RP2040\""
 				},
 				{
 					"backtrace" : 2,
@@ -727,7 +727,7 @@
 				},
 				{
 					"backtrace" : 14,
-					"define" : "HOJA_DEVICE_ID=0xA005"
+					"define" : "HOJA_DEVICE_ID=0xA004"
 				},
 				{
 					"backtrace" : 14,
@@ -899,7 +899,7 @@
 				},
 				{
 					"backtrace" : 16,
-					"define" : "PICO_TARGET_NAME=\"PROGCC3.2_RP2040\""
+					"define" : "PICO_TARGET_NAME=\"PROGCC3.1_RP2040\""
 				},
 				{
 					"backtrace" : 2,
@@ -1211,7 +1211,7 @@
 				},
 				{
 					"backtrace" : 14,
-					"define" : "HOJA_DEVICE_ID=0xA005"
+					"define" : "HOJA_DEVICE_ID=0xA004"
 				},
 				{
 					"backtrace" : 14,
@@ -1383,7 +1383,7 @@
 				},
 				{
 					"backtrace" : 16,
-					"define" : "PICO_TARGET_NAME=\"PROGCC3.2_RP2040\""
+					"define" : "PICO_TARGET_NAME=\"PROGCC3.1_RP2040\""
 				},
 				{
 					"backtrace" : 2,
@@ -1660,14 +1660,14 @@
 		},
 		{
 			"backtrace" : 11,
-			"id" : "hoja_lib_nserial_pio_h::@16e020e79a31ade7a0ad"
+			"id" : "hoja_lib_joybus_pio_h::@16e020e79a31ade7a0ad"
 		},
 		{
 			"backtrace" : 13,
-			"id" : "hoja_lib_joybus_pio_h::@16e020e79a31ade7a0ad"
+			"id" : "hoja_lib_nserial_pio_h::@16e020e79a31ade7a0ad"
 		}
 	],
-	"id" : "PROGCC3.2_RP2040::@6890427a1f51a3e7e1df",
+	"id" : "PROGCC3.1_RP2040::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -2452,7 +2452,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-Wl,-Map=PROGCC3.2_RP2040.elf.map",
+				"fragment" : "-Wl,-Map=PROGCC3.1_RP2040.elf.map",
 				"role" : "flags"
 			},
 			{
@@ -2503,8 +2503,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "PROGCC3.2_RP2040",
-	"nameOnDisk" : "PROGCC3.2_RP2040.elf",
+	"name" : "PROGCC3.1_RP2040",
+	"nameOnDisk" : "PROGCC3.1_RP2040.elf",
 	"paths" : 
 	{
 		"build" : ".",
@@ -2651,7 +2651,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/app_rumble_dualhaptic.c",
+			"path" : "src/app_rumble_haptic.c",
 			"sourceGroupIndex" : 0
 		},
 		{

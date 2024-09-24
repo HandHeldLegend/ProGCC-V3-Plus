@@ -2,6 +2,18 @@
 	"entries" : 
 	[
 		{
+			"name" : "CCACHE_ENABLE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : "1"
+		},
+		{
 			"name" : "CMAKE_ADDR2LINE",
 			"properties" : 
 			[
@@ -1286,6 +1298,18 @@
 			"value" : "DOXYGEN_EXECUTABLE-NOTFOUND"
 		},
 		{
+			"name" : "ESP_PLATFORM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : "1"
+		},
+		{
 			"name" : "FAMILY_MCUS",
 			"properties" : 
 			[
@@ -1463,7 +1487,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : " C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs"
+			"value" : " C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs"
 		},
 		{
 			"name" : "PICO_DOXYGEN_PATHS",
@@ -1764,6 +1788,30 @@
 			],
 			"type" : "STATIC",
 			"value" : "C:/Users/Mitch/GitRepos/ProGCC-V3-Plus/FW"
+		},
+		{
+			"name" : "PYTHON",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : "C:\\Users\\Mitch\\.espressif\\python_env\\idf5.2_py3.11_env\\Scripts\\python.exe"
+		},
+		{
+			"name" : "PYTHON_DEPS_CHECKED",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : "1"
 		},
 		{
 			"name" : "_Python3_Compiler_REASON_FAILURE",
