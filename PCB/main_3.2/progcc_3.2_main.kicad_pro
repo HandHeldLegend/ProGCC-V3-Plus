@@ -548,6 +548,18 @@
           "show": true
         },
         {
+          "group_by": false,
+          "label": "LCSC",
+          "name": "LCSC",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Price",
+          "name": "Price",
+          "show": true
+        },
+        {
           "group_by": true,
           "label": "Footprint",
           "name": "Footprint",
@@ -609,12 +621,6 @@
         },
         {
           "group_by": false,
-          "label": "LCSC",
-          "name": "LCSC",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "MANUFACTURER",
           "name": "MANUFACTURER",
           "show": false
@@ -647,12 +653,6 @@
           "group_by": false,
           "label": "Package",
           "name": "Package",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Price",
-          "name": "Price",
           "show": false
         },
         {
@@ -690,13 +690,19 @@
           "label": "JLCPN",
           "name": "JLCPN",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Confirmed",
+          "name": "Confirmed",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "name": "",
-      "sort_asc": false,
-      "sort_field": "USBDNP"
+      "sort_asc": true,
+      "sort_field": "Value"
     },
     "connection_grid_size": 50.0,
     "drawing": {
