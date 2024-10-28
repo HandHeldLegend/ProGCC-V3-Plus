@@ -273,6 +273,8 @@ void cb_hoja_read_analog(a_data_s *data)
     // Release right stick CS ADC
     gpio_put(PGPIO_RS_CS, true);
 
+    #if(HOJA_DEVICE_ID == 0xA004)
+
     static RollingAverage ralx = {0};
     static RollingAverage raly = {0};
     static RollingAverage rarx = {0};
@@ -288,6 +290,17 @@ void cb_hoja_read_analog(a_data_s *data)
     data->ly = (uint16_t) getAverage(&raly);
     data->rx = (uint16_t) getAverage(&rarx);
     data->ry = (uint16_t) getAverage(&rary);
+
+    #else
+
+    // Convert data
+    data->lx = BUFFER_TO_UINT16(buffer_lx);
+    data->ly = BUFFER_TO_UINT16(buffer_ly);
+    data->rx = BUFFER_TO_UINT16(buffer_rx);
+    data->ry = BUFFER_TO_UINT16(buffer_ry);
+
+    #endif
+
     mutex_exit(&analog_safe_mutex);
 }
 
@@ -301,6 +314,8 @@ int main()
 {
     stdio_init_all();
     sleep_ms(100);
+
+    btinput_capability_reset_flag();
 
     cb_hoja_hardware_setup();
 
