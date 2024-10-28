@@ -11,7 +11,7 @@
 #define HOJA_CLOCK_PIN 4
 #define HOJA_LATCH_PIN 5
 
-#define HOJA_FW_VERSION 0x0A2B
+#define HOJA_FW_VERSION 0x0A2C
 
 // Haptic
 #if (HOJA_DEVICE_ID == 0xA003)
@@ -25,6 +25,10 @@
     #define HOJA_CAPABILITY_RUMBLE_LRA 0
 #elif (HOJA_DEVICE_ID == 0xA004)
     #define HOJA_PRODUCT        "ProGCC 3.1"
+    #define HOJA_CAPABILITY_RUMBLE_ERM 0
+    #define HOJA_CAPABILITY_RUMBLE_LRA 1
+#elif (HOJA_DEVICE_ID == 0xA005)
+    #define HOJA_PRODUCT        "ProGCC 3.2"
     #define HOJA_CAPABILITY_RUMBLE_ERM 0
     #define HOJA_CAPABILITY_RUMBLE_LRA 1
 #endif
@@ -58,6 +62,9 @@
     #define HOJA_CAPABILITY_NINTENDO_SERIAL 1
     #define HOJA_CAPABILITY_NINTENDO_JOYBUS 1
 
+    #define HOJA_POWER_CONSUMPTION_RATE 150 // mA
+    #define HOJA_POWER_CONSUMPTION_SOURCE 1000 // mAh
+
     #if ( (HOJA_DEVICE_ID == 0xA002) | (HOJA_DEVICE_ID== 0xA003) )
         #define HOJA_RGB_GROUP_RS       {0, 1, 2, 3}
         #define HOJA_RGB_GROUP_LS       {4, 5, 6, 7}
@@ -77,7 +84,7 @@
         #define HOJA_RGB_GROUP_ZR {-1}
         #define HOJA_RGB_GROUP_PLAYER {-1}
         
-    #elif (HOJA_DEVICE_ID == 0xA004)
+    #elif (HOJA_DEVICE_ID == 0xA004) || (HOJA_DEVICE_ID == 0xA005) 
         #define HOJA_CAPABILITY_BLUETOOTH_OPTIONAL 1
     
         #define HOJA_RGB_GROUP_RS       {0, 1, 2, 3}

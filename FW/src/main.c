@@ -147,6 +147,7 @@ void cb_hoja_hardware_setup()
 
 bool set = false;
 bool unset = true;
+static uint32_t this_timestamp = 0;
 
 void cb_hoja_read_buttons(button_data_s *data)
 {
@@ -199,6 +200,8 @@ void cb_hoja_read_buttons(button_data_s *data)
     data->button_safemode = !gpio_get(PGPIO_BUTTON_MODE);
     data->button_shipping = data->button_stick_right && data->button_stick_left;
     data->button_sync = data->button_plus;
+
+
 }
 
 #define BUFFER_SIZE 4
@@ -270,6 +273,8 @@ void cb_hoja_read_analog(a_data_s *data)
     // Release right stick CS ADC
     gpio_put(PGPIO_RS_CS, true);
 
+    #if(HOJA_DEVICE_ID == 0xA004)
+
     static RollingAverage ralx = {0};
     static RollingAverage raly = {0};
     static RollingAverage rarx = {0};
@@ -285,11 +290,23 @@ void cb_hoja_read_analog(a_data_s *data)
     data->ly = (uint16_t) getAverage(&raly);
     data->rx = (uint16_t) getAverage(&rarx);
     data->ry = (uint16_t) getAverage(&rary);
+
+    #else
+
+    // Convert data
+    data->lx = BUFFER_TO_UINT16(buffer_lx);
+    data->ly = BUFFER_TO_UINT16(buffer_ly);
+    data->rx = BUFFER_TO_UINT16(buffer_rx);
+    data->ry = BUFFER_TO_UINT16(buffer_ry);
+
+    #endif
+
     mutex_exit(&analog_safe_mutex);
 }
 
 void cb_hoja_task_0_hook(uint32_t timestamp)
 {
+    this_timestamp = timestamp;
     app_rumble_task(timestamp);
 }
 
@@ -297,6 +314,8 @@ int main()
 {
     stdio_init_all();
     sleep_ms(100);
+
+    btinput_capability_reset_flag();
 
     cb_hoja_hardware_setup();
 

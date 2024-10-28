@@ -134,3 +134,64 @@ add_custom_command(TARGET ${PROJECT_NAME}
 					COMMENT "Updating version in manifest.json"
 					WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 					)
+
+# 3.2 build 
+project(PROGCC3.2_RP2040 C CXX ASM)
+
+include_directories(
+	include
+)
+
+add_executable(${PROJECT_NAME}
+	src/main.c
+	src/app_rumble_dualhaptic.c 
+	src/app_imu.c
+	src/app_hwtest.c
+)
+
+target_compile_definitions(${PROJECT_NAME}
+	PRIVATE
+	HOJA_DEVICE_ID=0xA005
+	HOJA_RUMBLE_TYPE=1 #haptic 3.2
+	PICO_XOSC_STARTUP_DELAY_MULTIPLIER=64
+	#PICO_DEFAULT_BOOT_STAGE2=boot2_generic_03h
+	#PICO_FLASH_SPI_CLKDIV=8
+	)
+
+target_link_libraries(${PROJECT_NAME}
+PRIVATE
+hoja_lib
+pico_stdlib
+pico_bootrom
+pico_multicore
+pico_platform
+pico_rand
+
+hardware_gpio
+hardware_adc
+hardware_flash
+hardware_pio
+hardware_dma
+hardware_pwm
+hardware_spi
+hardware_sync
+hardware_timer
+
+tinyusb_device
+tinyusb_board
+)
+
+pico_enable_stdio_usb(${PROJECT_NAME} 0)
+pico_enable_stdio_uart(${PROJECT_NAME} 0)
+
+pico_add_extra_outputs(${PROJECT_NAME})
+
+add_custom_command(TARGET ${PROJECT_NAME}
+ 					POST_BUILD
+					COMMAND ${CMAKE_COMMAND} 
+					-DTARGET_NAME=${PROJECT_NAME}
+					-DTARGET_PATH=${CMAKE_CURRENT_SOURCE_DIR}
+					-P ${CMAKE_SOURCE_DIR}/manifest.cmake
+					COMMENT "Updating version in manifest.json"
+					WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+					)
