@@ -22720,7 +22720,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Flip type -40℃~+105℃ 14P Bottom Contact Horizontal attachment 0.5mm SMD,P=0.5mm,Surface Mount"
 			(at 295.91 38.1 0)
 			(effects
 				(font
@@ -22738,7 +22738,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "molex_5051101492_14P"
+		(property "MPN" "5051101492"
 			(at 295.91 38.1 90)
 			(effects
 				(font
@@ -22757,6 +22757,24 @@
 			)
 		)
 		(property "Price" "1.1229"
+			(at 295.91 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 295.91 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SMD,P=0.5mm,Surface Mount，Right Angle"
 			(at 295.91 38.1 0)
 			(effects
 				(font
@@ -22936,6 +22954,15 @@
 				(hide yes)
 			)
 		)
+		(property "Link" ""
+			(at 55.88 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "51262c15-bcf8-4464-a0ba-dbf33f959610")
 		)
@@ -22993,7 +23020,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 386.08 118.11 0)
 			(effects
 				(font
@@ -23021,6 +23048,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 386.08 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 386.08 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 386.08 118.11 0)
 			(effects
 				(font
@@ -23089,7 +23134,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10V 10uF X5R ±10%"
 			(at 158.75 328.93 0)
 			(effects
 				(font
@@ -23126,6 +23171,24 @@
 			)
 		)
 		(property "Price" "0.0050"
+			(at 158.75 328.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 158.75 328.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0805"
 			(at 158.75 328.93 0)
 			(effects
 				(font
@@ -23192,7 +23255,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "SOD-323 Schottky Diodes ROHS "
 			(at 78.74 181.61 0)
 			(effects
 				(font
@@ -23220,6 +23283,24 @@
 			)
 		)
 		(property "Price" "0.0092"
+			(at 78.74 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 78.74 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SOD-323"
 			(at 78.74 181.61 0)
 			(effects
 				(font
@@ -23363,6 +23444,15 @@
 				(hide yes)
 			)
 		)
+		(property "Link" ""
+			(at 44.45 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "499def2f-0bd2-4860-b54f-a3894d800b62")
 		)
@@ -23485,7 +23575,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 109.22 194.31 0)
 			(effects
 				(font
@@ -23513,6 +23603,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 109.22 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 109.22 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 109.22 194.31 0)
 			(effects
 				(font
@@ -23587,7 +23695,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 443.23 53.34 0)
 			(effects
 				(font
@@ -23615,6 +23723,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 443.23 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 443.23 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 443.23 53.34 0)
 			(effects
 				(font
@@ -23683,7 +23809,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 47nF X7R ±5% 0603"
 			(at 83.82 125.73 0)
 			(effects
 				(font
@@ -23720,6 +23846,24 @@
 			)
 		)
 		(property "Price" "0.0026"
+			(at 83.82 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 83.82 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0603"
 			(at 83.82 125.73 0)
 			(effects
 				(font
@@ -23790,6 +23934,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 55.88 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
 			(at 55.88 66.04 0)
 			(effects
 				(font
@@ -23986,7 +24139,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 55.88 59.69 0)
 			(effects
 				(font
@@ -24014,6 +24167,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 55.88 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 55.88 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 55.88 59.69 0)
 			(effects
 				(font
@@ -24085,7 +24256,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 200mA 200mW 3.5Ω@10V,220mA 1.5V@250uA 2 N-Channel SC-70-6(SOT-363) MOSFETs ROHS"
 			(at 20.32 25.4 0)
 			(effects
 				(font
@@ -24113,6 +24284,24 @@
 			)
 		)
 		(property "Price" "0.037"
+			(at 20.32 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 20.32 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SC-70-6(SOT-363)"
 			(at 20.32 25.4 0)
 			(effects
 				(font
@@ -24256,7 +24445,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 299.72 217.17 0)
 			(effects
 				(font
@@ -24293,6 +24482,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 299.72 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 299.72 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 299.72 217.17 0)
 			(effects
 				(font
@@ -24368,7 +24575,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 34.29 59.69 0)
 			(effects
 				(font
@@ -24396,6 +24603,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 34.29 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 34.29 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 34.29 59.69 0)
 			(effects
 				(font
@@ -24464,7 +24689,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 47nF X7R ±5% 0603"
 			(at 95.25 100.33 0)
 			(effects
 				(font
@@ -24501,6 +24726,24 @@
 			)
 		)
 		(property "Price" "0.0026"
+			(at 95.25 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 95.25 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0603"
 			(at 95.25 100.33 0)
 			(effects
 				(font
@@ -24635,7 +24878,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 100Ω"
 			(at 109.22 181.61 0)
 			(effects
 				(font
@@ -24663,6 +24906,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 109.22 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 109.22 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 109.22 181.61 0)
 			(effects
 				(font
@@ -24737,7 +24998,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 494.03 25.4 0)
 			(effects
 				(font
@@ -24746,7 +25007,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 494.03 25.4 0)
 			(effects
 				(font
@@ -24765,6 +25026,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 494.03 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 494.03 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 494.03 25.4 0)
 			(effects
 				(font
@@ -24843,6 +25122,15 @@
 				(hide yes)
 			)
 		)
+		(property "Link" ""
+			(at 93.98 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "77c26f55-ae8f-4aca-b460-8f24dcc6ed82")
 		)
@@ -24900,7 +25188,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 386.08 127 0)
 			(effects
 				(font
@@ -24909,7 +25197,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 386.08 127 0)
 			(effects
 				(font
@@ -24928,6 +25216,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 386.08 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 386.08 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 386.08 127 0)
 			(effects
 				(font
@@ -24996,7 +25302,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 398.78 127 0)
 			(effects
 				(font
@@ -25024,6 +25330,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 398.78 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 398.78 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 398.78 127 0)
 			(effects
 				(font
@@ -25230,7 +25554,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 34.29 30.48 0)
 			(effects
 				(font
@@ -25258,6 +25582,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 34.29 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 34.29 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 34.29 30.48 0)
 			(effects
 				(font
@@ -25326,7 +25668,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 15pF NP0 ±1%"
 			(at 273.05 179.07 0)
 			(effects
 				(font
@@ -25363,6 +25705,24 @@
 			)
 		)
 		(property "Confirmed" "YES"
+			(at 273.05 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 273.05 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0402"
 			(at 273.05 179.07 0)
 			(effects
 				(font
@@ -25431,7 +25791,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 494.03 77.47 0)
 			(effects
 				(font
@@ -25440,7 +25800,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 494.03 77.47 0)
 			(effects
 				(font
@@ -25459,6 +25819,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 494.03 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 494.03 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 494.03 77.47 0)
 			(effects
 				(font
@@ -25597,7 +25975,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "1.3A 2.2uH ±20% 80mΩ 1008 Inductors (SMD) ROHS "
 			(at 132.08 165.1 0)
 			(effects
 				(font
@@ -25634,6 +26012,24 @@
 			)
 		)
 		(property "Price" "0.0208"
+			(at 132.08 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 132.08 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "1008"
 			(at 132.08 165.1 0)
 			(effects
 				(font
@@ -25706,7 +26102,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 383.54 27.94 0)
 			(effects
 				(font
@@ -25734,6 +26130,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 383.54 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 383.54 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 383.54 27.94 0)
 			(effects
 				(font
@@ -25812,7 +26226,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V 200mW 100@100mA,1V 200mA NPN SOT-23 Bipolar (BJT) ROHS "
 			(at 200.66 316.23 0)
 			(effects
 				(font
@@ -25849,6 +26263,24 @@
 			)
 		)
 		(property "Price" "0.0035"
+			(at 200.66 316.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 200.66 316.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" " SOT-23"
 			(at 200.66 316.23 0)
 			(effects
 				(font
@@ -25921,7 +26353,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "3.4mm 3.3mm Round Button Horizontal attachment SPST SMD"
 			(at 224.79 171.45 0)
 			(effects
 				(font
@@ -25949,6 +26381,24 @@
 			)
 		)
 		(property "Price" "0.053"
+			(at 224.79 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 224.79 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SMD,3.3x4.5mm"
 			(at 224.79 171.45 0)
 			(effects
 				(font
@@ -26150,6 +26600,15 @@
 				(hide yes)
 			)
 		)
+		(property "Link" ""
+			(at 129.54 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3734ffab-0ed0-4e51-8d27-e9e715f274ea")
 		)
@@ -26178,7 +26637,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "24f355b7-3631-41ff-8091-1d70532082c7")
 		(property "Reference" "J1"
 			(at 85.09 323.85 0)
@@ -26215,6 +26674,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 85.09 331.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
 			(at 85.09 331.47 0)
 			(effects
 				(font
@@ -26287,7 +26755,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 88.9 93.98 0)
 			(effects
 				(font
@@ -26315,6 +26783,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 88.9 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 88.9 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 88.9 93.98 0)
 			(effects
 				(font
@@ -26514,7 +27000,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 434.34 53.34 0)
 			(effects
 				(font
@@ -26551,6 +27037,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 434.34 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 434.34 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 434.34 53.34 0)
 			(effects
 				(font
@@ -26747,7 +27251,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 100.33 96.52 0)
 			(effects
 				(font
@@ -26775,6 +27279,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 100.33 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 100.33 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 100.33 96.52 0)
 			(effects
 				(font
@@ -26841,7 +27363,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V Independent Type 1A 550mV SOD-523 Schottky Diodes ROHS"
 			(at 459.74 35.56 0)
 			(effects
 				(font
@@ -26887,6 +27409,24 @@
 			)
 		)
 		(property "Price" "0.0179"
+			(at 459.74 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 459.74 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SOD-523"
 			(at 459.74 35.56 0)
 			(effects
 				(font
@@ -26954,7 +27494,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 190.5 316.23 0)
 			(effects
 				(font
@@ -26991,6 +27531,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 190.5 316.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 190.5 316.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 190.5 316.23 0)
 			(effects
 				(font
@@ -27122,7 +27680,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 27Ω"
 			(at 339.09 148.59 0)
 			(effects
 				(font
@@ -27150,6 +27708,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 339.09 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 339.09 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 339.09 148.59 0)
 			(effects
 				(font
@@ -27217,7 +27793,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 392.43 294.64 0)
 			(effects
 				(font
@@ -27245,6 +27821,24 @@
 			)
 		)
 		(property "Price" "0.0492"
+			(at 392.43 294.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 392.43 294.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
 			(at 392.43 294.64 0)
 			(effects
 				(font
@@ -27553,6 +28147,15 @@
 				(hide yes)
 			)
 		)
+		(property "Link" ""
+			(at 132.08 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "870d964b-5b65-4118-800c-118631968d2e")
 		)
@@ -27668,7 +28271,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "SOD-323 Schottky Diodes ROHS "
 			(at 101.6 160.02 0)
 			(effects
 				(font
@@ -27696,6 +28299,24 @@
 			)
 		)
 		(property "Price" "0.0092"
+			(at 101.6 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 101.6 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SOD-323"
 			(at 101.6 160.02 0)
 			(effects
 				(font
@@ -27773,7 +28394,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 200mA 200mW 3.5Ω@10V,220mA 1.5V@250uA 2 N-Channel SC-70-6(SOT-363) MOSFETs ROHS"
 			(at 45.72 36.83 0)
 			(effects
 				(font
@@ -27801,6 +28422,24 @@
 			)
 		)
 		(property "Price" "0.037"
+			(at 45.72 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 45.72 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SC-70-6(SOT-363)"
 			(at 45.72 36.83 0)
 			(effects
 				(font
@@ -27884,7 +28523,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 200mA 200mW 3.5Ω@10V,220mA 1.5V@250uA 2 N-Channel SC-70-6(SOT-363) MOSFETs ROHS"
 			(at 45.72 66.04 0)
 			(effects
 				(font
@@ -27912,6 +28551,24 @@
 			)
 		)
 		(property "Price" "0.037"
+			(at 45.72 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 45.72 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SC-70-6(SOT-363)"
 			(at 45.72 66.04 0)
 			(effects
 				(font
@@ -27992,7 +28649,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 386.08 109.22 0)
 			(effects
 				(font
@@ -28020,6 +28677,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 386.08 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 386.08 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 386.08 109.22 0)
 			(effects
 				(font
@@ -28092,7 +28767,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V 200mW 100@100mA,1V 200mA NPN SOT-23 Bipolar (BJT) ROHS "
 			(at 200.66 328.93 0)
 			(effects
 				(font
@@ -28129,6 +28804,24 @@
 			)
 		)
 		(property "Price" "0.0035"
+			(at 200.66 328.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 200.66 328.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" " SOT-23"
 			(at 200.66 328.93 0)
 			(effects
 				(font
@@ -28541,7 +29234,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "264KB 30 133MHz LQFN-56(7x7) Microcontrollers"
 			(at 369.57 179.07 0)
 			(effects
 				(font
@@ -28569,6 +29262,24 @@
 			)
 		)
 		(property "Price" "0.531"
+			(at 369.57 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 369.57 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "LQFN-56(7x7)"
 			(at 369.57 179.07 0)
 			(effects
 				(font
@@ -28802,7 +29513,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 5.1kΩ"
 			(at 59.69 123.19 0)
 			(effects
 				(font
@@ -28839,6 +29550,24 @@
 			)
 		)
 		(property "Price" "0.0004"
+			(at 59.69 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 59.69 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 59.69 123.19 0)
 			(effects
 				(font
@@ -28970,7 +29699,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Accelerometer gyroscope LGA-14(2.5x3) Accelerometers ROHS "
 			(at 288.29 238.76 0)
 			(effects
 				(font
@@ -29007,6 +29736,24 @@
 			)
 		)
 		(property "Price" "0.59"
+			(at 288.29 238.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 288.29 238.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "LGA-14(2.5x3) "
 			(at 288.29 238.76 0)
 			(effects
 				(font
@@ -29189,7 +29936,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10 positions 2.7V~5.5V 200kHz SPI MSOP-8 Analog to Digital Converters (ADC) ROHS"
 			(at 254 71.12 0)
 			(effects
 				(font
@@ -29217,6 +29964,24 @@
 			)
 		)
 		(property "Price" "1.11"
+			(at 254 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 254 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "MSOP-8"
 			(at 254 71.12 0)
 			(effects
 				(font
@@ -29368,7 +30133,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 494.03 97.79 0)
 			(effects
 				(font
@@ -29377,7 +30142,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 494.03 97.79 0)
 			(effects
 				(font
@@ -29396,6 +30161,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 494.03 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 494.03 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 494.03 97.79 0)
 			(effects
 				(font
@@ -29465,7 +30248,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 34.29 88.9 0)
 			(effects
 				(font
@@ -29493,6 +30276,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 34.29 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 34.29 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 34.29 88.9 0)
 			(effects
 				(font
@@ -29559,7 +30360,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "SOD-323 Schottky Diodes ROHS "
 			(at 129.54 353.06 0)
 			(effects
 				(font
@@ -29596,6 +30397,24 @@
 			)
 		)
 		(property "Price" "0.0092"
+			(at 129.54 353.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 129.54 353.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SOD-323"
 			(at 129.54 353.06 0)
 			(effects
 				(font
@@ -29995,7 +30814,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 494.03 45.72 0)
 			(effects
 				(font
@@ -30004,7 +30823,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 494.03 45.72 0)
 			(effects
 				(font
@@ -30023,6 +30842,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 494.03 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 494.03 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 494.03 45.72 0)
 			(effects
 				(font
@@ -30154,7 +30991,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 330Ω"
 			(at 381 247.65 0)
 			(effects
 				(font
@@ -30182,6 +31019,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 381 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 381 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 381 247.65 0)
 			(effects
 				(font
@@ -30249,6 +31104,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 337.82 229.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
 			(at 337.82 229.87 0)
 			(effects
 				(font
@@ -30380,7 +31244,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V Independent Type 1A 550mV SOD-523 Schottky Diodes ROHS"
 			(at 482.6 45.72 0)
 			(effects
 				(font
@@ -30426,6 +31290,24 @@
 			)
 		)
 		(property "Price" "0.0179"
+			(at 482.6 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 482.6 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SOD-523"
 			(at 482.6 45.72 0)
 			(effects
 				(font
@@ -30494,7 +31376,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 443.23 105.41 0)
 			(effects
 				(font
@@ -30522,6 +31404,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 443.23 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 443.23 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 443.23 105.41 0)
 			(effects
 				(font
@@ -30655,7 +31555,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 5.1kΩ"
 			(at 59.69 120.65 0)
 			(effects
 				(font
@@ -30692,6 +31592,24 @@
 			)
 		)
 		(property "Price" "0.0004"
+			(at 59.69 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 59.69 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 59.69 120.65 0)
 			(effects
 				(font
@@ -30824,7 +31742,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 367.03 323.85 0)
 			(effects
 				(font
@@ -30852,6 +31770,24 @@
 			)
 		)
 		(property "Price" "0.0492"
+			(at 367.03 323.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 367.03 323.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
 			(at 367.03 323.85 0)
 			(effects
 				(font
@@ -30925,7 +31861,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 100Ω"
 			(at 450.85 46.99 0)
 			(effects
 				(font
@@ -30962,6 +31898,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 450.85 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 450.85 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 450.85 46.99 0)
 			(effects
 				(font
@@ -31030,7 +31984,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "0mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 49.53 322.58 0)
 			(effects
 				(font
@@ -31067,6 +32021,24 @@
 			)
 		)
 		(property "Price" "0.0005"
+			(at 49.53 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 49.53 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 49.53 322.58 0)
 			(effects
 				(font
@@ -31133,7 +32105,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 331.47 140.97 0)
 			(effects
 				(font
@@ -31161,6 +32133,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 331.47 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 331.47 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 331.47 140.97 0)
 			(effects
 				(font
@@ -31227,7 +32217,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 270.51 217.17 0)
 			(effects
 				(font
@@ -31264,6 +32254,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 270.51 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 270.51 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 270.51 217.17 0)
 			(effects
 				(font
@@ -31419,6 +32427,15 @@
 				(hide yes)
 			)
 		)
+		(property "Link" ""
+			(at 93.98 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "23e24ece-1a99-4acf-8000-668f1a2982ac")
 		)
@@ -31548,7 +32565,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 123.19 302.26 0)
 			(effects
 				(font
@@ -31585,6 +32602,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 123.19 302.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 123.19 302.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 123.19 302.26 0)
 			(effects
 				(font
@@ -31787,7 +32822,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "0mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 198.12 300.99 0)
 			(effects
 				(font
@@ -31824,6 +32859,24 @@
 			)
 		)
 		(property "Price" "0.0005"
+			(at 198.12 300.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 198.12 300.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 198.12 300.99 0)
 			(effects
 				(font
@@ -31891,7 +32944,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 124.46 284.48 0)
 			(effects
 				(font
@@ -31928,6 +32981,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 124.46 284.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 124.46 284.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 124.46 284.48 0)
 			(effects
 				(font
@@ -32028,6 +33099,24 @@
 			)
 		)
 		(property "Price" "0.0050"
+			(at 462.28 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 462.28 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" " SOT-23"
 			(at 462.28 46.99 0)
 			(effects
 				(font
@@ -32164,7 +33253,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10V 10uF X5R ±10%"
 			(at 104.14 181.61 0)
 			(effects
 				(font
@@ -32192,6 +33281,24 @@
 			)
 		)
 		(property "Price" "0.0050"
+			(at 104.14 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 104.14 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0805"
 			(at 104.14 181.61 0)
 			(effects
 				(font
@@ -32271,7 +33378,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 412.75 323.85 0)
 			(effects
 				(font
@@ -32299,6 +33406,24 @@
 			)
 		)
 		(property "Price" "0.0492"
+			(at 412.75 323.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 412.75 323.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
 			(at 412.75 323.85 0)
 			(effects
 				(font
@@ -32501,7 +33626,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 270.51 257.81 0)
 			(effects
 				(font
@@ -32538,6 +33663,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 270.51 257.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 270.51 257.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 270.51 257.81 0)
 			(effects
 				(font
@@ -32612,7 +33755,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 398.78 118.11 0)
 			(effects
 				(font
@@ -32640,6 +33783,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 398.78 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 398.78 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 398.78 118.11 0)
 			(effects
 				(font
@@ -32734,6 +33895,24 @@
 				(hide yes)
 			)
 		)
+		(property "Link" ""
+			(at 115.57 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "-"
+			(at 115.57 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "S1"
 			(uuid "a277823b-caaf-48f6-8a08-7e3a3c20b2c6")
 		)
@@ -32818,7 +33997,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "12MHz SMD3225-4P Crystals ROHS "
 			(at 288.29 173.99 0)
 			(effects
 				(font
@@ -32855,6 +34034,24 @@
 			)
 		)
 		(property "Confirmed" ""
+			(at 288.29 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 288.29 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SMD3225-4P "
 			(at 288.29 173.99 0)
 			(effects
 				(font
@@ -32929,7 +34126,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "0mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 38.1 322.58 0)
 			(effects
 				(font
@@ -32966,6 +34163,24 @@
 			)
 		)
 		(property "Price" "0.0005"
+			(at 38.1 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 38.1 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 38.1 322.58 0)
 			(effects
 				(font
@@ -33098,7 +34313,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 344.17 323.85 0)
 			(effects
 				(font
@@ -33126,6 +34341,24 @@
 			)
 		)
 		(property "Price" "0.0492"
+			(at 344.17 323.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 344.17 323.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
 			(at 344.17 323.85 0)
 			(effects
 				(font
@@ -33266,7 +34499,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "SOD-323 Schottky Diodes ROHS "
 			(at 152.4 160.02 0)
 			(effects
 				(font
@@ -33294,6 +34527,24 @@
 			)
 		)
 		(property "Price" "0.0092"
+			(at 152.4 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 152.4 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SOD-323"
 			(at 152.4 160.02 0)
 			(effects
 				(font
@@ -33362,7 +34613,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 222.25 347.98 0)
 			(effects
 				(font
@@ -33399,6 +34650,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 222.25 347.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 222.25 347.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 222.25 347.98 0)
 			(effects
 				(font
@@ -33532,7 +34801,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 405.13 20.32 0)
 			(effects
 				(font
@@ -33560,6 +34829,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 405.13 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 405.13 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 405.13 20.32 0)
 			(effects
 				(font
@@ -33635,7 +34922,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 55.88 30.48 0)
 			(effects
 				(font
@@ -33663,6 +34950,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 55.88 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 55.88 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 55.88 30.48 0)
 			(effects
 				(font
@@ -33865,7 +35170,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V Independent Type 1A 550mV SOD-523 Schottky Diodes ROHS"
 			(at 459.74 87.63 0)
 			(effects
 				(font
@@ -33911,6 +35216,24 @@
 			)
 		)
 		(property "Price" "0.0179"
+			(at 459.74 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 459.74 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SOD-523"
 			(at 459.74 87.63 0)
 			(effects
 				(font
@@ -34042,7 +35365,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 27Ω"
 			(at 339.09 151.13 0)
 			(effects
 				(font
@@ -34070,6 +35393,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 339.09 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 339.09 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 339.09 151.13 0)
 			(effects
 				(font
@@ -34268,7 +35609,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 93.98 353.06 0)
 			(effects
 				(font
@@ -34305,6 +35646,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 93.98 353.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 93.98 353.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 93.98 353.06 0)
 			(effects
 				(font
@@ -34372,7 +35731,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 389.89 264.16 0)
 			(effects
 				(font
@@ -34400,6 +35759,24 @@
 			)
 		)
 		(property "Price" "0.0492"
+			(at 389.89 264.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 389.89 264.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
 			(at 389.89 264.16 0)
 			(effects
 				(font
@@ -34476,6 +35853,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 55.88 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
 			(at 55.88 36.83 0)
 			(effects
 				(font
@@ -34677,7 +36063,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 412.75 264.16 0)
 			(effects
 				(font
@@ -34705,6 +36091,24 @@
 			)
 		)
 		(property "Price" "0.0492"
+			(at 412.75 264.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 412.75 264.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
 			(at 412.75 264.16 0)
 			(effects
 				(font
@@ -34844,7 +36248,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 91.44 340.36 0)
 			(effects
 				(font
@@ -34862,7 +36266,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 91.44 340.36 0)
 			(effects
 				(font
@@ -34881,6 +36285,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 91.44 340.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 91.44 340.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 91.44 340.36 0)
 			(effects
 				(font
@@ -35214,7 +36636,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "100gf 1.6mm 0.55mm Round Button Standing paste SPST SMD"
 			(at 387.35 48.26 0)
 			(effects
 				(font
@@ -35242,6 +36664,24 @@
 			)
 		)
 		(property "Price" "0.0458"
+			(at 387.35 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 387.35 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SMD,1.6x2.6mm"
 			(at 387.35 48.26 0)
 			(effects
 				(font
@@ -35647,6 +37087,15 @@
 				(hide yes)
 			)
 		)
+		(property "Link" ""
+			(at 129.54 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "a9b633b3-faf7-4110-9d44-f2e4c6c4614f")
 		)
@@ -35714,7 +37163,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 55.88 88.9 0)
 			(effects
 				(font
@@ -35742,6 +37191,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 55.88 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 55.88 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 55.88 88.9 0)
 			(effects
 				(font
@@ -35810,7 +37277,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 224.79 289.56 0)
 			(effects
 				(font
@@ -35847,6 +37314,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 224.79 289.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 224.79 289.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 224.79 289.56 0)
 			(effects
 				(font
@@ -35916,7 +37401,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 434.34 105.41 0)
 			(effects
 				(font
@@ -35953,6 +37438,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 434.34 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 434.34 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 434.34 105.41 0)
 			(effects
 				(font
@@ -36021,7 +37524,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10V 10uF X5R ±10%"
 			(at 152.4 181.61 0)
 			(effects
 				(font
@@ -36049,6 +37552,24 @@
 			)
 		)
 		(property "Price" "0.0050"
+			(at 152.4 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 152.4 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0805"
 			(at 152.4 181.61 0)
 			(effects
 				(font
@@ -36128,7 +37649,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 190.5 328.93 0)
 			(effects
 				(font
@@ -36165,6 +37686,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 190.5 328.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 190.5 328.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 190.5 328.93 0)
 			(effects
 				(font
@@ -36232,7 +37771,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 415.29 294.64 0)
 			(effects
 				(font
@@ -36260,6 +37799,24 @@
 			)
 		)
 		(property "Price" "0.0492"
+			(at 415.29 294.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 415.29 294.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
 			(at 415.29 294.64 0)
 			(effects
 				(font
@@ -36405,7 +37962,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V Independent Type 1A 550mV SOD-523 Schottky Diodes ROHS"
 			(at 482.6 97.79 0)
 			(effects
 				(font
@@ -36451,6 +38008,24 @@
 			)
 		)
 		(property "Price" "0.0179"
+			(at 482.6 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 482.6 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SOD-523"
 			(at 482.6 97.79 0)
 			(effects
 				(font
@@ -36520,7 +38095,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 116.84 283.21 0)
 			(effects
 				(font
@@ -36538,7 +38113,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 116.84 283.21 0)
 			(effects
 				(font
@@ -36557,6 +38132,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 116.84 283.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 116.84 283.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 116.84 283.21 0)
 			(effects
 				(font
@@ -36777,6 +38370,15 @@
 				(hide yes)
 			)
 		)
+		(property "Link" ""
+			(at 93.98 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6daaa902-cbfc-4b3a-aac0-ef51d3fb3adf")
 		)
@@ -36833,7 +38435,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "USB 3.1 3A 1 Horizontal attachment 24P Female -40℃~+85℃ Type-C SMD USB Connectors ROHS"
 			(at 27.94 140.97 0)
 			(effects
 				(font
@@ -36861,6 +38463,24 @@
 			)
 		)
 		(property "Price" "0.2623"
+			(at 27.94 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://www.lcsc.com/product-detail/USB-Connectors_SHOU-HAN-TYPE-C-24P-QCHT_C456013.html"
+			(at 27.94 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "-"
 			(at 27.94 140.97 0)
 			(effects
 				(font
@@ -37265,7 +38885,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "8Ω 1 DPDT(DPDT) UQFN-10(1.5x2) Analog Switches, Multiplexers ROHS "
 			(at 138.43 292.1 0)
 			(effects
 				(font
@@ -37302,6 +38922,24 @@
 			)
 		)
 		(property "Price" "0.13"
+			(at 138.43 292.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 138.43 292.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "UQFN-10(1.5x2) "
 			(at 138.43 292.1 0)
 			(effects
 				(font
@@ -37393,7 +39031,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 346.71 294.64 0)
 			(effects
 				(font
@@ -37421,6 +39059,24 @@
 			)
 		)
 		(property "Price" "0.0492"
+			(at 346.71 294.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 346.71 294.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
 			(at 346.71 294.64 0)
 			(effects
 				(font
@@ -37495,7 +39151,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 153.67 323.85 0)
 			(effects
 				(font
@@ -37513,7 +39169,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 153.67 323.85 0)
 			(effects
 				(font
@@ -37532,6 +39188,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 153.67 323.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 153.67 323.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 153.67 323.85 0)
 			(effects
 				(font
@@ -37598,7 +39272,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "ESSOP-10-150mil-1mm USB Converters ROHS "
 			(at 198.12 287.02 0)
 			(effects
 				(font
@@ -37635,6 +39309,24 @@
 			)
 		)
 		(property "Price" "0.23"
+			(at 198.12 287.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 198.12 287.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "ESSOP-10-150mil-1mm "
 			(at 198.12 287.02 0)
 			(effects
 				(font
@@ -37858,7 +39550,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Accelerometer gyroscope LGA-14(2.5x3) Accelerometers ROHS "
 			(at 288.29 198.12 0)
 			(effects
 				(font
@@ -37895,6 +39587,24 @@
 			)
 		)
 		(property "Price" "0.59"
+			(at 288.29 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 288.29 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "LGA-14(2.5x3) "
 			(at 288.29 198.12 0)
 			(effects
 				(font
@@ -38199,7 +39909,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 367.03 264.16 0)
 			(effects
 				(font
@@ -38227,6 +39937,24 @@
 			)
 		)
 		(property "Price" "0.0492"
+			(at 367.03 264.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 367.03 264.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
 			(at 367.03 264.16 0)
 			(effects
 				(font
@@ -38341,6 +40069,24 @@
 				(hide yes)
 			)
 		)
+		(property "Link" ""
+			(at 462.28 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" " SOT-23"
+			(at 462.28 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "42b86fbc-d760-46fc-8113-f4f6cd5afe4f")
 		)
@@ -38404,6 +40150,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 180.34 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
 			(at 180.34 175.26 0)
 			(effects
 				(font
@@ -38601,7 +40356,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 302.26 179.07 0)
 			(effects
 				(font
@@ -38638,6 +40393,24 @@
 			)
 		)
 		(property "Confirmed" "YES"
+			(at 302.26 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 302.26 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 302.26 179.07 0)
 			(effects
 				(font
@@ -38862,6 +40635,24 @@
 				(hide yes)
 			)
 		)
+		(property "Link" ""
+			(at 115.57 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "-"
+			(at 115.57 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "S1"
 			(uuid "7998de06-f98e-4443-a89d-f8e61d8e1a1f")
 		)
@@ -38944,7 +40735,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 120.65 353.06 0)
 			(effects
 				(font
@@ -38981,6 +40772,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 120.65 353.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 120.65 353.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 120.65 353.06 0)
 			(effects
 				(font
@@ -39049,7 +40858,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "47uF 6.3V 1.6Ω@100kHz ±10%"
 			(at 86.36 176.53 0)
 			(effects
 				(font
@@ -39077,6 +40886,24 @@
 			)
 		)
 		(property "Price" "0.0544"
+			(at 86.36 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 86.36 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "CASE-A-3216-18(mm)"
 			(at 86.36 176.53 0)
 			(effects
 				(font
@@ -39151,7 +40978,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 355.6 124.46 0)
 			(effects
 				(font
@@ -39179,6 +41006,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 355.6 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 355.6 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 355.6 124.46 0)
 			(effects
 				(font
@@ -39505,7 +41350,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 88.9 121.92 0)
 			(effects
 				(font
@@ -39533,6 +41378,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 88.9 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 88.9 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 88.9 121.92 0)
 			(effects
 				(font
@@ -39600,7 +41463,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 115.57 297.18 0)
 			(effects
 				(font
@@ -39637,6 +41500,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 115.57 297.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 115.57 297.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 115.57 297.18 0)
 			(effects
 				(font
@@ -39715,6 +41596,15 @@
 				(hide yes)
 			)
 		)
+		(property "Link" ""
+			(at 93.98 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0ab782ab-0570-4048-82d6-1d560e65c318")
 		)
@@ -39770,7 +41660,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 299.72 257.81 0)
 			(effects
 				(font
@@ -39807,6 +41697,24 @@
 			)
 		)
 		(property "Price" "0.0007"
+			(at 299.72 257.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 299.72 257.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 299.72 257.81 0)
 			(effects
 				(font
@@ -39880,7 +41788,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 369.57 294.64 0)
 			(effects
 				(font
@@ -39908,6 +41816,24 @@
 			)
 		)
 		(property "Price" "0.0492"
+			(at 369.57 294.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 369.57 294.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
 			(at 369.57 294.64 0)
 			(effects
 				(font
@@ -39982,7 +41908,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 47nF X7R ±5% 0603"
 			(at 83.82 99.06 0)
 			(effects
 				(font
@@ -40019,6 +41945,24 @@
 			)
 		)
 		(property "Price" "0.0026"
+			(at 83.82 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 83.82 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0603"
 			(at 83.82 99.06 0)
 			(effects
 				(font
@@ -40087,7 +42031,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 47nF X7R ±5% 0603"
 			(at 95.25 129.54 0)
 			(effects
 				(font
@@ -40124,6 +42068,24 @@
 			)
 		)
 		(property "Price" "0.0026"
+			(at 95.25 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 95.25 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0603"
 			(at 95.25 129.54 0)
 			(effects
 				(font
@@ -40260,7 +42222,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 200mA 200mW 3.5Ω@10V,220mA 1.5V@250uA 2 N-Channel SC-70-6(SOT-363) MOSFETs ROHS"
 			(at 45.72 95.25 0)
 			(effects
 				(font
@@ -40288,6 +42250,24 @@
 			)
 		)
 		(property "Price" "0.037"
+			(at 45.72 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 45.72 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SC-70-6(SOT-363)"
 			(at 45.72 95.25 0)
 			(effects
 				(font
@@ -40368,7 +42348,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10V 10uF X5R ±10%"
 			(at 217.17 347.98 0)
 			(effects
 				(font
@@ -40405,6 +42385,24 @@
 			)
 		)
 		(property "Price" "0.0050"
+			(at 217.17 347.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 217.17 347.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0805"
 			(at 217.17 347.98 0)
 			(effects
 				(font
@@ -40477,7 +42475,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "5.5V Lithium-ion/Polymer 1 1A DSBGA-8(1.1x1.6) Battery Management ROHS "
 			(at 135.89 335.28 0)
 			(effects
 				(font
@@ -40514,6 +42512,24 @@
 			)
 		)
 		(property "Price" "1.23"
+			(at 135.89 335.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 135.89 335.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "DSBGA-8(1.1x1.6) "
 			(at 135.89 335.28 0)
 			(effects
 				(font
@@ -40728,7 +42744,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V Independent Type 1A 550mV SOD-523 Schottky Diodes ROHS"
 			(at 482.6 35.56 0)
 			(effects
 				(font
@@ -40774,6 +42790,24 @@
 			)
 		)
 		(property "Price" "0.0179"
+			(at 482.6 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 482.6 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SOD-523"
 			(at 482.6 35.56 0)
 			(effects
 				(font
@@ -40843,7 +42877,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 344.17 25.4 0)
 			(effects
 				(font
@@ -40871,6 +42905,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 344.17 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 344.17 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 344.17 25.4 0)
 			(effects
 				(font
@@ -40939,7 +42991,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 459.74 77.47 0)
 			(effects
 				(font
@@ -40948,7 +43000,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C22775"
+		(property "LCSC" "C106227"
 			(at 459.74 77.47 0)
 			(effects
 				(font
@@ -40976,6 +43028,24 @@
 			)
 		)
 		(property "Price" "0.0005"
+			(at 459.74 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 459.74 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 459.74 77.47 0)
 			(effects
 				(font
@@ -41044,7 +43114,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 15pF NP0 ±1%"
 			(at 273.05 168.91 0)
 			(effects
 				(font
@@ -41081,6 +43151,24 @@
 			)
 		)
 		(property "Confirmed" "YES"
+			(at 273.05 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 273.05 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0402"
 			(at 273.05 168.91 0)
 			(effects
 				(font
@@ -41150,7 +43238,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 459.74 25.4 0)
 			(effects
 				(font
@@ -41159,7 +43247,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C22775"
+		(property "LCSC" "C106227"
 			(at 459.74 25.4 0)
 			(effects
 				(font
@@ -41187,6 +43275,24 @@
 			)
 		)
 		(property "Price" "0.0005"
+			(at 459.74 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 459.74 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 459.74 25.4 0)
 			(effects
 				(font
@@ -41253,7 +43359,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V Independent Type 1A 550mV SOD-523 Schottky Diodes ROHS"
 			(at 482.6 87.63 0)
 			(effects
 				(font
@@ -41299,6 +43405,24 @@
 			)
 		)
 		(property "Price" "0.0179"
+			(at 482.6 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 482.6 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SOD-523"
 			(at 482.6 87.63 0)
 			(effects
 				(font
@@ -41368,7 +43492,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 344.17 35.56 0)
 			(effects
 				(font
@@ -41396,6 +43520,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 344.17 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 344.17 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 344.17 35.56 0)
 			(effects
 				(font
@@ -41462,7 +43604,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "0mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 198.12 297.18 0)
 			(effects
 				(font
@@ -41499,6 +43641,24 @@
 			)
 		)
 		(property "Price" "0.0005"
+			(at 198.12 297.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 198.12 297.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 198.12 297.18 0)
 			(effects
 				(font
@@ -41567,7 +43727,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "0mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 31.75 322.58 0)
 			(effects
 				(font
@@ -41604,6 +43764,24 @@
 			)
 		)
 		(property "Price" "0.0005"
+			(at 31.75 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 31.75 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 31.75 322.58 0)
 			(effects
 				(font
@@ -41801,7 +43979,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 100Ω"
 			(at 450.85 99.06 0)
 			(effects
 				(font
@@ -41838,6 +44016,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 450.85 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 450.85 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 450.85 99.06 0)
 			(effects
 				(font
@@ -41969,7 +44165,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "8Mbit 133MHz USON-8-EP(2x3) NOR FLASH ROHS"
 			(at 396.24 31.75 0)
 			(effects
 				(font
@@ -41997,6 +44193,24 @@
 			)
 		)
 		(property "Price" "0.22"
+			(at 396.24 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 396.24 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "USON-8-EP(2x3) "
 			(at 396.24 31.75 0)
 			(effects
 				(font
@@ -42087,7 +44301,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 100.33 124.46 0)
 			(effects
 				(font
@@ -42115,6 +44329,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 100.33 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 100.33 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 100.33 124.46 0)
 			(effects
 				(font
@@ -42183,7 +44415,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "19.5dBm ESP32 chip 2.4GHz WiFi Modules ROHS"
 			(at 201.93 383.54 0)
 			(effects
 				(font
@@ -42260,6 +44492,24 @@
 			)
 		)
 		(property "Price" "3.18"
+			(at 201.93 383.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 201.93 383.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "-"
 			(at 201.93 383.54 0)
 			(effects
 				(font
@@ -42503,7 +44753,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 222.25 312.42 0)
 			(effects
 				(font
@@ -42540,6 +44790,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 222.25 312.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 222.25 312.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 222.25 312.42 0)
 			(effects
 				(font
@@ -42607,7 +44875,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "100gf 1.6mm 0.55mm Round Button Standing paste SPST SMD"
 			(at 154.94 386.08 0)
 			(effects
 				(font
@@ -42644,6 +44912,24 @@
 			)
 		)
 		(property "Price" "0.0458"
+			(at 154.94 386.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 154.94 386.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SMD,1.6x2.6mm"
 			(at 154.94 386.08 0)
 			(effects
 				(font
@@ -42724,7 +45010,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "0mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 44.45 322.58 0)
 			(effects
 				(font
@@ -42761,6 +45047,24 @@
 			)
 		)
 		(property "Price" "0.0005"
+			(at 44.45 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 44.45 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 44.45 322.58 0)
 			(effects
 				(font
@@ -42829,7 +45133,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 75kΩ"
 			(at 88.9 359.41 0)
 			(effects
 				(font
@@ -42875,6 +45179,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 88.9 359.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 88.9 359.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 88.9 359.41 0)
 			(effects
 				(font
@@ -42944,7 +45266,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10 positions 2.7V~5.5V 200kHz SPI MSOP-8 Analog to Digital Converters (ADC) ROHS"
 			(at 254 38.1 0)
 			(effects
 				(font
@@ -42972,6 +45294,24 @@
 			)
 		)
 		(property "Price" "1.11"
+			(at 254 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 254 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "MSOP-8"
 			(at 254 38.1 0)
 			(effects
 				(font
@@ -43058,7 +45398,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 75kΩ"
 			(at 99.06 359.41 0)
 			(effects
 				(font
@@ -43104,6 +45444,24 @@
 			)
 		)
 		(property "Price" "0.0006"
+			(at 99.06 359.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 99.06 359.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "0201"
 			(at 99.06 359.41 0)
 			(effects
 				(font
@@ -43301,7 +45659,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 389.89 323.85 0)
 			(effects
 				(font
@@ -43329,6 +45687,24 @@
 			)
 		)
 		(property "Price" "0.0492"
+			(at 389.89 323.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 389.89 323.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
 			(at 389.89 323.85 0)
 			(effects
 				(font
@@ -43604,7 +45980,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 344.17 264.16 0)
 			(effects
 				(font
@@ -43632,6 +46008,24 @@
 			)
 		)
 		(property "Price" "0.0492"
+			(at 344.17 264.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 344.17 264.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
 			(at 344.17 264.16 0)
 			(effects
 				(font

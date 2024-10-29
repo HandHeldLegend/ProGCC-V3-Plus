@@ -337,7 +337,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -361,7 +361,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -393,6 +393,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "50e092a6-2e28-486c-92a9-ff6ef68b770f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5e3b8698-44a6-4829-a314-879f5f247672")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "79775524-5708-4cd0-b963-3715f205758f")
 			(effects
 				(font
 					(size 1 1)
@@ -593,7 +619,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10V 10uF X5R ±10%"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -637,6 +663,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "df8c27ff-c968-4d2f-9d14-6976f5361e0e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7084bf41-7357-4f93-9bbf-8f8ffa322b76")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0805"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "707ea7f9-44d1-43d2-baa9-201ec3e4a2bf")
 			(effects
 				(font
 					(size 1 1)
@@ -843,7 +895,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "3.4mm 3.3mm Round Button Horizontal attachment SPST SMD"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -886,6 +938,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "bbf112f3-5d2d-4db2-b086-bccecd1bd458")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "be7c1b15-165b-4f85-8afd-7c5000b01b96")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SMD,3.3x4.5mm"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8bce43b1-e44b-457c-8175-6553ebb47616")
 			(effects
 				(font
 					(size 1 1)
@@ -1020,7 +1098,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 27Ω"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -1064,6 +1142,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c9c44750-79e9-42f2-8d41-489cbd01c135")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "20f2c422-bfbc-4b23-b3da-68d47162a9d3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c70e226a-4db4-4e98-a716-fb7813b4012b")
 			(effects
 				(font
 					(size 1 1)
@@ -1263,7 +1367,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V Independent Type 1A 550mV SOD-523 Schottky Diodes ROHS"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1333,6 +1437,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "182513e4-3079-4450-a1e4-9d6393a6ca24")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "66823489-d532-43c6-a583-8aaefe5827d5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SOD-523"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "366fe0c6-8118-4f37-9c14-f2f62dc86077")
 			(effects
 				(font
 					(size 1 1)
@@ -1611,7 +1741,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1654,6 +1784,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7c91cf3f-d438-4f25-b367-d11919141510")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "176198f6-bea6-4900-8261-526b239e2a40")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fb29b348-309e-4493-8b51-097764d190a9")
 			(effects
 				(font
 					(size 1 1)
@@ -1828,7 +1984,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1883,6 +2039,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2424d21b-d16d-4e35-8a66-64b4dd2bedc1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "124fa390-ba22-46e7-b6b4-14a66a517ef6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1dd57332-8dbf-471d-af66-a426f7c14537")
 			(effects
 				(font
 					(size 1 1)
@@ -2082,7 +2264,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "0mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2138,6 +2320,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "20bb7fbf-b303-4d9e-9b82-dd30c0e221fd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "57869d33-641d-4c81-a168-11533a0a47ab")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e6c7435e-4098-4f17-b9f5-fa9fa2e61b28")
 			(effects
 				(font
 					(size 1 1)
@@ -2337,7 +2545,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10V 10uF X5R ±10%"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2393,6 +2601,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e2566d37-df02-430e-a7ec-878281217e4f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5e0a9760-b9f6-4f61-9e61-1fd516304672")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0805"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "70ae7d03-c45d-4b71-94a5-534842169dfd")
 			(effects
 				(font
 					(size 1 1)
@@ -2599,7 +2833,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -2643,6 +2877,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7a215c3d-48e2-48eb-bca8-e4e11d3e98a4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7ac01c6d-2ded-42c0-a6f3-1623166afb88")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5e64aebc-a19e-4824-9cfc-d889ce76d6c0")
 			(effects
 				(font
 					(size 1 1)
@@ -2842,7 +3102,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "0mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2898,6 +3158,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "10da181f-7b14-4e81-87d4-78fb08acd9b8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e98451c9-23b8-4028-bcd6-db3a3abc3d2f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "475559de-7401-4fd0-a441-3c800dd9366b")
 			(effects
 				(font
 					(size 1 1)
@@ -3099,7 +3385,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10 positions 2.7V~5.5V 200kHz SPI MSOP-8 Analog to Digital Converters (ADC) ROHS"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -3142,6 +3428,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2ab56d53-4975-42fc-8b3b-c0c357d3bba1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "067d172e-19ea-4271-94dc-96df1e713540")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "MSOP-8"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cf749317-7c6d-4d3a-b795-0af0d5eef925")
 			(effects
 				(font
 					(size 1 1)
@@ -3439,7 +3751,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 47nF X7R ±5% 0603"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3493,6 +3805,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "085f6af7-20e4-4b23-9137-7654b8c049b5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "50bb4d7d-136a-42f1-ad10-a9661bdc300b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0603"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b5677b3e-2ab0-463d-b9be-1d05656cd2d6")
 			(effects
 				(font
 					(size 1 1)
@@ -3699,7 +4037,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 200mA 200mW 3.5Ω@10V,220mA 1.5V@250uA 2 N-Channel SC-70-6(SOT-363) MOSFETs ROHS"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -3741,6 +4079,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5f922894-88be-4c4a-ad5d-d225c9fd6eff")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c2f5c716-2b39-43e6-a63b-a3ebd27741bb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SC-70-6(SOT-363)"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3a83b444-87c4-4166-b997-f71e7f32d1f7")
 			(effects
 				(font
 					(size 1 1)
@@ -3992,7 +4356,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 330Ω"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4036,6 +4400,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "23cdd07f-2643-4dfb-a2e0-85d0980d0314")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "71a9fc1d-bdf5-4a17-8c9b-d00605880771")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c2c29067-169a-44be-949c-53cf8ef3e82f")
 			(effects
 				(font
 					(size 1 1)
@@ -4235,7 +4625,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V Independent Type 1A 550mV SOD-523 Schottky Diodes ROHS"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4305,6 +4695,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "bd551ca7-0360-4376-949b-ac9150c55a79")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "65900be9-7d8c-4521-8bf0-018304ddea90")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SOD-523"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2fbc6a6b-9691-4320-a309-e4a3e853a387")
 			(effects
 				(font
 					(size 1 1)
@@ -4582,7 +4998,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4626,6 +5042,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2d779994-1b0b-469f-ad67-5c04636fff44")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cc714bfa-96bb-44b6-a0d2-cb62af66d3d8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c7bd630f-81e0-4a96-8cfb-b1fd43c279f1")
 			(effects
 				(font
 					(size 1 1)
@@ -4826,7 +5268,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "0mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4882,6 +5324,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6511e6af-b593-4b78-9099-047d6fc27077")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fcb0d6c2-ca7b-41f3-b170-a57b68cc1df6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "39dadc90-7ddd-4521-af20-bf9ea9e82d62")
 			(effects
 				(font
 					(size 1 1)
@@ -5081,7 +5549,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 47nF X7R ±5% 0603"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5135,6 +5603,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6f5ed9cb-14a4-495a-9917-7957a4a61141")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cc71812d-89d6-4d01-8982-5afe5d3481da")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0603"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "23109f75-9159-46e3-8ba4-1caad8b7e3de")
 			(effects
 				(font
 					(size 1 1)
@@ -5341,7 +5835,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5384,6 +5878,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "25d04176-4bfa-4fbb-af71-d18a9e3182b9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "260c3494-88b8-47f2-9b7c-0a90ac3e35da")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8b821f04-6fce-43cc-b58e-4e23be1de9bf")
 			(effects
 				(font
 					(size 1 1)
@@ -5559,7 +6079,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "SOD-323 Schottky Diodes ROHS "
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -5602,6 +6122,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "13e06be6-c736-455d-be8d-503ecab38586")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5c256ef8-30c8-4b49-b8c5-b8fffb973185")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SOD-323"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a53306b0-72d6-48f3-b8c9-20a5e3a08ef0")
 			(effects
 				(font
 					(size 1 1)
@@ -5880,7 +6426,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -5924,6 +6470,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a965f7a2-3948-4f27-a11d-f0454bff2c43")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e231d076-1247-4282-af36-3ad30c05a01f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "11bc8b21-1e78-4c1d-ada5-1c4cb0081fdc")
 			(effects
 				(font
 					(size 1 1)
@@ -6123,7 +6695,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6135,7 +6707,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C22775"
+		(property "LCSC" "C106227"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6180,6 +6752,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "534e2624-1ff1-42b9-a622-8995356598bf")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "080f4fb9-2917-4c07-9d16-66228ea173f6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "78647c95-5772-40ce-9b99-fcd340abbf35")
 			(effects
 				(font
 					(size 1 1)
@@ -6380,7 +6978,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -6424,6 +7022,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "aa09a82b-d606-4543-bcca-b05ad21d6304")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eaede4c3-43a3-4421-afd7-3b542685ecdb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "20600aa4-1598-43ef-acaa-5164550b3aa1")
 			(effects
 				(font
 					(size 1 1)
@@ -6637,6 +7261,19 @@
 				)
 			)
 		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bdfe3ff2-2786-43cf-92c3-90916729fd93")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/1b3ea6f2-720a-42ca-b28f-692113128277")
 		(sheetname "Root")
@@ -6829,7 +7466,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6841,7 +7478,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C22775"
+		(property "LCSC" "C106227"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6886,6 +7523,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e3314cde-7e05-488d-96cd-770100e30158")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e5b312fd-2fe5-4af8-9dd7-caab454415d8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "74e8f700-83d1-4f3e-a23b-c0a3b8951898")
 			(effects
 				(font
 					(size 1 1)
@@ -7087,7 +7750,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "264KB 30 133MHz LQFN-56(7x7) Microcontrollers"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -7130,6 +7793,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a949ef24-117f-4844-a4f1-82b05e4cbc95")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "78808c6c-c5c1-49b1-9f85-225011419ecc")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "LQFN-56(7x7)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "11ca3223-aec8-418f-9552-f6d9a28d7c13")
 			(effects
 				(font
 					(size 1 1)
@@ -8150,7 +8839,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8193,6 +8882,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "70d8cd6d-4ce7-42d5-86a0-38035638bdbb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "be43fead-a266-42cc-9a46-2dc66e8907c1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ea0f4ec9-15e3-4833-99b5-282462490d3d")
 			(effects
 				(font
 					(size 1 1)
@@ -8380,6 +9095,19 @@
 				)
 			)
 		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0128b42a-fce9-4095-b7b8-c74f263b444b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/08de7410-5e74-4f71-a5b6-3b5918f208c3")
 		(sheetname "Root")
@@ -8479,7 +9207,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "19.5dBm ESP32 chip 2.4GHz WiFi Modules ROHS"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -8582,6 +9310,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "302627de-1c1d-4205-8e36-b968391e3212")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4af04ad9-ee0e-4b26-bb4f-dfd38e147e1d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "-"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "edceed1d-1257-4442-a451-dfe682fda51c")
 			(effects
 				(font
 					(size 1 1)
@@ -9491,7 +10245,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9503,7 +10257,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9535,6 +10289,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "61f5ae40-552d-4e11-94fd-35dd0554dd2e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0a779c30-cb28-4ded-b67c-ef6338b89dd7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "23e1cc18-70a0-4bd0-88a3-f9ca65618aed")
 			(effects
 				(font
 					(size 1 1)
@@ -9735,7 +10515,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -9779,6 +10559,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "56d4939f-81a2-4fe0-8433-c6a9e7877511")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1910f0c6-4688-4ecc-b3c0-41b73e191d73")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c9527381-0f62-4ead-a227-e310e1945f69")
 			(effects
 				(font
 					(size 1 1)
@@ -9980,7 +10786,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "SOD-323 Schottky Diodes ROHS "
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -10035,6 +10841,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4dc05d1b-88d6-43a2-b571-47f471a89c19")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "081e588b-a75b-4907-be0a-91007869f6b1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SOD-323"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1854964e-d6a3-449b-9ef6-1f3e488b4293")
 			(effects
 				(font
 					(size 1 1)
@@ -10326,6 +11158,19 @@
 				)
 			)
 		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eeecc5cd-f924-403f-8280-3411dd6d9a74")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/b931ca66-073c-45a9-8848-f46a836f2a49")
 		(sheetname "Root")
@@ -10519,7 +11364,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -10563,6 +11408,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6c0ecdca-75dd-4142-9584-b3737d71b9ad")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "31e10427-eefe-4c49-976b-92880d2bd921")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "50746939-e20e-4138-b874-f78e289dfea6")
 			(effects
 				(font
 					(size 1 1)
@@ -10763,7 +11634,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10806,6 +11677,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a1efd774-4bde-460b-ad0a-8b892f45dd28")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f116758c-5f95-47a9-9e61-6af93f378873")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5635af53-1b54-4f98-b847-341a56b49696")
 			(effects
 				(font
 					(size 1 1)
@@ -10982,7 +11879,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "SOD-323 Schottky Diodes ROHS "
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -11025,6 +11922,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "dcac8b02-924a-40d2-aafd-209fa014e2bb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fe2ccf01-7078-41ca-bb2c-b924ee7260e1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SOD-323"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "97395dde-861e-4985-8891-75e1c1038ac6")
 			(effects
 				(font
 					(size 1 1)
@@ -11302,7 +12225,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V Independent Type 1A 550mV SOD-523 Schottky Diodes ROHS"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11372,6 +12295,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9623d9f4-0d2a-437c-b213-41b56b09b10f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ae404fc9-8858-4614-a5e3-ba96d3f41d33")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SOD-523"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "886b74f2-de6b-4331-8dd1-8a2e0d46ab33")
 			(effects
 				(font
 					(size 1 1)
@@ -11650,7 +12599,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -11694,6 +12643,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a3853d4f-7e88-4bf2-9636-0b950ffd1de3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "871efccc-01f3-41fd-bdfd-6e61ebde2438")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bdcd595a-8dc8-45bd-b679-2eb27b73300e")
 			(effects
 				(font
 					(size 1 1)
@@ -11937,6 +12912,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "30353901-40d4-498e-a6e8-da43e0bebd99")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ae22ac01-79f8-44ec-8a79-cec320806c0d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" " SOT-23"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "daf09160-65e9-47e7-b310-ae264274f69e")
 			(effects
 				(font
 					(size 1 1)
@@ -12209,6 +13210,19 @@
 				)
 			)
 		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a6caf147-e332-4dac-9070-04f3ce760015")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/0e9d146a-38cd-4beb-828c-1d18e0940f70")
 		(sheetname "Root")
@@ -12310,7 +13324,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -12366,6 +13380,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9c7ca158-106e-4ffd-b999-e6c4874fabb7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7c565b7e-f36d-4967-9cf7-07f4b60ca300")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3ca6c7f1-fbb8-461f-a4af-08260c68795d")
 			(effects
 				(font
 					(size 1 1)
@@ -12566,7 +13606,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -12610,6 +13650,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f76b27a1-5fbc-467a-ba27-1faae3d96d1d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9e1621aa-0acd-4844-911e-fd3288783a62")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ff3de8e6-e737-4625-9c3a-0759f783e349")
 			(effects
 				(font
 					(size 1 1)
@@ -12809,7 +13875,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12866,6 +13932,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "20f3ebf6-9e72-4f29-b451-c7ae1f2b1926")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a9c5100d-7c13-4ab7-b0f4-f5ee04a9e955")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9d4ecef2-d864-479b-8d75-20d66c623aa7")
 			(effects
 				(font
 					(size 1 1)
@@ -13066,7 +14158,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -13078,7 +14170,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13110,6 +14202,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a03597b5-58ab-4eec-b646-ccef4966d675")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "459144b6-12b0-4802-b1b8-c35a4f4687a1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a06f581a-797e-4925-9541-b6dda88cc5e3")
 			(effects
 				(font
 					(size 1 1)
@@ -13310,7 +14428,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "0mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -13366,6 +14484,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b3b98668-d8ad-4c4a-b32c-f23ac4b160c7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9e921a8b-86a7-44ee-87e2-d627f2557652")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "58e2234c-c299-4679-905a-d666c2db741f")
 			(effects
 				(font
 					(size 1 1)
@@ -13565,7 +14709,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 100Ω"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13622,6 +14766,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d3ba36bd-6156-468e-a112-f1b6dad0bc2a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "455d6afd-1d55-4990-8323-10bf4df653fa")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1126fd72-3a1f-40fd-8814-26541aa43dd0")
 			(effects
 				(font
 					(size 1 1)
@@ -13822,7 +14992,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -13878,6 +15048,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c0a94ca4-2bac-4898-831e-688fc645dd8c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f689c39f-4d82-4d8d-981a-2bb6adffdbcd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "145093b9-9b30-4cbd-a0da-e27e0c2fd6ef")
 			(effects
 				(font
 					(size 1 1)
@@ -14191,6 +15387,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "312d9428-c87d-41d2-be62-8755530f254e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e3dc1669-c3d3-4a21-aa2d-3d3cdb61b22e")
 			(effects
 				(font
 					(size 1 1)
@@ -14730,7 +15939,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "0mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -14786,6 +15995,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c098ac3e-74ad-4d0d-8038-2876c4d6e372")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2866c691-aad2-41ba-ba4f-ccd421fca97b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "84098ff6-0496-4ac1-a87a-b057983c9822")
 			(effects
 				(font
 					(size 1 1)
@@ -14985,7 +16220,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -15040,6 +16275,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9f7fbb08-aa8e-405d-8aad-29d6fea83e8d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5cbc0d55-cf8c-43b1-ab84-0226d1968247")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7c7762e5-ad8a-478f-a3ed-d3cb8690fa79")
 			(effects
 				(font
 					(size 1 1)
@@ -15240,7 +16501,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 27Ω"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -15284,6 +16545,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "53e5be64-415c-4460-a062-c23ee377ab36")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9dc463f2-4428-4c66-b125-5384b70ec282")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0921400b-4335-4c38-b709-040be7f1f489")
 			(effects
 				(font
 					(size 1 1)
@@ -15484,7 +16771,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -15496,7 +16783,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -15528,6 +16815,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ae00ac4d-212b-4a51-9b8c-45e4e34e5307")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5c7c4bc6-76a7-41ee-a45a-605958880b45")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7b67f136-4b51-4c17-888d-711c96998f49")
 			(effects
 				(font
 					(size 1 1)
@@ -15728,7 +17041,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "5.5V Lithium-ion/Polymer 1 1A DSBGA-8(1.1x1.6) Battery Management ROHS "
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -15782,6 +17095,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f12441fc-18b6-4eb3-8cce-b7a966dfb49a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c2e4001b-46d8-4ae9-9d9b-eec80a4ada6c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "DSBGA-8(1.1x1.6) "
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e522f1d8-96bc-4cf5-91d1-774cc874a76f")
 			(effects
 				(font
 					(size 1 1)
@@ -16131,6 +17470,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9ddce5a2-662e-4639-ad44-bfa7220f83da")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9658c5a7-cac2-4513-b40b-3b0cfb98e91a")
 			(effects
 				(font
 					(size 1 1)
@@ -16518,7 +17870,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "8Mbit 133MHz USON-8-EP(2x3) NOR FLASH ROHS"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -16560,6 +17912,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4231bb22-d55e-41ff-93f4-7eb131785c19")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ac3bf311-77c6-49fc-bdf2-a8cb9b81465b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "USON-8-EP(2x3) "
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a8474444-2938-49dc-8084-363e198bf8e0")
 			(effects
 				(font
 					(size 1 1)
@@ -16734,7 +18112,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 47nF X7R ±5% 0603"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -16788,6 +18166,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ed082b77-645a-41ac-b312-64bc7e58132c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9642ded2-2081-4368-bf54-44161ca79d74")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0603"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "44664a42-be65-4ce9-b32c-c48a91236f91")
 			(effects
 				(font
 					(size 1 1)
@@ -17141,6 +18545,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6304f523-9ceb-45c6-a4d7-74bb44e99a33")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "781083d8-1d9d-40d8-bca2-2b8a79423fef")
 			(effects
 				(font
 					(size 1 1)
@@ -17529,7 +18946,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -17553,7 +18970,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -17585,6 +19002,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "80bb3978-bcde-4299-adbc-b0bd5ab9ac9e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "19ec4df9-3626-439e-8cfc-944497c6c535")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "77f4ad91-2281-4b45-874a-8ce13f35d41e")
 			(effects
 				(font
 					(size 1 1)
@@ -17785,7 +19228,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "47uF 6.3V 1.6Ω@100kHz ±10%"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -17829,6 +19272,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ff6b9a07-548d-424f-ab53-1cdff4c0062f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "81655de1-e8dd-4276-b098-7aa61f5206be")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "CASE-A-3216-18(mm)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ef0e0b51-59db-47d0-be40-c64af3b3caed")
 			(effects
 				(font
 					(size 1 1)
@@ -18055,7 +19524,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -18098,6 +19567,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7af7282e-60e0-4519-8d79-916554ed1c59")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "79ade70f-4713-42ba-ab19-d63edb0d2f6d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eb2cf4e7-d100-4ecf-899b-034c06e4d941")
 			(effects
 				(font
 					(size 1 1)
@@ -18273,7 +19768,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V 200mW 100@100mA,1V 200mA NPN SOT-23 Bipolar (BJT) ROHS "
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -18328,6 +19823,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3141927c-2cc2-4a9e-a804-0540d82c8987")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5b430c98-daec-4706-bab8-9add15db19ea")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" " SOT-23"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b225f410-215b-4ab3-9186-0a46b6f40e66")
 			(effects
 				(font
 					(size 1 1)
@@ -18589,6 +20110,19 @@
 				)
 			)
 		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "56c3efd5-8a85-4286-988b-624d56e7a3ef")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "SolderJumper*Open*")
 		(path "/582d5e0d-eec7-46e0-bd44-be88ecc94bfe")
 		(sheetname "Root")
@@ -18745,7 +20279,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -18800,6 +20334,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d27ab35e-7067-4ea4-ac50-7174ab1522c0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f4837bd3-26d3-41db-ad9d-9d33d9e1a598")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f7091814-f98e-4e4b-8efe-0639b911ee0a")
 			(effects
 				(font
 					(size 1 1)
@@ -19013,11 +20573,24 @@
 				)
 			)
 		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0bdb9ec7-9415-4136-b0ab-06c651d68ed2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/24f355b7-3631-41ff-8091-1d70532082c7")
 		(sheetname "Root")
 		(sheetfile "progcc_3.2_main.kicad_sch")
-		(attr through_hole)
+		(attr through_hole dnp)
 		(fp_line
 			(start -1.06 -1.06)
 			(end 0 -1.06)
@@ -19288,7 +20861,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -19344,6 +20917,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1d1ac6b9-9e58-4a14-aae9-89d97d410cf2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "af65756b-03d0-42a5-82f2-4973240cc03b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5099e22e-7970-474c-9a77-333e3681d607")
 			(effects
 				(font
 					(size 1 1)
@@ -19544,7 +21143,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -19588,6 +21187,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b489e8f0-16b8-42d9-96b3-131695792001")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6c434f7e-79d5-4a75-9e8a-661283edfbbb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a51a9957-90ef-4ad3-bf9a-942141be1f4f")
 			(effects
 				(font
 					(size 1 1)
@@ -19788,7 +21413,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -19844,6 +21469,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4df84aa9-1c7f-4bb2-b6f8-453ced3e5058")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "27c68f5b-6c93-49da-a396-7d9301d6a3d9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "05a2d574-7642-4492-9b29-a4fde205698b")
 			(effects
 				(font
 					(size 1 1)
@@ -20043,7 +21694,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "12MHz SMD3225-4P Crystals ROHS "
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20099,6 +21750,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f5ff8638-b849-4088-b005-fda2fc4dab5a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f3986a8e-5006-4963-8644-8a7176181c4c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SMD3225-4P "
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5f4c13f9-0ec6-4b43-b961-505a67731cf8")
 			(effects
 				(font
 					(size 1 1)
@@ -20332,7 +22009,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20376,6 +22053,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c5df2b39-25a8-4e52-b21e-d50c2baeb65b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "34090a9a-e85d-4d2c-9f3f-def54f611ca5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "da288c26-b099-48c1-9b8c-0736e4b7bded")
 			(effects
 				(font
 					(size 1 1)
@@ -20576,7 +22279,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20619,6 +22322,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ad50a7ce-fc64-41f2-a649-e4d14a2b455f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f79092a4-87b4-467a-8c4a-62ecc41e79e0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "45ebdc30-5660-4727-adcb-33d5c3f75e63")
 			(effects
 				(font
 					(size 1 1)
@@ -20794,7 +22523,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -20850,6 +22579,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b820105d-530e-41b7-8552-a6d10b0881e5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "59067717-0d40-4162-bf9b-34a1201098b3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fe9167c0-8798-4804-876d-a521d6001168")
 			(effects
 				(font
 					(size 1 1)
@@ -21049,7 +22804,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10V 10uF X5R ±10%"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -21105,6 +22860,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "deb13582-9b1a-439d-9b55-5d99a5615ca1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d49d42f4-54ac-472e-8310-ffe19c66bfa7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0805"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "22fcdaa1-4d46-4ef8-896a-d5711e04d914")
 			(effects
 				(font
 					(size 1 1)
@@ -21310,7 +23091,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 47nF X7R ±5% 0603"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -21364,6 +23145,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d7cd7f00-20a5-447d-9b03-93bf7d8996d2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e2485b34-efc8-4fc0-903d-df4bb737ce2d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0603"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9e97a18e-70b4-4b9a-a440-e6f60120abb8")
 			(effects
 				(font
 					(size 1 1)
@@ -21569,7 +23376,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 15pF NP0 ±1%"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -21626,6 +23433,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6864c5b9-ebac-4316-be80-7c51f426e000")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fa5504b1-d0a2-4876-a1b0-b333be627bd8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0402"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c606f5b1-9ac5-4af0-882a-c7a8da0f79b0")
 			(effects
 				(font
 					(size 1 1)
@@ -21833,7 +23666,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -21889,6 +23722,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7187b135-93af-4df5-98b0-adf42c682765")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "302cef61-020d-4a80-9019-67a14289c7a6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "19fbda31-89dc-4724-9fc4-683075bf9e06")
 			(effects
 				(font
 					(size 1 1)
@@ -22089,7 +23948,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -22132,6 +23991,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "21baa41e-e016-4bcf-b301-efd44cf5a673")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "90192f80-4769-4721-8329-bba5edd9ee74")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f344dd65-c4f7-4c14-a43f-d009cbc5830c")
 			(effects
 				(font
 					(size 1 1)
@@ -22307,7 +24192,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 200mA 200mW 3.5Ω@10V,220mA 1.5V@250uA 2 N-Channel SC-70-6(SOT-363) MOSFETs ROHS"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -22349,6 +24234,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b8adec34-155a-419b-9fbe-a99b1a491b80")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c5d2ea4a-588d-4318-9347-d2dd743d4b54")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SC-70-6(SOT-363)"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8bc9a53a-efd7-46cb-946d-3f147cec35a5")
 			(effects
 				(font
 					(size 1 1)
@@ -22600,7 +24511,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "ESSOP-10-150mil-1mm USB Converters ROHS "
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -22654,6 +24565,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "92776ecc-8398-4c5a-83ea-99e79a19ebe6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f17b2c85-8ff4-4f3e-9fa6-e868113e5f57")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "ESSOP-10-150mil-1mm "
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d0bb1c16-155b-4a05-a4a9-572dfcd6cd83")
 			(effects
 				(font
 					(size 1 1)
@@ -22852,7 +24789,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -22896,6 +24833,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e538c2cf-3b90-48e7-8930-9855e1af034b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3ff9af06-5949-4b4a-87d8-b636e57abe95")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7aa742ce-cc47-4d5c-8454-001363a38c40")
 			(effects
 				(font
 					(size 1 1)
@@ -23126,6 +25089,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3f8e1ea0-7016-414b-9f22-632a8926e28e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1c55600b-cdaf-494d-b609-ee9713a84c4f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "-"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "05c55413-ade3-49bc-9dc5-614e8bc321f9")
 			(effects
 				(font
 					(size 1 1)
@@ -23370,7 +25359,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V 200mW 100@100mA,1V 200mA NPN SOT-23 Bipolar (BJT) ROHS "
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -23425,6 +25414,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7fb708b4-62e1-4586-81f7-dacb9a97afd4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4534e228-e724-4fb1-a37b-a3d7fe929e4f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" " SOT-23"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "67ed2b7e-ab9f-4789-a88d-7c67ea1143b4")
 			(effects
 				(font
 					(size 1 1)
@@ -23673,7 +25688,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -23717,6 +25732,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0bd04b90-76d0-4348-a76d-d9c10141ccdd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "13953876-efb4-4bfd-8a4a-064bf5cbf2b1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "477905c6-3ba2-4cfe-87c3-cfd39d67d742")
 			(effects
 				(font
 					(size 1 1)
@@ -23917,7 +25958,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "100gf 1.6mm 0.55mm Round Button Standing paste SPST SMD"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -23959,6 +26000,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8cbe3597-3078-4237-915d-bc800650a046")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "68d48bd1-cf3c-4142-a37e-6cf6d41f80aa")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SMD,1.6x2.6mm"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a7daf1e8-831d-4014-a6fd-b654f93e20e9")
 			(effects
 				(font
 					(size 1 1)
@@ -24097,7 +26164,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -24109,7 +26176,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -24141,6 +26208,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "35b2f5ff-5258-466e-abfe-a38096366f37")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "28a42d94-50d4-4bf6-b903-ece36c150454")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6588852d-b1c2-4300-87b4-fb79d4a76a51")
 			(effects
 				(font
 					(size 1 1)
@@ -24341,7 +26434,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -24385,6 +26478,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e841ce4f-21ed-472a-8714-865911c23766")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fc1581ea-09aa-466e-b4a4-4a231b172197")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fb22531a-ebf6-494d-b516-1db307e937ef")
 			(effects
 				(font
 					(size 1 1)
@@ -24584,7 +26703,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -24639,6 +26758,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6a6d7b91-4ac5-4ba1-b389-a776d6788e67")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "08d684e7-1764-450e-803a-2bcd457fa77e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1a82c5e7-2a87-4625-aff9-3a52393f2a00")
 			(effects
 				(font
 					(size 1 1)
@@ -24838,7 +26983,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -24882,6 +27027,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c64dda24-746f-4d7e-ba40-69ce22e3fd05")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4c10c536-29ec-4f16-80b1-531e6e88fc7a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "80a6e305-2245-405d-b229-cf2af944e4ee")
 			(effects
 				(font
 					(size 1 1)
@@ -25082,7 +27253,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -25106,7 +27277,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -25138,6 +27309,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0d49529c-5db6-47a0-8e5d-1cc2c67510f0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e0e9c5d6-bd5b-457f-88fa-834127b4eead")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6cef4651-f111-4118-9e92-cef693d8bcd6")
 			(effects
 				(font
 					(size 1 1)
@@ -25338,7 +27535,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -25382,6 +27579,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c0760179-3f45-43ca-b22b-ed7ca8dd662c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "71ad1bb1-1e0c-485b-84e3-67d74335d3ad")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b18d26c3-e96e-42f9-9ee9-edb1c3ea19e0")
 			(effects
 				(font
 					(size 1 1)
@@ -25625,6 +27848,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "29b92442-c95a-4850-8dd6-6b987695e2d4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5c64eab1-f938-4993-98e9-6cc0218d691f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" " SOT-23"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "10eaa8d6-e827-43bf-82b2-c6f0d0bfb94a")
 			(effects
 				(font
 					(size 1 1)
@@ -25885,7 +28134,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -25941,6 +28190,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b642f060-a9be-476d-97ae-6608210c01df")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "be3ef51d-6ea6-4614-8127-5cbe343d35e7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "376ed3ca-f90d-40d0-bd73-4ecc46c692bf")
 			(effects
 				(font
 					(size 1 1)
@@ -26140,7 +28415,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 1uF X5R ±10%"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -26152,7 +28427,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C160831"
+		(property "LCSC" "C76929"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -26184,6 +28459,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d9efd302-ac70-4011-ad2e-f055743ea266")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "78827798-84ec-4893-a981-76002a2db169")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "955fd078-2aac-4d08-8a3f-33a601c58931")
 			(effects
 				(font
 					(size 1 1)
@@ -26383,7 +28684,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -26427,6 +28728,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7e0e67ce-6383-481d-af23-c6f1020a6122")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "180e7b8c-bd97-4f93-89b0-b2f53d53ef39")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "90c9ecf9-1e89-47b4-9186-83885f410adb")
 			(effects
 				(font
 					(size 1 1)
@@ -26636,6 +28963,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a62a3b42-cdca-4d8b-bced-b239dc56f9d6")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -26893,7 +29233,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -26936,6 +29276,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0b2c3274-5fe5-47b3-acce-d9eccad80991")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c147a22f-1db7-42b6-8298-197d075fee06")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ace16f60-233b-4a18-9edc-c2d96dd36035")
 			(effects
 				(font
 					(size 1 1)
@@ -27110,7 +29476,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50V 15pF NP0 ±1%"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -27167,6 +29533,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7d15eb63-a67e-46d3-8418-6d48e28af374")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "14fdb02d-7134-4286-b83d-f7f462e4e362")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0402"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2e0dc59a-6e1d-483a-9989-9f910ffc951f")
 			(effects
 				(font
 					(size 1 1)
@@ -27385,6 +29777,19 @@
 				)
 			)
 		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "74433bf4-bc17-4411-bf01-173f89956d84")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/8c00af01-4458-469c-ae92-049fbbe6f7dc")
 		(sheetname "Root")
@@ -27485,7 +29890,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -27529,6 +29934,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6a1a775c-9725-47ea-a949-113e393cac87")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2db28d93-1243-4a9c-8a55-473d6610dbb4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ebbd0464-81a7-477d-9e54-f198de9395f8")
 			(effects
 				(font
 					(size 1 1)
@@ -27727,7 +30158,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Flip type -40℃~+105℃ 14P Bottom Contact Horizontal attachment 0.5mm SMD,P=0.5mm,Surface Mount"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -27751,7 +30182,7 @@
 				)
 			)
 		)
-		(property "MPN" "molex_5051101492_14P"
+		(property "MPN" "5051101492"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -27782,6 +30213,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d982d8ec-365a-47b3-b36f-b7ac1c8f804b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b0a2f951-7e03-4aa5-9c61-2cee7a0c8cd4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SMD,P=0.5mm,Surface Mount，Right Angle"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "366be478-20ea-4b8b-a6a6-b574ded5dcd9")
 			(effects
 				(font
 					(size 1 1)
@@ -28009,6 +30466,19 @@
 				)
 			)
 		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a99e497c-f534-4794-a7fc-4beb2805a067")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/0263ea92-4655-45c9-8d1d-8aad4fc40d70")
 		(sheetname "Root")
@@ -28109,7 +30579,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 75kΩ"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -28175,6 +30645,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "94521f3c-aa9d-46de-927a-0f97cb162c49")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3ca87c2b-8205-4fa5-ba5c-a19757345847")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ce7d7bbb-897c-4d2f-a0b9-eb6fbd43bff0")
 			(effects
 				(font
 					(size 1 1)
@@ -28375,7 +30871,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -28419,6 +30915,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e656f2f0-3441-4f03-a9de-c5405bd506eb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "84614438-c6eb-417b-ab68-1e4e6c810af3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c8c773ae-daec-47ee-ad94-27e06bdb4039")
 			(effects
 				(font
 					(size 1 1)
@@ -28620,7 +31142,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "USB 3.1 3A 1 Horizontal attachment 24P Female -40℃~+85℃ Type-C SMD USB Connectors ROHS"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -28663,6 +31185,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4f59b82b-3307-4da5-9341-29d5a49cfc0b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://www.lcsc.com/product-detail/USB-Connectors_SHOU-HAN-TYPE-C-24P-QCHT_C456013.html"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cdf5fe79-829a-4acc-941d-30afc5f7937a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "-"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "55d027e2-d3af-44d3-8da5-2ea1dac75896")
 			(effects
 				(font
 					(size 1 1)
@@ -29068,7 +31616,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "8Ω 1 DPDT(DPDT) UQFN-10(1.5x2) Analog Switches, Multiplexers ROHS "
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -29122,6 +31670,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "58254c12-b7a0-48f8-8dd9-d9df3defff99")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8176a040-ed44-4092-bb1b-6153d739d18f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "UQFN-10(1.5x2) "
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1a960abf-019b-4735-b94e-c8a418f20680")
 			(effects
 				(font
 					(size 1 1)
@@ -29430,7 +32004,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10 positions 2.7V~5.5V 200kHz SPI MSOP-8 Analog to Digital Converters (ADC) ROHS"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -29473,6 +32047,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "667a8173-fbd0-4bf8-aba0-7faeda3b382c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7633beb4-6aa9-4d27-931d-a6cac53ea6b8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "MSOP-8"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "67554e9b-42eb-41f6-9fbc-5bf249b425a7")
 			(effects
 				(font
 					(size 1 1)
@@ -29770,7 +32370,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "100gf 1.6mm 0.55mm Round Button Standing paste SPST SMD"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -29824,6 +32424,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2914dfa4-ffd5-4622-b8d0-160984557b80")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3b9e8902-5ee0-49f0-9168-3e7baa1272aa")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SMD,1.6x2.6mm"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a01342d2-9bb2-4340-a7e4-b86332942c07")
 			(effects
 				(font
 					(size 1 1)
@@ -29962,7 +32588,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V Independent Type 1A 550mV SOD-523 Schottky Diodes ROHS"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -30032,6 +32658,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a28f4c8d-13fc-4394-9efc-137a2550ce66")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f527cfdc-ed7c-4afa-8455-22ee55fa55c9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SOD-523"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "17b983e3-bad2-44f0-a19d-8a49c8d6d6d4")
 			(effects
 				(font
 					(size 1 1)
@@ -30309,7 +32961,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V Independent Type 1A 550mV SOD-523 Schottky Diodes ROHS"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -30379,6 +33031,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e341982d-10ac-4214-8d45-125abcd50a1a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c0435b7d-6d96-4117-9578-e9d470b21a02")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SOD-523"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cae950a1-3d69-480c-bb00-6bd7d30ee9da")
 			(effects
 				(font
 					(size 1 1)
@@ -30657,7 +33335,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -30701,6 +33379,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "377c5979-fa20-401a-92f8-c12ce66d20b5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "71fa6c0b-1a34-4cff-8c66-15a102cb289d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "14e2ebb0-be22-40ca-97d6-5bda67cdfe50")
 			(effects
 				(font
 					(size 1 1)
@@ -30901,7 +33605,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -30958,6 +33662,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0b2b3dac-b0e2-4c7f-b156-ccc471e70b66")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7b4f5ea4-ca80-424f-88e0-ff67f4e6cc33")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "baf05d51-dc7d-4487-a711-c2f625ea67aa")
 			(effects
 				(font
 					(size 1 1)
@@ -31158,7 +33888,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -31202,6 +33932,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7788e230-bdaf-46c5-b6d9-c4f870a38359")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fc6c36c4-4cdc-41d9-9a14-f94e8ac5f71b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b640e4ff-c594-4340-89b9-5d7c1192d8a0")
 			(effects
 				(font
 					(size 1 1)
@@ -31402,7 +34158,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -31458,6 +34214,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "090e242f-c9ec-4002-8990-668ff9282ce0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2cd6be8b-82c2-4ff3-b55e-494b43e4c312")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "99e2bc14-7010-4713-9764-682db3c3f985")
 			(effects
 				(font
 					(size 1 1)
@@ -31658,7 +34440,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -31701,6 +34483,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8e3bd61e-1420-4ff4-af72-ffa9e685ceea")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1b0710ed-ddbc-4d9b-bd7e-3d0a6947ba2c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b1ab6bae-bc0a-49f7-8698-234bcc5288c9")
 			(effects
 				(font
 					(size 1 1)
@@ -31876,7 +34684,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Accelerometer gyroscope LGA-14(2.5x3) Accelerometers ROHS "
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -31930,6 +34738,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7817e256-b428-4e07-a27a-2ea059a3acc7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "db9dd7c0-eeeb-4468-8b26-e49418dc4c21")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "LGA-14(2.5x3) "
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bc9f2a49-253e-4562-a8d7-c34f9ffa0b94")
 			(effects
 				(font
 					(size 1 1)
@@ -32250,7 +35084,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "40V Independent Type 1A 550mV SOD-523 Schottky Diodes ROHS"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -32320,6 +35154,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ccc799aa-8628-4dd9-9a46-03fce6bcc506")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2e6cee84-d002-45b8-a0b6-08d5d7379c9e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SOD-523"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6d7a5f34-ab11-49a4-908b-5abb02b65d30")
 			(effects
 				(font
 					(size 1 1)
@@ -32598,7 +35458,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -32642,6 +35502,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "dc8b8876-e36d-4cfd-a5fa-e0694e292e66")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e89efc7c-4db9-41d9-b731-c6eeee5fc982")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "830bca62-0ab5-4fae-ba05-88712f6a717c")
 			(effects
 				(font
 					(size 1 1)
@@ -32841,7 +35727,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "0mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -32897,6 +35783,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d591f9ba-f038-43af-80d2-e2b5ce7e04b0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c997531c-92d4-42d3-b399-92388a321cf6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2d0bebb0-b407-4142-bac1-b8f13a2014b6")
 			(effects
 				(font
 					(size 1 1)
@@ -33097,7 +36009,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -33153,6 +36065,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "64c682e3-63e3-4ab4-9c42-70e46a76024b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5f6f38dc-e543-4a53-b39e-82a941213c5b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "355f9619-9381-4b9d-afff-262164065bdb")
 			(effects
 				(font
 					(size 1 1)
@@ -33353,7 +36291,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -33396,6 +36334,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "81c7d80e-1bc6-47b3-938c-b59e34d231ad")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e81ab073-1211-49cb-96bb-baf9fe7902b4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a7f8b183-39fa-42b0-bb3d-47e283a74f2a")
 			(effects
 				(font
 					(size 1 1)
@@ -33571,7 +36535,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Accelerometer gyroscope LGA-14(2.5x3) Accelerometers ROHS "
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -33625,6 +36589,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1a5be10e-7f9f-444f-90a9-bdbbae83e0cf")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2c15e64d-f5aa-43c7-84af-25dc01aa8e20")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "LGA-14(2.5x3) "
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3fdde083-6063-4227-9eb0-8fa2d5331f0a")
 			(effects
 				(font
 					(size 1 1)
@@ -33946,7 +36936,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "1.3A 2.2uH ±20% 80mΩ 1008 Inductors (SMD) ROHS "
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -34000,6 +36990,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c7566cb9-a521-4628-9596-1831dd07ad1b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e8c0ce0f-fddb-41ce-8837-d43903423ee8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "1008"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b69af8b7-0de6-4831-9806-75073dae4063")
 			(effects
 				(font
 					(size 1 1)
@@ -34208,7 +37224,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 5.1kΩ"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -34262,6 +37278,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d4b28263-5f5e-4ffa-9370-25a83abdc5d9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3d4190cc-fedd-4aee-966e-514845adf292")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f8b2960b-b524-4351-b4c1-cb9769f7d1fe")
 			(effects
 				(font
 					(size 1 1)
@@ -34492,6 +37534,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "297ff4bd-9d98-4e2d-9401-0f537a21674f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "22071bc3-1ae5-4134-88f2-7bae49af073b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "-"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2b55678b-6f71-4da6-a696-a15364fd25ce")
 			(effects
 				(font
 					(size 1 1)
@@ -34736,7 +37804,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "6.3V 100nF X5R ±10%"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -34780,6 +37848,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9947c73a-3efe-4987-a4b1-028d96dc336f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "58065094-5436-42c6-bf79-2724abf3c544")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1e769f5d-d6b6-4230-b665-0830f4b0f3f5")
 			(effects
 				(font
 					(size 1 1)
@@ -34980,7 +38074,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "SOD-323 Schottky Diodes ROHS "
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -35023,6 +38117,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "76a4ecfa-9853-4168-b280-1bc179cb8239")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3812b8b5-ce96-428f-923a-753e06dc58ba")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SOD-323"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3574985a-1ce7-4664-bd32-b963e57de1d3")
 			(effects
 				(font
 					(size 1 1)
@@ -35300,7 +38420,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 75kΩ"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -35366,6 +38486,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d533c8d0-2ffa-41eb-9c34-853906910f26")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "85f2c83b-79aa-4d3b-b87d-7b9bfe6db01b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "463e8083-0d5f-45c3-b7bf-256e88856e81")
 			(effects
 				(font
 					(size 1 1)
@@ -35567,7 +38713,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 100Ω"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -35611,6 +38757,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "77c38c23-b830-4bea-8bdc-7eb290d4650f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5b771add-a83a-4565-8ed6-ce3cb463598d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0c746340-fdcf-4a6b-bb50-fda75359f36e")
 			(effects
 				(font
 					(size 1 1)
@@ -35811,7 +38983,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -35854,6 +39026,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ecac2ac8-efc2-4b6a-92b8-b190700339bf")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9af42bec-2a8f-4a54-8e8f-1c01341afdf6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "86b30da4-d8bd-4b93-88f6-5f212d64e816")
 			(effects
 				(font
 					(size 1 1)
@@ -36029,7 +39227,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "RGB LED"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -36072,6 +39270,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "91c3cba9-76bb-4954-afd8-5bb24cd334b1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" "https://cdn-shop.adafruit.com/product-files/5849/SK6805-EC10-000_REV.01_EN.pdf"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "75344f65-97a2-4a28-93c7-8f3fc8e218ec")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "SK6805-EC-10"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f81d49a7-e393-4bed-80a4-c56223abcd0c")
 			(effects
 				(font
 					(size 1 1)
@@ -36246,7 +39470,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -36303,6 +39527,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "593b219b-d4c9-443c-8365-00d064003fa0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b3f91c24-912f-4f70-ab02-8211d9173424")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9b048b26-f262-4df8-9d36-33b8e4c9aebc")
 			(effects
 				(font
 					(size 1 1)
@@ -36516,6 +39766,19 @@
 				)
 			)
 		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5e4c8a19-e3d7-47f9-9efe-6ea055db6ad0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/d4df208c-1233-48e8-b0c0-6ea1773cc05a")
 		(sheetname "Root")
@@ -36722,6 +39985,19 @@
 				)
 			)
 		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c4b107dd-be76-42ce-984d-4f0ad3a717b4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/69c6bb14-04ab-4556-8c53-fd0db7149139")
 		(sheetname "Root")
@@ -36914,7 +40190,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 100Ω"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -36971,6 +40247,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8bb5aa1d-d55a-47c0-b608-63c6c591a5a1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ff1d9707-1adc-4ee8-998d-73ebc4324179")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dd440ce0-a6b4-4f49-97aa-2f9d0a876676")
 			(effects
 				(font
 					(size 1 1)
@@ -37171,7 +40473,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "10V 10uF X5R ±10%"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -37215,6 +40517,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ff0fb5ce-1ac4-45ac-8cd0-00ef242dcec9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3169f77e-51a7-45ae-8356-f8627329aa5b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0805"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d08a99bc-1895-4d7c-a6e0-5dbbc8f148ff")
 			(effects
 				(font
 					(size 1 1)
@@ -37421,7 +40749,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 5.1kΩ"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -37475,6 +40803,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2c6ce7ea-0a86-4ab1-b956-aca1b22fe190")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "48aec41e-a7fc-4ab5-a92b-805372a59732")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "73d5ee16-3da7-4ba1-97b1-90025c9d146e")
 			(effects
 				(font
 					(size 1 1)
@@ -37675,7 +41029,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 10kΩ"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -37731,6 +41085,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "eea57608-69b7-4716-8912-a28f273358f6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0d933021-d7e7-48d2-a883-d9b617303c93")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "87ef7be3-24f4-4e8b-a064-7d4cf2bf7e77")
 			(effects
 				(font
 					(size 1 1)
@@ -37931,7 +41311,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "50mW Thick Film Resistors 25V ±1% ±200ppm/℃ 1kΩ"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -37975,6 +41355,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "cd50191d-b90d-457f-a7ea-727eb794ae48")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Link" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "be11be49-de88-46cc-99e8-7aa9dc4000ec")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Package" "0201"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e86bb2ec-ce5f-42bc-a34e-88f46c0f981b")
 			(effects
 				(font
 					(size 1 1)
