@@ -315,7 +315,7 @@ int main()
     stdio_init_all();
     sleep_ms(100);
 
-    btinput_capability_reset_flag();
+    //btinput_capability_reset_flag();
 
     cb_hoja_hardware_setup();
 

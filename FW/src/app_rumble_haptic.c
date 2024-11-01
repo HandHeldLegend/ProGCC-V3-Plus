@@ -582,9 +582,10 @@ bool lra_init = false;
 // Obtain and dump calibration values for auto-init LRA
 void cb_hoja_rumble_init()
 {
+    //return; // Do not init debug
     if (!lra_init)
     {
-        sleep_ms(100);
+        sleep_ms(250);
         lra_init = true;
 
         // Take MODE out of standby
