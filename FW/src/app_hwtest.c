@@ -1,6 +1,5 @@
 #include "app_hwtest.h"
 #include "main.h"
-#include "app_rumble.h"
 
 bool _hwtest_pinok(uint primary)
 {
@@ -101,7 +100,6 @@ bool _hwtest_analog()
 
 bool _hwtest_rumble()
 {
-    cb_hoja_rumble_test();
     return true;
 }
 

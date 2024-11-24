@@ -1,6 +1,8 @@
 #include "hoja_includes.h"
 #include "interval.h"
 #include "main.h"
+#include "haptics.h"
+#include "hardware/pwm.h"
 
 uint main_slice_num = 0;
 uint brake_slice_num = 0;

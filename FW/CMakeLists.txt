@@ -82,7 +82,6 @@ include_directories(
 
 add_executable(${PROJECT_NAME}
 	src/main.c
-	src/app_rumble_haptic.c 
 	src/app_hwtest.c
 )
 
@@ -142,7 +141,6 @@ include_directories(
 
 add_executable(${PROJECT_NAME}
 	src/main.c
-	src/app_rumble_dualhaptic.c 
 	src/app_hwtest.c
 )
 

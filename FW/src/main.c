@@ -1,6 +1,5 @@
 #include "hoja_includes.h"
 #include "board_config.h"
-#include "app_rumble.h"
 #include "main.h"
 
 button_remap_s user_map = {
@@ -171,12 +170,6 @@ void cb_hoja_read_buttons(button_data_s *data)
     data->button_safemode = !gpio_get(PGPIO_BUTTON_MODE);
     data->button_shipping = data->button_stick_right && data->button_stick_left;
     data->button_sync = data->button_plus;
-}
-
-void cb_hoja_task_0_hook(uint32_t timestamp)
-{
-    this_timestamp = timestamp;
-    app_rumble_task(timestamp);
 }
 
 int main()

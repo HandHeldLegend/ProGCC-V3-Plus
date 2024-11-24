@@ -14,12 +14,7 @@
 #define HOJA_FW_VERSION 0x0A30
 
 // Haptic
-#if (HOJA_DEVICE_ID == 0xA003)
-    #define HOJA_PRODUCT        "ProGCC 3H"
-    #define HOJA_CAPABILITY_RUMBLE_LRA 1
-    #define HOJA_CAPABILITY_RUMBLE_ERM 0
-// Normal
-#elif (HOJA_DEVICE_ID == 0xA002)
+#if (HOJA_DEVICE_ID == 0xA002)
     #define HOJA_PRODUCT        "ProGCC 3+"
     #define HOJA_CAPABILITY_RUMBLE_ERM 1
     #define HOJA_CAPABILITY_RUMBLE_LRA 0
@@ -111,6 +106,8 @@
     #define HOJA_I2C_SDA 28     // ok
     #define HOJA_I2C_SCL 29     // ok
 
+    // ---------------------------------
+    // ---------------------------------
 
     // SPI HAL Setup
     #define HOJA_SPI_0_ENABLE     1
@@ -118,6 +115,12 @@
     #define HOJA_SPI_0_GPIO_MOSI  19
     #define HOJA_SPI_0_GPIO_MISO  20
     #define SPI_INSTANCE_0        0
+
+    // I2C HAL Setup
+    #define HOJA_I2C_0_ENABLE       1
+    #define HOJA_I2C_0_GPIO_SDA     28
+    #define HOJA_I2C_0_GPIO_SCL     29
+    #define I2C_INSTANCE_0          0
 
     // IMU Driver Setup
     #define IMU_DRIVER_LSM6DSR 2     // 2 Sensors
@@ -136,6 +139,8 @@
 
     #define HOJA_IMU_CHAN_B_SPI_INSTANCE    0
     #define HOJA_IMU_CHAN_B_INVERT_FLAGS    0b010010
+    // ---------------------------------
+    // ---------------------------------
 
     // ADC Driver Setup
     #define ADC_DRIVER_MCP3002          2   // 2 MCP3002 chips
@@ -165,13 +170,25 @@
     #define HOJA_ADC_RY_CHANNEL         1
     #define HOJA_ADC_RY_SPI_INSTANCE    0
     #define HOJA_ADC_RY_CS_PIN          22 
+    // ---------------------------------
+    // ---------------------------------
 
-    //#define HOJA_ADC_CHAN_LT_READ() 0
-    //#define HOJA_ADC_CHAN_RT_READ() 0
-    //#define HOJA_ADC_CHAN_BATTERY_READ()
+    // Haptic Driver Setup
+    #if (HOJA_DEVICE_ID == 0xA004) // ProGCC 3.1
+        #define HOJA_CONFIG_HDRUMBLE    1
+        #define HAPTIC_DRIVER_DRV2605L  1
+        #define HAPTIC_DRIVER_DRV2605L_I2C_INSTANCE 0
 
-    //#define HOJA_IMU_CHAN_A_READ() void()
-    //#define HOJA_IMU_CHAN_B_READ() void()
+        #define HOJA_HDRUMBLE_CHAN_A_PIN 21
+        #define HOJA_HDRUMBLE_CHAN_B_PIN 24
+    #elif (HOJA_DEVICE_ID == 0xA005) // ProGCC 3.2
+        // No external driver used
+        #define HOJA_CONFIG_HDRUMBLE     1
+        #define HOJA_HDRUMBLE_CHAN_A_PIN 21
+        #define HOJA_HDRUMBLE_CHAN_B_PIN 24
+    #endif
+    // ---------------------------------
+    // ---------------------------------
 
 // Defined by cmake #define HOJA_RUMBLE_TYPE HOJA_RUMBLE_TYPE_HAPTIC or HOJA_RUMBLE_TYPE_ERM
 
