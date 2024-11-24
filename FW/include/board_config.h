@@ -104,13 +104,74 @@
         #define HOJA_RGB_GROUP_ZL       {27}
         #define HOJA_RGB_GROUP_R        {25}
         #define HOJA_RGB_GROUP_ZR       {24}
-        
     #endif
 
     #define HOJA_I2C_BUS i2c0
     #define HOJA_I2CINPUT_ADDRESS 0x76
     #define HOJA_I2C_SDA 28     // ok
     #define HOJA_I2C_SCL 29     // ok
+
+
+    // SPI HAL Setup
+    #define HOJA_SPI_0_ENABLE     1
+    #define HOJA_SPI_0_GPIO_CLK   18
+    #define HOJA_SPI_0_GPIO_MOSI  19
+    #define HOJA_SPI_0_GPIO_MISO  20
+    #define SPI_INSTANCE_0        0
+
+    // IMU Driver Setup
+    #define IMU_DRIVER_LSM6DSR 2     // 2 Sensors
+    #define HOJA_IMU_CHAN_A_DRIVER IMU_DRIVER_LSM6DSR
+    #define HOJA_IMU_CHAN_B_DRIVER IMU_DRIVER_LSM6DSR
+
+    #define HOJA_IMU_CHAN_A_CS_PIN          17
+    #define HOJA_IMU_CHAN_A_SPI_INSTANCE    0
+    #define HOJA_IMU_CHAN_A_INVERT_FLAGS    0b100100
+
+    #if ( (HOJA_DEVICE_ID == 0xA002) | (HOJA_DEVICE_ID == 0xA003) )
+        #define HOJA_IMU_CHAN_B_CS_PIN 21    // ok
+    #elif (HOJA_DEVICE_ID == 0xA004) | (HOJA_DEVICE_ID == 0xA005)
+        #define HOJA_IMU_CHAN_B_CS_PIN 25    // ok
+    #endif
+
+    #define HOJA_IMU_CHAN_B_SPI_INSTANCE    0
+    #define HOJA_IMU_CHAN_B_INVERT_FLAGS    0b010010
+
+    // ADC Driver Setup
+    #define ADC_DRIVER_MCP3002          2   // 2 MCP3002 chips
+
+    #if(HOJA_DEVICE_ID == 0xA004)
+        #define ADC_SMOOTHING_STRENGTH      4
+    #else 
+        #define ADC_SMOOTHING_STRENGTH      0 
+    #endif
+
+    #define HOJA_ADC_LX_DRIVER          ADC_DRIVER_MCP3002
+    #define HOJA_ADC_LX_CHANNEL         0
+    #define HOJA_ADC_LX_SPI_INSTANCE    0
+    #define HOJA_ADC_LX_CS_PIN          16 
+
+    #define HOJA_ADC_LY_DRIVER          ADC_DRIVER_MCP3002
+    #define HOJA_ADC_LY_CHANNEL         1
+    #define HOJA_ADC_LY_SPI_INSTANCE    0
+    #define HOJA_ADC_LY_CS_PIN          16 
+
+    #define HOJA_ADC_RX_DRIVER          ADC_DRIVER_MCP3002
+    #define HOJA_ADC_RX_CHANNEL         0
+    #define HOJA_ADC_RX_SPI_INSTANCE    0
+    #define HOJA_ADC_RX_CS_PIN          22 
+
+    #define HOJA_ADC_RY_DRIVER          ADC_DRIVER_MCP3002
+    #define HOJA_ADC_RY_CHANNEL         1
+    #define HOJA_ADC_RY_SPI_INSTANCE    0
+    #define HOJA_ADC_RY_CS_PIN          22 
+
+    //#define HOJA_ADC_CHAN_LT_READ() 0
+    //#define HOJA_ADC_CHAN_RT_READ() 0
+    //#define HOJA_ADC_CHAN_BATTERY_READ()
+
+    //#define HOJA_IMU_CHAN_A_READ() void()
+    //#define HOJA_IMU_CHAN_B_READ() void()
 
 // Defined by cmake #define HOJA_RUMBLE_TYPE HOJA_RUMBLE_TYPE_HAPTIC or HOJA_RUMBLE_TYPE_ERM
 

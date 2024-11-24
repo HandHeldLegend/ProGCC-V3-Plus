@@ -1,6 +1,5 @@
 #include "app_hwtest.h"
 #include "main.h"
-#include "app_imu.h"
 #include "app_rumble.h"
 
 bool _hwtest_pinok(uint primary)
@@ -89,93 +88,15 @@ bool _hwtest_battery()
 
 bool _hwtest_imu()
 {
+    // Will be depreciated
     return true;
 }
 
 #define ANALOG_ATTEMPTS 10
 bool _hwtest_analog()
 {
-    uint attempts = ANALOG_ATTEMPTS;
-
-    // Set up buffers for each axis
-    uint8_t buffer_lx[3] = {0};
-    uint8_t buffer_ly[3] = {0};
-    uint8_t buffer_rx[3] = {0};
-    uint8_t buffer_ry[3] = {0};
-
-    while (attempts--)
-    {
-        // CS left stick ADC
-        gpio_put(PGPIO_LS_CS, false);
-        // Read first axis for left stick
-        while (!spi_is_readable(spi0))
-        {
-        };
-        int read = spi_read_blocking(spi0, X_AXIS_CONFIG, buffer_lx, 3);
-        if (read != 3)
-            return false;
-
-        // CS left stick ADC reset
-        gpio_put(PGPIO_LS_CS, true);
-        gpio_put(PGPIO_LS_CS, false);
-
-        while (!spi_is_readable(spi0))
-        {
-        };
-        // Set up and read axis for left stick Y  axis
-        read = spi_read_blocking(spi0, Y_AXIS_CONFIG, buffer_ly, 3);
-        if (read != 3)
-            return false;
-
-        // CS right stick ADC
-        gpio_put(PGPIO_LS_CS, true);
-        gpio_put(PGPIO_RS_CS, false);
-
-        while (!spi_is_readable(spi0))
-        {
-        };
-        read = spi_read_blocking(spi0, Y_AXIS_CONFIG, buffer_ry, 3);
-        if (read != 3)
-            return false;
-
-        // CS right stick ADC reset
-        gpio_put(PGPIO_RS_CS, true);
-        gpio_put(PGPIO_RS_CS, false);
-
-        while (!spi_is_readable(spi0))
-        {
-        };
-        read = spi_read_blocking(spi0, X_AXIS_CONFIG, buffer_rx, 3);
-        if (read != 3)
-            return false;
-
-        // Release right stick CS ADC
-        gpio_put(PGPIO_RS_CS, true);
-
-        bool lx = false;
-        bool ly = false;
-        bool rx = false;
-        bool ry = false;
-        for (uint i = 0; i < 3; i++)
-        {
-            if (buffer_lx[i] > 0)
-                lx = true;
-            if (buffer_rx[i] > 0)
-                rx = true;
-            if (buffer_ly[i] > 0)
-                ly = true;
-            if (buffer_ry[i] > 0)
-                ry = true;
-        }
-
-        if (lx && ly && rx && ry)
-        {
-            attempts = 0;
-            return true;
-        }
-    }
-
-    return false;
+    // Will be depreciated
+    return true;
 }
 
 bool _hwtest_rumble()
