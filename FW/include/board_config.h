@@ -180,13 +180,28 @@
         #define HAPTIC_DRIVER_DRV2605L_I2C_INSTANCE 0
 
         #define HOJA_HDRUMBLE_CHAN_A_PIN 21
-        #define HOJA_HDRUMBLE_CHAN_B_PIN 24
+        // UNUSED #define HOJA_HDRUMBLE_CHAN_B_PIN 24
     #elif (HOJA_DEVICE_ID == 0xA005) // ProGCC 3.2
         // No external driver used
         #define HOJA_CONFIG_HDRUMBLE     1
         #define HOJA_HDRUMBLE_CHAN_A_PIN 21
         #define HOJA_HDRUMBLE_CHAN_B_PIN 24
     #endif
+    // ---------------------------------
+    // ---------------------------------
+
+    // USB Mux Driver Setup
+    #define USB_MUX_DRIVER_PI3USB4000A  1
+    #define HOJA_USB_MUX_DRIVER         USB_MUX_DRIVER_PI3USB4000A
+    #define USB_MUX_DRIVER_ENABLE_PIN   0
+    #define USB_MUX_DRIVER_SELECT_PIN   0
+
+    // Bluetooth Driver Setup
+    #define BLUETOOTH_DRIVER_ESP32HOJA      1
+    #define HOJA_BLUETOOTH_DRIVER           BLUETOOTH_DRIVER_ESP32HOJA
+    #define BLUETOOTH_DRIVER_I2C_INSTANCE   0
+    #define BLUETOOTH_DRIVER_ENABLE_PIN     0
+
     // ---------------------------------
     // ---------------------------------
 
