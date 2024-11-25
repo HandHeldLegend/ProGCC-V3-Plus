@@ -102,7 +102,7 @@
     #endif
 
     #define HOJA_I2C_BUS i2c0
-    #define HOJA_I2CINPUT_ADDRESS 0x76
+    
     #define HOJA_I2C_SDA 28     // ok
     #define HOJA_I2C_SCL 29     // ok
 
