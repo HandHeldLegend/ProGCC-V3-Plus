@@ -23827,7 +23827,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "CC0603JRX7R9BB473"
+		(property "MPN" "TAJA476K006RNJ"
 			(at 83.82 125.73 0)
 			(effects
 				(font
@@ -24707,7 +24707,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "CC0603JRX7R9BB473"
+		(property "MPN" "TAJA476K006RNJ"
 			(at 95.25 100.33 0)
 			(effects
 				(font
@@ -41926,7 +41926,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "CC0603JRX7R9BB473"
+		(property "MPN" "TAJA476K006RNJ"
 			(at 83.82 99.06 0)
 			(effects
 				(font
@@ -42049,7 +42049,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "CC0603JRX7R9BB473"
+		(property "MPN" "TAJA476K006RNJ"
 			(at 95.25 129.54 0)
 			(effects
 				(font
@@ -42991,7 +42991,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "50mW Thick Film Resistors 25V ±1% 0Ω"
+		(property "Description" "0mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 459.74 77.47 0)
 			(effects
 				(font
@@ -43238,7 +43238,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "50mW Thick Film Resistors 25V ±1% 0Ω"
+		(property "Description" "0mW Thick Film Resistors 25V ±1% 0Ω"
 			(at 459.74 25.4 0)
 			(effects
 				(font
