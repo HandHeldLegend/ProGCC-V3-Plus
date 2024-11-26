@@ -20,8 +20,6 @@ include_directories(
 
 add_executable(${PROJECT_NAME}
 	src/main.c
-	src/app_rumble_erm.c 
-	src/app_hwtest.c
 )
 
 target_compile_definitions(${PROJECT_NAME}
@@ -38,24 +36,6 @@ target_compile_definitions(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
 PRIVATE
 hoja_lib
-pico_stdlib
-pico_bootrom
-pico_multicore
-pico_platform
-pico_rand
-
-hardware_gpio
-hardware_adc
-hardware_flash
-hardware_pio
-hardware_dma
-hardware_pwm
-hardware_spi
-hardware_sync
-hardware_timer
-
-tinyusb_device
-tinyusb_board
 )
 
 pico_enable_stdio_usb(${PROJECT_NAME} 0)
@@ -82,7 +62,6 @@ include_directories(
 
 add_executable(${PROJECT_NAME}
 	src/main.c
-	src/app_hwtest.c
 )
 
 target_compile_definitions(${PROJECT_NAME}
@@ -97,24 +76,6 @@ target_compile_definitions(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
 PRIVATE
 hoja_lib
-pico_stdlib
-pico_bootrom
-pico_multicore
-pico_platform
-pico_rand
-
-hardware_gpio
-hardware_adc
-hardware_flash
-hardware_pio
-hardware_dma
-hardware_pwm
-hardware_spi
-hardware_sync
-hardware_timer
-
-tinyusb_device
-tinyusb_board
 )
 
 pico_enable_stdio_usb(${PROJECT_NAME} 0)
@@ -141,7 +102,6 @@ include_directories(
 
 add_executable(${PROJECT_NAME}
 	src/main.c
-	src/app_hwtest.c
 )
 
 target_compile_definitions(${PROJECT_NAME}
@@ -156,24 +116,6 @@ target_compile_definitions(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
 PRIVATE
 hoja_lib
-pico_stdlib
-pico_bootrom
-pico_multicore
-pico_platform
-pico_rand
-
-hardware_gpio
-hardware_adc
-hardware_flash
-hardware_pio
-hardware_dma
-hardware_pwm
-hardware_spi
-hardware_sync
-hardware_timer
-
-tinyusb_device
-tinyusb_board
 )
 
 pico_enable_stdio_usb(${PROJECT_NAME} 0)

@@ -21,6 +21,4 @@
 #define PGPIO_BUTTON_USB_EN 27    // ok
 #define PGPIO_ESP_EN 14           // ok
 
-
-void _gpio_put_od(uint gpio, bool level);
   
