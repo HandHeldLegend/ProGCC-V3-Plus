@@ -3,6 +3,9 @@
 
 #include "board_config.h"
 #include "main.h"
+#include "hardware/gpio.h"
+#include "pico/stdlib.h"
+#include "pico/bootrom.h"
 
 /*
 button_remap_s user_map = {
@@ -28,21 +31,47 @@ button_remap_s user_map = {
 };
 */
 
-void cb_hoja_buttons_init()
+void _local_setup_btn(uint32_t gpio)
 {
+    gpio_init(gpio);
+    gpio_pull_up(gpio);
+    gpio_set_dir(gpio, GPIO_IN);
+}
+
+void _local_setup_push(uint32_t gpio)
+{
+    gpio_init(gpio);
+    gpio_pull_up(gpio);
+    gpio_set_dir(gpio, GPIO_IN);
+}
+
+void _local_setup_scan(uint32_t gpio)
+{
+    gpio_init(gpio);
+    gpio_pull_up(gpio);
+    gpio_set_dir(gpio, GPIO_OUT);
+    gpio_put(gpio, true);
+}
+
+bool cb_hoja_buttons_init()
+{
+    stdio_init_all();
+    
     // Set up GPIO for input buttons
-    hoja_setup_gpio_button(PGPIO_BUTTON_RS);
-    hoja_setup_gpio_button(PGPIO_BUTTON_LS);
+    _local_setup_btn(PGPIO_BUTTON_RS);
+    _local_setup_btn(PGPIO_BUTTON_LS);
 
-    hoja_setup_gpio_push(PGPIO_PUSH_A);
-    hoja_setup_gpio_push(PGPIO_PUSH_B);
-    hoja_setup_gpio_push(PGPIO_PUSH_C);
-    hoja_setup_gpio_push(PGPIO_PUSH_D);
+    _local_setup_push(PGPIO_PUSH_A);
+    _local_setup_push(PGPIO_PUSH_B);
+    _local_setup_push(PGPIO_PUSH_C);
+    _local_setup_push(PGPIO_PUSH_D);
 
-    hoja_setup_gpio_scan(PGPIO_SCAN_A);
-    hoja_setup_gpio_scan(PGPIO_SCAN_B);
-    hoja_setup_gpio_scan(PGPIO_SCAN_C);
-    hoja_setup_gpio_scan(PGPIO_SCAN_D);
+    _local_setup_scan(PGPIO_SCAN_A);
+    _local_setup_scan(PGPIO_SCAN_B);
+    _local_setup_scan(PGPIO_SCAN_C);
+    _local_setup_scan(PGPIO_SCAN_D);
+
+    return true;
 }
 
 void cb_hoja_read_buttons(button_data_s *data)
@@ -72,16 +101,6 @@ void cb_hoja_read_buttons(button_data_s *data)
     data->button_minus      = !gpio_get(PGPIO_PUSH_C);
     gpio_put(PGPIO_SCAN_C, true);
 
-    /*
-    if (data->button_capture)
-    {
-        reset_usb_boot(0, 0);
-    }
-    if (data->button_home)
-    {
-        watchdog_reboot(0, 0, 0);
-    }*/
-
     gpio_put(PGPIO_SCAN_D, false);
     sleep_us(5);
     data->trigger_r     = !gpio_get(PGPIO_PUSH_B);
@@ -96,11 +115,14 @@ void cb_hoja_read_buttons(button_data_s *data)
     data->button_safemode = !gpio_get(PGPIO_BUTTON_MODE);
     data->button_shipping = data->button_stick_right && data->button_stick_left;
     data->button_sync = data->button_plus;
+
+    if (data->button_stick_left)
+    {
+        reset_usb_boot(0, 0);
+    }
 }
 
 int main()
 {
-    stdio_init_all();
-
     hoja_init();
 }

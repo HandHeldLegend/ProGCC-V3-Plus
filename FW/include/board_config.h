@@ -201,10 +201,68 @@
     #define HOJA_BLUETOOTH_DRIVER           BLUETOOTH_DRIVER_ESP32HOJA
     #define BLUETOOTH_DRIVER_I2C_INSTANCE   0
     #define BLUETOOTH_DRIVER_ENABLE_PIN     0
-
     // ---------------------------------
     // ---------------------------------
 
-// Defined by cmake #define HOJA_RUMBLE_TYPE HOJA_RUMBLE_TYPE_HAPTIC or HOJA_RUMBLE_TYPE_ERM
+    // Battery Driver Setup
+    #define BATTERY_DRIVER_BQ25810      1
+    #define HOJA_BATTERY_DRIVER         BATTERY_DRIVER_BQ25810
+    #define HOJA_BATTERY_I2C_INSTANCE   0
+    // ---------------------------------
+    // ---------------------------------
+
+    // Device Information Setup 
+    #define HOJA_DEVICE_NAME    HOJA_PRODUCT
+    #define HOJA_DEVICE_MAKER   HOJA_MANUFACTURER
+    // ---------------------------------
+    // ---------------------------------
+
+    // Static memory elements setup
+    #define HOJA_BUTTONS_SUPPORTED_MAIN     0b1111111111111111 // ALL buttons supported
+    #define HOJA_BUTTONS_SUPPORTED_SYSTEM   0b111 // Home, Capture, Sync
+
+    // RGB Setup
+    #if ( (HOJA_DEVICE_ID == 0xA002) | (HOJA_DEVICE_ID== 0xA003) )
+        #define HOJA_RGB_GROUPS_NUM 15
+        #define HOJA_RGB_GROUP_NAMES { \
+            {"A"}, {"B"}, {"X"}, {"Y"}, \
+            {"D-Pad"}, {"L Stick"}, {"R Stick"}, \
+            {"L"}, {"R"}, {"ZL"}, {"ZR"}, \
+            {"Home"}, {"Capture"}, \
+            {"Plus"}, {"Minus"} \
+        }
+
+        // Corresponds to the group names in order
+        // Filled out with any LED index corresponding to a group
+        #define HOJA_RGB_GROUPINGS { \
+            {18}, {19}, {17}, {16}, \
+            {8, 9, 10, 11}, {4, 5, 6, 7}, {0, 1, 2, 3}, \
+            {20}, {22}, {21}, {23}, \
+            {14}, {13}, \
+            {15}, {12} \
+        }
+    #elif (HOJA_DEVICE_ID == 0xA004) || (HOJA_DEVICE_ID == 0xA005)
+        #define HOJA_RGB_GROUPS_NUM 16
+        #define HOJA_RGB_GROUP_NAMES { \
+            {"A"}, {"B"}, {"X"}, {"Y"}, \
+            {"D-Pad"}, {"L Stick"}, {"R Stick"}, \
+            {"L"}, {"R"}, {"ZL"}, {"ZR"}, \
+            {"Home"}, {"Capture"}, \
+            {"Plus"}, {"Minus"}, {"Player"} \
+        }
+        #define HOJA_RGB_PLAYER_GROUP_IDX 15
+
+        // Corresponds to the group names in order
+        // Filled out with any LED index corresponding to a group
+        #define HOJA_RGB_GROUPINGS { \
+            {22}, {23}, {21}, {20}, \
+            {12,13,14,15}, {8,9,10,11}, {0,1,2,3}, \
+            {26}, {25}, {27}, {24}, \
+            {18}, {17}, \
+            {19}, {16}, {7,6,5,4} \
+        }
+    #endif
+    // ---------------------------------
+    // ---------------------------------
 
 #endif
