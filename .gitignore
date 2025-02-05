@@ -25,3 +25,5 @@ FW/build/.ninja_deps
 FW/build/CMakeCache.txt
 
 FW/build/.ninja_log
+
+PCB/main_3.3/progcc_3.3_main-backups/
