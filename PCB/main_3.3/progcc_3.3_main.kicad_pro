@@ -49,7 +49,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.18
+          "min_clearance": 0.0
         }
       },
       "diff_pair_dimensions": [
@@ -732,7 +732,7 @@
       "group_symbols": true,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Value"
+      "sort_field": "Reference"
     },
     "connection_grid_size": 50.0,
     "drawing": {
