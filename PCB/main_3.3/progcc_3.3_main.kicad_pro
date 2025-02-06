@@ -498,8 +498,8 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "../production/main_3.2/gerber/",
-      "pos_files": "../production/main_3.2/placement/",
+      "plot": "../production/main_3.3/gerber/",
+      "pos_files": "../production/main_3.3/placement/",
       "specctra_dsn": "",
       "step": "production/3d/procon_gcc_main_pcb.step",
       "svg": "",
@@ -732,7 +732,7 @@
       "group_symbols": true,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Reference"
+      "sort_field": "MPN"
     },
     "connection_grid_size": 50.0,
     "drawing": {
