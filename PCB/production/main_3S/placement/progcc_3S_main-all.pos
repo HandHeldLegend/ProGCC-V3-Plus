@@ -1,7 +1,7 @@
-### Footprint positions - created on 2025-12-09T16:11:23-0800 ###
-### Printed by KiCad version 9.0.6-rc2
+### Footprint positions - created on 2026-07-29T22:55:29 ###
+### Printed by KiCad version 10.0.5
 ## Unit = mm, Angle = deg.
-## Side : top
+## Side : All
 # Ref     Val                    Package                                                    PosX       PosY       Rot  Side
 C1        100nF                  C_0201_0603Metric                                      175.4124  -140.2588  -90.0000  top
 C2        100nF                  C_0201_0603Metric                                      121.1580  -141.2240    0.0000  top
@@ -51,7 +51,7 @@ J1        USB4056-03-A           USB405603A                                     
 J2        To_Button_Board        molex_5051101492_14P                                    99.7900  -144.7800    0.0000  top
 J4        SM02B-SURS-TF_LF__SN_  JST_SM02B-SURS-TF_LF__SN_                              180.7300  -144.0550    0.0000  top
 J5        SM02B-SURS-TF_LF__SN_  JST_SM02B-SURS-TF_LF__SN_                               92.2400  -138.4950    0.0000  top
-L1        1.3A_2.2uH_±20%_80mΩ  L_1008_2520Metric                                      159.4131  -113.3847    0.0000  top
+L1        1.3A_2.2uH_±20%_80mΩ   L_1008_2520Metric                                      159.4131  -113.3847    0.0000  top
 L2        SK6805-EC-10           SK6805-EC-10                                           149.3202  -133.5220    0.0000  top
 L3        SK6805-EC-10           SK6805-EC-10                                           105.3770  -124.9326    0.0000  top
 L4        SK6805-EC-10           SK6805-EC-10                                           144.0812  -149.3894    0.0000  top
@@ -97,16 +97,12 @@ R27       1k                     R_0201_0603Metric                              
 R28       33                     R_0201_0603Metric                                      142.4959  -111.4317  180.0000  top
 R29       27R                    R_0201_0603Metric                                      138.6859  -111.1015  -90.0000  top
 R30       27R                    R_0201_0603Metric                                      139.3844  -111.1002  -90.0000  top
-R31       100R                   R_0201_0603Metric                                      133.2738  -114.5794  180.0000  top
+R31       27R                    R_0201_0603Metric                                      133.2738  -114.5794  180.0000  top
 REF**     HHL_Logo               HHL_Logo                                               134.3985  -133.8155    0.0000  top
 SW1       GL1807SYAE-002         GL1807SYAE                                              96.3770  -118.4326    0.0000  top
 SW2       GL1807SYAE-002         GL1807SYAE                                             158.3202  -140.0220    0.0000  top
 SW3       TS35CA                 TS35CA                                                 128.4835  -101.8900    0.0000  top
 SW4       1TS026A-1000-0550      1TS026A-1000-0550                                      135.9662  -108.3818    0.0000  top
-T1        36-8730                KS_8730                                                 91.6239  -135.4400  180.0000  top
-T2        36-8730                KS_8730                                                 95.7400  -135.4100   90.0000  top
-T3        36-8730                KS_8730                                                176.9364  -146.0213  -90.0000  top
-T4        36-8730                KS_8730                                                184.5531  -145.9992   90.0000  top
 U1        USBLC6-2P6             SOT-666                                                138.5500  -103.6000  -90.0000  top
 U2        USBLC6-2P6             SOT-666                                                133.7500  -102.7500   90.0000  top
 U3        USBLC6-2P6             SOT-666                                                136.2625  -102.7500   90.0000  top
